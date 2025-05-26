@@ -1,0 +1,23 @@
+.hero-section {
+    min-height: 100vh;
+    background-image: url('./../../../assets/img/01_Hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-content {
+    color: white;
+}
+
+app-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+}
