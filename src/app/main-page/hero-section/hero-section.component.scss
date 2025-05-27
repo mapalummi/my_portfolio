@@ -1,25 +1,85 @@
 .hero-section {
-    min-height: 100vh;
-    background-image: url('./../../../assets/img/01_Hero.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  min-height: 100vh;
+  background-image: url("./../../../assets/img/01_Hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .hero-content {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    color: white;
-    font-size: 4rem;
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: white;
+  font-size: 6rem;
 }
 
+.hero-content h1:first-child {
+    text-align: left;
+    margin-left: -10%;
+}
+
+.hero-content h1:last-child {
+    text-align: right;
+    margin-left: -10%;
+}
+
+.bouncing-letters span {
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  display: inline-block;
+}
+
+.bouncing-letters span:hover {
+//   color: rgb(247, 197, 24);
+  color: rgb(36, 221, 128);
+}
+
+.bouncing-letters span.bounce {
+  animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+  20%,
+  50%,
+  80%,
+  to {
+    transform: scale(1, 1);
+  }
+
+  40% {
+    transform: scale(1.75, 0.65);
+  }
+
+  45% {
+    transform: scale(1.75, 0.65);
+  }
+
+  70% {
+    transform: scale(1.25, 0.75);
+  }
+
+  90% {
+    transform: scale(1.15, 0.85);
+  }
+}
+
+// .bouncing-letters-two{
+//     display: inline-block;
+//     transition: transform 0.3s ease;
+// }
+
+// .bouncing-letters-two:hover {
+//   transform: scale(1.2);
+//   color: #ff5733;
+// }
+
 app-navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
