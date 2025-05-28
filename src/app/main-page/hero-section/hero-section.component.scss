@@ -27,6 +27,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 2rem;
+  position: relative; // Wichtig für absolute Positionierung des Kindes!
 }
 
 .hero-content .right-section {
@@ -80,6 +81,24 @@
   90% {
     transform: scale(1.15, 0.85);
   }
+}
+
+.polaroid-container {
+  position: absolute;
+  top: -80px; //Vertikale Position (von oben)
+  right: 100px; //Horizontale Position (von rechts)
+  transform: rotate(10deg);
+  z-index: 2;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(-5deg) scale(1.05);
+  }
+}
+
+.polaroid-container img {
+  width: 250px;
+  height: auto;
 }
 
 .hello-button {
