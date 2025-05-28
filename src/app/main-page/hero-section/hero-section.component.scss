@@ -85,20 +85,43 @@
 
 .polaroid-container {
   position: absolute;
-  top: -80px; //Vertikale Position (von oben)
+  top: -70px; //Vertikale Position (von oben)
   right: 100px; //Horizontale Position (von rechts)
   transform: rotate(10deg);
   z-index: 2;
   transition: transform 0.3s ease;
 
-  &:hover {
-    transform: rotate(-5deg) scale(1.05);
-  }
 }
 
 .polaroid-container img {
   width: 250px;
   height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+
+  &:hover{
+    filter: grayscale(0%);
+    animation: colorBounce 0.5s ease-in-out;
+  }
+}
+
+@keyframes colorBounce {
+  0% {
+    filter: grayscale(100%);
+    transform: scale(1);
+  }
+  30% {
+    filter: grayscale(50%) saturate(1.5);
+    transform: scale(1.05);
+  }
+  60% {
+    filter: grayscale(0%) saturate(2) brightness(1.2);
+    transform: scale(0.98);
+  }
+  100% {
+    filter: grayscale(0%) saturate(1) brightness(1);
+    transform: scale(1);
+  }
 }
 
 .hello-button {
