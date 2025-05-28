@@ -11,3 +11,5 @@ import { AboutMeSectionComponent } from "../../about-me-section/about-me-section
 export class NavbarComponent {
 
 }
+
+//TODO: if/else für toggle language !!!
