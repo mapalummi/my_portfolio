@@ -51,6 +51,18 @@ nav {
       animation: hideToTop 0.4s ease-out forwards;
     }
 
+    &:nth-child(3):hover img,
+    &:nth-child(4):hover img,
+    &:nth-child(5):hover img {
+      animation: revealFromLeft 0.4s ease-out forwards;
+    }
+
+    &:nth-child(3):not(:hover) img,
+    &:nth-child(4):not(:hover) img,
+    &:nth-child(5):not(:hover) img {
+      animation: hideToRight 0.4s ease-out forwards;
+    }
+
     // Spezifische Größenanpassungen für verschiedene Links falls nötig
     &:nth-child(2) img {
       // About-Link
@@ -99,5 +111,25 @@ nav {
   }
   to {
     clip-path: inset(0 0 100% 0);
+  }
+}
+
+// Von links nach rechts
+@keyframes revealFromLeft {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0% 0 0 0);
+  }
+}
+
+// Neue Animation zum Verstecken nach links
+@keyframes hideToRight {
+  from {
+    clip-path: inset(0 0% 0 0);
+  }
+  to {
+    clip-path: inset(0 100% 0 0);
   }
 }
