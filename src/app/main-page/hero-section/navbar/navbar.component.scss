@@ -91,53 +91,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 10px;
-
-   // Hover auf dem ersten Language-Button (English)
-  .language-button:nth-child(1):hover ~ .toggle-en {
-    animation: revealFromBottom 0.4s ease-out forwards;
   }
-
-  .language-button:nth-child(1):not(:hover) ~ .toggle-en {
-    animation: hideToTop 0.4s ease-out forwards;
-  }
-
-  // Hover auf dem vierten Element (Deutsch)
-  .language-button:nth-child(4):hover ~ .toggle-de {
-    animation: revealFromBottom 0.4s ease-out forwards;
-  }
-
-  .language-button:nth-child(4):not(:hover) ~ .toggle-de {
-    animation: hideToTop 0.4s ease-out forwards;
-  }
-  }
-
-  .language-button {
-    width: 35px;
-  }
-
-  .toggle-button {
-    width: 110px;
-  }
-}
-
-nav div .toggle-en {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 35px;
-  z-index: 2;
-  clip-path: inset(100% 0 0 0);
-}
-
-nav div .toggle-de {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%) scaleX(-1);
-  width: 35px;
-  z-index: 2;
-  clip-path: inset(100% 0 0 0);
 }
 
 // Von unten nach oben (Hover)
@@ -178,4 +132,51 @@ nav div .toggle-de {
   to {
     clip-path: inset(0 100% 0 0);
   }
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 14px;
+  background-color: #f57c5b;
+  border: 1px solid white;
+  border-radius: 14px;
+  transition: background-color 0.4s;
+  overflow: visible;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 28px;
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #2f4fff;
+  transition: transform 0.4s;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translate(34px, -50%);
 }
