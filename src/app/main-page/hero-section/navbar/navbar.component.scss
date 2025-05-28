@@ -20,6 +20,7 @@ nav {
   a {
     text-decoration: none;
     color: white;
+    font-size: 1.2em;
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
@@ -85,13 +86,76 @@ nav {
     }
   }
 
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+   // Hover auf dem ersten Language-Button (English)
+  .language-button:nth-child(1):hover ~ .toggle-en {
+    animation: revealFromBottom 0.4s ease-out forwards;
+  }
+
+  .language-button:nth-child(1):not(:hover) ~ .toggle-en {
+    animation: hideToTop 0.4s ease-out forwards;
+  }
+
+  // Hover auf dem vierten Element (Deutsch)
+  .language-button:nth-child(4):hover ~ .toggle-de {
+    animation: revealFromBottom 0.4s ease-out forwards;
+  }
+
+  .language-button:nth-child(4):not(:hover) ~ .toggle-de {
+    animation: hideToTop 0.4s ease-out forwards;
+  }
+  }
+
   .language-button {
-    width: 30px;
+    width: 35px;
   }
 
   .toggle-button {
     width: 110px;
   }
+}
+
+nav div .toggle-en {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 35px;
+  z-index: 2;
+  clip-path: inset(100% 0 0 0);
+  
+
+  // &:hover {
+  //   animation: revealFromBottom 0.4s ease-out forwards;
+  // }
+
+  // &:not(:hover) {
+  //   animation: hideToTop 0.4s ease-out forwards;
+  // }
+}
+
+nav div .toggle-de {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+  width: 35px;
+  z-index: 2;
+  clip-path: inset(100% 0 0 0);
+  
+
+  // &:hover {
+  //   animation: revealFromBottom 0.4s ease-out forwards;
+  // }
+
+  // &:not(:hover) {
+  //   animation: hideToTop 0.4s ease-out forwards;
+  // }
 }
 
 // Von unten nach oben (Hover)
