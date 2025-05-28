@@ -4,7 +4,7 @@ import { AboutMeSectionComponent } from "../../about-me-section/about-me-section
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [AboutMeSectionComponent],
+  imports: [AboutMeSectionComponent], //CHECK: Warum hab ich die hier rein gestezt??
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
