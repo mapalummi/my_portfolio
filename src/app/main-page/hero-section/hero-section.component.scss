@@ -14,16 +14,31 @@
   font-family: "Bricolage Grotesque", sans-serif;
   color: white;
   font-size: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
 }
 
-.hero-content h1:first-child {
-  text-align: left;
-  margin-left: -10%;
+.hero-content .left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
 }
 
+.hero-content .right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hero-content h1:first-child,
 .hero-content h1:last-child {
-  text-align: right;
-  margin-left: -10%;
+  text-align: unset;
+  margin-left: 0;
 }
 
 .bouncing-letters span {
