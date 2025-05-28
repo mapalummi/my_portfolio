@@ -90,16 +90,16 @@
   transform: rotate(10deg);
   z-index: 2;
   transition: transform 0.3s ease;
-
 }
 
+// Polaroid Bounced komplett !
 .polaroid-container img {
   width: 250px;
   height: auto;
   filter: grayscale(100%);
-  transition: filter 0.4s ease, transform 0.3s ease;
+  transition: filter 0.4s ease, transform 0.3s ease; // transform könnte raus!
 
-  &:hover{
+  &:hover {
     filter: grayscale(0%);
     animation: colorBounce 0.5s ease-in-out;
   }
@@ -108,18 +108,53 @@
 @keyframes colorBounce {
   0% {
     filter: grayscale(100%);
-    transform: scale(1);
+    // transform: scale(1);
   }
   30% {
     filter: grayscale(50%) saturate(1.5);
-    transform: scale(1.05);
+    // transform: scale(1.05);
   }
   60% {
     filter: grayscale(0%) saturate(2) brightness(1.2);
-    transform: scale(0.98);
+    // transform: scale(0.98);
   }
   100% {
     filter: grayscale(0%) saturate(1) brightness(1);
+    // transform: scale(1);
+  }
+}
+
+.polaroid-text {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #333;
+  font-family: "Kalam", sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.polaroid-text::before {
+  content: "Marco :)";
+  transition: opacity 0.3s ease;
+}
+
+.polaroid-container:hover .polaroid-text::before {
+  content: "Marco :D";
+  animation: textSwap 0.5s ease-in-out;
+}
+
+@keyframes textSwap {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
     transform: scale(1);
   }
 }
