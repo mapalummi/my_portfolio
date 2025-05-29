@@ -10,6 +10,14 @@
   position: relative;
 }
 
+.socialbar-left{
+  position: absolute;
+  left: 100px;
+  bottom: 50px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
 .hero-content {
   font-family: "Bricolage Grotesque", sans-serif;
   color: white;

@@ -1,0 +1,27 @@
+@import "./../../../../styles.scss";
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: blue;
+    }
+  }
+  img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+  }
+}

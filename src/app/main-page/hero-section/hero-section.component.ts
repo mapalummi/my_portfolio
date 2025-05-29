@@ -1,10 +1,11 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SocialbarComponent } from './socialbar/socialbar.component';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, SocialbarComponent],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss'
 })
