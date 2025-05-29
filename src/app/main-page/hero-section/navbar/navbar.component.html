@@ -14,10 +14,12 @@
       ><img src="assets/icons/3.png" alt="" /><span>Contact</span></a
     >
     <div class="toggle">
+      <span [class.active]="!isEnglish"><img src="./../../../../assets/icons/Toggle.png" alt="">EN</span>
       <label class="toggle-switch">
-        <input type="checkbox">
+        <input type="checkbox" [checked]="isEnglish" (change)="toggleLanguage()">
         <span class="slider"></span>
       </label>
+      <span [class.active]="isEnglish"><img src="./../../../../assets/icons/Toggle.png" alt="">DE</span>
     </div>
   </nav>
 </div>
