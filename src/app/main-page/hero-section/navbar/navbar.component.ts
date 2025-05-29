@@ -14,4 +14,12 @@ export class NavbarComponent {
   toggleLanguage() {
     this.isEnglish = !this.isEnglish;
   }
+
+  setGerman(){
+    this.isEnglish = false;
+  }
+
+  setEnglish(){
+    this.isEnglish = true;
+  }
 }
