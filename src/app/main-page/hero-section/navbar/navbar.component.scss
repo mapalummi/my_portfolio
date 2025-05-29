@@ -148,9 +148,10 @@ nav {
 
     &.active {
       color: #1073ea; // Aktive Farbe
+      cursor: default;
 
       img {
-        display: none;  // Image wird ausgeblendet wenn aktiv!
+        display: none; // Image wird ausgeblendet wenn aktiv!
       }
     }
     img {
