@@ -169,7 +169,7 @@
 
 .hello-button {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 150px;
   height: 50px;
   padding: 12px 24px;
@@ -180,6 +180,18 @@
   font-size: 16px;
   cursor: pointer;
   transition: width 0.4s ease;
+
+  img{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -35px; // Positionierung Icon oberhalb Button
+    left: 50%;
+    filter: invert(100%);
+    transform: translateX(-50%) translateX(-60px);
+    opacity: 0; // Standard unsichtbar
+    transition: opacity 0.5s ease, transform 1s ease;
+  }
 
   span {
     position: absolute;
@@ -208,6 +220,11 @@
 
     .text-hover {
       opacity: 1;
+    }
+
+    img{
+      opacity: 1; // Icon wird bei Hover sichtbar
+      transform: translateX(-50%) translateX(100px) rotate(20deg) scale(1.5); // Animation nach oben, vergrößert..
     }
   }
 }
