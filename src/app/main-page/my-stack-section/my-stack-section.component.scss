@@ -1,11 +1,21 @@
 @import "./../../../styles.scss";
 
-.skillset-container {
+.my-stack-section {
+  min-height: 60vh;
+
+  background-image: url("./../../../assets/img/Skills_BG.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  display: flex;
 }
+
+// .headline-container {
+// }
 
 .subtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: white;
   margin: 0 0 1rem 0;
   font-weight: 300;
 }
@@ -17,7 +27,7 @@
   h1 {
     font-size: 3rem;
     font-weight: bold;
-    color: #333;
+    color: white;
     position: relative; // Bringt Text nach vorne
     z-index: 2;
   }
@@ -45,4 +55,18 @@
   100% {
     clip-path: inset(0 100% 0 0);
   }
+}
+
+.skillset-container {
+  max-width: 800px;
+  display: flex;
+  > img {
+    width: 500px;
+    height: 150px;
+  }
+}
+
+.skill-icons {
+  width: 100px;
+  height: 100px;
 }
