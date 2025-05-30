@@ -1,5 +1,8 @@
 @import "./../../../styles.scss";
 
+.about-section {
+  display: flex;
+}
 .about-me-container {
   text-align: start;
   max-width: 800px;
@@ -15,11 +18,11 @@
 }
 
 .main-title {
-    margin: 0 0 1rem 0;
+  margin: 0 0 1rem 0;
   h1 {
     font-size: 3rem;
     font-weight: bold;
-    
+
     color: #333;
   }
   img {
@@ -60,8 +63,39 @@
   }
 }
 
-.snippet-container{
-    img{
-        width: 200px;
-    }
+.snippet-container {
+  position: relative; // Bezugspunkt für die Snippet-Divs
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px;
+  z-index: 1;
+  width: 600px;
+  height: 600px;
+
+  img {
+    width: 500px;
+  }
+}
+
+.snippet1 {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  z-index: 3;
+  transform: rotate(-5deg);
+}
+.snippet2 {
+  position: absolute;
+  top: 200px;
+  left: 30px;
+  z-index: 2;
+}
+.snippet3 {
+  position: absolute;
+  top: 120px;
+  left: 150px;
+  z-index: 1;
+  transform: rotate(5deg);
 }
