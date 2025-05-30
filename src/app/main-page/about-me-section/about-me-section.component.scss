@@ -1,0 +1,67 @@
+@import "./../../../styles.scss";
+
+.about-me-container {
+  text-align: start;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-weight: 300;
+}
+
+.main-title {
+    margin: 0 0 1rem 0;
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    
+    color: #333;
+  }
+  img {
+    width: 200px;
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+  color: #444;
+  max-width: 700px;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.lets-talk-button {
+  width: 150px;
+  height: 50px;
+  padding: 12px 24px;
+  border: 1px solid black;
+  box-shadow: 0px 5px 0px black;
+  background: transparent;
+  color: black;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: none;
+    transform: translateY(5px);
+    color: white;
+    background-color: #1073ea;
+  }
+}
+
+.snippet-container{
+    img{
+        width: 200px;
+    }
+}
