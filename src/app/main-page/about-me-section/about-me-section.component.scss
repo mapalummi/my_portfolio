@@ -2,6 +2,7 @@
 
 .about-section {
   display: flex;
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 .about-me-container {
   text-align: start;
@@ -26,7 +27,23 @@
     color: #333;
   }
   img {
-    width: 200px;
+    width: 300px;
+    animation: pulseUnderline 4s ease-in-out infinite;
+  }
+}
+
+@keyframes pulseUnderline {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  25% {
+    clip-path: inset(0% 0 0 0);
+  }
+  75% {
+    clip-path: inset(0% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
   }
 }
 
@@ -74,14 +91,14 @@
   width: 600px;
   height: 600px;
 
-  img {
-    width: 500px;
+  > div > img:first-child {
+    width: 600px;
   }
 }
 
 .snippet1 {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 50px;
   z-index: 3;
   transform: rotate(-3deg);
@@ -94,45 +111,50 @@
 }
 .snippet3 {
   position: absolute;
-  top: 200px;
+  top: 220px;
   left: 30px;
   z-index: 1;
-  transform: rotate(8deg);
+  transform: rotate(6deg);
 }
 
 .snippet-text1 {
   position: absolute;
-  bottom: 40px;
+  bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
-  color: #333;
-  font-family: "Kalam", sans-serif;
-  font-size: 26px;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+
 .snippet-text2 {
   position: absolute;
-  bottom: 40px;
+  bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
-  color: #333;
-  font-family: "Kalam", sans-serif;
-  font-size: 26px;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
+
 .snippet-text3 {
   position: absolute;
-  bottom: 40px;
+  bottom: 65px;
   left: 50%;
   transform: translateX(-50%);
-  color: #333;
-  font-family: "Kalam", sans-serif;
-  font-size: 26px;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.snippet-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
 }
