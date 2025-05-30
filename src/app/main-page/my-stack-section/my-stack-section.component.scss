@@ -1,0 +1,48 @@
+@import "./../../../styles.scss";
+
+.skillset-container {
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-weight: 300;
+}
+
+.main-title {
+  margin: 0 0 1rem 0;
+  position: relative; // Positionierungskontext
+  display: inline-block; // Macht Container so breit wie den Inhalt
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    position: relative; // Bringt Text nach vorne
+    z-index: 2;
+  }
+  img {
+    width: 200px;
+    animation: pulseLine 4s ease-in-out infinite;
+    position: absolute; // Positioniert absolut zum main-title
+    top: 50%; // Vertikale Zentrierung
+    left: 50%; // Horizontale Zentrierung
+    transform: translate(-50%, -50%); // Perfekte Zentrierung
+    z-index: 1;
+  }
+}
+
+@keyframes pulseLine {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  25% {
+    clip-path: inset(0% 0 0 0);
+  }
+  75% {
+    clip-path: inset(0% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
