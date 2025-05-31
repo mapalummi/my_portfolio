@@ -101,48 +101,81 @@
   }
 }
 
-.peel-off{
+.peel-off {
   position: relative;
   width: 300px;
   cursor: pointer;
 }
 
-.peel-off img{
+.peel-off img {
   position: absolute;
   top: 0;
   left: 0;
   width: 250px;
   height: 250px;
   transition: opacity 0.3s ease;
+  will-change: opacity;     // optimiert für Animationen
+  transform: translateZ(0); // Hardware-Beschleunigung
 }
 
-.peel-off img:nth-child(1){
+.peel-off img:nth-child(1) {
   z-index: 3;
 }
 
-.peel-off img:nth-child(2){
+.peel-off img:nth-child(2) {
   z-index: 2;
   opacity: 0;
 }
 
-.peel-off img:nth-child(3){
+.peel-off img:nth-child(3) {
   z-index: 1;
   opacity: 0;
 }
 
-.peel-off:hover img:nth-child(1){
+.peel-off.peeled img:nth-child(1) {
   opacity: 0;
-}
-.peel-off:hover img:nth-child(2){
-  opacity: 1;
+  transition: opacity 0.1s ease-out;
 }
 
-.peel-off.peeled img:nth-child(1){
-opacity: 0;
+.peel-off.peeled img:nth-child(2) {
+  opacity: 1;
+  animation: showMiddleThenHide 0.1s ease-out forwards;
 }
-.peel-off.peeled img:nth-child(2){
-opacity: 0;
+
+.peel-off.peeled img:nth-child(3) {
+  opacity: 0;
+  animation: showFinalDelayed 0.1s ease-out forwards;
 }
-.peel-off.peeled img:nth-child(3){
-opacity: 1;
+
+@keyframes showMiddleThenHide {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showFinalDelayed {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
