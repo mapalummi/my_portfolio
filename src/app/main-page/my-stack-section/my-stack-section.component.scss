@@ -2,12 +2,12 @@
 
 .my-stack-section {
   min-height: 60vh;
-
   background-image: url("./../../../assets/img/Skills_BG.png");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
   display: flex;
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 
 .headline-container {
@@ -72,9 +72,19 @@
 
 .skill-description {
   padding-bottom: 24px;
+  position: relative;
   > img {
     width: 700px;
     height: 150px;
+  }
+  > span {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
   }
 }
 
