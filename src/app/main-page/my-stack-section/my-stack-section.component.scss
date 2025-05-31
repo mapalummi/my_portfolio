@@ -102,8 +102,47 @@
 }
 
 .peel-off{
-  > img {
-    width: 250px;
-    height: 250px;
+  position: relative;
+  width: 300px;
+  cursor: pointer;
 }
+
+.peel-off img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  transition: opacity 0.3s ease;
+}
+
+.peel-off img:nth-child(1){
+  z-index: 3;
+}
+
+.peel-off img:nth-child(2){
+  z-index: 2;
+  opacity: 0;
+}
+
+.peel-off img:nth-child(3){
+  z-index: 1;
+  opacity: 0;
+}
+
+.peel-off:hover img:nth-child(1){
+  opacity: 0;
+}
+.peel-off:hover img:nth-child(2){
+  opacity: 1;
+}
+
+.peel-off.peeled img:nth-child(1){
+opacity: 0;
+}
+.peel-off.peeled img:nth-child(2){
+opacity: 0;
+}
+.peel-off.peeled img:nth-child(3){
+opacity: 1;
 }

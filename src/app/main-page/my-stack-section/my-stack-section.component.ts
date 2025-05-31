@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './my-stack-section.component.scss'
 })
 export class MyStackSectionComponent {
+isPeeled = false;
 
+togglePeel(){
+  this.isPeeled = !this.isPeeled;
+}
 }
