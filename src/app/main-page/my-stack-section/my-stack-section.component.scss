@@ -13,6 +13,8 @@
 .headline-container {
   width: 500px;
     display: flex;
+    
+    align-items: center;
     flex-direction: column;
 }
 
@@ -33,15 +35,17 @@
     color: white;
     position: relative; // Bringt Text nach vorne
     z-index: 2;
+    margin: 0;
   }
   img {
     width: 200px;
     animation: pulseLine 4s ease-in-out infinite;
     position: absolute; // Positioniert absolut zum main-title
-    top: 50%; // Vertikale Zentrierung
+    top: 0; // Vertikale Zentrierung
     left: 50%; // Horizontale Zentrierung
-    transform: translate(-50%, -50%); // Perfekte Zentrierung
+    transform: translate(-50%) scaleX(-1); // Perfekte Zentrierung, Spiegeln
     z-index: 1;
+    height: 100%;
   }
 }
 
