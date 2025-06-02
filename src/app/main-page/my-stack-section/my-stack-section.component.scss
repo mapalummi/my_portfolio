@@ -2,12 +2,14 @@
 
 .my-stack-section {
   min-height: 80vh;
+  height: 80vh; // Wichtig: Explizite Höhe
   background-image: url("./../../../assets/img/Skills_BG.png");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
   display: flex;
   font-family: "Bricolage Grotesque", sans-serif;
+  // align-items: stretch; // Alle Flex-Children nehmen volle Höheein
 }
 
 .headline-container {
@@ -64,26 +66,39 @@
 }
 
 .skillset-container {
-  max-width: 800px;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
+  align-items: center;
+  flex: 1;
+  align-self: center;
+  max-width: 800px;
+  gap: 3rem;
 }
 
 .skill-description {
-  padding-bottom: 24px;
   position: relative;
+  display: inline-block;
+  // padding-bottom: 72px;
+
   > img {
     width: 700px;
     height: 150px;
+    display: block;
   }
   > span {
-    width: 90%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 2;
     text-align: center;
+    padding: 0 5%;
+    box-sizing: border-box;
   }
 }
 
@@ -110,16 +125,16 @@
 .peel-off-container {
   position: relative;
   width: 600px;
-  height: 400px;
+  height: 100%; // Komplette Höhe des Parents
 }
 
 .peel-off {
   position: absolute;
-  top: 100px;
-  left: 100px;
+  bottom: 250px;
+  left: 50%;
+  transform:translateX(-50%) rotate(15deg);
   width: 250px;
   height: 250px;
-  transform: rotate(15deg);
   cursor: pointer;
 
   > img:first-child {
@@ -156,7 +171,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Kalam", sans-serif;
-    font-size: 44px;
+    font-size: 24px;
     line-height: 1.1;
     text-align: center;
     color: white;
