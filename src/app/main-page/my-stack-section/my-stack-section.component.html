@@ -36,10 +36,15 @@
     </div>
   </div>
 
-  <div class="peel-off" [class.peeled]="isPeeled" (click)="togglePeel()">
-    <img src="./../../../assets/icons/Peel_A.png" alt="">
-    <img src="./../../../assets/icons/Peel_B.png" alt="">
-    <img src="./../../../assets/icons/Peel_C.png" alt="">
-  </div>
+  <div class="peel-off-container">
+    
 
+    <div class="peel-off" [class.peeled]="isPeeled" (click)="togglePeel()">
+      <img src="./../../../assets/icons/Arrow.png" alt="" />
+      <span>Pull to peel</span>
+      <img src="./../../../assets/icons/Peel_A.png" alt="" />
+      <img src="./../../../assets/icons/Peel_B.png" alt="" />
+      <img src="./../../../assets/icons/Peel_C.png" alt="" />
+    </div>
+  </div>
 </div>

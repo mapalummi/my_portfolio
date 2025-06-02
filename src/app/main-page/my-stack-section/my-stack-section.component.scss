@@ -13,7 +13,6 @@
 .headline-container {
   width: 500px;
   display: flex;
-
   align-items: center;
   flex-direction: column;
 }
@@ -108,10 +107,42 @@
   }
 }
 
+.peel-off-container {
+  position: relative;
+  width: 600px;
+}
+
 .peel-off {
   position: relative;
-  width: 300px;
+  width: 250px;
+  height: 250px;
   cursor: pointer;
+
+  > img:first-child {
+    position: absolute;
+    top: 44px;
+    left: 94px;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+  }
+
+  > span {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Kalam", sans-serif;
+    font-size: 44px;
+    line-height: 1.1;
+    text-align: center;
+    color: white;
+    z-index: 4;
+    transition: opacity 0.3s ease;
+  }
 }
 
 .peel-off img {
@@ -125,31 +156,37 @@
   transform: translateZ(0); // Hardware-Beschleunigung
 }
 
-.peel-off img:nth-child(1) {
+.peel-off img:nth-child(3) {
   z-index: 3;
 }
 
-.peel-off img:nth-child(2) {
+.peel-off img:nth-child(4) {
   z-index: 2;
   opacity: 0;
 }
 
-.peel-off img:nth-child(3) {
+.peel-off img:nth-child(5) {
   z-index: 1;
   opacity: 0;
 }
 
-.peel-off.peeled img:nth-child(1) {
+// Unsichtbar machen beim "peeled" Zustand
+.peel-off.peeled > img:first-child,
+.peel-off.peeled > span {
+  opacity: 0;
+}
+
+.peel-off.peeled img:nth-child(3) {
   opacity: 0;
   transition: opacity 0.1s ease-out;
 }
 
-.peel-off.peeled img:nth-child(2) {
+.peel-off.peeled img:nth-child(4) {
   opacity: 1;
   animation: showMiddleThenHide 0.1s ease-out forwards;
 }
 
-.peel-off.peeled img:nth-child(3) {
+.peel-off.peeled img:nth-child(5) {
   opacity: 0;
   animation: showFinalDelayed 0.1s ease-out forwards;
 }
