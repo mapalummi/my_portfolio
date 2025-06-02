@@ -132,7 +132,7 @@
     transition: opacity 0.3s ease;
   }
 
-  > span {
+  > span:first-of-type {
     position: absolute;
     width: 200px;
     height: auto;
@@ -145,6 +145,23 @@
     text-align: center;
     color: white;
     z-index: 4;
+    transition: opacity 0.3s ease;
+  }
+
+  > span:last-of-type {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Kalam", sans-serif;
+    font-size: 44px;
+    line-height: 1.1;
+    text-align: center;
+    color: white;
+    z-index: 4;
+    opacity: 0;
     transition: opacity 0.3s ease;
   }
 }
@@ -160,37 +177,42 @@
   transform: translateZ(0); // Hardware-Beschleunigung
 }
 
-.peel-off img:nth-child(3) {
+.peel-off img:nth-child(4) {
   z-index: 3;
 }
 
-.peel-off img:nth-child(4) {
+.peel-off img:nth-child(5) {
   z-index: 2;
   opacity: 0;
 }
 
-.peel-off img:nth-child(5) {
+.peel-off img:nth-child(6) {
   z-index: 1;
   opacity: 0;
 }
 
-// Unsichtbar machen beim "peeled" Zustand
+// Nur der erste Span verschwindet beim Peel
 .peel-off.peeled > img:first-child,
-.peel-off.peeled > span {
+.peel-off.peeled > span:first-of-type {
   opacity: 0;
 }
 
-.peel-off.peeled img:nth-child(3) {
+// Der zweite Span erscheint beim Peel
+.peel-off.peeled > span:last-of-type {
+  opacity: 1;
+}
+
+.peel-off.peeled img:nth-child(4) {
   opacity: 0;
   transition: opacity 0.1s ease-out;
 }
 
-.peel-off.peeled img:nth-child(4) {
+.peel-off.peeled img:nth-child(5) {
   opacity: 1;
   animation: showMiddleThenHide 0.1s ease-out forwards;
 }
 
-.peel-off.peeled img:nth-child(5) {
+.peel-off.peeled img:nth-child(6) {
   opacity: 0;
   animation: showFinalDelayed 0.1s ease-out forwards;
 }
