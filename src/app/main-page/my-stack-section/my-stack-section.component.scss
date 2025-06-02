@@ -47,7 +47,7 @@
   }
   img {
     width: 250px;
-    animation: rollAndFall 4s ease-in-out infinite;
+    animation: rollAndFall 4s ease-out infinite;
     position: absolute; // Positioniert absolut zum main-title
     top: 50%; // Vertikale Zentrierung
     left: 100%; // Horizontale Zentrierung
