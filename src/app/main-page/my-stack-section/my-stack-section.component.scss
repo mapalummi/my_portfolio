@@ -26,9 +26,10 @@
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: white;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 .main-title {
@@ -36,37 +37,63 @@
   position: relative; // Positionierungskontext
   display: inline-block; // Macht Container so breit wie den Inhalt
   h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
     color: white;
     position: relative; // Bringt Text nach vorne
     z-index: 2;
     margin: 0;
+    line-height: 1;
   }
   img {
-    width: 200px;
-    animation: pulseLine 4s ease-in-out infinite;
+    width: 250px;
+    animation: rollAndFall 4s ease-in-out infinite;
     position: absolute; // Positioniert absolut zum main-title
-    top: 0; // Vertikale Zentrierung
-    left: 50%; // Horizontale Zentrierung
+    top: 50%; // Vertikale Zentrierung
+    left: 100%; // Horizontale Zentrierung
     transform: translate(-50%) scaleX(-1); // Perfekte Zentrierung, Spiegeln
     z-index: 1;
-    height: 100%;
+    height: auto;
+    transform-origin: left center; // Wichtig fürs Einrollen
   }
 }
 
-@keyframes pulseLine {
+@keyframes rollAndFall {
   0% {
-    clip-path: inset(0 100% 0 0);
+    transform: translate(0, -50%) scaleX(-1) rotateZ(0deg) translateY(0px);
+    opacity: 1;
   }
-  25% {
-    clip-path: inset(0% 0 0 0);
+  12.5% {
+    transform: translate(0, -50%) scaleX(-1) rotateZ(0deg) translateY(0px);
+    opacity: 1;
   }
-  75% {
-    clip-path: inset(0% 0 0 0);
+  32.5% {
+    transform: translate(0, -50%) scaleX(-1) rotateZ(0deg) translateY(0px);
+    opacity: 1;
+  }
+  35% {
+    transform: translate(0, -50%) scaleX(-1) rotateZ(60deg) translateY(60px);
+    opacity: 0;
+  }
+  45% {
+    transform: translate(0, -50%) scaleX(-1) rotateZ(120deg) translateY(120px);
+    opacity: 0;
+  }
+  55% {
+    transform: translate(0, -50%) scaleX(-1) rotateZ(120deg) translateY(120px);
+    opacity: 0;
+  }
+  67.5% {
+    transform: translate(0, -50%) scaleX(-1) rotateZ(0deg) translateY(0px);
+    opacity: 1;
+  }
+  87.5% {
+    transform: translate(0, -50%) scaleX(-1) rotateZ(0deg) translateY(0px);
+    opacity: 1;
   }
   100% {
-    clip-path: inset(0 100% 0 0);
+    transform: translate(0, -50%) scaleX(-1) rotateZ(0deg) translateY(0px);
+    opacity: 1;
   }
 }
 
