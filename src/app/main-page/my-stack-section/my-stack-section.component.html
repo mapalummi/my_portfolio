@@ -71,12 +71,34 @@
 
   <div class="peel-off-container">
     <div class="peel-off" [class.peeled]="isPeeled" (click)="togglePeel()">
-      <img src="./../../../assets/icons/Arrow.png" alt="" />
-      <span>Pull to peel</span>
-      <span>Also, I'm interested in diving into:</span>
-      <img src="./../../../assets/icons/Peel_A.png" alt="" />
-      <img src="./../../../assets/icons/Peel_B.png" alt="" />
-      <img src="./../../../assets/icons/Peel_C.png" alt="" />
+      <div class="peel-header">
+        <img src="./../../../assets/icons/Arrow.png" alt="" />
+        <span>Pull to peel</span>
+      </div>
+
+      <div class="peel-content">
+        <span>Also, I'm interested in diving into:</span>
+
+        <div class="peel-decorations">
+          <img src="./../../../assets/icons/Peel_A.png" alt="" />
+          <img src="./../../../assets/icons/Peel_B.png" alt="" />
+          <img src="./../../../assets/icons/Peel_C.png" alt="" />
+        </div>
+
+        <div class="future-skills">
+          
+          <div>
+            <img src="./../../../assets/icons/React.png" alt="" />
+            <span>React</span>
+          </div>
+
+          <div>
+            <img src="./../../../assets/icons/Vue Js.png" alt="" />
+            <span>Vue Js</span>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -155,8 +155,14 @@
   width: 250px;
   height: 250px;
   cursor: pointer;
+}
 
-  > img:first-child {
+.peel-header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  > img {
     position: absolute;
     top: 44px;
     left: 94px;
@@ -166,7 +172,7 @@
     transition: opacity 0.3s ease;
   }
 
-  > span:first-of-type {
+  > span {
     position: absolute;
     width: 200px;
     height: auto;
@@ -181,17 +187,26 @@
     z-index: 4;
     transition: opacity 0.3s ease;
   }
+}
 
-  > span:last-of-type {
+.peel-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  > span {
     position: absolute;
-    width: 200px;
+    width: 180px;
     height: auto;
-    top: 60%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "Kalam", sans-serif;
-    font-size: 24px;
-    line-height: 1.1;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
     text-align: center;
     color: white;
     z-index: 4;
@@ -200,53 +215,83 @@
   }
 }
 
-.peel-off img {
+.peel-decorations img {
   position: absolute;
   top: 0;
   left: 0;
   width: 250px;
   height: 250px;
   transition: opacity 0.3s ease;
-  will-change: opacity; // optimiert für Animationen
-  transform: translateZ(0); // Hardware-Beschleunigung
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
-.peel-off img:nth-child(4) {
+.peel-decorations img:nth-child(1) {
   z-index: 3;
 }
 
-.peel-off img:nth-child(5) {
+.peel-decorations img:nth-child(2) {
   z-index: 2;
   opacity: 0;
 }
 
-.peel-off img:nth-child(6) {
+.peel-decorations img:nth-child(3) {
   z-index: 1;
   opacity: 0;
 }
 
-// Nur der erste Span verschwindet beim Peel
-.peel-off.peeled > img:first-child,
-.peel-off.peeled > span:first-of-type {
+.future-skills {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 4;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: white;
+    text-align: center;
+  }
+}
+
+// Peeled States
+.peel-off.peeled .peel-header > img,
+.peel-off.peeled .peel-header > span {
   opacity: 0;
 }
 
-// Der zweite Span erscheint beim Peel
-.peel-off.peeled > span:last-of-type {
+.peel-off.peeled .peel-content > span,
+.peel-off.peeled .future-skills {
   opacity: 1;
 }
 
-.peel-off.peeled img:nth-child(4) {
+.peel-off.peeled .peel-decorations img:nth-child(1) {
   opacity: 0;
   transition: opacity 0.1s ease-out;
 }
 
-.peel-off.peeled img:nth-child(5) {
+.peel-off.peeled .peel-decorations img:nth-child(2) {
   opacity: 1;
   animation: showMiddleThenHide 0.1s ease-out forwards;
 }
 
-.peel-off.peeled img:nth-child(6) {
+.peel-off.peeled .peel-decorations img:nth-child(3) {
   opacity: 0;
   animation: showFinalDelayed 0.1s ease-out forwards;
 }
