@@ -2,7 +2,6 @@
 
 .my-craft-section {
   min-height: 100vh;
-  
   display: flex;
   flex-direction: column;
   font-family: "Bricolage Grotesque", sans-serif;
@@ -19,12 +18,9 @@
   gap: 2rem;
 }
 
-
-
 .headline-container,
 .join-project {
   flex: 1;
-  
 }
 
 .headline-container {
@@ -51,7 +47,8 @@
   }
 
   h1 {
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
+    font-size: 64px;
   }
 
   div {
@@ -60,7 +57,9 @@
   }
 
   img {
-    width: 150px;
+    width: 280px;
+    //TODO: Anpassen
+    animation: pulseUnderline 1.5s ease-in-out infinite 6s;
   }
 
   p {
@@ -69,67 +68,83 @@
   }
 }
 
+@keyframes pulseUnderline {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  25% {
+    clip-path: inset(0% 0 0 0);
+  }
+  75% {
+    clip-path: inset(0% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
 .join-project {
   display: flex;
   flex-direction: column;
   max-width: 600px;
+}
 
-  .image-container {
-    display: block; 
-    width: 100%;
-    
-    position: relative; // Wichtig für absolut positionierte Kinder
-    overflow: hidden;
-    border-radius: 12px;
+.image-container {
+  display: block;
+  width: 100%;
+  position: relative; // Wichtig für absolut positionierte Kinder
+  overflow: hidden;
+  border-radius: 12px;
 
-    img:first-of-type,
-    img:last-of-type {
-        width: 100%;
-        height: auto;
-    }
-
-    img:first-of-type {
-      
-      animation: float 3s ease-in-out infinite;
-      display: block;
-      opacity: 1;
-      transition: opacity 0.3s ease;
-    }
-
-    img:last-of-type {
-      
-      position: absolute;
-      top: 0;
-      left: 0;
+  &:hover {
+    .default-image {
       opacity: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(0, 0, 0, 0.3) 30%,
-        rgba(0, 0, 0, 0.1) 50%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      transform: scale(1);
-      transform-origin: right top;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      animation-play-state: paused;
     }
-
-    &:hover {
-      img:first-of-type {
-        opacity: 0;
-        animation-play-state: paused;
-      }
-
-      img:last-of-type {
-        opacity: 1;
-        transform: scale(1.2);
-      }
+    .hover-image {
+      opacity: 1;
+      transform: scale(1.2);
     }
   }
+}
 
-  h1, p{
-    width: 100%;
-  }
+.sticker-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: auto;
+  z-index: 10;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.default-image {
+  width: 100%;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  transform: scale(1);
+  transform-origin: right top;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 @keyframes float {
@@ -142,7 +157,10 @@
   }
 }
 
-
+h1,
+p {
+  width: 100%;
+}
 
 .my-projects {
   display: flex;
