@@ -1,0 +1,59 @@
+@import "./../../../styles.scss";
+
+.my-craft-section {
+  min-height: 100vh;
+  height: 100vh; // Wichtig: Explizite Höhe
+  display: flex;
+  flex-direction: column;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.section1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.headline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: black;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  div {
+    margin-bottom: 15px;
+  }
+
+  img{
+    width: 150px;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+.section2 {
+  display: flex;
+}
+
+.my-projects {
+  display: flex;
+  flex-direction: column;
+}

@@ -54,11 +54,10 @@
 
     position: absolute; // Positioniert absolut zum main-title
     top: 50%; // Vertikale Zentrierung
-    left: 100%; // Horizontale Zentrierung
+    left: 0; // Horizontale Zentrierung
     transform: translate(-50%) scaleX(-1); // Perfekte Zentrierung, Spiegeln
     z-index: 1;
     height: auto;
-    transform-origin: left center; // Wichtig fürs Einrollen
   }
 }
 
