@@ -57,29 +57,45 @@
 
   .image-container {
     display: inline-block; // Container immer so groß wie Inhalt
-    width: fit-content;    // Container passt sich der Breite des inhalts an
+    width: fit-content; // Container passt sich der Breite des inhalts an
+    position: relative; // Wichtig für absolut positionierte Kinder
 
     img:first-of-type {
       width: 500px;
       animation: float 3s ease-in-out infinite;
       display: block;
+      opacity: 1;
+      transition: opacity 0.3s ease;
     }
 
     img:last-of-type {
       width: 500px;
-      display: none;
-      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0) 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.3) 30%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
       border-radius: 12px;
       transform: scale(1);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     &:hover {
       img:first-of-type {
-        display: none;
+        opacity: 0;
+        animation-play-state: paused;
       }
 
       img:last-of-type {
-        display: block;
+        opacity: 1;
+        transform: scale(1.05);
       }
     }
   }
