@@ -64,9 +64,7 @@
         />
         <button class="details-button">Project details</button>
       </div>
-      
-
-      <h1>Join</h1>
+      <h2>Join</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit cumque
         similique dolore nisi facere minima esse id totam placeat, voluptates
@@ -78,7 +76,12 @@
 
   <div class="section2">
     <div class="pollo-loco-project">
-      <h1>El Pollo Loco</h1>
+      <img
+        class="project-image"
+        src="./../../../assets/img/ElPolloLoco.png"
+        alt=""
+      />
+      <h2>El Pollo Loco</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit cumque
         similique dolore nisi facere minima esse id totam placeat, voluptates
@@ -88,7 +91,12 @@
     </div>
 
     <div class="da-bubble-project">
-      <h1>DABubble</h1>
+      <img
+        class="project-image"
+        src="./../../../assets/img/DABubble.jpg"
+        alt=""
+      />
+      <h2>DABubble</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit cumque
         similique dolore nisi facere minima esse id totam placeat, voluptates
@@ -98,3 +106,10 @@
     </div>
   </div>
 </div>
+
+<button
+  class="back-to-top-button"
+  [class.visible]="showBackToTop"
+  (click)="scrollToTop()"
+  aria-label="Nach oben scrollen"
+></button>
