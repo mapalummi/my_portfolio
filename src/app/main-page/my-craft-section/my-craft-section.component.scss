@@ -2,37 +2,53 @@
 
 .my-craft-section {
   min-height: 100vh;
-  height: 100vh; // Wichtig: Explizite Höhe
+  
   display: flex;
   flex-direction: column;
   font-family: "Bricolage Grotesque", sans-serif;
+  gap: 3rem;
 }
 
-.section1 {
+.section1,
+.section2 {
   width: 100%;
-  height: 500px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  gap: 2rem;
+}
+
+
+
+.headline-container,
+.join-project {
+  flex: 1;
+  
 }
 
 .headline-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.subtitle {
-  font-size: 1.3rem;
-  color: black;
-  font-weight: 300;
-  text-transform: uppercase;
+  height: 100%;
+  justify-content: center;
+  max-width: 600px;
 }
 
 .main-title {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+
+  span {
+    font-size: 1.3rem;
+    color: black;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
 
   h1 {
     margin-bottom: 10px;
@@ -40,6 +56,7 @@
 
   div {
     margin-bottom: 15px;
+    width: 100%;
   }
 
   img {
@@ -48,20 +65,31 @@
 
   p {
     margin-top: 0;
+    width: 100%;
   }
 }
 
 .join-project {
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 
   .image-container {
-    display: inline-block; // Container immer so groß wie Inhalt
-    width: fit-content; // Container passt sich der Breite des inhalts an
+    display: block; 
+    width: 100%;
+    
     position: relative; // Wichtig für absolut positionierte Kinder
+    overflow: hidden;
+    border-radius: 12px;
+
+    img:first-of-type,
+    img:last-of-type {
+        width: 100%;
+        height: auto;
+    }
 
     img:first-of-type {
-      width: 500px;
+      
       animation: float 3s ease-in-out infinite;
       display: block;
       opacity: 1;
@@ -69,12 +97,11 @@
     }
 
     img:last-of-type {
-      width: 500px;
+      
       position: absolute;
       top: 0;
       left: 0;
       opacity: 0;
-
       background: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.6) 0%,
@@ -82,8 +109,8 @@
         rgba(0, 0, 0, 0.1) 50%,
         rgba(0, 0, 0, 0) 100%
       );
-      border-radius: 12px;
       transform: scale(1);
+      transform-origin: right top;
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
@@ -95,9 +122,13 @@
 
       img:last-of-type {
         opacity: 1;
-        transform: scale(1.05);
+        transform: scale(1.2);
       }
     }
+  }
+
+  h1, p{
+    width: 100%;
   }
 }
 
@@ -111,9 +142,7 @@
   }
 }
 
-.section2 {
-  display: flex;
-}
+
 
 .my-projects {
   display: flex;
