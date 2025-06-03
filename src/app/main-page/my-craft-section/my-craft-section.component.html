@@ -17,12 +17,37 @@
     </div>
 
     <div class="join-project">
-      <div class="image-container">
+      <div class="sticker-container">
+        <img class="arrow-image" src="./../../../assets/icons/pfeil_weiß.png" alt="">
         <img
           class="sticker-image"
           src="./../../../assets/icons/round_sticker.png"
           alt=""
         />
+
+        <svg class="curved-svg" viewBox="0 0 250 200">
+          <defs>
+            <path id="curve-top" d="M 50 85 A 45 45 0 0 1 200 85" />
+            <path id="curve-bottom" d="M 50 125 A 45 45 0 0 0 200 125" />
+          </defs>
+          <text class="curved-svg-text">
+            <textPath href="#curve-top" startOffset="50%" text-anchor="middle">
+              Featured Project
+            </textPath>
+          </text>
+          <text class="curved-svg-text-small">
+            <textPath
+              href="#curve-bottom"
+              startOffset="50%"
+              text-anchor="middle"
+            >
+              Check all details
+            </textPath>
+          </text>
+        </svg>
+      </div>
+
+      <div class="laptop-container">
         <img
           class="default-image"
           src="./../../../assets/img/Laptop_Movement.png"
@@ -34,6 +59,8 @@
           alt=""
         />
       </div>
+      <button class="details-button">Project details</button>
+
       <h1>Join</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit cumque
