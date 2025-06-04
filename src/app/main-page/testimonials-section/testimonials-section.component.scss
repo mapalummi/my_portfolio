@@ -68,13 +68,35 @@
   justify-content: center;
   align-items: center;
 
-  img {
-    width: 500px;
-  }
+  
 }
 
 .testimonial-card {
+  position: relative; // Container für absolute Positionierung
+  cursor: pointer;
+
+  &:hover{
+    .line-image{
+      opacity: 1;
+    }
+  }
 }
+
+.card-image{
+  width: 500px;
+  z-index: 0;
+  display: block; // Sicherstellen, dass es als Block-Element behandelt wird!
+}
+
+.line-image{
+  width: 500px;
+  z-index: 1;
+  opacity: 0;
+  position: absolute; // Absolute Positionierung
+  top: 0;   // An der gleichen vertikalen Position
+  left: 0;  // An der gleichen horizontalen Position
+}
+
 
 .card-content {
 }
