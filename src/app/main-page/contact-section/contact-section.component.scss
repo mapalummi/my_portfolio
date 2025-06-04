@@ -1,0 +1,42 @@
+@import "./../../../styles.scss";
+
+#contact-section {
+  min-height: 80vh;
+  height: 80vh; // Wichtig: Explizite Höhe
+  background-image: url("./../../../assets/img/Footer.png");
+  background-size: 100%;
+  background-position: top 95%;
+  background-repeat: no-repeat;
+  display: flex;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.left-section {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  gap: 24px;
+}
+
+.headline-container {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+}
+
+.text-container {
+}
+
+.arrow-image {
+  width: 300px;
+}
