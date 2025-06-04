@@ -1,17 +1,24 @@
 @import "./../../../styles.scss";
 
-
-
 .testimonial-section {
+  width: 100%;
+  max-width: 100vw;
+  height: 800px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
-.headline-content {
+.headline-container {
+  width: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
+  text-align: right;
   font-family: "Bricolage Grotesque", sans-serif;
 
   span {
@@ -32,10 +39,24 @@
   }
 }
 
-.testimonial-cards {
+.text-and-arrow {
   display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.testimonial-card{}
+.testimonial-cards {
+  width: 100%;
+  display: flex;
 
-.card-content{}
+  img {
+    width: 500px;
+  }
+}
+
+.testimonial-card {
+}
+
+.card-content {
+}
