@@ -30,12 +30,28 @@
 
   img {
     width: 100px;
+    animation: pulseArrow 4s ease infinite 2s;
   }
 
   h1 {
     //NOTE: Was ist besser - px oder rem?
     // font-size: 64px;
     font-size: 4rem;
+  }
+}
+
+@keyframes pulseArrow {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  15% { // Schnell einblenden
+    clip-path: inset(0% 0 0 0);
+  }
+  85% { // lange sichtbar bleiben
+    clip-path: inset(0% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
   }
 }
 
