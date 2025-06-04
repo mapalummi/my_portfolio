@@ -44,10 +44,12 @@
   0% {
     clip-path: inset(0 0 0 100%);
   }
-  15% { // Schnell einblenden
+  15% {
+    // Schnell einblenden
     clip-path: inset(0% 0 0 0);
   }
-  85% { // lange sichtbar bleiben
+  85% {
+    // lange sichtbar bleiben
     clip-path: inset(0% 0 0 0);
   }
   100% {
@@ -66,44 +68,60 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; // Wichtig für unterschiedliche Transforms!
+}
 
-  
+.card-left {
+  z-index: 3;
+  transform: translateY(0) rotate(-2deg) translateX(100px);
+}
+
+.card-center {
+  z-index: 2;
+  transform: translateY(50px);
+}
+
+.card-right {
+  z-index: 1;
+  transform: translateY(0) rotate(4deg) translateX(-100px);
 }
 
 .testimonial-card {
   position: relative; // Container für absolute Positionierung
   cursor: pointer;
+  transition: transform 0.3s ease-in-out, z-index 0s;
 
-  &:hover{
-    .line-image{
+  &:hover {
+    z-index: 999;
+
+    .line-image {
       opacity: 1;
     }
 
-    .author-name, .author-title{
+    .author-name,
+    .author-title {
       color: white;
     }
   }
 }
 
-.card-image{
+.card-image {
   width: 500px;
   height: auto;
   z-index: 0;
   display: block; // Sicherstellen, dass es als Block-Element behandelt wird!
 }
 
-.line-image{
+.line-image {
   width: 500px;
   z-index: 1;
   opacity: 0;
   position: absolute; // Absolute Positionierung
-  top: 0;   // An der gleichen vertikalen Position
-  left: 0;  // An der gleichen horizontalen Position
+  top: 0; // An der gleichen vertikalen Position
+  left: 0; // An der gleichen horizontalen Position
 
   transition: opacity 0.5s ease-in-out;
 }
-
 
 .card-content {
   width: 100%;
@@ -125,42 +143,49 @@
   font-size: 17px;
 }
 
-.testimonial-text{
+.testimonial-text {
   text-align: center;
   line-height: 1.4;
   margin-bottom: auto;
 }
 
-.author-info{
-  align-self: flex-start;
+.bottom-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 
-  .author-name, .author-title{
-    transition: color 0.5s ease-in-out;  // Sanfte Farbanimation
+.author-info {
+  .author-name,
+  .author-title {
+    transition: color 0.5s ease-in-out; // Sanfte Farbanimation
   }
 
-  .author-name{
+  .author-name {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     font-size: 20px;
   }
 
-  .author-title{
+  .author-title {
     display: block;
     font-size: 0.9em;
     opacity: 0.8;
   }
 }
 
-.social-icon{
+.social-icon {
   display: flex;
   align-items: center;
   gap: 6px;
-  
-  img{
+
+  img {
     width: 24px;
   }
+
+  &:hover {
+    filter: invert(100%);
+  }
 }
-
-
-
