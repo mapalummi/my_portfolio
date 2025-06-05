@@ -4,9 +4,8 @@
 
 .header-container {
   font-family: "Bricolage Grotesque", sans-serif;
-  padding: 1rem 2rem;
+  padding: clamp(0.5rem, 2vw, 2rem);
   background-color: transparent;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -19,30 +18,30 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1rem, 3vw, 2rem);
 
   img {
-    width: 150px;
+    width: clamp(6rem, 15vw, 9.3rem);
     height: auto;
   }
 
   a {
     text-decoration: none;
     color: white;
-    font-size: 1.2em;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: clamp(0.25rem, 1vw, 0.5rem);
 
     img {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 150px;
+      width: clamp(6rem, 15vw, 9.3rem);
       height: auto;
       z-index: 1;
       clip-path: inset(100% 0 0 0);
@@ -76,22 +75,22 @@ nav {
     // Spezifische Größenanpassungen für verschiedene Links falls nötig
     &:nth-child(2) img {
       // About-Link
-      width: 120px;
+      width: clamp(5rem, 12vw, 7.5rem);
     }
 
     &:nth-child(3) img {
       // Skills-Link
-      width: 140px;
+      width: clamp(6rem, 14vw, 8.75rem);
     }
 
     &:nth-child(4) img {
       // Projects-Link
-      width: 130px;
+      width: clamp(5.5rem, 13vw, 8.125rem);
     }
 
     &:nth-child(5) img {
       // Contact-Link
-      width: 130px;
+      width: clamp(5.5rem, 13vw, 8.125rem);
     }
   }
 
@@ -99,7 +98,7 @@ nav {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: clamp(0.5rem, 2vw, 0.625rem);
   }
 }
 
@@ -151,7 +150,7 @@ nav {
   span {
     color: white; // Inaktive Farbe
     transition: color 0.3s ease;
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 2vw, 1rem);
     font-weight: 500;
     cursor: pointer;
 
@@ -168,7 +167,7 @@ nav {
       top: 50%;
       left: 10%;
       transform: translate(-50%, -50%);
-      width: 35px;
+      width: clamp(1.5rem, 4vw, 2.1875rem);
       height: auto;
       z-index: 1;
       opacity: 0; // Standardmäßig unsichtbar
@@ -189,8 +188,8 @@ nav {
 .toggle-switch {
   position: relative;
   display: inline-block;
-  width: 40px; // Gesamtbreite des Toggle-Containers
-  height: 30px; // Gesamthöhe des Toggle-Containers
+  width: clamp(2rem, 5vw, 2.5rem); // Gesamtbreite des Toggle-Containers
+  height: clamp(1.5rem, 4vw, 1.875rem); // Gesamthöhe des Toggle-Containers
   margin: 0;
   pointer-events: none; // Toggle-Switch nicht anklickbar!
 }
@@ -207,11 +206,11 @@ nav {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  width: 35px; // Breite der Slider-Schiene
-  height: 10px; // Höhe der Slider-Schiene
+  width: clamp(1.8rem, 4.5vw, 2.1875rem); // Breite der Slider-Schiene
+  height: clamp(0.5rem, 1.5vw, 0.625rem); // Höhe der Slider-Schiene
   background-color: #1aa8b4;
   border: 1px solid white;
-  border-radius: 14px;
+  border-radius: 0.875rem;
   transition: background-color 0.4s;
   overflow: visible;
 }
@@ -219,19 +218,19 @@ nav {
 .slider::before {
   position: absolute;
   content: "";
-  height: 14px; // Höhe des runden Slider-Knopfs
-  width: 14px; // Breite des runden Slider-Knopfs
-  left: -2px; // Horizontale Position (überlappt leicht)
+  height: clamp(0.7rem, 2vw, 0.875rem); // Höhe des runden Slider-Knopfs
+  width: clamp(0.7rem, 2vw, 0.875rem); // Breite des runden Slider-Knopfs
+  left:  -0.125rem; // Horizontale Position (überlappt leicht)
   top: 50%;
   transform: translateY(-50%);
   background-color: #1073ea;
   transition: transform 0.4s;
   border: 1px solid white;
   border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.3);
 }
 
 .toggle-switch input:checked + .slider::before {
-  transform: translate(24px, -50%); // Bewegungsstrecke: 34px nach rechts
+  transform: translate(clamp(1rem, 3vw, 1.5rem), -50%); // Bewegungsstrecke: 34px nach rechts
 }
 
