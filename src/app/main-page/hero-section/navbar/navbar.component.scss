@@ -1,227 +1,234 @@
-@import "./../../../../styles.scss";
+// @import "./../../../../styles.scss";
 
-.header-container {
-  font-family: "Bricolage Grotesque", sans-serif;
-  padding: 1rem 2rem;
-  background-color: transparent;
-}
+// .header-container {
+//   font-family: "Bricolage Grotesque", sans-serif;
+//   padding: 1rem 2rem;
+//   background-color: transparent;
 
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 2rem;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   z-index: 100;
+//   box-sizing: border-box;
+// }
 
-  img {
-    width: 150px;
-    height: auto;
-  }
+// nav {
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   gap: 2rem;
 
-  a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2em;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+//   img {
+//     width: 150px;
+//     height: auto;
+//   }
 
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 150px;
-      height: auto;
-      z-index: 1;
-      clip-path: inset(100% 0 0 0);
-    }
+//   a {
+//     text-decoration: none;
+//     color: white;
+//     font-size: 1.2em;
+//     font-weight: 500;
+//     transition: color 0.3s ease;
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     gap: 4px;
 
-    span {
-      position: relative;
-      z-index: 0;
-    }
+//     img {
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       width: 150px;
+//       height: auto;
+//       z-index: 1;
+//       clip-path: inset(100% 0 0 0);
+//     }
 
-    &:hover img {
-      animation: revealFromBottom 0.4s ease-out forwards;
-    }
+//     span {
+//       position: relative;
+//       z-index: 0;
+//     }
 
-    &:not(:hover) img {
-      animation: hideToTop 0.4s ease-out forwards;
-    }
+//     &:hover img {
+//       animation: revealFromBottom 0.4s ease-out forwards;
+//     }
 
-    &:nth-child(3):hover img,
-    &:nth-child(4):hover img,
-    &:nth-child(5):hover img {
-      animation: revealFromLeft 0.4s ease-out forwards;
-    }
+//     &:not(:hover) img {
+//       animation: hideToTop 0.4s ease-out forwards;
+//     }
 
-    &:nth-child(3):not(:hover) img,
-    &:nth-child(4):not(:hover) img,
-    &:nth-child(5):not(:hover) img {
-      animation: hideToRight 0.4s ease-out forwards;
-    }
+//     &:nth-child(3):hover img,
+//     &:nth-child(4):hover img,
+//     &:nth-child(5):hover img {
+//       animation: revealFromLeft 0.4s ease-out forwards;
+//     }
 
-    // Spezifische Größenanpassungen für verschiedene Links falls nötig
-    &:nth-child(2) img {
-      // About-Link
-      width: 120px;
-    }
+//     &:nth-child(3):not(:hover) img,
+//     &:nth-child(4):not(:hover) img,
+//     &:nth-child(5):not(:hover) img {
+//       animation: hideToRight 0.4s ease-out forwards;
+//     }
 
-    &:nth-child(3) img {
-      // Skills-Link
-      width: 140px;
-    }
+//     // Spezifische Größenanpassungen für verschiedene Links falls nötig
+//     &:nth-child(2) img {
+//       // About-Link
+//       width: 120px;
+//     }
 
-    &:nth-child(4) img {
-      // Projects-Link
-      width: 130px;
-    }
+//     &:nth-child(3) img {
+//       // Skills-Link
+//       width: 140px;
+//     }
 
-    &:nth-child(5) img {
-      // Contact-Link
-      width: 130px;
-    }
-  }
+//     &:nth-child(4) img {
+//       // Projects-Link
+//       width: 130px;
+//     }
 
-  div {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-}
+//     &:nth-child(5) img {
+//       // Contact-Link
+//       width: 130px;
+//     }
+//   }
 
-// Von unten nach oben (Hover)
-@keyframes revealFromBottom {
-  from {
-    clip-path: inset(0 0 100% 0);
-  }
-  to {
-    clip-path: inset(0% 0 0 0);
-  }
-}
+//   div {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     gap: 10px;
+//   }
+// }
 
-// Von oben nach unten verstecken (beim Verlassen des Hovers)
-@keyframes hideToTop {
-  from {
-    clip-path: inset(0% 0 0 0);
-  }
-  to {
-    clip-path: inset(0 0 100% 0);
-  }
-}
+// // Von unten nach oben (Hover)
+// @keyframes revealFromBottom {
+//   from {
+//     clip-path: inset(0 0 100% 0);
+//   }
+//   to {
+//     clip-path: inset(0% 0 0 0);
+//   }
+// }
 
-// Von links nach rechts
-@keyframes revealFromLeft {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0% 0 0 0);
-  }
-}
+// // Von oben nach unten verstecken (beim Verlassen des Hovers)
+// @keyframes hideToTop {
+//   from {
+//     clip-path: inset(0% 0 0 0);
+//   }
+//   to {
+//     clip-path: inset(0 0 100% 0);
+//   }
+// }
 
-// Neue Animation zum Verstecken nach links
-@keyframes hideToRight {
-  from {
-    clip-path: inset(0 0% 0 0);
-  }
-  to {
-    clip-path: inset(0 100% 0 0);
-  }
-}
+// // Von links nach rechts
+// @keyframes revealFromLeft {
+//   from {
+//     clip-path: inset(0 100% 0 0);
+//   }
+//   to {
+//     clip-path: inset(0% 0 0 0);
+//   }
+// }
 
-.toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// // Neue Animation zum Verstecken nach links
+// @keyframes hideToRight {
+//   from {
+//     clip-path: inset(0 0% 0 0);
+//   }
+//   to {
+//     clip-path: inset(0 100% 0 0);
+//   }
+// }
 
-  span {
-    color: white; // Inaktive Farbe
-    transition: color 0.3s ease;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+// .toggle {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 
-    &.active {
-      color: #1073ea; // Aktive Farbe
-      cursor: default;
+//   span {
+//     color: white; // Inaktive Farbe
+//     transition: color 0.3s ease;
+//     font-size: 1rem;
+//     font-weight: 500;
+//     cursor: pointer;
 
-      img {
-        display: none; // Image wird ausgeblendet wenn aktiv!
-      }
-    }
-    img {
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      transform: translate(-50%, -50%);
-      width: 35px;
-      height: auto;
-      z-index: 1;
-      opacity: 0; // Standardmäßig unsichtbar
-      transition: opacity 0.3s ease; // Übergangsanimation
-    }
+//     &.active {
+//       color: #1073ea; // Aktive Farbe
+//       cursor: default;
 
-    &:hover img {
-      opacity: 1; // Sichtbarkeit beim Hovern
-    }
+//       img {
+//         display: none; // Image wird ausgeblendet wenn aktiv!
+//       }
+//     }
+//     img {
+//       position: absolute;
+//       top: 50%;
+//       left: 10%;
+//       transform: translate(-50%, -50%);
+//       width: 35px;
+//       height: auto;
+//       z-index: 1;
+//       opacity: 0; // Standardmäßig unsichtbar
+//       transition: opacity 0.3s ease; // Übergangsanimation
+//     }
 
-    &:nth-child(3) img {
-      left: 90%;
-      transform: translate(-50%, -50%) scaleX(-1) scaleY(-1);
-    }
-  }
-}
+//     &:hover img {
+//       opacity: 1; // Sichtbarkeit beim Hovern
+//     }
 
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 40px; // Gesamtbreite des Toggle-Containers
-  height: 30px; // Gesamthöhe des Toggle-Containers
-  margin: 0;
-  pointer-events: none; // Toggle-Switch nicht anklickbar!
-}
+//     &:nth-child(3) img {
+//       left: 90%;
+//       transform: translate(-50%, -50%) scaleX(-1) scaleY(-1);
+//     }
+//   }
+// }
 
-.toggle-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+// .toggle-switch {
+//   position: relative;
+//   display: inline-block;
+//   width: 40px; // Gesamtbreite des Toggle-Containers
+//   height: 30px; // Gesamthöhe des Toggle-Containers
+//   margin: 0;
+//   pointer-events: none; // Toggle-Switch nicht anklickbar!
+// }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 35px; // Breite der Slider-Schiene
-  height: 10px; // Höhe der Slider-Schiene
-  background-color: #1aa8b4;
-  border: 1px solid white;
-  border-radius: 14px;
-  transition: background-color 0.4s;
-  overflow: visible;
-}
+// .toggle-switch input {
+//   opacity: 0;
+//   width: 0;
+//   height: 0;
+// }
 
-.slider::before {
-  position: absolute;
-  content: "";
-  height: 14px; // Höhe des runden Slider-Knopfs
-  width: 14px; // Breite des runden Slider-Knopfs
-  left: -2px; // Horizontale Position (überlappt leicht)
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #1073ea;
-  transition: transform 0.4s;
-  border: 1px solid white;
-  border-radius: 50%;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-}
+// .slider {
+//   position: absolute;
+//   cursor: pointer;
+//   top: 50%;
+//   left: 0;
+//   transform: translateY(-50%);
+//   width: 35px; // Breite der Slider-Schiene
+//   height: 10px; // Höhe der Slider-Schiene
+//   background-color: #1aa8b4;
+//   border: 1px solid white;
+//   border-radius: 14px;
+//   transition: background-color 0.4s;
+//   overflow: visible;
+// }
 
-.toggle-switch input:checked + .slider::before {
-  transform: translate(24px, -50%); // Bewegungsstrecke: 34px nach rechts
-}
+// .slider::before {
+//   position: absolute;
+//   content: "";
+//   height: 14px; // Höhe des runden Slider-Knopfs
+//   width: 14px; // Breite des runden Slider-Knopfs
+//   left: -2px; // Horizontale Position (überlappt leicht)
+//   top: 50%;
+//   transform: translateY(-50%);
+//   background-color: #1073ea;
+//   transition: transform 0.4s;
+//   border: 1px solid white;
+//   border-radius: 50%;
+//   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+// }
+
+// .toggle-switch input:checked + .slider::before {
+//   transform: translate(24px, -50%); // Bewegungsstrecke: 34px nach rechts
+// }

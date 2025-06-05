@@ -1,1 +1,26 @@
+<div class="header-container">
+  <nav>
+    <img src="assets/img/LogoMarcoNeu.png" alt="" />
+    <a href="#about-section"
+      ><img src="assets/icons/1.png" alt="" /><span>About me</span></a
+    >
+    <a href="#my-stack-section"
+      ><img src="assets/icons/2.png" alt="" /><span>Skills</span></a
+    >
+    <a href="#my-craft-section"
+      ><img src="assets/icons/4.png" alt="" /><span>Projects</span></a
+    >
+    <a href="#contact-section"
+      ><img src="assets/icons/3.png" alt="" /><span>Contact</span></a
+    >
+    <div class="toggle">
+      <span [class.active]="!isEnglish" (click)="setGerman()"><img src="./../../assets/icons/Toggle.png" alt="">EN</span>
+      <label class="toggle-switch">
+        <input type="checkbox" [checked]="isEnglish">
+        <span class="slider"></span>
+      </label>
+      <span [class.active]="isEnglish" (click)="setEnglish()"><img src="./../../assets/icons/Toggle.png" alt="">DE</span>
+    </div>
+  </nav>
+</div>
 
