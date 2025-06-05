@@ -6,32 +6,29 @@
 
   min-height: 100vh;
   height: auto;
-  
 
   display: flex;
   flex-direction: column;
-
   // justify-content: space-evenly;
 
   background-image: url("./../../../assets/img/Footer.png");
   background-size: 100%;
   background-position: top 95%;
   background-repeat: no-repeat;
-  
+
   gap: 2rem;
   padding: 0 2rem;
   box-sizing: border-box;
   font-family: "Bricolage Grotesque", sans-serif;
 }
 
-
-
-.content-area{
+.content-area {
   display: flex;
   flex: 1;
 }
 
-.left-section, .right-section{
+.left-section,
+.right-section {
   flex: 1;
 }
 
@@ -97,10 +94,4 @@
   justify-content: center;
   align-items: center;
   color: white;
-}
-
-::ng-deep app-footer{
-  margin-top: auto;
-  width: 100%;
-  flex-shrink: 0;
 }
