@@ -5,12 +5,12 @@ import { MyStackSectionComponent } from './my-stack-section/my-stack-section.com
 import { MyCraftSectionComponent } from './my-craft-section/my-craft-section.component';
 import { TestimonialsSectionComponent } from './testimonials-section/testimonials-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
-import { NavbarComponent } from './hero-section/navbar/navbar.component';
+
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [NavbarComponent, HeroSectionComponent, AboutMeSectionComponent, MyStackSectionComponent, MyCraftSectionComponent, TestimonialsSectionComponent, ContactSectionComponent],
+  imports: [HeroSectionComponent, AboutMeSectionComponent, MyStackSectionComponent, MyCraftSectionComponent, TestimonialsSectionComponent, ContactSectionComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
