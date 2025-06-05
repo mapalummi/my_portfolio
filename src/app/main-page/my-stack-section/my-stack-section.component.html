@@ -70,20 +70,23 @@
   </div>
 
   <div class="peel-off-container">
-    <div class="peel-off" [class.peeled]="isPeeled" (click)="togglePeel()">
+    <div class="peel-off" [class.peeled]="isPeeled" (click.dragging)="isDragging" [style.--drag-progress]="dragProgress" (mousedown)="onDragStart($event)">
+
       <div class="peel-header">
         <img src="./../../../assets/icons/Arrow.png" alt="" />
         <span>Pull to peel</span>
       </div>
 
-      <div class="peel-content">
-        <span>Also, I'm interested in diving into:</span>
-
-        <div class="peel-decorations">
+      <div class="peel-decorations">
           <img src="./../../../assets/icons/Peel_A.png" alt="" />
           <img src="./../../../assets/icons/Peel_B.png" alt="" />
           <img src="./../../../assets/icons/Peel_C.png" alt="" />
         </div>
+
+      <div class="peel-content">
+        <span>Also, I'm interested in diving into:</span>
+
+        
 
         <div class="future-skills">
           

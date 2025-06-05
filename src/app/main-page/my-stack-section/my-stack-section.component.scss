@@ -175,8 +175,49 @@
   transform: translateX(-50%) rotate(15deg);
   width: 250px;
   height: 250px;
-  cursor: pointer;
+  cursor: grab;
+
+  &.dragging {
+    cursor: grabbing;
+  }
+
+  --drag-progress: 0;
 }
+
+// Elements that transform during drag
+.peel-off:not(.peeled) .peel-header > img {
+  // Arrow moves down as user drags
+  transform: translateY(calc(var(--drag-progress) * 0.5px)) translateX(-50%);
+  opacity: calc(1 - (var(--drag-progress) / 100));
+}
+
+// Pull to peel Text verschwindet sofort beim Drag-Start
+.peel-off:not(.peeled) .peel-header > span {
+  opacity: calc(1 - (var(--drag-progress) / 10)); // Verschwindet sehr schnell (bei 10% Drag)
+}
+
+.peel-off:not(.peeled) .peel-decorations img:nth-child(1) {
+  // First layer fades out slower (0-60% instead of 0-50%)
+  opacity: calc(max(0, 1 - var(--drag-progress) / 60));
+}
+
+.peel-off:not(.peeled) .peel-decorations img:nth-child(2) {
+  // Second layer appears earlier and stays longer (30-90% range)
+  opacity: calc(max(0, min(1, (var(--drag-progress) - 30) / 30)) * max(0, min(1, (90 - var(--drag-progress)) / 30)));
+}
+
+.peel-off:not(.peeled) .peel-decorations img:nth-child(3) {
+  // Third layer appears more gradually (60%+ instead of 70%+)
+  opacity: calc(max(0, min(1, (var(--drag-progress) - 60) / 40)));
+}
+
+// Content (Text + Future Skills) bleibt während Drag unsichtbar
+.peel-off:not(.peeled) .peel-content > span,
+.peel-off:not(.peeled) .future-skills {
+  opacity: 0; // Komplett unsichtbar während Drag
+}
+
+
 
 .peel-header {
   position: relative;
@@ -242,7 +283,7 @@
   left: 0;
   width: 250px;
   height: 250px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.6s ease-in-out;
   will-change: opacity;
   transform: translateZ(0);
 }
@@ -297,9 +338,11 @@
   opacity: 0;
 }
 
+// Content erscheint erst nach dem vollständigen Peel
 .peel-off.peeled .peel-content > span,
 .peel-off.peeled .future-skills {
   opacity: 1;
+  transition: opacity 0.5s ease-in; // Erscheint erst nach dem finalen Bild
 }
 
 .peel-off.peeled .peel-decorations img:nth-child(1) {
