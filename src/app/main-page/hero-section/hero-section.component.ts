@@ -9,9 +9,7 @@ import { HeaderComponent } from '../../header/header.component';
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss'
 })
-// export class HeroSectionComponent {
 
-// }
 
 export class HeroSectionComponent implements AfterViewInit {
 
