@@ -110,15 +110,23 @@ footer {
   }
 }
 
+
+
 .link-item {
-  width: 34px;
   position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
+  width: 30px;
+  height: 30px;
+  top: -35px;
+  left: 25%;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateX(0px) rotate(0deg);
+  // transition: all 0.6s ease;
+  transition: all 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.link:hover .link-item {
+  opacity: 1;
+  transform: translateX(50px) rotate(360deg);
 }
 
 .link-button {
@@ -132,8 +140,4 @@ footer {
   &:hover {
     background-color: blue;
   }
-}
-
-.link:hover .link-item {
-  opacity: 1;
 }
