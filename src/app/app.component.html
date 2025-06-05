@@ -1,5 +1,8 @@
-
-
-
 <router-outlet />
 
+<button
+  class="back-to-top-button"
+  [class.visible]="showBackToTop"
+  (click)="scrollToTop()"
+  aria-label="Nach oben scrollen"
+></button>
