@@ -1,5 +1,14 @@
 @import "./../../../styles.scss";
 
+:host {
+  // Logo invertieren für schwarzen Hintergrund
+  --header-logo-filter: invert(1);
+
+  // Nur die ersten beiden Links schwarz
+  --header-link-2-color: black;
+  --header-link-3-color: black;
+}
+
 h1 {
   font-size: 64px;
 }
@@ -45,7 +54,6 @@ h2 {
   gap: 12px;
   cursor: pointer;
 
-  
   img {
     width: 30px;
   }
@@ -54,10 +62,9 @@ h2 {
     color: black;
     text-decoration: none;
 
-    &:hover{
-    color: #1073ea;
-  }
-
+    &:hover {
+      color: #1073ea;
+    }
   }
 }
 
@@ -166,8 +173,8 @@ h2 {
     color: white;
     text-decoration: none;
 
-     &:hover{
-    color: #24dd80;
-  }
+    &:hover {
+      color: #24dd80;
+    }
   }
 }
