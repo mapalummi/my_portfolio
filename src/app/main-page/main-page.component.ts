@@ -5,12 +5,13 @@ import { MyStackSectionComponent } from './my-stack-section/my-stack-section.com
 import { MyCraftSectionComponent } from './my-craft-section/my-craft-section.component';
 import { TestimonialsSectionComponent } from './testimonials-section/testimonials-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [HeroSectionComponent, AboutMeSectionComponent, MyStackSectionComponent, MyCraftSectionComponent, TestimonialsSectionComponent, ContactSectionComponent],
+  imports: [RouterModule, HeroSectionComponent, AboutMeSectionComponent, MyStackSectionComponent, MyCraftSectionComponent, TestimonialsSectionComponent, ContactSectionComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })

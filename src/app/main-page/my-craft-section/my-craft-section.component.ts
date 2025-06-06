@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-my-craft-section',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './my-craft-section.component.html',
   styleUrl: './my-craft-section.component.scss',
 })
