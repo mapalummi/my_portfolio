@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../header/header.component';
 
+
 @Component({
   selector: 'app-join',
   standalone: true,
@@ -10,5 +11,7 @@ import { HeaderComponent } from '../../header/header.component';
   styleUrl: './join.component.scss'
 })
 export class JoinComponent {
+
+
 
 }

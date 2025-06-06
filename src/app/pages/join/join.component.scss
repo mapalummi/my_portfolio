@@ -1,0 +1,153 @@
+@import "./../../../styles.scss";
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#content {
+  min-height: 100vh;
+  margin-top: 0;
+  padding-top: 0;
+  background-color: rgb(21, 21, 21);
+  background-image: url("./../../../assets/img/Note book paper.png");
+  background-size: 100%;
+  background-position: center 95%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  gap: 50px;
+}
+
+.left-section {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.back-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.underline-image {
+  width: 110px;
+  height: 20px;
+  animation: pulseUnderline 2s ease-in-out infinite;
+}
+
+@keyframes pulseUnderline {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  25% {
+    clip-path: inset(0% 0 0 0);
+  }
+  75% {
+    clip-path: inset(0% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.icons {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+
+  img {
+    width: 30px;
+  }
+}
+
+.right-section {
+  width: 800px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.project-sample {
+  position: relative;
+}
+
+.project-image {
+  width: 550px;
+  border-radius: 24px;
+}
+
+.sticker-image {
+  position: absolute;
+  top: 35%;
+  right: 20%;
+  width: 150px;
+  height: auto;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.right-section-button {
+  width: 150px;
+  height: 50px;
+  padding: 12px 24px;
+  border: 1px solid white;
+  box-shadow: 0px 5px 0px rgb(255, 255, 255);
+  background: transparent;
+  color: white;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: none;
+    transform: translateY(5px);
+    background-color: #1073ea;
+  }
+}
+
+.next-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}

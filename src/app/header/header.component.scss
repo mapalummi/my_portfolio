@@ -1,7 +1,5 @@
 @import "./../../styles.scss";
 
-
-
 .header-container {
   font-family: "Bricolage Grotesque", sans-serif;
   padding: clamp(0.5rem, 2vw, 2rem);
@@ -10,7 +8,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 10; // Z-Index von 100 auf 10 runter gesetzt.
   box-sizing: border-box;
 }
 
@@ -20,9 +18,16 @@ nav {
   align-items: center;
   gap: clamp(1rem, 3vw, 2rem);
 
-  img {
-    width: clamp(6rem, 15vw, 9.3rem);
+  > img {
+    width: 100px;
+    // width: clamp(3.5rem, 8vw, 5.5rem);
     height: auto;
+
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 
   a {
@@ -220,7 +225,7 @@ nav {
   content: "";
   height: clamp(0.7rem, 2vw, 0.875rem); // Höhe des runden Slider-Knopfs
   width: clamp(0.7rem, 2vw, 0.875rem); // Breite des runden Slider-Knopfs
-  left:  -0.125rem; // Horizontale Position (überlappt leicht)
+  left: -0.125rem; // Horizontale Position (überlappt leicht)
   top: 50%;
   transform: translateY(-50%);
   background-color: #1073ea;
@@ -231,6 +236,8 @@ nav {
 }
 
 .toggle-switch input:checked + .slider::before {
-  transform: translate(clamp(1rem, 3vw, 1.5rem), -50%); // Bewegungsstrecke: 34px nach rechts
+  transform: translate(
+    clamp(1rem, 3vw, 1.5rem),
+    -50%
+  ); // Bewegungsstrecke: 34px nach rechts
 }
-
