@@ -24,8 +24,9 @@ h2 {
   padding-top: 0;
   background-color: rgb(21, 21, 21);
   background-image: url("./../../../assets/img/Note book paper.png");
-  background-size: 100%;
-  background-position: center 95%;
+  //   background-size: 100%;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
