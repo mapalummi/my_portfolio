@@ -20,7 +20,7 @@ footer {
 
 .logo-container {
   width: 100%;
-  height: 100px;
+  height: 70px;
   display: flex;
   flex-direction: column;
   align-self: flex-start; // Logo-Container linksbündig
@@ -37,7 +37,7 @@ footer {
 
 .link-container {
   width: 100%;
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -109,8 +109,6 @@ footer {
     clip-path: inset(0 100% 0 0);
   }
 }
-
-
 
 .link-item {
   position: absolute;

@@ -13,7 +13,6 @@
 .about-me-container {
   text-align: start;
   max-width: 800px;
-  
   padding: 2rem;
   flex: 1;
 }
@@ -96,7 +95,7 @@
   margin: 50px;
   z-index: 1;
   width: 600px;
-  height: 600px;
+  min-height: 600px;
   flex-shrink: 0;
 
   > div > img:first-child {

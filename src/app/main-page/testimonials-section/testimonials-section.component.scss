@@ -1,16 +1,17 @@
 @import "./../../../styles.scss";
 
-.testimonial-section {
-  width: 100%;
-  max-width: 100vw;
-  height: 800px;
+#testimonial-section {
+  font-family: "Bricolage Grotesque", sans-serif;
+  
+}
+
+#testimonial-section .page-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
-  padding: 0 2rem;
-  box-sizing: border-box;
+  min-height: 800px;
 }
 
 .headline-container {
