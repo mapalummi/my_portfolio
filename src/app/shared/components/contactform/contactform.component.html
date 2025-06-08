@@ -1,41 +1,63 @@
 <div class="container">
   <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <label for="name">Name</label>
-    <input
-      [(ngModel)]="contactData.name"
-      type="text"
-      id="name"
-      name="name"
-      placeholder="Your name"
-      required
-    />
+    <label for="name"
+      >What's your name?
+      <input
+        [(ngModel)]="contactData.name"
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name goes here"
+        required
+      />
+    </label>
 
-    <label for="email">Email</label>
-    <input
-      [(ngModel)]="contactData.email"
-      type="email"
-      id="email"
-      name="email"
-      placeholder="Your mail adress"
-      required
-      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-    />
+    <label for="email"
+      >What's your email?
+      <input
+        [(ngModel)]="contactData.email"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="youremail@email.com"
+        required
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+      />
+    </label>
 
-    <label for="message">Subject</label>
-    <textarea
-      #message="ngModel"
-      minlength="4"
-      [(ngModel)]="contactData.message"
-      id="message"
-      name="message"
-      placeholder="Write something"
-      required
-    ></textarea>
+    <label for="message"
+      >How can I help you?
+      <textarea
+        #message="ngModel"
+        minlength="4"
+        [(ngModel)]="contactData.message"
+        id="message"
+        name="message"
+        placeholder="Hello Marco, I am interested in..."
+        required
+      ></textarea>
+    </label>
 
     @if (!message.valid && message.touched) {
     <span>Please enter a message</span>
     }
 
-    <input type="submit" value="Submit" />
+    <label for="privacy" class="privacy-label">
+      <input
+        [(ngModel)]="contactData.privacyAccepted"
+        type="checkbox"
+        id="privacy"
+        name="privacy"
+        required
+      />
+      <span
+        >I've read the <a href="">privacy policy</a> and agree to the processing
+        of my data as outlined.</span
+      >
+    </label>
+
+    <button class="submit-button">
+      <input type="submit" value="Submit" />
+    </button>
   </form>
 </div>

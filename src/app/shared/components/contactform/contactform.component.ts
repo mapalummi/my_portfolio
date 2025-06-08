@@ -17,6 +17,7 @@ export class ContactformComponent {
     name: '',
     email: '',
     message: '',
+    privacyAccepted: false // Richtig so ?
   };
 
   mailTest = true;
