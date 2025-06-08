@@ -1,20 +1,27 @@
 @import "./../../../styles.scss";
 
 #my-stack-section {
-  min-height: 80vh;
-  height: 80vh; // Wichtig: Explizite Höhe
+  position: relative;
   background-image: url("./../../../assets/img/Skills_BG.png");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  display: flex;
   font-family: "Bricolage Grotesque", sans-serif;
-  // align-items: stretch; // Alle Flex-Children nehmen volle Höheein
+}
+
+#my-stack-section .page-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: stretch;
+  height: 100%;
+  min-height: 80vh;
+  justify-content: space-between;
+  position: relative; // Zusätzlicher Positionierungskontext
 }
 
 .headline-container {
-  width: 500px;
-  height: 100%;
+  width: 300px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -23,6 +30,7 @@
   padding-top: 8rem;
   padding-right: 3rem;
   text-align: right;
+  flex-shrink: 0;
 }
 
 .subtitle {
@@ -60,8 +68,6 @@
     height: auto;
   }
 }
-
-
 
 @keyframes fadeAndGlow {
   0% {
@@ -164,18 +170,19 @@
 
 .peel-off-container {
   position: relative;
-  width: 600px;
-  height: 100%; // Komplette Höhe des Parents
+  width: 400px;
+  flex-shrink: 0;
+  height: 100%;
 }
 
 .peel-off {
-  position: absolute;
-  bottom: 250px;
-  left: 50%;
-  transform: translateX(-50%) rotate(15deg);
+  position: static;
+  margin-top: 300px; // Fester Abstand von oben 
+  margin-left: 50px; // Fester Abstand von links
   width: 250px;
   height: 250px;
   cursor: grab;
+ transform: rotate(15deg);
 
   &.dragging {
     cursor: grabbing;
@@ -193,7 +200,9 @@
 
 // Pull to peel Text verschwindet sofort beim Drag-Start
 .peel-off:not(.peeled) .peel-header > span {
-  opacity: calc(1 - (var(--drag-progress) / 10)); // Verschwindet sehr schnell (bei 10% Drag)
+  opacity: calc(
+    1 - (var(--drag-progress) / 10)
+  ); // Verschwindet sehr schnell (bei 10% Drag)
 }
 
 .peel-off:not(.peeled) .peel-decorations img:nth-child(1) {
@@ -203,7 +212,10 @@
 
 .peel-off:not(.peeled) .peel-decorations img:nth-child(2) {
   // Second layer appears earlier and stays longer (30-90% range)
-  opacity: calc(max(0, min(1, (var(--drag-progress) - 30) / 30)) * max(0, min(1, (90 - var(--drag-progress)) / 30)));
+  opacity: calc(
+    max(0, min(1, (var(--drag-progress) - 30) / 30)) *
+      max(0, min(1, (90 - var(--drag-progress)) / 30))
+  );
 }
 
 .peel-off:not(.peeled) .peel-decorations img:nth-child(3) {
@@ -216,8 +228,6 @@
 .peel-off:not(.peeled) .future-skills {
   opacity: 0; // Komplett unsichtbar während Drag
 }
-
-
 
 .peel-header {
   position: relative;
