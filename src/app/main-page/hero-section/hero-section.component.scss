@@ -1,4 +1,4 @@
-.hero-section {
+#hero-section {
   min-height: 100vh;
   margin-top: 0;
   padding-top: 0;
@@ -12,24 +12,23 @@
   position: relative;
 }
 
-.socialbar-left{
-  position: absolute;
-  left: 100px;
-  bottom: 50px;
-  transform: translateY(-50%);
-  z-index: 10;
+.socialbar-left {
+  position: fixed;
+  left: 120px;
+  bottom: 100px;
 }
 
 .hero-content {
+  position: relative;
   font-family: "Bricolage Grotesque", sans-serif;
   color: white;
   font-size: 6rem;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   width: 100%;
   max-width: 1200px;
   padding: 0 2rem;
+  margin: auto;
 }
 
 .hero-content .left-section {
@@ -183,7 +182,7 @@
   cursor: pointer;
   transition: width 0.4s ease;
 
-  img{
+  img {
     position: absolute;
     width: 24px;
     height: 24px;
@@ -224,7 +223,7 @@
       opacity: 1;
     }
 
-    img{
+    img {
       opacity: 1; // Icon wird bei Hover sichtbar
       transform: translateX(-50%) translateX(100px) rotate(20deg) scale(1.5); // Animation nach oben, vergrößert..
     }

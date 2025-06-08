@@ -8,14 +8,12 @@
   --header-link-2-color: black;
   --header-link-3-color: black;
 
-
-
-@media (max-width: 1999px) {
+  @media (max-width: 1999px) {
     --header-link-3-color: white;
     --header-link-4-color: white;
   }
 
-   // Tablet (bis 768px)
+  // Tablet (bis 768px)
   @media (max-width: 768px) {
     --header-link-3-color: white;
     --header-link-4-color: white;
@@ -29,7 +27,7 @@
   }
 
   @media (max-width: 242px) {
-     --header-logo-filter: invert(0);
+    --header-logo-filter: invert(0);
     --header-link-2-color: white;
     --header-link-3-color: white;
     --header-link-4-color: white;
@@ -58,20 +56,35 @@ h2 {
   padding-top: 0;
   background-color: rgb(21, 21, 21);
   background-image: url("./../../../assets/img/Note book paper.png");
-  //   background-size: 100%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  // Neu - Verhindert Scrollen des Backgrounds
   background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-
   font-family: "Bricolage Grotesque", sans-serif;
 
-  gap: 50px;
+  .page-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    min-height: calc(100vh - 120px); // Adjust for header height
+    padding-top: 120px;
+    max-width: 1200px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 100px;
+    }
+
+    @media (max-width: 480px) {
+      padding-top: 80px; // Für sehr kleine Bildschirme
+    }
+  }
 
   // Responsive Anpassungen für das Background
   @media (max-width: 768px) {
@@ -88,10 +101,15 @@ h2 {
 }
 
 .left-section {
-  width: 800px;
+  flex: 1;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 50px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 
 .back-button {
@@ -103,6 +121,15 @@ h2 {
   font-weight: bold;
   gap: 12px;
   cursor: pointer;
+  margin-left: -50px;
+
+  @media (max-width: 768px) {
+    margin-left: -20px; // Weniger auf mobilen Geräten
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 0; // Zurück auf mobile Geräte
+  }
 
   img {
     width: 30px;
@@ -152,11 +179,16 @@ h2 {
 }
 
 .right-section {
-  width: 800px;
-  width: 800px;
+  flex: 1;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 50px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 
 .project-sample {
@@ -164,18 +196,27 @@ h2 {
 }
 
 .project-image {
-  width: 550px;
+  width: 100%;
+  max-width: 600px;
   border-radius: 24px;
 }
 
 .sticker-image {
   position: absolute;
   top: 35%;
-  right: 20%;
+  right: -50px;
   width: 150px;
   height: auto;
   opacity: 1;
   pointer-events: none;
+
+  @media (max-width: 768px) {
+    right: -15px; // Weniger auf Tablets
+  }
+
+  @media (max-width: 480px) {
+    right: 0; // Zurück auf mobile Geräte
+  }
 }
 
 .project-buttons {
@@ -214,6 +255,15 @@ h2 {
   font-weight: bold;
   gap: 12px;
   cursor: pointer;
+  margin-right: -50px;
+
+  @media (max-width: 768px) {
+    margin-right: -20px; // Weniger auf mobilen Geräten
+  }
+
+  @media (max-width: 480px) {
+    margin-right: 0; // Zurück auf mobile Geräte
+  }
 
   img {
     width: 30px;
