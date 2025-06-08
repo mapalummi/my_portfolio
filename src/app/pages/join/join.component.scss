@@ -105,7 +105,7 @@ h2 {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 
   @media (max-width: 768px) {
     max-width: 100%;
@@ -166,6 +166,24 @@ h2 {
   }
 }
 
+.text-section {
+  max-width: 450px; // Begrenzt die Textbreite
+
+  p {
+    line-height: 1.5; // Kompaktere Zeilenhöhe
+    margin-bottom: 12px; // Weniger Abstand zwischen Absätzen
+    text-align: justify; // Blocksatz für saubere Kanten
+  }
+
+  h2 {
+    margin-bottom: 8px; // Weniger Abstand unter Überschriften
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%; // Auf mobilen Geräten volle Breite
+  }
+}
+
 .icons {
   width: 80%;
   display: flex;
@@ -185,9 +203,13 @@ h2 {
   flex-direction: column;
   align-items: flex-end;
   gap: 50px;
+  // margin-top: 80px; // Verschiebt alle Inhalte nach unten
+  // padding-top: 80px; // Schiebt den Inhalt nach unten
+  align-self: center;
 
   @media (max-width: 768px) {
     max-width: 100%;
+    align-self: auto; // Reset auf mobilen Geräten
   }
 }
 
