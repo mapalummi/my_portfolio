@@ -62,6 +62,8 @@ h2 {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  // Neu - Verhindert Scrollen des Backgrounds
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +72,19 @@ h2 {
   font-family: "Bricolage Grotesque", sans-serif;
 
   gap: 50px;
+
+  // Responsive Anpassungen für das Background
+  @media (max-width: 768px) {
+    background-attachment: scroll; // Auf mobilen Geräten besser
+    background-size: cover;
+    background-position: center top;
+  }
+
+  @media (max-width: 471px) {
+    background-size: 100% contain; // Oder verwenden Sie contain für vollständige Sichtbarkeit
+    background-position: center top;
+    min-height: 100vh;
+  }
 }
 
 .left-section {
