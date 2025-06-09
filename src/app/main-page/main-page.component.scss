@@ -1,0 +1,71 @@
+.back-to-top-button {
+  position: fixed;
+  bottom: 10%;
+  right: max(30px, calc((100vw - 1440px) / 2 + 30px)); // Bleibt innerhalb der 1440px Container-Breite
+  width: 50px;
+  height: 50px;
+  background-color: #1aa8b4;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    background-color: #158a94;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  &:active {
+    transform: translateY(-51px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  // Pfeil nach oben Icon
+  &::before {
+    content: "↑";
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
+// Responsive Anpassungen
+@media (max-width: 1440px) {
+  .back-to-top-button {
+    right: 50px; // Mehr Abstand vom Container-Rand bei schmaleren Bildschirmen
+  }
+}
+
+@media (max-width: 768px) {
+  .back-to-top-button {
+    bottom: 20px;
+    right: 36px; // 20px Container-Padding + 16px Abstand
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+
+    &::before {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-top-button {
+    right: 32px; // 12px Container-Padding + 20px Abstand
+  }
+}

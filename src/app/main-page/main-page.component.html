@@ -5,3 +5,10 @@
 <app-my-craft-section></app-my-craft-section>
 <app-testimonials-section></app-testimonials-section>
 <app-contact-section></app-contact-section>
+
+<button
+  class="back-to-top-button"
+  [class.visible]="showBackToTop"
+  (click)="scrollToTop()"
+  aria-label="Nach oben scrollen"
+></button>
