@@ -1,7 +1,7 @@
 .back-to-top-button {
   position: fixed;
   bottom: 10%;
-  right: max(30px, calc((100vw - 1440px) / 2 + 30px)); // Bleibt innerhalb der 1440px Container-Breite
+  right: calc((100vw - 1440px) / 2 - 30px);
   width: 50px;
   height: 50px;
   background-color: #1aa8b4;
@@ -46,14 +46,14 @@
 // Responsive Anpassungen
 @media (max-width: 1440px) {
   .back-to-top-button {
-    right: 50px; // Mehr Abstand vom Container-Rand bei schmaleren Bildschirmen
+    right: 30px; // Fallback für kleinere Bildschirme
   }
 }
 
 @media (max-width: 768px) {
   .back-to-top-button {
     bottom: 20px;
-    right: 36px; // 20px Container-Padding + 16px Abstand
+    right: 30px;
     width: 45px;
     height: 45px;
     font-size: 18px;
@@ -66,6 +66,6 @@
 
 @media (max-width: 480px) {
   .back-to-top-button {
-    right: 32px; // 12px Container-Padding + 20px Abstand
+    right: 20px;
   }
 }
