@@ -67,6 +67,10 @@ form {
 
     &:hover {
       color: white;
+
+      a {
+        color: orange;
+      }
     }
 
     a {
@@ -74,10 +78,6 @@ form {
       text-decoration: none;
       font-family: inherit;
       font-size: inherit;
-
-      &:hover {
-        color: orange;
-      }
     }
 
     input[type="checkbox"] {
@@ -104,7 +104,7 @@ form {
           // font-weight: bold;
           width: 18px;
           height: 18px;
-          background-image: url('./../../../../assets/icons/check.png');
+          background-image: url("./../../../../assets/icons/check.png");
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center;
@@ -114,8 +114,6 @@ form {
       &:hover {
         background-color: #24dd815f;
       }
-
-      
     }
   }
 }
