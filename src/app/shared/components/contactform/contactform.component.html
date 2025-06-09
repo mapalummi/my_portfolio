@@ -3,13 +3,17 @@
     <label for="name"
       >What's your name?
       <input
-      #name="ngModel"
+        #name="ngModel"
         [(ngModel)]="contactData.name"
         type="text"
         id="name"
         name="name"
-         [placeholder]="(!name.valid && name.touched) ? 'Oops! it seems your name is missing' : 'Your name goes here'"
-    [class.error-placeholder]="!name.valid && name.touched"
+        [placeholder]="
+          !name.valid && name.touched
+            ? 'Oops! it seems your name is missing'
+            : 'Your name goes here'
+        "
+        [class.error-placeholder]="!name.valid && name.touched"
         required
       />
     </label>
@@ -17,13 +21,17 @@
     <label for="email"
       >What's your email?
       <input
-      #email="ngModel"
+        #email="ngModel"
         [(ngModel)]="contactData.email"
         type="email"
         id="email"
         name="email"
-        [placeholder]="(!email.valid && email.touched) ? 'Hoppla! your email is required' : 'youremail@email.com'"
-    [class.error-placeholder]="!email.valid && email.touched"
+        [placeholder]="
+          !email.valid && email.touched
+            ? 'Hoppla! your email is required'
+            : 'youremail@email.com'
+        "
+        [class.error-placeholder]="!email.valid && email.touched"
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
@@ -37,10 +45,12 @@
         [(ngModel)]="contactData.message"
         id="message"
         name="message"
-        
-        [placeholder]="(!message.valid && message.touched) ? 'What do you need to develop?' : 'Hello Marco, I am interested in...'"
+        [placeholder]="
+          !message.valid && message.touched
+            ? 'What do you need to develop?'
+            : 'Hello Marco, I am interested in...'
+        "
         [class.error-placeholder]="!message.valid && message.touched"
-
         required
       ></textarea>
     </label>
@@ -78,8 +88,17 @@
     <span class="error-message">Please accept the privacy policy.</span>
     }
 
-    <button class="submit-button">
+    <!-- <button class="submit-button" [disabled]="!contactData.privacyAccepted">
       <input type="submit" value="Submit" />
-    </button>
+    </button> -->
+
+    <button
+  class="submit-button"
+  type="submit"
+  [disabled]="!contactData.privacyAccepted"
+>
+  Send
+</button>
+
   </form>
 </div>
