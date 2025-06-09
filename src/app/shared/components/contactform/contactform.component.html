@@ -3,11 +3,13 @@
     <label for="name"
       >What's your name?
       <input
+      #name="ngModel"
         [(ngModel)]="contactData.name"
         type="text"
         id="name"
         name="name"
-        placeholder="Your name goes here"
+         [placeholder]="(!name.valid && name.touched) ? 'Oops! it seems your name is missing' : 'Your name goes here'"
+    [class.error-placeholder]="!name.valid && name.touched"
         required
       />
     </label>
@@ -15,11 +17,13 @@
     <label for="email"
       >What's your email?
       <input
+      #email="ngModel"
         [(ngModel)]="contactData.email"
         type="email"
         id="email"
         name="email"
-        placeholder="youremail@email.com"
+        [placeholder]="(!email.valid && email.touched) ? 'Hoppla! your email is required' : 'youremail@email.com'"
+    [class.error-placeholder]="!email.valid && email.touched"
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
@@ -33,16 +37,15 @@
         [(ngModel)]="contactData.message"
         id="message"
         name="message"
-        placeholder="Hello Marco, I am interested in..."
+        
+        [placeholder]="(!message.valid && message.touched) ? 'What do you need to develop?' : 'Hello Marco, I am interested in...'"
+        [class.error-placeholder]="!message.valid && message.touched"
+
         required
       ></textarea>
     </label>
 
-    @if (!message.valid && message.touched) {
-    <span>Please enter a message</span>
-    }
-
-    <label for="privacy" class="privacy-label">
+    <!-- <label for="privacy" class="privacy-label">
       <input
         [(ngModel)]="contactData.privacyAccepted"
         type="checkbox"
@@ -54,7 +57,26 @@
         >I've read the <a href="">privacy policy</a> and agree to the processing
         of my data as outlined.</span
       >
-    </label>
+    </label> -->
+
+    <div class="privacy-label">
+      <input
+        [(ngModel)]="contactData.privacyAccepted"
+        type="checkbox"
+        id="privacy"
+        name="privacy"
+        required
+        #privacy="ngModel"
+      />
+      <span
+        >I've read the <a href="">privacy policy</a> and agree to the processing
+        of my data as outlined.</span
+      >
+    </div>
+
+    @if (!contactData.privacyAccepted && privacy.touched){
+    <span class="error-message">Please accept the privacy policy.</span>
+    }
 
     <button class="submit-button">
       <input type="submit" value="Submit" />
