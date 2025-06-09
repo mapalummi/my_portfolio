@@ -70,7 +70,7 @@ form {
     }
 
     a {
-      color: blue;
+      color: #24dd80;
       text-decoration: none;
       font-family: inherit;
       font-size: inherit;
@@ -84,7 +84,7 @@ form {
       width: 20px;
       height: 20px;
       appearance: none; // Entfernt Standard-Browser-Styles
-      border: 2px solid blue;
+      border: 2px solid #24dd80;
       border-radius: 4px;
       background: transparent;
       cursor: pointer;
@@ -93,20 +93,29 @@ form {
       &:checked {
         // Häkchen-Symbol
         &::after {
-          content: "✓";
+          // content: "✓";
+          content: "";
           position: absolute;
           top: 50%;
-          left: 50%;
+          left: 65%;
           transform: translate(-50%, -50%);
-          color: orange;
-          font-size: 14px;
-          font-weight: bold;
+          // color: orange;
+          // font-size: 14px;
+          // font-weight: bold;
+          width: 18px;
+          height: 18px;
+          background-image: url('./../../../../assets/icons/check.png');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
         }
       }
 
       &:hover {
-        background-color: #1072ea76;
+        background-color: #24dd815f;
       }
+
+      
     }
   }
 }
@@ -116,7 +125,7 @@ form {
   height: 50px;
   padding: 12px 24px;
   border: 1px solid white;
-  box-shadow: 0px 5px 0px white;
+  box-shadow: 3px 4px 0px white;
   background: transparent;
 
   border-radius: 24px;
@@ -126,8 +135,8 @@ form {
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    box-shadow: none;
-    transform: translateY(5px);
+    box-shadow: 0.5px 0.5px 0px white;
+    transform: translate(2.5px, 3.5px);
     color: white;
     background-color: #1073ea;
   }
