@@ -1,9 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-stack-section',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe, TranslateDirective],
   templateUrl: './my-stack-section.component.html',
   styleUrl: './my-stack-section.component.scss'
 })

@@ -214,6 +214,7 @@
   &:hover {
     width: 250px;
     background-color: #1aa8b4;
+    text-transform: uppercase;
 
     .text-default {
       opacity: 0;
@@ -231,7 +232,7 @@
 }
 
 .getintouch-button {
-  width: 150px;
+  width: 170px;
   height: 40px;
   padding: 12px 24px;
   border: 1px solid white;

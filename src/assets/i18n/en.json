@@ -1,14 +1,35 @@
 {
-    "header": {
+  "header": {
     "link-one": "About me",
     "link-two": "Skills",
     "link-three": "Projects",
     "link-four": "Contact"
   },
+  "hero-section": {
+    "button-one": "Hello World",
+    "button-one-hover": "I'm Marco Palummieri",
+    "button-two": "Get in Touch"
+  },
   "about-me-section": {
     "whois": "Who's Marco?",
-    "about": "Übersetzung",
-    "text": "Übersetzung",
-    "button": "Übersetzung"
+    "about": "About me",
+    "text": "Hi! I'm Marco and I love modern frontend technologies - that's why I'm becoming a Junior Web Developer. As a programming newcomer, I'm particularly excited about turning creative ideas into applications. I'm constantly learning through new projects. My focus is on JavaScript and Angular, as well as automation and AI. As a developer, I want to create solutions that help people move forward.",
+    "button": "Let's talk"
+  },
+  "my-stack-section": {
+    "headline-one": "My Stack",
+    "headline-two": "Skill set",
+    "text": "I have experience in front-end development using HTML, CSS, and JavaScript, with a focus on responsive design and modern web technologies such as Angular. I confidently use Git and GitHub for version control. I quickly and eagerly learn new tools and technologies.",
+    "peel-one": "Pull to peel",
+    "peel-two": "Also, I'm interested in diving into:"
+  },
+  "my-craft-section": {
+    "headline-one": "My Craft",
+    "headline-two": "Projects",
+    "text": "Great to have you here! I love turning ideas into functional, user-friendly websites. In my projects, I focus on modern, responsive design and clean, well-structured code. It’s important to me that applications not only run smoothly but also feel intuitive for users. Feel free to take a look around and try things out — and if you’d like, I’d really appreciate your feedback!",
+    "join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+    "el-pollo-loco": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+    "da-bubble": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
+    "button": "Project details"
   }
 }

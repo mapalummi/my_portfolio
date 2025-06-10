@@ -3,16 +3,13 @@
     <div class="section1">
       <div class="headline-container">
         <div class="main-title">
-          <span>My Craft</span>
-          <h1 class="">Projects</h1>
+          <span>{{ "my-craft-section.headline-one" | translate }}</span>
+          <h1 class="">{{ "my-craft-section.headline-two" | translate }}</h1>
           <div>
             <img src="./../../../assets/icons/underline2.png" alt="" />
           </div>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis vel fuga eos earum vitae perspiciatis repellat neque
-            obcaecati explicabo. At dicta aut nemo dolorum vel autem veritatis
-            voluptas officia temporibus.
+            {{ "my-craft-section.text" | translate }}
           </p>
         </div>
       </div>
@@ -37,12 +34,13 @@
             src="./../../../assets/img/Laptop_Default.png"
             alt=""
           />
-          <button class="details-button"><a>Project details</a></button>
+          <button class="details-button">
+            <a>{{ "my-craft-section.button" | translate }}</a>
+          </button>
         </div>
         <h2>Join</h2>
         <p>
-          Task manager inspired by the Kanban System. Create and organize tasks
-          using drag and drop functions, assign users and categories.
+          {{ "my-craft-section.join" | translate }}
         </p>
       </div>
     </div>
@@ -56,14 +54,15 @@
         <div class="project-image">
           <img src="./../../../assets/img/ElPolloLoco.png" alt="" />
           <button class="details-button">
-            <a routerLink="elPolloLoco">Project details</a>
+            <a routerLink="elPolloLoco">{{
+              "my-craft-section.button" | translate
+            }}</a>
           </button>
         </div>
 
         <h2>El Pollo Loco</h2>
         <p>
-          Jump, run and throw game based on object-oriented approach. Help Pepe
-          to find coins and tabasco salsa to fight against the crazy hen.
+          {{ "my-craft-section.el-pollo-loco" | translate }}
         </p>
       </div>
 
@@ -71,15 +70,15 @@
         <div class="project-image">
           <img src="./../../../assets/img/DABubble1.png" alt="" />
           <button class="details-button">
-            <a routerLink="daBubble">Project details</a>
+            <a routerLink="daBubble">{{
+              "my-craft-section.button" | translate
+            }}</a>
           </button>
         </div>
 
         <h2>DABubble</h2>
         <p>
-          This App is a Slack Clone App. It revolutionizes team communication
-          and collaboration with its intuitive interface, real-time messaging,
-          and robust channel organization.
+          {{ "my-craft-section.da-bubble" | translate }}
         </p>
       </div>
     </div>

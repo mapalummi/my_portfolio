@@ -1,17 +1,35 @@
 {
-    "header": {
+  "header": {
     "link-one": "Über mich",
     "link-two": "Skills",
     "link-three": "Projekte",
     "link-four": "Kontakt"
   },
+  "hero-section": {
+    "button-one": "Hallo Welt",
+    "button-one-hover": "Ich bin Marco Palummieri",
+    "button-two": "Lass connecten"
+  },
   "about-me-section": {
     "whois": "Wer ist Marco?",
-    "about": "Übersetzung",
-    "text": "Übersetzung",
-    "button": "Übersetzung"
+    "about": "Über mich",
+    "text": "Hey! Ich bin Marco und liebe moderne Frontend-Technologien - deshalb werde ich Junior Webentwickler. Als Programmier-Neuling begeistert mich besonders, kreative Ideen in Anwendungen umzusetzen. Durch neue Projekte lerne ich ständig dazu. Mein Fokus liegt auf JavaScript und Angular, sowie Automatisierung und KI. Als Entwickler möchte ich Lösungen schaffen, die Menschen weiterbringen.",
+    "button": "Reden wir?"
   },
-  "hero-section": {
-
+  "my-stack-section": {
+    "headline-one": "My Stack",
+    "headline-two": "Skill set",
+    "text": "Ich habe Erfahrung in der Front-End-Entwicklung mit HTML, CSS und JavaScript und setze dabei auf responsive Design und moderne Webtechnologien wie Angular. Git und GitHub nutze ich sicher für die Versionskontrolle. Neue Tools und Technologien lerne ich schnell und mit großer Neugier.",
+    "peel-one": "Hier ziehen",
+    "peel-two": "Das möchte ich noch lernen:"
+  },
+  "my-craft-section": {
+    "headline-one": "My Craft",
+    "headline-two": "Projects",
+    "text": "Schön, dass du da bist! Ich liebe es, Ideen in funktionierende, benutzerfreundliche Webseiten zu verwandeln. Bei meinen Projekten achte ich auf ein modernes, responsives Design und sauberen, gut strukturierten Code. Mir ist wichtig, dass Anwendungen nicht nur technisch gut laufen, sondern sich auch für Nutzer*innen intuitiv anfühlen. Schau dich gern um, probier alles in Ruhe aus – und wenn du magst, freue ich mich über dein Feedback!",
+    "join": "Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer*innen und Kategorien zu.",
+    "el-pollo-loco": "Jump-and-Run-Spiel mit Wurf-Funktion auf objektorientierter Basis. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
+    "da-bubble": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und Zusammenarbeit durch eine intuitive Benutzeroberfläche, Echtzeitnachrichten und eine durchdachte Kanalstruktur.",
+    "button": "Projektdetails"
   }
 }
