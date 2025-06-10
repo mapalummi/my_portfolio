@@ -46,7 +46,17 @@
   "contactform": {
     "name": "What's your name?",
     "name-default": "Your name goes here",
-    "name-error": "Oops! it seems your name is missing"
-    
+    "name-error": "Oops! it seems your name is missing",
+    "mail": "What's your email?",
+    "mail-default": "youremail@email.com",
+    "mail-error": "Hoppla! your email is required",
+    "text": "How can I help you",
+    "text-default": "Hello Marco, I am interested in...",
+    "text-error": "What do you need to develop?",
+    "privacy-text-one": "I've read the ",
+    "privacy-text-two": "and agree to the processing of my data as outlined.",
+    "privacy-policy": "privacy policy",
+    "privacy-error": "Please accept the privacy policy",
+    "button": "Send"
   }
 }

@@ -10,8 +10,8 @@
         name="name"
         [placeholder]="
           !name.valid && name.touched
-            ? 'Oops! it seems your name is missing'
-            : 'Your name goes here'
+            ? ('contactform.name-error' | translate)
+            : ('contactform.name-default' | translate)
         "
         [class.error-placeholder]="!name.valid && name.touched"
         [class.error-border]="!name.valid && name.touched"
@@ -20,7 +20,7 @@
     </label>
 
     <label for="email" [class.error-label]="!email.valid && email.touched"
-      >What's your email?
+      >{{ "contactform.mail" | translate }}
       <input
         #email="ngModel"
         [(ngModel)]="contactData.email"
@@ -29,8 +29,8 @@
         name="email"
         [placeholder]="
           !email.valid && email.touched
-            ? 'Hoppla! your email is required'
-            : 'youremail@email.com'
+            ? ('contactform.mail-error' | translate)
+            : ('contactform.mail-default' | translate)
         "
         [class.error-placeholder]="!email.valid && email.touched"
         required
@@ -39,7 +39,7 @@
     </label>
 
     <label for="message" [class.error-label]="!message.valid && message.touched"
-      >How can I help you?
+      >{{ "contactform.text" | translate }}
       <textarea
         #message="ngModel"
         minlength="4"
@@ -48,8 +48,8 @@
         name="message"
         [placeholder]="
           !message.valid && message.touched
-            ? 'What do you need to develop?'
-            : 'Hello Marco, I am interested in...'
+            ? ('contactform.text-error' | translate)
+            : ('contactform.text-default' | translate)
         "
         [class.error-placeholder]="!message.valid && message.touched"
         required
@@ -80,13 +80,16 @@
         #privacy="ngModel"
       />
       <span
-        >I've read the <a href="">privacy policy</a> and agree to the processing
-        of my data as outlined.</span
+        >{{ "contactform.privacy-text-one" | translate }}
+        <a href="">{{ "contactform.privacy-policy" | translate }}</a>
+        {{ "contactform.privacy-text-two" | translate }}</span
       >
     </div>
 
     @if (!contactData.privacyAccepted && privacy.touched){
-    <span class="error-message">Please accept the privacy policy.</span>
+    <span class="error-message">{{
+      "contactform.privacy-error" | translate
+    }}</span>
     }
 
     <!-- <button class="submit-button" [disabled]="!contactData.privacyAccepted">
@@ -94,12 +97,11 @@
     </button> -->
 
     <button
-  class="submit-button"
-  type="submit"
-  [disabled]="!contactData.privacyAccepted"
->
-  Send
-</button>
-
+      class="submit-button"
+      type="submit"
+      [disabled]="!contactData.privacyAccepted"
+    >
+      {{ "contactform.button" | translate }}
+    </button>
   </form>
 </div>

@@ -46,7 +46,17 @@
   "contactform": {
     "name": "Wie ist dein Name?",
     "name-default": "Trage hier deinen Namen ein",
-    "name-error": "Ups! Sieht aus als fehlt hier was"
-    
+    "name-error": "Ups! Sieht aus als fehlt hier etwas",
+    "mail": "Wie lautet deine Email?",
+    "mail-default": "deinemail@email.de",
+    "mail-error": "Hoppla! Deine Email wird benötigt",
+    "text": "Wie kann ich dir helfen",
+    "text-default": "Hallo Marco, Ich bin interessiert an...",
+    "text-error": "Was möchtest du entwickeln?",
+    "privacy-text-one": "Ich habe die",
+     "privacy-text-two": "zur Kenntnis genommen und willige in die darin beschriebene Verarbeitung meiner personenbezogenen Daten ein.",
+    "privacy-policy": "Datenschutzerklärung",
+    "privacy-error": "Bitte akzeptiere die Datenschutzerklärung.",
+    "button": "Absenden"
   }
 }
