@@ -235,7 +235,7 @@
   height: 50px;
   padding: 12px 24px;
   border: 1px solid white;
-  box-shadow: 0px 5px 0px rgb(255, 255, 255);
+  box-shadow: 3px 4px 0px rgb(255, 255, 255);
   background: transparent;
   color: white;
   border-radius: 24px;
@@ -245,8 +245,8 @@
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    box-shadow: none;
-    transform: translateY(5px);
+    box-shadow: 0.5px 0.5px 0px white;
+    transform: translate(2.5px, 3.5px);
     background-color: #1073ea;
   }
 }
