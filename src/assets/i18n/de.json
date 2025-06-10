@@ -43,6 +43,11 @@
     "title-three": "Frontend Entwicklerin",
     "linked": "Profil"
   },
+   "contact-section": {
+    "headline-one": "Meld dich gern bei mir!",
+    "headline-two": "Bereit zusammen was zu erschaffen?",
+    "text": "Ich bin immer offen für neue Projekte, Ideen und spannende Aufgaben – vor allem, wenn’s ums Coden und kreative Lösungen geht. Wenn du jemanden suchst, der mit Herzblut dabei ist, Lust hat dazuzulernen und echte Unterstützung ins Team bringt, dann bist du bei mir genau richtig. Schreib mir einfach – ich freu mich drauf, von dir zu hören und vielleicht gemeinsam was Cooles auf die Beine zu stellen!"
+  },
   "contactform": {
     "name": "Wie ist dein Name?",
     "name-default": "Trage hier deinen Namen ein",

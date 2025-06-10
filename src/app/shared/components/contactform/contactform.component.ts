@@ -11,14 +11,13 @@ import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
   styleUrl: './contactform.component.scss',
 })
 export class ContactformComponent {
-
-  http = inject(HttpClient)
+  http = inject(HttpClient);
 
   contactData = {
     name: '',
     email: '',
     message: '',
-    privacyAccepted: false // Richtig so ?
+    privacyAccepted: false, // Richtig so ?
   };
 
   mailTest = true;
