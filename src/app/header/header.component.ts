@@ -29,10 +29,6 @@ export class HeaderComponent {
 
   constructor(private translate: TranslateService) {}
 
-  toggleLanguage() {
-    this.isEnglish = !this.isEnglish;
-  }
-
   setGerman(language: string) {
     this.isEnglish = false;
     this.translate.use(language);
