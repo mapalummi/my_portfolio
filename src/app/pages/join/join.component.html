@@ -6,7 +6,9 @@
       <div class="back-button">
         <img src="./../../../assets/icons/Breadcrumb arrow 3.png" alt="" />
         <!-- <a routerLink="/" fragment="my-craft-section">Go Back</a> -->
-        <a (click)="goBack()" style="cursor: pointer">Go Back</a>
+        <a (click)="goBack()" style="cursor: pointer">{{
+          "join.button-back" | translate
+        }}</a>
       </div>
 
       <div>
@@ -19,20 +21,21 @@
       </div>
 
       <div class="text-section">
-        <h2>Description</h2>
+        <h2>{{ "join.headline-one" | translate }}</h2>
         <p>
-          Task manager inspired by the Kanban System. Create and organize tasks
-          using drag and drop functions, assign users and categories.
+          {{ "join.text-one" | translate }}
         </p>
       </div>
 
       <div class="text-section">
-        <h2>Implementation Details</h2>
+        <h2>{{ "join.headline-two" | translate }}</h2>
         <p>
-          As a team, we developed a Kanban board, where I actively contributed and took responsibility for specific tasks – mainly in the front-end area. Using agile methods, I was able to work in a structured and independent way while collaborating closely with the team.
+          {{ "join.text-two" | translate }}
         </p>
         <br />
-        <p><b>Duration:</b> 5 weeks</p>
+        <p>
+          <b>{{ "join.info" | translate }}</b> {{ "join.time" | translate }}
+        </p>
       </div>
 
       <div class="icons">
@@ -69,7 +72,9 @@
       </div>
 
       <div class="next-button">
-        <a (click)="goToNextProject()" style="cursor:pointer">Next Project</a>
+        <a (click)="goToNextProject()" style="cursor: pointer">{{
+          "join.button-next" | translate
+        }}</a>
         <img src="./../../../assets/icons/Next project arrow 3.png" alt="" />
       </div>
     </div>

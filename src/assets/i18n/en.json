@@ -32,6 +32,39 @@
     "da-bubble": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
     "button": "Project details"
   },
+  "join": {
+    "button-back": "Go Back",
+    "title": "Join",
+    "headline-one": "Description",
+    "headline-two": "Implementation Details",
+    "text-one": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+    "text-two": "As a team, we developed a Kanban board, where I actively contributed and took responsibility for specific tasks – mainly in the front-end area. Using agile methods, I was able to work in a structured and independent way while collaborating closely with the team.",
+    "info": "Duration:",
+    "time": "5 weeks",
+    "button-next": "Next Project"
+  },
+  "el-pollo-loco": {
+    "button-back": "Go Back",
+    "title": "",
+    "headline-one": "Description",
+    "headline-two": "implementation Details",
+    "text-one": "",
+    "text-two": "",
+    "info": "",
+    "time": "",
+    "button-next": "Next Project"
+  },
+  "da-bubble": {
+    "button-back": "Go Back",
+    "title": "",
+    "headline-one": "Description",
+    "headline-two": "implementation Details",
+    "text-one": "",
+    "text-two": "",
+    "info": "",
+    "time": "",
+    "button-next": "Next Project"
+  },
   "testimonial-section": {
     "headline-one": "In their words:",
     "headline-two": "Colleagues' Thoughts",
