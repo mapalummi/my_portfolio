@@ -1,7 +1,7 @@
 <div class="container">
   <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     <label for="name" [class.error-label]="!name.valid && name.touched"
-      >What's your name?
+      >{{ "contactform.name" | translate }}
       <input
         #name="ngModel"
         [(ngModel)]="contactData.name"

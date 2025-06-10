@@ -42,5 +42,11 @@
     "title-two": "Project Manager",
     "title-three": "Frontend Developer",
     "linked": "Profile"
+  },
+  "contactform": {
+    "name": "What's your name?",
+    "name-default": "Your name goes here",
+    "name-error": "Oops! it seems your name is missing"
+    
   }
 }

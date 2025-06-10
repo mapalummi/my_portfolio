@@ -42,5 +42,11 @@
     "title-two": "Projektmanager",
     "title-three": "Frontend Entwicklerin",
     "linked": "Profil"
+  },
+  "contactform": {
+    "name": "Wie ist dein Name?",
+    "name-default": "Trage hier deinen Namen ein",
+    "name-error": "Ups! Sieht aus als fehlt hier was"
+    
   }
 }
