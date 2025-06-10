@@ -1,6 +1,6 @@
 <div class="container">
   <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <label for="name"
+    <label for="name" [class.error-label]="!name.valid && name.touched"
       >What's your name?
       <input
         #name="ngModel"
@@ -14,11 +14,12 @@
             : 'Your name goes here'
         "
         [class.error-placeholder]="!name.valid && name.touched"
+        [class.error-border]="!name.valid && name.touched"
         required
       />
     </label>
 
-    <label for="email"
+    <label for="email" [class.error-label]="!email.valid && email.touched"
       >What's your email?
       <input
         #email="ngModel"
@@ -37,7 +38,7 @@
       />
     </label>
 
-    <label for="message"
+    <label for="message" [class.error-label]="!message.valid && message.touched"
       >How can I help you?
       <textarea
         #message="ngModel"
