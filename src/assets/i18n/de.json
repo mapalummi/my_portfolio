@@ -24,12 +24,23 @@
     "peel-two": "Das möchte ich noch lernen:"
   },
   "my-craft-section": {
-    "headline-one": "My Craft",
-    "headline-two": "Projects",
+    "headline-one": "Mein Handwerk",
+    "headline-two": "Projekte",
     "text": "Schön, dass du da bist! Ich liebe es, Ideen in funktionierende, benutzerfreundliche Webseiten zu verwandeln. Bei meinen Projekten achte ich auf ein modernes, responsives Design und sauberen, gut strukturierten Code. Mir ist wichtig, dass Anwendungen nicht nur technisch gut laufen, sondern sich auch für Nutzer*innen intuitiv anfühlen. Schau dich gern um, probier alles in Ruhe aus – und wenn du magst, freue ich mich über dein Feedback!",
     "join": "Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer*innen und Kategorien zu.",
     "el-pollo-loco": "Jump-and-Run-Spiel mit Wurf-Funktion auf objektorientierter Basis. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
     "da-bubble": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und Zusammenarbeit durch eine intuitive Benutzeroberfläche, Echtzeitnachrichten und eine durchdachte Kanalstruktur.",
     "button": "Projektdetails"
+  },
+  "testimonial-section": {
+    "headline-one": "So sehen mich andere:",
+    "headline-two": "Feedback aus dem Team",
+    "card-one": "Marco arbeitet absolut zuverlässig und denkt immer aus Nutzersicht. Er bringt kreative Ideen ein und hat ein Auge fürs Detail – eine echte Bereicherung fürs Team.",
+    "card-two": "Mit Marco im Team läuft’s rund: strukturiert, pünktlich und immer lösungsorientiert. Auch unter Druck bleibt er ruhig und professionell.",
+    "card-three": "Marco brennt für sauberen Code und modernes Design. Er kombiniert technisches Können mit einem feinen Gespür für Ästhetik und ist super im Austausch.",
+    "title-one": "UX Designerin",
+    "title-two": "Projektmanager",
+    "title-three": "Frontend Entwicklerin",
+    "linked": "Profil"
   }
 }

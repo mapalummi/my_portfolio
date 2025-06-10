@@ -31,5 +31,16 @@
     "el-pollo-loco": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
     "da-bubble": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
     "button": "Project details"
+  },
+  "testimonial-section": {
+    "headline-one": "In their words:",
+    "headline-two": "Colleagues' Thoughts",
+    "card-one": "Marco is absolutely reliable and always thinks from the user's perspective. He contributes creative ideas and has a keen eye for detail – a true asset to the team.",
+    "card-two": "With Marco on the team, everything runs smoothly: structured, punctual, and always solution-oriented. Even under pressure, he remains calm and professional.",
+    "card-three": "Marco is passionate about clean code and modern design. He combines technical expertise with a strong sense of aesthetics and excels in communication.",
+    "title-one": "UX Designer",
+    "title-two": "Project Manager",
+    "title-three": "Frontend Developer",
+    "linked": "Profile"
   }
 }
