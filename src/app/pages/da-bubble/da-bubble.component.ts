@@ -4,11 +4,12 @@ import { ProjectNavigationService } from '../../services/project-navigation.serv
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../header/header.component';
 import { CommonModule } from '@angular/common';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-da-bubble',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, CommonModule],
+  imports: [RouterModule, HeaderComponent, CommonModule, TranslatePipe, TranslateDirective],
   templateUrl: './da-bubble.component.html',
   styleUrl: './da-bubble.component.scss',
 })
