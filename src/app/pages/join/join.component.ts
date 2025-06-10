@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 //Neu
 import { Router } from '@angular/router';
+
+//NEU
+import { ProjectNavigationService } from '../../services/project-navigation.service';
 
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../header/header.component';
@@ -15,9 +18,21 @@ import { CommonModule } from '@angular/common';
   templateUrl: './join.component.html',
   styleUrl: './join.component.scss',
 })
-export class JoinComponent {
+export class JoinComponent implements OnInit {
   //NEU
-  constructor(private router: Router) {}
+  constructor(private router: Router, private projectService: ProjectNavigationService) {}
+
+
+  //NEU
+  ngOnInit(): void {
+  }
+//NEU
+  goToNextProject(): void {
+    this.projectService.navigateToNext(this.router.url);
+  }
+
+
+
 
   goBack(): void {
     this.router.navigate(['/']).then(() => {
