@@ -63,5 +63,8 @@
     "privacy-policy": "privacy policy",
     "privacy-error": "Please accept the privacy policy",
     "button": "Send"
+  },
+  "footer": {
+    "link-one": "Legal Notice"
   }
 }

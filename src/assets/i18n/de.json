@@ -63,5 +63,8 @@
     "privacy-policy": "Datenschutzerklärung",
     "privacy-error": "Bitte akzeptiere die Datenschutzerklärung.",
     "button": "Absenden"
+  },
+  "footer": {
+    "link-one": "Impressum"
   }
 }
