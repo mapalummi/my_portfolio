@@ -1,0 +1,6 @@
+{
+  "about-me-section": {
+    "hello": "hello {{value}}",
+    "title": "Translation Demo"
+  }
+}

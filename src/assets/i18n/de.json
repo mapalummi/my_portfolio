@@ -1,0 +1,9 @@
+{
+  "about-me-section": {
+    "hello": "Guten Tag {{value}}",
+    "title": "Übersetzung"
+  },
+  "hero-section": {
+
+  }
+}
