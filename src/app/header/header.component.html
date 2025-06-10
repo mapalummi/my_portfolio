@@ -16,12 +16,12 @@
       ><img src="assets/icons/3.png" alt="" /><span>Contact</span></a
     >
     <div class="toggle">
-      <span [class.active]="!isEnglish" (click)="setGerman()"><img src="./../../assets/icons/Toggle.png" alt="">EN</span>
+      <span [class.active]="!isEnglish" (click)="setGerman('en')"><img src="./../../assets/icons/Toggle.png" alt="">EN</span>
       <label class="toggle-switch">
         <input type="checkbox" [checked]="isEnglish">
         <span class="slider"></span>
       </label>
-      <span [class.active]="isEnglish" (click)="setEnglish()"><img src="./../../assets/icons/Toggle.png" alt="">DE</span>
+      <span [class.active]="isEnglish" (click)="setEnglish('de')"><img src="./../../assets/icons/Toggle.png" alt="">DE</span>
     </div>
   </nav>
 </div>

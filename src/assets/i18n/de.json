@@ -1,7 +1,9 @@
 {
   "about-me-section": {
-    "hello": "Guten Tag {{value}}",
-    "title": "Übersetzung"
+    "whois": "Wer ist Marco?",
+    "about": "Übersetzung",
+    "text": "Übersetzung",
+    "button": "Übersetzung"
   },
   "hero-section": {
 

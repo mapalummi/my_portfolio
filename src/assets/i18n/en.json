@@ -1,6 +1,8 @@
 {
   "about-me-section": {
-    "hello": "hello {{value}}",
-    "title": "Translation Demo"
+    "whois": "Who's Marco?",
+    "about": "Übersetzung",
+    "text": "Übersetzung",
+    "button": "Übersetzung"
   }
 }
