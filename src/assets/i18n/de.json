@@ -1,4 +1,10 @@
 {
+    "header": {
+    "link-one": "Über mich",
+    "link-two": "Skills",
+    "link-three": "Projekte",
+    "link-four": "Kontakt"
+  },
   "about-me-section": {
     "whois": "Wer ist Marco?",
     "about": "Übersetzung",

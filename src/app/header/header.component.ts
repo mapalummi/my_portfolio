@@ -13,21 +13,11 @@ import {
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  isEnglish = false; // Toggle-Status
+  isEnglish = true; // Toggle-Status
 
-  // toggleLanguage() {
-  //   this.isEnglish = !this.isEnglish;
-  // }
-
-  // setGerman(){
-  //   this.isEnglish = false;
-  // }
-
-  // setEnglish(){
-  //   this.isEnglish = true;
-  // }
-
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService) {
+    this.translate.use('en');
+  }
 
   setGerman(language: string) {
     this.isEnglish = false;
