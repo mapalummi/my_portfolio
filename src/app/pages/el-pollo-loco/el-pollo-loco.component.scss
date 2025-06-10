@@ -1,0 +1,303 @@
+@import "./../../../styles.scss";
+
+:host {
+  // Logo invertieren für schwarzen Hintergrund
+  --header-logo-filter: invert(1);
+
+  // Nur die ersten beiden Links schwarz
+  --header-link-2-color: black;
+  --header-link-3-color: black;
+
+  @media (max-width: 1999px) {
+    --header-link-3-color: white;
+    --header-link-4-color: white;
+  }
+
+  // Tablet (bis 768px)
+  @media (max-width: 768px) {
+    --header-link-3-color: white;
+    --header-link-4-color: white;
+  }
+
+  // Mobile (bis 480px)
+  @media (max-width: 471px) {
+    --header-link-2-color: white;
+    --header-link-3-color: white;
+    --header-link-4-color: white;
+  }
+
+  @media (max-width: 242px) {
+    --header-logo-filter: invert(0);
+    --header-link-2-color: white;
+    --header-link-3-color: white;
+    --header-link-4-color: white;
+  }
+
+  // Large Desktop (ab 1200px)
+  @media (min-width: 1200px) {
+    --header-link-2-color: black;
+    --header-link-3-color: black;
+    --header-link-4-color: white;
+  }
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#content {
+  min-height: 100vh;
+  margin-top: 0;
+  padding-top: 0;
+  background-color: rgb(21, 21, 21);
+  background-image: url("./../../../assets/img/Note book paper.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  .page-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    min-height: calc(100vh - 120px); // Adjust for header height
+    padding-top: 120px;
+    max-width: 1200px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 100px;
+    }
+
+    @media (max-width: 480px) {
+      padding-top: 80px; // Für sehr kleine Bildschirme
+    }
+  }
+
+  // Responsive Anpassungen für das Background
+  @media (max-width: 768px) {
+    background-attachment: scroll; // Auf mobilen Geräten besser
+    background-size: cover;
+    background-position: center top;
+  }
+
+  @media (max-width: 471px) {
+    background-size: 100% contain; // Oder verwenden Sie contain für vollständige Sichtbarkeit
+    background-position: center top;
+    min-height: 100vh;
+  }
+}
+
+.left-section {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+}
+
+.back-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 12px;
+  cursor: pointer;
+  margin-left: -50px;
+
+  @media (max-width: 768px) {
+    margin-left: -20px; // Weniger auf mobilen Geräten
+  }
+
+  @media (max-width: 480px) {
+    margin-left: 0; // Zurück auf mobile Geräte
+  }
+
+  img {
+    width: 30px;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: #1073ea;
+    }
+  }
+}
+
+.underline-image {
+  width: 400px;
+  height: 20px;
+  animation: pulseUnderline 2s ease-in-out infinite;
+}
+
+@keyframes pulseUnderline {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  25% {
+    clip-path: inset(0% 0 0 0);
+  }
+  75% {
+    clip-path: inset(0% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.text-section {
+  max-width: 450px; // Begrenzt die Textbreite
+
+  p {
+    line-height: 1.5; // Kompaktere Zeilenhöhe
+    margin-bottom: 12px; // Weniger Abstand zwischen Absätzen
+    text-align: justify; // Blocksatz für saubere Kanten
+  }
+
+  h2 {
+    margin-bottom: 8px; // Weniger Abstand unter Überschriften
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%; // Auf mobilen Geräten volle Breite
+  }
+}
+
+.icons {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+
+  img {
+    width: 30px;
+  }
+}
+
+.right-section {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 50px;
+  // margin-top: 80px; // Verschiebt alle Inhalte nach unten
+  // padding-top: 80px; // Schiebt den Inhalt nach unten
+  align-self: center;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    align-self: auto; // Reset auf mobilen Geräten
+  }
+}
+
+.project-sample {
+  position: relative;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 24px;
+}
+
+.sticker-image {
+  position: absolute;
+  top: 35%;
+  right: -50px;
+  width: 120px;
+  height: auto;
+  transform: rotate(90deg);
+  opacity: 1;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    right: -15px; // Weniger auf Tablets
+  }
+
+  @media (max-width: 480px) {
+    right: 0; // Zurück auf mobile Geräte
+  }
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.right-section-button {
+  width: 150px;
+  height: 50px;
+  padding: 12px 24px;
+  border: 1px solid white;
+  box-shadow: 0px 5px 0px rgb(255, 255, 255);
+  background: transparent;
+  color: white;
+  border-radius: 24px;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: none;
+    transform: translateY(5px);
+    background-color: #1073ea;
+  }
+}
+
+.next-button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  gap: 12px;
+  cursor: pointer;
+  margin-right: -50px;
+
+  @media (max-width: 768px) {
+    margin-right: -20px; // Weniger auf mobilen Geräten
+  }
+
+  @media (max-width: 480px) {
+    margin-right: 0; // Zurück auf mobile Geräte
+  }
+
+  img {
+    width: 30px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: #24dd80;
+    }
+  }
+}

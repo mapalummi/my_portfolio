@@ -1,2 +1,77 @@
-<p>da-bubble works!</p>
-<button><a routerLink="">back</a></button>
+<section id="content">
+  <app-header></app-header>
+
+  <div class="page-container">
+    <div class="left-section">
+      <div class="back-button">
+        <img src="./../../../assets/icons/Breadcrumb arrow 3.png" alt="" />
+        <!-- <a routerLink="/" fragment="my-craft-section">Go Back</a> -->
+        <a (click)="goBack()" style="cursor: pointer">Go Back</a>
+      </div>
+
+      <div>
+        <h1>DABubble</h1>
+        <img
+          class="underline-image"
+          src="./../../../assets/icons/underline3.png"
+          alt=""
+        />
+      </div>
+
+      <div class="text-section">
+        <h2>Description</h2>
+        <p>
+          This App is a Slack Clone App. It revolutionizes team communication
+          and collaboration with its intuitive interface, real-time messaging,
+          and robust channel organization.
+        </p>
+      </div>
+
+      <div class="text-section">
+        <h2>Implementation Details</h2>
+        <p>
+          As a team, we developed a Kanban board, where I actively contributed
+          and took responsibility for specific tasks – mainly in the front-end
+          area. Using agile methods, I was able to work in a structured and
+          independent way while collaborating closely with the team.
+        </p>
+        <br />
+        <p><b>Duration:</b> 3 weeks</p>
+      </div>
+
+      <div class="icons">
+        <img src="./../../../assets/icons/JavaScript.png" alt="" />
+        <p>JavaScript</p>
+        <img src="./../../../assets/icons/HTML.png" alt="" />
+        <p>HTML</p>
+        <img src="./../../../assets/icons/CSS.png" alt="" />
+        <p>CSS</p>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="project-sample">
+        <img
+          class="project-image"
+          src="./../../../assets/img/DABubble.jpg"
+          alt=""
+        />
+        <img
+          class="sticker-image"
+          src="./../../../assets/icons/round_sticker.png"
+          alt=""
+        />
+      </div>
+
+      <div class="project-buttons">
+        <button class="right-section-button">GitHub</button>
+        <button class="right-section-button">Live Test</button>
+      </div>
+
+      <div class="next-button">
+        <a>Next Project</a>
+        <img src="./../../../assets/icons/Next project arrow 3.png" alt="" />
+      </div>
+    </div>
+  </div>
+</section>

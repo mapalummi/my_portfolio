@@ -2,75 +2,76 @@
   <app-header></app-header>
 
   <div class="page-container">
+    <div class="left-section">
+      <div class="back-button">
+        <img src="./../../../assets/icons/Breadcrumb arrow 3.png" alt="" />
+        <!-- <a routerLink="/" fragment="my-craft-section">Go Back</a> -->
+        <a (click)="goBack()" style="cursor: pointer">Go Back</a>
+      </div>
 
-  <div class="left-section">
-    <div class="back-button">
-      <img src="./../../../assets/icons/Breadcrumb arrow 3.png" alt="" />
-      <!-- <a routerLink="/" fragment="my-craft-section">Go Back</a> -->
-      <a (click)="goBack()" style="cursor: pointer;">Go Back</a>
+      <div>
+        <h1>Join</h1>
+        <img
+          class="underline-image"
+          src="./../../../assets/icons/underline3.png"
+          alt=""
+        />
+      </div>
+
+      <div class="text-section">
+        <h2>Description</h2>
+        <p>
+          Task manager inspired by the Kanban System. Create and organize tasks
+          using drag and drop functions, assign users and categories.
+        </p>
+      </div>
+
+      <div class="text-section">
+        <h2>Implementation Details</h2>
+        <p>
+          As a team, we developed a Kanban board, where I actively contributed and took responsibility for specific tasks – mainly in the front-end area. Using agile methods, I was able to work in a structured and independent way while collaborating closely with the team.
+        </p>
+        <br />
+        <p><b>Duration:</b> 5 weeks</p>
+      </div>
+
+      <div class="icons">
+        <img src="./../../../assets/icons/CSS.png" alt="" />
+        <p>CSS</p>
+        <img src="./../../../assets/icons/HTML.png" alt="" />
+        <p>HTML</p>
+        <img src="./../../../assets/icons/Firebase.png" alt="" />
+        <p>Firebase</p>
+        <img src="./../../../assets/icons/Angular.png" alt="" />
+        <p>Angular</p>
+        <img src="./../../../assets/icons/TypeScript.png" alt="" />
+        <p>TypeScript</p>
+      </div>
     </div>
 
-    <div>
-      <h1>Join</h1>
-      <img class="underline-image" src="./../../../assets/icons/underline3.png" alt="" />
-    </div>
+    <div class="right-section">
+      <div class="project-sample">
+        <img
+          class="project-image"
+          src="./../../../assets/img/join.jpg"
+          alt=""
+        />
+        <img
+          class="sticker-image"
+          src="./../../../assets/img/featured_sticker.png"
+          alt=""
+        />
+      </div>
 
-    <div class="text-section">
-      <h2>Description</h2>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
-        distinctio dicta ipsa aperiam, tempore, ut nihil, sed maiores dolore
-        iusto molestiae minima laboriosam esse veniam ducimus pariatur commodi
-        nam vel!
-      </p>
-    </div>
+      <div class="project-buttons">
+        <button class="right-section-button">GitHub</button>
+        <button class="right-section-button">Live Test</button>
+      </div>
 
-    <div class="text-section">
-      <h2>Implementation Details</h2>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
-        distinctio dicta ipsa aperiam, tempore, ut nihil, sed maiores dolore
-        iusto molestiae minima laboriosam esse veniam ducimus pariatur commodi
-        nam vel!
-      </p>
-      <br>
-      <p><b>Duration:</b> 5 weeks</p>
+      <div class="next-button">
+        <a>Next Project</a>
+        <img src="./../../../assets/icons/Next project arrow 3.png" alt="" />
+      </div>
     </div>
-
-    <div class="icons">
-<img src="./../../../assets/icons/CSS.png" alt="">
-<p>CSS</p>
-<img src="./../../../assets/icons/HTML.png" alt="">
-<p>HTML</p>
-<img src="./../../../assets/icons/Firebase.png" alt="">
-<p>Firebase</p>
-<img src="./../../../assets/icons/Angular.png" alt="">
-<p>Angular</p>
-<img src="./../../../assets/icons/TypeScript.png" alt="">
-<p>TypeScript</p>
-
-    </div>
-  </div>
-
-  <div class="right-section">
-    <div class="project-sample">
-      <img class="project-image" src="./../../../assets/img/join.jpg" alt="" />
-      <img
-        class="sticker-image"
-        src="./../../../assets/img/featured_sticker.png"
-        alt=""
-      />
-    </div>
-
-    <div class="project-buttons">
-      <button class="right-section-button">GitHub</button>
-      <button class="right-section-button">Live Test</button>
-    </div>
-
-    <div class="next-button">
-      <a>Next Project</a>
-      <img src="./../../../assets/icons/Next project arrow 3.png" alt="" />
-    </div>
-  </div>
   </div>
 </section>
