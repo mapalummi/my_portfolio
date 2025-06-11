@@ -9,8 +9,15 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-size: 16px;
+  font-size: 16px; // Behalte 16px als Standard
   scroll-behavior: smooth;
+}
+
+// Responsive font-size nur wenn nötig
+@media (max-width: 600px) {
+  html {
+    font-size: 14px; // Sanftere Reduzierung
+  }
 }
 
 .page-container{
