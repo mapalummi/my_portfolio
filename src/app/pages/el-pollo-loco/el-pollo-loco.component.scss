@@ -227,8 +227,6 @@ h2 {
   position: absolute;
   top: 35%;
   right: -50px;
-  width: 120px;
-  height: 120px;
   z-index: 1;
   
   @media (max-width: 768px) {
@@ -240,8 +238,8 @@ h2 {
   }
   
   .custom-sticker {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     position: relative;
     display: flex;

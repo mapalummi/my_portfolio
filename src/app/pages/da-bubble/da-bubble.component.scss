@@ -223,34 +223,11 @@ h2 {
   border-radius: 24px;
 }
 
-// .sticker-image {
-//   position: absolute;
-//   top: 35%;
-//   right: -50px;
-//   width: 120px;
-//   height: auto;
-//   transform: rotate(90deg);
-//   opacity: 1;
-//   pointer-events: none;
 
-//   @media (max-width: 768px) {
-//     right: -15px; // Weniger auf Tablets
-//   }
-
-//   @media (max-width: 480px) {
-//     right: 0; // Zurück auf mobile Geräte
-//   }
-// }
-
-
-
-// neue .sticker Regel:
 .sticker {
   position: absolute;
   top: 35%;
   right: -50px;
-  width: 120px;
-  height: 120px;
   z-index: 1;
   
   @media (max-width: 768px) {
@@ -262,8 +239,8 @@ h2 {
   }
   
   .custom-sticker {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     position: relative;
     display: flex;
