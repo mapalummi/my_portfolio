@@ -139,7 +139,7 @@ form {
     height: auto;
     display: flex; //NEU
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     border: none;
     margin-top: 20px;
     gap: 8px;
@@ -163,12 +163,16 @@ form {
     input[type="checkbox"] {
       width: 20px;
       height: 20px;
+      min-width: 20px;
+      min-height: 20px;
+      flex-shrink: 0;
       appearance: none; // Entfernt Standard-Browser-Styles
       border: 2px solid #24dd80;
       border-radius: 4px;
       background: transparent;
       cursor: pointer;
       position: relative;
+      margin-top: 2px;
 
       &:checked {
         &::after {
@@ -176,7 +180,7 @@ form {
           content: "";
           position: absolute;
           top: 50%;
-          left: 65%;
+          left: 50%;
           transform: translate(-50%, -50%);
           // color: orange;
           // font-size: 14px;
@@ -193,6 +197,12 @@ form {
       &:hover {
         background-color: #24dd815f;
       }
+    }
+
+    span {
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.4;
     }
   }
 }
