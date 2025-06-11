@@ -24,7 +24,7 @@
   position: relative;
   font-family: "Bricolage Grotesque", sans-serif;
   color: var(--text-color-light);
-  font-size: 6rem;
+  font-size: clamp(3.5rem, 5vw, 6rem);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -39,14 +39,14 @@
   align-items: flex-start;
   margin-bottom: var(--spacing-lg); // Anstatt 2rem
   position: relative; // Wichtig für absolute Positionierung des Kindes!
-  padding-left: 4rem; // Schiebt Inhalt nach innen
+  padding-left: 10rem; // Schiebt Inhalt nach innen
 }
 
 .hero-content .right-section {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-right: 4rem; // Schiebt Inhalt nach innen
+  padding-right: 10rem; // Schiebt Inhalt nach innen
 }
 
 .hero-content h1:first-child,
@@ -63,7 +63,7 @@
 }
 
 .bouncing-letters span:hover {
-  color: var(--secondary-color); // Anstatt rgb(36, 221, 128)
+  color: var(--third-color);
 }
 
 .bouncing-letters span.bounce {
@@ -97,8 +97,9 @@
 
 .polaroid-container {
   position: absolute;
-  top: -70px; //Vertikale Position (von oben)
-  right: 100px; //Horizontale Position (von rechts)
+  top: -70px;
+  right: 10rem;
+  width: clamp(150px, 15vw, 250px);
   transform: rotate(10deg);
   z-index: 2;
   transition: transform var(--transition-normal); // Anstatt 0.3s ease
@@ -143,7 +144,7 @@
   transform: translateX(-50%);
   color: var(--text-color-dark); // Anstatt #333
   font-family: "Kalam", sans-serif;
-  font-size: 26px;
+  font-size: clamp(1.125rem, 1.5vw, 1.625rem);
   font-weight: bold;
   transition: opacity var(--transition-normal);
   pointer-events: none;
@@ -266,10 +267,48 @@ app-navbar {
 //
 // Media Queries für verschiedene Bildschirmgrößen
 
-@media (max-width: 1199px) and (min-width: 768px) {
+@media (max-width: 1550px) {
+  .socialbar-left {
+    position: absolute;
+    left: 0px;
+  }
+}
+
+@media (max-width: 1000px) {
   #hero-section {
-    background-size: cover;
-    background-position: center center;
+    align-items: flex-start; // Anstatt center - beginnt von oben
+    padding-top: 80px; // Platz für die Navbar
+  }
+
+  .hero-content {
+    justify-content: flex-start; // Inhalt nach oben ausrichten
+    padding-top: var(--spacing-xl); // Abstand von oben
+  }
+
+  .hero-content .left-section {
+    margin-bottom: var(--spacing-md); // Weniger Abstand zwischen den Sections
+    align-self: center; // Zentriert die left-section
+  }
+
+  .hero-content .right-section {
+    align-self: center; // Zentriert die right-section
+    margin-bottom: var(--spacing-lg); // Abstand zum Polaroid
+  }
+
+  .polaroid-container {
+    position: relative; // Entfernt absolute Positionierung
+    align-self: center; // Zentriert das Polaroid
+    margin: 5rem auto 0 auto; // Abstand zu den Sections
+    width: clamp(120px, 12vw, 200px);
+    transform: rotate(10deg);
+    order: 3; // Stellt sicher, dass es als letztes erscheint
+  }
+
+  .polaroid-text {
+    bottom: 30px;
+    left: 50%;
+    font-size: 0.9rem;
+    font-weight: bold;
   }
 }
 
@@ -283,10 +322,39 @@ app-navbar {
   .hero-content {
     font-size: var(--font-size-xl); // Responsive Schriftgröße
     padding: 0 var(--spacing-md); // Anstatt 0 1rem
+    padding-top: var(--spacing-lg);
+    padding-left: var(--spacing-xl); // Mehr Innen-Padding links
+    padding-right: var(--spacing-xl); // Mehr Innen-Padding rechts
+  }
+
+  .hero-content .left-section {
+    text-align: center; // Zentriert den Text
+    padding-left: 0; // Entfernt das 10rem padding
+    padding-right: var(--spacing-lg); // Schiebt nach innen
+    align-items: center; // Zentriert die Elemente vertikal
+  }
+
+  .hero-content .right-section {
+    text-align: center; // Zentriert den Text
+    padding-right: 0; // Entfernt das 10rem padding
+    padding-left: var(--spacing-lg); // Schiebt nach innen
+    align-items: center; // Zentriert die Elemente vertikal
   }
 
   .polaroid-container {
-    display: none; // Verstecke Polaroid auf sehr kleinen Bildschirmen
+    // width: clamp(100px, 10vw, 150px);
+    margin-top: 6rem;
+  }
+
+  .polaroid-text {
+    bottom: 10px;
+    left: 50%;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  .socialbar-left {
+    display: none;
   }
 }
 
@@ -297,10 +365,5 @@ app-navbar {
 
   .hero-content {
     font-size: var(--font-size-lg); // Kleinere responsive Schriftgröße
-  }
-
-  .socialbar-left {
-    left: -30px; // Anpassung der Social Bar Position
-    bottom: -50px;
   }
 }
