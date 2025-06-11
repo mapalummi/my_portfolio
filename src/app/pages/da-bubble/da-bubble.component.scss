@@ -223,22 +223,114 @@ h2 {
   border-radius: 24px;
 }
 
-.sticker-image {
+// .sticker-image {
+//   position: absolute;
+//   top: 35%;
+//   right: -50px;
+//   width: 120px;
+//   height: auto;
+//   transform: rotate(90deg);
+//   opacity: 1;
+//   pointer-events: none;
+
+//   @media (max-width: 768px) {
+//     right: -15px; // Weniger auf Tablets
+//   }
+
+//   @media (max-width: 480px) {
+//     right: 0; // Zurück auf mobile Geräte
+//   }
+// }
+
+
+
+// neue .sticker Regel:
+.sticker {
   position: absolute;
   top: 35%;
   right: -50px;
   width: 120px;
-  height: auto;
-  transform: rotate(90deg);
-  opacity: 1;
-  pointer-events: none;
-
+  height: 120px;
+  z-index: 1;
+  
   @media (max-width: 768px) {
-    right: -15px; // Weniger auf Tablets
+    right: -15px;
   }
 
   @media (max-width: 480px) {
-    right: 0; // Zurück auf mobile Geräte
+    right: 0;
+  }
+  
+  .custom-sticker {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    .sticker-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 0;
+    }
+    
+    .circular-text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      animation: rotate 20s linear infinite;
+      
+      svg {
+        width: 100%;
+        height: 100%;
+        
+        text {
+          fill: #000000;
+          font-family: "Bricolage Grotesque", sans-serif;
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          
+          &:nth-child(even) {
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    
+    .logo-center {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 

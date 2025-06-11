@@ -33,7 +33,10 @@
           {{ "da-bubble.text-two" | translate }}
         </p>
         <br />
-        <p><b>{{ "da-bubble.info" | translate }}</b> {{ "da-bubble.time" | translate }}</p>
+        <p>
+          <b>{{ "da-bubble.info" | translate }}</b>
+          {{ "da-bubble.time" | translate }}
+        </p>
       </div>
 
       <div class="icons">
@@ -53,11 +56,46 @@
           src="./../../../assets/img/DABubble1.png"
           alt=""
         />
-        <img
-          class="sticker-image"
-          src="./../../../assets/icons/round_sticker.png"
-          alt=""
-        />
+
+        <div class="sticker">
+          <div class="custom-sticker">
+            <img
+              src="./../../../assets/icons/round_sticker.png"
+              alt="Background"
+              class="sticker-background"
+            />
+            <div class="circular-text">
+              <svg viewBox="0 0 150 150">
+                <defs>
+                  <path
+                    id="circle"
+                    d="M 75, 75 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
+                  />
+                </defs>
+                <text>
+                  <textPath href="#circle" startOffset="2%">
+                    MARCO PALUMMIERI
+                  </textPath>
+                </text>
+                <text>
+                  <textPath href="#circle" startOffset="46%">•</textPath>
+                </text>
+                <text>
+                  <textPath href="#circle" startOffset="50%">
+                    FRONTEND DEVELOPER
+                  </textPath>
+                </text>
+                <text>
+                  <textPath href="#circle" startOffset="98%">•</textPath>
+                </text>
+              </svg>
+            </div>
+            <div class="logo-center">
+              <img src="./../../../assets/img/LogoMpNeu3.png" alt="MP Logo" />
+            </div>
+          </div>
+        </div>
+        
       </div>
 
       <div class="project-buttons">
