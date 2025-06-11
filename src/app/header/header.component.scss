@@ -2,13 +2,8 @@
 
 .header-container {
   font-family: "Bricolage Grotesque", sans-serif;
-  padding: clamp(0.5rem, 2vw, 2rem);
+  padding: clamp(var(--spacing-sm), 2vw, var(--spacing-lg));
   background-color: transparent;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
-  // width: 100%;
-
   position: absolute;
   top: 0;
   left: 50%;
@@ -20,43 +15,31 @@
   box-sizing: border-box;
 }
 
-.nav-about {
-  margin-right: 20px;
-}
-.nav-skills {
-  margin-right: 30px;
-}
-.nav-projects {
-  margin-right: 15px;
-}
-.nav-contact {
-  margin-right: 40px;
-}
+.nav-about { margin-right: var(--spacing-md); }
+.nav-skills { margin-right: calc(var(--spacing-md) + 0.5rem); }
+.nav-projects { margin-right: var(--spacing-sm); }
+.nav-contact { margin-right: calc(var(--spacing-lg) + 0.5rem); }
 
 nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: clamp(1rem, 3vw, 2rem);
+  @include flex-around;
+  gap: clamp(var(--spacing-md), 3vw, var(--spacing-lg));
 
   > img {
-    width: 100px;
-    // width: clamp(3.5rem, 8vw, 5.5rem);
-    height: auto;
-    transition: transform 0.3s ease;
+    @include logo-responsive('sm');
+    transition: transform var(--transition-normal);
     filter: var(--header-logo-filter, none);
 
     &:hover {
-      transform: scale(1.02);
+      @include hover-scale(1.02);
     }
   }
 
   a {
     text-decoration: none;
-    color: var(--header-link-color, white);
-    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    color: var(--header-link-color);
+    font-size: var(--font-size-base);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color var(--transition-normal);
     position: relative;
     display: flex;
     align-items: center;
@@ -93,7 +76,7 @@ nav {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: clamp(6rem, 15vw, 9.3rem);
+      width: var(--nav-hover-img-xl);
       height: auto;
       z-index: 1;
       clip-path: inset(100% 0 0 0);
@@ -127,22 +110,22 @@ nav {
     // Spezifische Größenanpassungen für verschiedene Links falls nötig
     &:nth-child(2) img {
       // About-Link
-      width: clamp(5rem, 12vw, 7.5rem);
+      width: var(--nav-hover-img-sm);
     }
 
     &:nth-child(3) img {
       // Skills-Link
-      width: clamp(6rem, 14vw, 8.75rem);
+      width: var(--nav-hover-img-md);
     }
 
     &:nth-child(4) img {
       // Projects-Link
-      width: clamp(5.5rem, 13vw, 8.125rem);
+      width: var(--nav-hover-img-lg);
     }
 
     &:nth-child(5) img {
       // Contact-Link
-      width: clamp(5.5rem, 13vw, 8.125rem);
+      width: var(--nav-hover-img-lg);
     }
   }
 
@@ -195,19 +178,17 @@ nav {
 }
 
 .toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 
   span {
     color: white; // Inaktive Farbe
-    transition: color 0.3s ease;
-    font-size: clamp(0.875rem, 2vw, 1rem);
+    transition: color var(--transition-normal);
+    font-size: var(--font-size-sm);
     font-weight: 500;
     cursor: pointer;
 
     &.active {
-      color: #1073ea; // Aktive Farbe
+      color: var(--primary-color);
       cursor: default;
 
       img {
@@ -215,15 +196,14 @@ nav {
       }
     }
     img {
+      @include icon-responsive('sm'); // Responsive Icon Größe
       position: absolute;
       top: 50%;
       left: 10%;
       transform: translate(-50%, -50%);
-      width: clamp(1.5rem, 4vw, 2.1875rem);
-      height: auto;
       z-index: 1;
       opacity: 0; // Standardmäßig unsichtbar
-      transition: opacity 0.3s ease; // Übergangsanimation
+      transition: opacity var(--transition-normal); // Übergangsanimation
     }
 
     &:hover img {
@@ -286,5 +266,5 @@ nav {
   transform: translate(
     clamp(1rem, 3vw, 1.5rem),
     -50%
-  ); // Bewegungsstrecke: 34px nach rechts
+  );
 }
