@@ -10,12 +10,12 @@ import { HeaderComponent } from '../../header/header.component';
 
 //NEU
 import { CommonModule } from '@angular/common';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-join',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, CommonModule, TranslatePipe, TranslateDirective],
+  imports: [RouterModule, HeaderComponent, CommonModule, TranslatePipe],
   templateUrl: './join.component.html',
   styleUrl: './join.component.scss',
 })
