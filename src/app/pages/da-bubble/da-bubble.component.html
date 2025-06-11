@@ -6,7 +6,9 @@
       <div class="back-button">
         <img src="./../../../assets/icons/Breadcrumb arrow 3.png" alt="" />
         <!-- <a routerLink="/" fragment="my-craft-section">Go Back</a> -->
-        <a (click)="goBack()" style="cursor: pointer">Go Back</a>
+        <a (click)="goBack()" style="cursor: pointer">{{
+          "da-bubble.button-back" | translate
+        }}</a>
       </div>
 
       <div>
@@ -19,24 +21,19 @@
       </div>
 
       <div class="text-section">
-        <h2>Description</h2>
+        <h2>{{ "da-bubble.headline-one" | translate }}</h2>
         <p>
-          This App is a Slack Clone App. It revolutionizes team communication
-          and collaboration with its intuitive interface, real-time messaging,
-          and robust channel organization.
+          {{ "da-bubble.text-one" | translate }}
         </p>
       </div>
 
       <div class="text-section">
-        <h2>Implementation Details</h2>
+        <h2>{{ "da-bubble.headline-two" | translate }}</h2>
         <p>
-          As a team, we developed a Kanban board, where I actively contributed
-          and took responsibility for specific tasks – mainly in the front-end
-          area. Using agile methods, I was able to work in a structured and
-          independent way while collaborating closely with the team.
+          {{ "da-bubble.text-two" | translate }}
         </p>
         <br />
-        <p><b>Duration:</b> 3 weeks</p>
+        <p><b>{{ "da-bubble.info" | translate }}</b> {{ "da-bubble.time" | translate }}</p>
       </div>
 
       <div class="icons">
@@ -69,7 +66,9 @@
       </div>
 
       <div class="next-button">
-        <a (click)="goToNextProject()" style="cursor: pointer">Next Project</a>
+        <a (click)="goToNextProject()" style="cursor: pointer">{{
+          "da-bubble.button-next" | translate
+        }}</a>
         <img src="./../../../assets/icons/Next project arrow 3.png" alt="" />
       </div>
     </div>

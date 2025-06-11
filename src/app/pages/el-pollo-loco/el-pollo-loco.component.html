@@ -6,7 +6,9 @@
       <div class="back-button">
         <img src="./../../../assets/icons/Breadcrumb arrow 3.png" alt="" />
         <!-- <a routerLink="/" fragment="my-craft-section">Go Back</a> -->
-        <a (click)="goBack()" style="cursor: pointer">Go Back</a>
+        <a (click)="goBack()" style="cursor: pointer">{{
+          "el-pollo-loco.button-back" | translate
+        }}</a>
       </div>
 
       <div>
@@ -19,23 +21,19 @@
       </div>
 
       <div class="text-section">
-        <h2>Description</h2>
+        <h2>{{ "el-pollo-loco.headline-one" | translate }}</h2>
         <p>
-          Jump, run and throw game based on object-oriented approach. Help Pepe
-          to find coins and tabasco salsa to fight against the crazy hen.
+          {{ "el-pollo-loco.text-one" | translate }}
         </p>
       </div>
 
       <div class="text-section">
-        <h2>Implementation Details</h2>
+        <h2>{{ "el-pollo-loco.headline-two" | translate }}</h2>
         <p>
-          As a team, we developed a Kanban board, where I actively contributed
-          and took responsibility for specific tasks – mainly in the front-end
-          area. Using agile methods, I was able to work in a structured and
-          independent way while collaborating closely with the team.
+          {{ "el-pollo-loco.text-two" | translate }}
         </p>
         <br />
-        <p><b>Duration:</b> 3 weeks</p>
+        <p><b>{{ "el-pollo-loco.info" | translate }}</b> {{ "el-pollo-loco.time" | translate }}</p>
       </div>
 
       <div class="icons">
@@ -68,7 +66,9 @@
       </div>
 
       <div class="next-button">
-        <a (click)="goToNextProject()" style="cursor:pointer">Next Project</a>
+        <a (click)="goToNextProject()" style="cursor:pointer">{{
+          "el-pollo-loco.button-next" | translate
+        }}</a>
         <img src="./../../../assets/icons/Next project arrow 3.png" alt="" />
       </div>
     </div>

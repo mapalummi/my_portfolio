@@ -43,6 +43,28 @@
     "time": "5 Wochen",
     "button-next": "Nächstes Projekt"
   },
+  "el-pollo-loco": {
+    "button-back": "Zurück",
+    "title": "El Pollo Loco",
+    "headline-one": "Beschreibung",
+    "headline-two": "Details zur Implementierung",
+    "text-one": "Jump’n’Run- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
+    "text-two": "Als Team haben wir ein Kanban-Board entwickelt, wobei ich aktiv mitgewirkt und Verantwortung für bestimmte Aufgaben – hauptsächlich im Frontend-Bereich – übernommen habe. Durch den Einsatz agiler Methoden konnte ich strukturiert und eigenständig arbeiten und gleichzeitig eng mit dem Team zusammenarbeiten.",
+    "info": "Dauer:",
+    "time": "3 Wochen",
+    "button-next": "Nächstes Projekt"
+  },
+  "da-bubble": {
+    "button-back": "Zurück",
+    "title": "DABubble",
+    "headline-one": "Beschreibung",
+    "headline-two": "Details zur Implementierung",
+    "text-one": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit durch eine intuitive Benutzeroberfläche, Echtzeitnachrichten und eine leistungsstarke Kanalorganisation.",
+    "text-two": "Als Team haben wir ein Kanban-Board entwickelt, wobei ich aktiv mitgewirkt und Verantwortung für bestimmte Aufgaben – hauptsächlich im Frontend-Bereich – übernommen habe. Durch den Einsatz agiler Methoden konnte ich strukturiert und eigenständig arbeiten und gleichzeitig eng mit dem Team zusammenarbeiten.",
+    "info": "Dauer:",
+    "time": "3 Wochen",
+    "button-next": "Nächstes Projekt"
+  },
   "testimonial-section": {
     "headline-one": "So sehen mich andere:",
     "headline-two": "Feedback aus dem Team",
@@ -54,7 +76,7 @@
     "title-three": "Frontend Entwicklerin",
     "linked": "Profil"
   },
-   "contact-section": {
+  "contact-section": {
     "headline-one": "Meld dich gern bei mir!",
     "headline-two": "Bereit zusammen was zu erschaffen?",
     "text": "Ich bin immer offen für neue Projekte, Ideen und spannende Aufgaben – vor allem, wenn’s ums Coden und kreative Lösungen geht. Wenn du jemanden suchst, der mit Herzblut dabei ist, Lust hat dazuzulernen und echte Unterstützung ins Team bringt, dann bist du bei mir genau richtig. Schreib mir einfach – ich freu mich drauf, von dir zu hören und vielleicht gemeinsam was Cooles auf die Beine zu stellen!"
@@ -70,7 +92,7 @@
     "text-default": "Hallo Marco, Ich bin interessiert an...",
     "text-error": "Was möchtest du entwickeln?",
     "privacy-text-one": "Ich habe die",
-     "privacy-text-two": "zur Kenntnis genommen und willige in die darin beschriebene Verarbeitung meiner personenbezogenen Daten ein.",
+    "privacy-text-two": "zur Kenntnis genommen und willige in die darin beschriebene Verarbeitung meiner personenbezogenen Daten ein.",
     "privacy-policy": "Datenschutzerklärung",
     "privacy-error": "Bitte akzeptiere die Datenschutzerklärung.",
     "button": "Absenden"
