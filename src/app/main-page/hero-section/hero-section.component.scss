@@ -1,10 +1,12 @@
+@import "./../../../styles.scss";
+
 #hero-section {
   min-height: 100vh;
   margin-top: 0;
   padding-top: 0;
   background-image: url("./../../../assets/img/01_Hero.png");
-  background-size: 100%;
-  background-position: center 95%;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -21,13 +23,13 @@
 .hero-content {
   position: relative;
   font-family: "Bricolage Grotesque", sans-serif;
-  color: white;
+  color: var(--text-color-light);
   font-size: 6rem;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
+  max-width: var(--breakpoint-desktop); // Anstatt 1200px
+  padding: 0 var(--spacing-lg); // Anstatt 0 2rem
   margin: auto;
 }
 
@@ -35,14 +37,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-lg); // Anstatt 2rem
   position: relative; // Wichtig für absolute Positionierung des Kindes!
+  padding-left: 4rem; // Schiebt Inhalt nach innen
 }
 
 .hero-content .right-section {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-right: 4rem; // Schiebt Inhalt nach innen
 }
 
 .hero-content h1:first-child,
@@ -59,8 +63,7 @@
 }
 
 .bouncing-letters span:hover {
-  //   color: rgb(247, 197, 24);
-  color: rgb(36, 221, 128);
+  color: var(--secondary-color); // Anstatt rgb(36, 221, 128)
 }
 
 .bouncing-letters span.bounce {
@@ -98,15 +101,15 @@
   right: 100px; //Horizontale Position (von rechts)
   transform: rotate(10deg);
   z-index: 2;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal); // Anstatt 0.3s ease
 }
 
 // Polaroid Bounced komplett !
 .polaroid-container img {
-  width: 250px;
+  width: var(--avatar-size-lg); // Anstatt 250px - responsive Größe
   height: auto;
   filter: grayscale(100%);
-  transition: filter 0.4s ease, transform 0.3s ease; // transform könnte raus!
+  transition: filter var(--transition-slow), transform var(--transition-normal);
 
   &:hover {
     filter: grayscale(0%);
@@ -138,11 +141,11 @@
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  color: #333;
+  color: var(--text-color-dark); // Anstatt #333
   font-family: "Kalam", sans-serif;
   font-size: 26px;
   font-weight: bold;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-normal);
   pointer-events: none;
   z-index: 3;
 }
@@ -174,18 +177,18 @@
   width: 150px;
   height: 40px;
   padding: 12px 24px;
-  border: 1px solid white;
+  border: 1px solid var(--text-color-light); // Anstatt white
   background: transparent;
-  color: white;
+  color: var(--text-color-light); // Anstatt white
   border-radius: 24px;
   font-size: 16px;
   cursor: pointer;
-  transition: width 0.4s ease;
+  transition: width var(--transition-slow); // Anstatt 0.4s ease
 
   img {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: var(--icon-size-sm); // Anstatt 24px
+    height: var(--icon-size-sm); // Anstatt 24px
     top: -35px; // Positionierung Icon oberhalb Button
     left: 50%;
     filter: invert(100%);
@@ -199,7 +202,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition-normal);
     white-space: nowrap;
   }
 
@@ -213,7 +216,7 @@
 
   &:hover {
     width: 250px;
-    background-color: #1aa8b4;
+    background-color: var(--secondary-color); // Anstatt #1aa8b4
     text-transform: uppercase;
 
     .text-default {
@@ -235,20 +238,20 @@
   width: 170px;
   height: 40px;
   padding: 12px 24px;
-  border: 1px solid white;
-  box-shadow: 3px 4px 0px rgb(255, 255, 255);
+  border: 1px solid var(--text-color-light); // Anstatt white
+  box-shadow: 3px 4px 0px var(--text-color-light); // Anstatt white
   background: transparent;
-  color: white;
+  color: var(--text-color-light); // Anstatt white
   border-radius: 24px;
   font-size: 16px;
   cursor: pointer;
-
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 
   &:hover {
-    box-shadow: 0.5px 0.5px 0px white;
+    box-shadow: 0.5px 0.5px 0px var(--text-color-light);
     transform: translate(2.5px, 3.5px);
-    background-color: #1073ea;
+    background-color: var(--primary-color); // Anstatt #1073ea
   }
 }
 
@@ -257,4 +260,47 @@ app-navbar {
   top: 0;
   left: 0;
   width: 100%;
+}
+
+//
+//
+// Media Queries für verschiedene Bildschirmgrößen
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  #hero-section {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+@media (max-width: 767px) {
+  #hero-section {
+    background-size: cover;
+    background-position: center top;
+    min-height: 80vh; // Reduzierte Höhe auf mobilen Geräten
+  }
+
+  .hero-content {
+    font-size: var(--font-size-xl); // Responsive Schriftgröße
+    padding: 0 var(--spacing-md); // Anstatt 0 1rem
+  }
+
+  .polaroid-container {
+    display: none; // Verstecke Polaroid auf sehr kleinen Bildschirmen
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-section {
+    min-height: 70vh;
+  }
+
+  .hero-content {
+    font-size: var(--font-size-lg); // Kleinere responsive Schriftgröße
+  }
+
+  .socialbar-left {
+    left: -30px; // Anpassung der Social Bar Position
+    bottom: -50px;
+  }
 }
