@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contactform',
   standalone: true,
-  imports: [FormsModule, TranslatePipe, TranslateDirective],
+  imports: [RouterModule, FormsModule, TranslatePipe],
   templateUrl: './contactform.component.html',
   styleUrl: './contactform.component.scss',
 })
