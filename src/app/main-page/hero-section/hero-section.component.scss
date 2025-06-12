@@ -102,10 +102,9 @@
   width: clamp(150px, 15vw, 250px);
   transform: rotate(10deg);
   z-index: 2;
-  transition: transform var(--transition-normal); // Anstatt 0.3s ease
+  transition: transform var(--transition-normal); 
 }
 
-// Polaroid Bounced komplett !
 .polaroid-container img {
   width: var(--avatar-size-lg); // Anstatt 250px - responsive Größe
   height: auto;
@@ -178,18 +177,18 @@
   width: 150px;
   height: 40px;
   padding: 12px 24px;
-  border: 1px solid var(--text-color-light); // Anstatt white
+  border: 1px solid var(--text-color-light); 
   background: transparent;
-  color: var(--text-color-light); // Anstatt white
+  color: var(--text-color-light); 
   border-radius: 24px;
   font-size: 16px;
   cursor: pointer;
-  transition: width var(--transition-slow); // Anstatt 0.4s ease
+  transition: width var(--transition-slow);
 
   img {
     position: absolute;
-    width: var(--icon-size-sm); // Anstatt 24px
-    height: var(--icon-size-sm); // Anstatt 24px
+    width: var(--icon-size-xs);
+    height: var(--icon-size-xs); 
     top: -35px; // Positionierung Icon oberhalb Button
     left: 50%;
     filter: invert(100%);
