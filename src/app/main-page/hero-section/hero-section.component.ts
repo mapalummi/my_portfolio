@@ -1,7 +1,8 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { SocialbarComponent } from './socialbar/socialbar.component';
 import { HeaderComponent } from '../../header/header.component';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-hero-section',
@@ -10,16 +11,19 @@ import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
     HeaderComponent,
     SocialbarComponent,
     TranslatePipe,
-    TranslateDirective,
   ],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss',
 })
 export class HeroSectionComponent implements AfterViewInit {
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private viewportScroller: ViewportScroller) {}
 
   ngAfterViewInit(): void {
     this.initializeBouncingLetters();
+  }
+
+  scrollToSection(elementId: string): void {
+    this.viewportScroller.scrollToAnchor(elementId)
   }
 
   private initializeBouncingLetters(): void {
