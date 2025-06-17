@@ -44,9 +44,11 @@
       <p class="description">
         {{ "about-me-section.text" | translate }}
       </p>
-      <button class="lets-talk-button">
+
+      <button class="lets-talk-button" (click)="scrollToSection('contact-section')">
         {{ "about-me-section.button" | translate }}
       </button>
+
     </div>
   </div>
 </section>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {TranslatePipe, TranslateDirective} from "@ngx-translate/core";
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-about-me-section',
@@ -9,5 +10,9 @@ import {TranslatePipe, TranslateDirective} from "@ngx-translate/core";
   styleUrl: './about-me-section.component.scss'
 })
 export class AboutMeSectionComponent {
+constructor(private viewportScroller: ViewportScroller){}
 
+scrollToSection(elementId: string): void {
+    this.viewportScroller.scrollToAnchor(elementId)
+  }
 }
