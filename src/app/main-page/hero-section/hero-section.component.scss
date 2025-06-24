@@ -16,7 +16,7 @@
 
 .socialbar-left {
   position: absolute;
-  left: -50px;
+  left: 60px;
   bottom: -100px;
 }
 
@@ -39,14 +39,14 @@
   align-items: flex-start;
   margin-bottom: var(--spacing-lg); // Anstatt 2rem
   position: relative; // Wichtig für absolute Positionierung des Kindes!
-  padding-left: 10rem; // Schiebt Inhalt nach innen
+  padding-left: 15rem; // Schiebt Inhalt nach innen
 }
 
 .hero-content .right-section {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-right: 10rem; // Schiebt Inhalt nach innen
+  padding-right: 13rem; // Schiebt Inhalt nach innen
 }
 
 .hero-content h1:first-child,
@@ -97,16 +97,17 @@
 
 .polaroid-container {
   position: absolute;
-  top: -70px;
-  right: 10rem;
-  width: clamp(150px, 15vw, 250px);
+  top: -100px;
+  right: 15rem;
+  width: clamp(120px, 15vw, 300px);
   transform: rotate(10deg);
   z-index: 2;
-  transition: transform var(--transition-normal); 
+  transition: transform var(--transition-normal);
 }
 
 .polaroid-container img {
-  width: var(--avatar-size-lg); // Anstatt 250px - responsive Größe
+  // width: var(--avatar-size-lg); // Anstatt 250px - responsive Größe
+  width: 100%;
   height: auto;
   filter: grayscale(100%);
   transition: filter var(--transition-slow), transform var(--transition-normal);
@@ -177,18 +178,19 @@
   width: 150px;
   height: 40px;
   padding: 12px 24px;
-  border: 1px solid var(--text-color-light); 
+  border: 1px solid var(--text-color-light);
   background: transparent;
-  color: var(--text-color-light); 
+  color: var(--text-color-light);
   border-radius: 24px;
   font-size: 16px;
   cursor: pointer;
   transition: width var(--transition-slow);
+  margin-bottom: var(--spacing-md);
 
   img {
     position: absolute;
     width: var(--icon-size-xs);
-    height: var(--icon-size-xs); 
+    height: var(--icon-size-xs);
     top: -35px; // Positionierung Icon oberhalb Button
     left: 50%;
     filter: invert(100%);
@@ -247,6 +249,7 @@
   cursor: pointer;
   transition: box-shadow var(--transition-fast),
     transform var(--transition-fast);
+  margin-top: var(--spacing-md);
 
   &:hover {
     box-shadow: 0.5px 0.5px 0px var(--text-color-light);
@@ -267,49 +270,54 @@ app-navbar {
 // Media Queries für verschiedene Bildschirmgrößen
 
 @media (max-width: 1550px) {
-  .socialbar-left {
-    position: absolute;
-    left: 0px;
+  // .socialbar-left {
+  //   position: absolute;
+  //   left: 0px;
+  // }
+}
+
+@media (max-width: 1200px) {
+  .polaroid-container {
+    top: -50px;
+    right: 15rem;
   }
 }
 
-@media (max-width: 1000px) {
-  #hero-section {
-    align-items: flex-start; // Anstatt center - beginnt von oben
-    padding-top: 80px; // Platz für die Navbar
-  }
-
-  .hero-content {
-    justify-content: flex-start; // Inhalt nach oben ausrichten
-    padding-top: var(--spacing-xl); // Abstand von oben
+@media (max-width: 1165px) {
+  .polaroid-container {
+    position: static; // Entfernt absolute Positionierung komplett
+    margin: var(--spacing-xl) auto 0 auto; // Zentriert es horizontal
+    order: 3; // Stellt sicher, dass es nach den Text-Elementen kommt
+    align-self: center;
+    width: clamp(180px, 25vw, 350px); // Größer als die ursprünglichen 120px-300px
   }
 
   .hero-content .left-section {
-    margin-bottom: var(--spacing-md); // Weniger Abstand zwischen den Sections
-    align-self: center; // Zentriert die left-section
-  }
-
-  .hero-content .right-section {
-    align-self: center; // Zentriert die right-section
-    margin-bottom: var(--spacing-lg); // Abstand zum Polaroid
-  }
-
-  .polaroid-container {
-    position: relative; // Entfernt absolute Positionierung
-    align-self: center; // Zentriert das Polaroid
-    margin: 5rem auto 0 auto; // Abstand zu den Sections
-    width: clamp(120px, 12vw, 200px);
-    transform: rotate(10deg);
-    order: 3; // Stellt sicher, dass es als letztes erscheint
-  }
-
-  .polaroid-text {
-    bottom: 30px;
-    left: 50%;
-    font-size: 0.9rem;
-    font-weight: bold;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  padding-left: min(15rem, 20vw); // Begrenzt das Padding auf maximal 20vw
 }
+
+.hero-content .right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: min(13rem, 18vw); // Begrenzt das Padding auf maximal 18vw
+}
+
+.socialbar-left{
+  bottom: 70px;
+}
+}
+
+// @media (max-width: 1000px) {
+
+// }
+
+
 
 @media (max-width: 767px) {
   #hero-section {
