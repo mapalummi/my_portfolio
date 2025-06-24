@@ -2,28 +2,34 @@ import { Component, AfterViewInit, ElementRef } from '@angular/core';
 import { SocialbarComponent } from './socialbar/socialbar.component';
 import { HeaderComponent } from '../../header/header.component';
 import { TranslatePipe } from '@ngx-translate/core';
-import { ViewportScroller } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    SocialbarComponent,
-    TranslatePipe,
-  ],
+  imports: [CommonModule, HeaderComponent, SocialbarComponent, TranslatePipe],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss',
 })
 export class HeroSectionComponent implements AfterViewInit {
-  constructor(private elementRef: ElementRef, private viewportScroller: ViewportScroller) {}
+  constructor(
+    private elementRef: ElementRef,
+    private viewportScroller: ViewportScroller
+  ) {}
+
+  //NEU
+  isMobileMenuOpen = false;
+  //NEU
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 
   ngAfterViewInit(): void {
     this.initializeBouncingLetters();
   }
 
   scrollToSection(elementId: string): void {
-    this.viewportScroller.scrollToAnchor(elementId)
+    this.viewportScroller.scrollToAnchor(elementId);
   }
 
   private initializeBouncingLetters(): void {

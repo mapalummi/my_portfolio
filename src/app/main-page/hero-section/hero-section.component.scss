@@ -14,6 +14,39 @@
   position: relative;
 }
 
+.mobile-menu-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("./../../../assets/img/01_Hero.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  
+  app-header {
+    display: block !important;
+    position: relative;
+    z-index: 1001;
+  }
+}
+
+.mobile-menu-icon {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: auto;
+  z-index: 10;
+  cursor: pointer;
+}
+
 .socialbar-left {
   position: absolute;
   left: 60px;
@@ -171,9 +204,13 @@
 
 .polaroid-text {
   position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 10%; // Prozentuale Position innerhalb des hero-section
+  right: 30%; // Prozentuale Position innerhalb des hero-section
+  transform: none; // Entfernt die Zentrierung
+  // position: absolute;
+  // bottom: 40px;
+  // left: 50%;
+  // transform: translateX(-50%);
   color: var(--text-color-dark); // Anstatt #333
   font-family: "Kalam", sans-serif;
   font-size: clamp(1.125rem, 1.5vw, 1.625rem);
@@ -448,17 +485,21 @@ app-navbar {
   }
 
   .polaroid-text {
-    bottom: 10px;
-    left: 50%;
+    bottom: 10%; // Angepasste Position für mobile Geräte
+    right: 35%;
     font-size: 0.9rem;
     font-weight: bold;
   }
 }
 
 @media (max-width: 536px) {
-app-header {
-  display: none;
-}
+  app-header {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: unset;
+  }
 
   .hero-content {
     max-width: 280px;
@@ -494,6 +535,10 @@ app-header {
     margin-right: 0;
   }
 
+  .polaroid-container img {
+    filter: grayscale(0%);
+  }
+
   .socialbar-left {
     display: none;
   }
@@ -503,7 +548,7 @@ app-header {
   app-header {
     display: none;
   }
-  
+
   #hero-section {
     min-height: 70vh;
   }
