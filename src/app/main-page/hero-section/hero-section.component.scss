@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  
+
   app-header {
     display: block !important;
     position: relative;
@@ -366,7 +366,7 @@ app-navbar {
 
 @media (max-width: 1200px) {
   .hero-content {
-    font-size: clamp(2.5rem, 3.5vw, 4.5rem); // Weiter reduziert
+    font-size: clamp(2.5rem, 3.5vw, 4.5rem);
   }
 
   .text-line-one {
@@ -399,8 +399,8 @@ app-navbar {
 
 @media (max-width: 1029px) {
   .text-container {
-    align-items: center; // Gesamter Container bleibt zentriert
-    max-width: 400px; // Begrenzt die Breite für bessere Zentrierung
+    align-items: center;
+    max-width: 400px;
   }
 
   .text-line-one,
@@ -439,7 +439,6 @@ app-navbar {
   }
 
   .hero-content {
-    font-size: var(--font-size-xl); // Responsive Schriftgröße
     padding: 0 var(--spacing-md); // Anstatt 0 1rem
     padding-top: var(--spacing-lg);
     padding-left: var(--spacing-xl); // Mehr Innen-Padding links
@@ -502,8 +501,13 @@ app-navbar {
   }
 
   .hero-content {
-    max-width: 280px;
+    width: 100%;
     padding-top: 0;
+  }
+
+  .text-container {
+    align-items: center;
+    max-width: 100%;
   }
 
   .hello-button {
@@ -554,8 +558,20 @@ app-navbar {
   }
 
   .hero-content {
-    max-width: 300px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 var(--spacing-sm);
   }
+
+  .text-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  // .bouncing-letters {
+  //   white-space: nowrap; // Aktiviert - verhindert Zeilenumbrüche
+  //   font-size: clamp(2rem, 8vw, 3rem); // Responsive Schriftgröße
+  // }
 
   .hello-button {
     width: 90px;
