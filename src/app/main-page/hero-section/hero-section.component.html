@@ -5,48 +5,53 @@
     <div class="hero-content">
       <app-socialbar class="socialbar-left"></app-socialbar>
 
-      <div class="left-section">
-        <Button class="hello-button">
-          <img src="./assets/icons/hallo.png" alt="" />
-          <span class="text-default">{{
-            "hero-section.button-one" | translate
-          }}</span>
-          <span class="text-hover">{{
-            "hero-section.button-one-hover" | translate
-          }}</span>
-        </Button>
+      <!-- Neuer übergeordneter Container für beide Text-Sektionen -->
+      <div class="text-container">
+        <div class="text-line text-line-one">
+          <Button class="hello-button">
+            <img src="./assets/icons/hallo.png" alt="" />
+            <span class="text-default">{{
+              "hero-section.button-one" | translate
+            }}</span>
+            <span class="text-hover">{{
+              "hero-section.button-one-hover" | translate
+            }}</span>
+          </Button>
+          
+          <h1 class="bouncing-letters" style="letter-spacing: 0.3px">
+            <span>F</span>
+            <span>r</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>e</span>
+            <span>n</span>
+            <span>d</span>
+          </h1>
+        </div>
 
-        <h1 class="bouncing-letters" style="letter-spacing: 0.3px">
-          <span>F</span>
-          <span>r</span>
-          <span>o</span>
-          <span>n</span>
-          <span>t</span>
-          <span>e</span>
-          <span>n</span>
-          <span>d</span>
-        </h1>
+        <div class="text-line text-line-two">
+          <h1 class="bouncing-letters" style="letter-spacing: 0.3px">
+            <span>D</span>
+            <span>E</span>
+            <span>V</span>
+            <span>E</span>
+            <span>L</span>
+            <span>O</span>
+            <span>P</span>
+            <span>E</span>
+            <span>R</span>
+          </h1>
+          
+          <button
+            class="getintouch-button"
+            (click)="scrollToSection('contact-section')"
+          >
+            {{ "hero-section.button-two" | translate }}
+          </button>
+        </div>
       </div>
 
-      <div class="right-section">
-        <h1 class="bouncing-letters" style="letter-spacing: 0.3px">
-          <span>D</span>
-          <span>E</span>
-          <span>V</span>
-          <span>E</span>
-          <span>L</span>
-          <span>O</span>
-          <span>P</span>
-          <span>E</span>
-          <span>R</span>
-        </h1>
-        <button
-          class="getintouch-button"
-          (click)="scrollToSection('contact-section')"
-        >
-          {{ "hero-section.button-two" | translate }}
-        </button>
-      </div>
       <div class="polaroid-container">
         <img src="./assets/img/MyPolaroid.png" alt="Marco Palummieri" />
         <span class="polaroid-text"></span>

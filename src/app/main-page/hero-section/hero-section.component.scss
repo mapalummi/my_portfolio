@@ -33,20 +33,52 @@
   margin: auto;
 }
 
-.hero-content .left-section {
+// Neuer übergeordneter Text-Container
+.text-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: var(--spacing-lg); // Anstatt 2rem
-  position: relative; // Wichtig für absolute Positionierung des Kindes!
-  padding-left: 15rem; // Schiebt Inhalt nach innen
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px; // Begrenzt die maximale Breite
+  margin: 0 auto;
 }
 
-.hero-content .right-section {
+.text-line {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  gap: var(--spacing-md);
+}
+
+.text-line-one {
+  align-items: flex-start;
+  align-self: flex-start;
+  margin-left: 6rem;
+
+  .hello-button {
+    order: 1;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .bouncing-letters {
+    order: 2;
+  }
+}
+
+.text-line-two {
   align-items: flex-end;
-  padding-right: 13rem; // Schiebt Inhalt nach innen
+  align-self: flex-end;
+  margin-right: 2rem;
+
+  .bouncing-letters {
+    order: 1;
+  }
+
+  .getintouch-button {
+    order: 2;
+    margin-top: var(--spacing-sm);
+  }
 }
 
 .hero-content h1:first-child,
@@ -185,7 +217,6 @@
   font-size: 16px;
   cursor: pointer;
   transition: width var(--transition-slow);
-  margin-bottom: var(--spacing-md);
 
   img {
     position: absolute;
@@ -249,7 +280,6 @@
   cursor: pointer;
   transition: box-shadow var(--transition-fast),
     transform var(--transition-fast);
-  margin-top: var(--spacing-md);
 
   &:hover {
     box-shadow: 0.5px 0.5px 0px var(--text-color-light);
@@ -267,16 +297,49 @@ app-navbar {
 
 //
 //
-// Media Queries für verschiedene Bildschirmgrößen
+// MEDIA QUERIES !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-@media (max-width: 1550px) {
-  // .socialbar-left {
-  //   position: absolute;
-  //   left: 0px;
-  // }
+@media (max-width: 1600px) {
+  .hero-content {
+    font-size: clamp(3rem, 4.5vw, 5.5rem); // Etwas kleinere Schrift
+  }
+
+  .text-line-one {
+    margin-left: 7rem; // Größer als 6rem
+  }
+
+  .text-line-two {
+    margin-right: 9rem; // Größer als 2rem
+  }
+}
+
+@media (max-width: 1400px) {
+  .hero-content {
+    font-size: clamp(2.8rem, 4vw, 5rem); // Noch kleiner
+  }
+
+  .text-line-one {
+    margin-left: 10rem; // Noch größer
+  }
+
+  .text-line-two {
+    margin-right: 15rem; // Noch größer
+  }
 }
 
 @media (max-width: 1200px) {
+  .hero-content {
+    font-size: clamp(2.5rem, 3.5vw, 4.5rem); // Weiter reduziert
+  }
+
+  .text-line-one {
+    margin-left: 15rem; // Maximaler Wert vor Zentrierung
+  }
+
+  .text-line-two {
+    margin-right: 20rem; // Maximaler Wert vor Zentrierung
+  }
+
   .polaroid-container {
     top: -50px;
     right: 15rem;
@@ -284,39 +347,53 @@ app-navbar {
 }
 
 @media (max-width: 1165px) {
-  .polaroid-container {
-    position: static; // Entfernt absolute Positionierung komplett
-    margin: var(--spacing-xl) auto 0 auto; // Zentriert es horizontal
-    order: 3; // Stellt sicher, dass es nach den Text-Elementen kommt
-    align-self: center;
-    width: clamp(180px, 25vw, 350px); // Größer als die ursprünglichen 120px-300px
+  .text-container {
+    align-items: center;
   }
 
-  .hero-content .left-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: var(--spacing-lg);
-  position: relative;
-  padding-left: min(15rem, 20vw); // Begrenzt das Padding auf maximal 20vw
+  .polaroid-container {
+    position: static;
+    margin: var(--spacing-xl) auto 0 auto;
+    order: 3;
+    align-self: center;
+    width: clamp(180px, 25vw, 350px);
+  }
 }
 
-.hero-content .right-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-right: min(13rem, 18vw); // Begrenzt das Padding auf maximal 18vw
-}
+@media (max-width: 1029px) {
+  .text-container {
+    align-items: center; // Gesamter Container bleibt zentriert
+    max-width: 400px; // Begrenzt die Breite für bessere Zentrierung
+  }
 
-.socialbar-left{
-  bottom: 70px;
-}
-}
+  .text-line-one,
+  .text-line-two {
+    align-items: flex-start;
+    align-self: center;
+    text-align: left;
+    margin: 0;
+    width: 100%;
+  }
 
-// @media (max-width: 1000px) {
+  .text-line-one .hello-button {
+    align-self: flex-start;
+  }
 
-// }
+    .text-line-one .bouncing-letters {
+    align-self: flex-start;
+  }
+  
 
+  .text-line-two .bouncing-letters {
+    align-self: flex-start;
+  }
+
+    .text-line-two .getintouch-button {
+    align-self: flex-end;
+    margin-top: var(--spacing-sm);
+    margin-right: 3rem;
+  }
+  }
 
 
 @media (max-width: 767px) {
@@ -334,23 +411,12 @@ app-navbar {
     padding-right: var(--spacing-xl); // Mehr Innen-Padding rechts
   }
 
-  .hero-content .left-section {
-    text-align: center; // Zentriert den Text
-    padding-left: 0; // Entfernt das 10rem padding
-    padding-right: var(--spacing-lg); // Schiebt nach innen
-    align-items: center; // Zentriert die Elemente vertikal
+  .socialbar-left {
+    bottom: 0px;
   }
 
-  .hero-content .right-section {
-    text-align: center; // Zentriert den Text
-    padding-right: 0; // Entfernt das 10rem padding
-    padding-left: var(--spacing-lg); // Schiebt nach innen
-    align-items: center; // Zentriert die Elemente vertikal
-  }
-
-  .polaroid-container {
-    // width: clamp(100px, 10vw, 150px);
-    margin-top: 6rem;
+  .text-line-two .getintouch-button {
+    margin-right: 9rem; // Überschreibt das ursprüngliche margin-right
   }
 
   .polaroid-text {
@@ -358,10 +424,6 @@ app-navbar {
     left: 50%;
     font-size: 0.9rem;
     font-weight: bold;
-  }
-
-  .socialbar-left {
-    display: none;
   }
 }
 
@@ -372,5 +434,14 @@ app-navbar {
 
   .hero-content {
     font-size: var(--font-size-lg); // Kleinere responsive Schriftgröße
+  }
+
+  .socialbar-left {
+    display: none;
+  }
+
+  .text-container {
+    max-width: 100%; // Auf Mobile wieder volle Breite
+    padding: 0 var(--spacing-md);
   }
 }
