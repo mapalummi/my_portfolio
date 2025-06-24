@@ -379,22 +379,20 @@ app-navbar {
     align-self: flex-start;
   }
 
-    .text-line-one .bouncing-letters {
+  .text-line-one .bouncing-letters {
     align-self: flex-start;
   }
-  
 
   .text-line-two .bouncing-letters {
     align-self: flex-start;
   }
 
-    .text-line-two .getintouch-button {
+  .text-line-two .getintouch-button {
     align-self: flex-end;
     margin-top: var(--spacing-sm);
     margin-right: 3rem;
   }
-  }
-
+}
 
 @media (max-width: 767px) {
   #hero-section {
@@ -409,6 +407,36 @@ app-navbar {
     padding-top: var(--spacing-lg);
     padding-left: var(--spacing-xl); // Mehr Innen-Padding links
     padding-right: var(--spacing-xl); // Mehr Innen-Padding rechts
+  }
+
+  .hello-button {
+    width: 120px; // Reduziert von 150px
+    height: 35px; // Reduziert von 40px
+    padding: 10px 18px; // Reduziert von 12px 24px
+    font-size: 14px; // Reduziert von 16px
+
+    img {
+      top: -22px;
+      width: calc(var(--icon-size-xs) * 0.8); // Kleineres Icon
+      height: calc(var(--icon-size-xs) * 0.8);
+    }
+
+    &:hover {
+      width: 200px; // Reduziert von 250px
+    }
+  }
+
+  .getintouch-button {
+    width: 140px; // Reduziert von 170px
+    height: 35px; // Reduziert von 40px
+    padding: 10px 18px; // Reduziert von 12px 24px
+    font-size: 14px; // Reduziert von 16px
+    box-shadow: 2px 3px 0px var(--text-color-light); // Kleinerer Schatten
+
+    &:hover {
+      box-shadow: 0.5px 0.5px 0px var(--text-color-light);
+      transform: translate(2px, 2.5px); // Kleinere Transform-Werte
+    }
   }
 
   .socialbar-left {
@@ -427,13 +455,91 @@ app-navbar {
   }
 }
 
+@media (max-width: 536px) {
+app-header {
+  display: none;
+}
+
+  .hero-content {
+    max-width: 280px;
+    padding-top: 0;
+  }
+
+  .hello-button {
+    width: 100px;
+    height: 32px;
+    padding: 8px 15px;
+    font-size: 13px;
+
+    img {
+      top: -20px; // Noch näher für kleinere Buttons
+      width: calc(var(--icon-size-xs) * 0.9);
+      height: calc(var(--icon-size-xs) * 0.9);
+    }
+
+    &:hover {
+      width: 170px;
+    }
+  }
+
+  .getintouch-button {
+    width: 120px;
+    height: 32px;
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  .text-line-two .getintouch-button {
+    align-self: flex-end;
+    margin-right: 0;
+  }
+
+  .socialbar-left {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
+  app-header {
+    display: none;
+  }
+  
   #hero-section {
     min-height: 70vh;
   }
 
   .hero-content {
-    font-size: var(--font-size-lg); // Kleinere responsive Schriftgröße
+    max-width: 300px;
+  }
+
+  .hello-button {
+    width: 90px;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 12px;
+
+    img {
+      top: -20px;
+      left: 30%;
+      width: calc(var(--icon-size-xs) * 0.8);
+      height: calc(var(--icon-size-xs) * 0.8);
+    }
+
+    &:hover {
+      width: 150px;
+    }
+  }
+
+  .getintouch-button {
+    width: 110px;
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 12px;
+    box-shadow: 1.5px 2px 0px var(--text-color-light);
+
+    &:hover {
+      transform: translate(1.5px, 2px);
+    }
   }
 
   .socialbar-left {
