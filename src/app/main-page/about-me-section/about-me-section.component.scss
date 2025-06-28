@@ -7,18 +7,18 @@
 #about-section .page-container {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--spacing-lg);
 }
 
 .about-me-container {
   text-align: start;
   max-width: 800px;
-  padding: 2rem;
+  padding: var(--spacing-lg);
   flex: 1;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: var(--font-size-base);
   color: #666;
   margin: 0 0 1rem 0;
   font-weight: 300;
@@ -27,14 +27,15 @@
 
 .main-title {
   margin: 0 0 1rem 0;
-  h1 {
-    font-size: 3rem;
-    font-weight: bold;
 
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: bold;
     color: #333;
   }
+
   img {
-    width: 300px;
+    width: clamp(200px, 50vw, 300px);
     animation: pulseUnderline 4s ease-in-out infinite;
   }
 }
@@ -55,18 +56,18 @@
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: var(--font-size-base);
   line-height: 1.6;
   text-align: justify;
   margin: 0;
   color: #444;
   max-width: 700px;
-  margin: 0;
+  // margin: 0;
   margin-bottom: 1rem;
 }
 
 .lets-talk-button {
-  width: 160px;
+  width: clamp(140px, 25vw, 160px);
   height: 40px;
   padding: 12px 24px;
   border: 1px solid black;
@@ -74,97 +75,218 @@
   background: transparent;
   color: black;
   border-radius: 24px;
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   cursor: pointer;
   margin-left: auto;
   display: block;
-
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
     box-shadow: 0.5px 0.5px 0px white;
     transform: translate(2.5px, 3.5px);
     color: white;
-    background-color: #1073ea;
+    background-color: var(--primary-color);
   }
 }
 
 .snippet-container {
-  position: relative; // Bezugspunkt für die Snippet-Divs
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   margin: 50px;
   z-index: 1;
-  width: 600px;
-  min-height: 600px;
+  width: clamp(300px, 80vw, 600px);
+  min-height: clamp(300px, 50vw, 600px);
   flex-shrink: 0;
+}
 
-  > div > img:first-child {
-    width: 600px;
-  }
+.snippets-group {
+  position: relative;
+  width: 100%;
+  max-width: 600px; // Definiert die Gruppengröße
+  aspect-ratio: 1; // Macht es quadratisch
 }
 
 .snippet1 {
   position: absolute;
-  top: 30px;
-  left: 50px;
+  top: 100px;
+  left: 20px;
   z-index: 3;
   transform: rotate(-3deg);
+
+  > img:first-child {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .snippet-text1 {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }
+
 .snippet2 {
   position: absolute;
-  top: 120px;
-  left: 25px;
+  top: 180px;
+  left: 0;
   z-index: 2;
+
+  > img:first-child {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .snippet-text2 {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }
+
 .snippet3 {
   position: absolute;
-  top: 220px;
-  left: 30px;
+  bottom: 120px;
+  left: 15px;
   z-index: 1;
   transform: rotate(6deg);
+
+  > img:first-child {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .snippet-text3 {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }
 
-.snippet-text1 {
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+// .snippet-container {
+//   position: relative; // Bezugspunkt für die Snippet-Divs
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   margin: 50px;
+//   z-index: 1;
+//   width: clamp(300px, 80vw, 600px);
+//   min-height: clamp(300px, 50vw, 600px);
+//   flex-shrink: 0;
 
-.snippet-text2 {
-  position: absolute;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+//   > div > img:first-child {
+//     width: 100%; // Macht Snippets responsive
+//     max-width: 600px;
+//   }
+// }
 
-.snippet-text3 {
-  position: absolute;
-  bottom: 65px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+// .snippet1 {
+//   position: absolute;
+//   top: 30px;
+//   left: 50px;
+//   z-index: 3;
+//   transform: rotate(-3deg);
+// }
+// .snippet2 {
+//   position: absolute;
+//   top: 120px;
+//   left: 25px;
+//   z-index: 2;
+// }
+// .snippet3 {
+//   position: absolute;
+//   top: 220px;
+//   left: 30px;
+//   z-index: 1;
+//   transform: rotate(6deg);
+// }
+
+// .snippet-text1,
+// .snippet-text2,
+// .snippet-text3 {
+//   position: absolute;
+//   bottom: clamp(40px, 8vw, 70px);
+//   left: 50%;
+//   transform: translateX(-50%);
+//   color: white;
+//   font-size: var(--font-size-lg);
+//   display: flex;
+//   align-items: center;
+//   gap: 8px;
+// }
 
 .snippet-icon {
-  width: 44px;
-  height: 44px;
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
   flex-shrink: 0;
+}
+
+//
+//
+//
+//
+//
+//
+
+@media (max-width: 1150px) {
+  .snippet-container {
+    margin: 0;
+  }
+}
+
+// Mobile: Stack vertical
+@media (max-width: 768px) {
+  #about-section .page-container {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  .about-me-container {
+    max-width: 100%;
+    padding: 1rem;
+    text-align: center; // Zentriert auf Mobile
+  }
+
+  .description {
+    text-align: left; // Bessere Lesbarkeit auf Mobile
+    max-width: 100%;
+  }
+
+  .snippet-container {
+    margin: 20px auto;
+    order: -1; // Snippets zuerst auf Mobile
+  }
+}
+
+@media (max-width: 480px) {
+  .about-me-container {
+    padding: 0.5rem;
+  }
+
+  .snippet-text1,
+  .snippet-text2,
+  .snippet-text3 {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
 }

@@ -1,36 +1,38 @@
 <section id="about-section">
   <div class="page-container">
     <div class="snippet-container">
-      <div class="snippet1">
-        <img src="./assets/icons/snippet1.png" alt="" /><span
-          class="snippet-text1"
-        >
-          <img
-            src="./assets/icons/State_Location.png"
-            alt=""
-            class="snippet-icon"
-          />Based in Düsseldorf</span
-        >
-      </div>
-      <div class="snippet2">
-        <img src="./assets/icons/snippet3.png" alt="" /><span
-          class="snippet-text2"
-          ><img
-            src="./assets/icons/State_Relocation.png"
-            alt=""
-            class="snippet-icon"
-          />Open to relocate</span
-        >
-      </div>
-      <div class="snippet3">
-        <img src="./assets/icons/snippet2.png" alt="" /><span
-          class="snippet-text3"
-          ><img
-            src="./assets/icons/Status_Remote.png"
-            alt=""
-            class="snippet-icon"
-          />Open to work remote</span
-        >
+      <div class="snippets-group">
+        <div class="snippet1">
+          <img src="./assets/icons/snippet1.png" alt="" /><span
+            class="snippet-text1"
+          >
+            <img
+              src="./assets/icons/State_Location.png"
+              alt=""
+              class="snippet-icon"
+            />Based in Düsseldorf</span
+          >
+        </div>
+        <div class="snippet2">
+          <img src="./assets/icons/snippet3.png" alt="" /><span
+            class="snippet-text2"
+            ><img
+              src="./assets/icons/State_Relocation.png"
+              alt=""
+              class="snippet-icon"
+            />Open to relocate</span
+          >
+        </div>
+        <div class="snippet3">
+          <img src="./assets/icons/snippet2.png" alt="" /><span
+            class="snippet-text3"
+            ><img
+              src="./assets/icons/Status_Remote.png"
+              alt=""
+              class="snippet-icon"
+            />Open to work remote</span
+          >
+        </div>
       </div>
     </div>
 
@@ -45,10 +47,12 @@
         {{ "about-me-section.text" | translate }}
       </p>
 
-      <button class="lets-talk-button" (click)="scrollToSection('contact-section')">
+      <button
+        class="lets-talk-button"
+        (click)="scrollToSection('contact-section')"
+      >
         {{ "about-me-section.button" | translate }}
       </button>
-
     </div>
   </div>
 </section>

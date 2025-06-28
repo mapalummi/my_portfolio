@@ -13,13 +13,6 @@ body {
   scroll-behavior: smooth;
 }
 
-// Responsive font-size nur wenn nötig
-@media (max-width: 600px) {
-  html {
-    font-size: 14px; // Sanftere Reduzierung
-  }
-}
-
 // ===================
 // CSS Custom Properties (Variablen)
 // ===================
@@ -54,6 +47,11 @@ body {
   --breakpoint-mobile: 480px;
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1440px;
+
+  // Zusätzliche Breakpoints
+  --breakpoint-large: 1150px;
+  --breakpoint-medium: 768px;
+  --breakpoint-small: 480px;
 
   // Transitions
   --transition-fast: 0.2s ease;
