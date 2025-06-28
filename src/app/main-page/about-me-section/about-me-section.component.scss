@@ -2,9 +2,6 @@
 
 #about-section {
   font-family: "Bricolage Grotesque", sans-serif;
-}
-
-#about-section .page-container {
   display: flex;
   align-items: center;
   gap: var(--spacing-lg);
@@ -98,19 +95,20 @@
   width: clamp(300px, 80vw, 600px);
   min-height: clamp(300px, 50vw, 600px);
   flex-shrink: 0;
+  flex: 1;
 }
 
 .snippets-group {
   position: relative;
   width: 100%;
   max-width: 600px; // Definiert die Gruppengröße
-  aspect-ratio: 1; // Macht es quadratisch
+  min-height: 400px;
 }
 
 .snippet1 {
   position: absolute;
-  top: 100px;
-  left: 20px;
+  top: 10%;
+  left: 5%;
   z-index: 3;
   transform: rotate(-3deg);
 
@@ -121,19 +119,22 @@
 
   .snippet-text1 {
     position: absolute;
-    bottom: 70px;
+    bottom: 45%;
     left: 50%;
     transform: translateX(-50%);
     color: white;
     font-size: var(--font-size-lg);
     display: flex;
     align-items: center;
+    width: max-content;
+    max-width: 350px;
+    gap: 1rem;
   }
 }
 
 .snippet2 {
   position: absolute;
-  top: 210px;
+  top: 37%; // statt top: 210px
   left: 0;
   z-index: 2;
 
@@ -144,20 +145,23 @@
 
   .snippet-text2 {
     position: absolute;
-    bottom: 60px;
+    bottom: 39%; // statt bottom: 60px
     left: 50%;
     transform: translateX(-50%);
     color: white;
     font-size: var(--font-size-lg);
     display: flex;
     align-items: center;
+    width: max-content;
+    max-width: 350px;
+    gap: 1rem;
   }
 }
 
 .snippet3 {
   position: absolute;
-  bottom: 110px;
-  left: 15px;
+  bottom: -8%; // statt bottom: 110px
+  left: 3%; // statt left: 15px
   z-index: 1;
   transform: rotate(3deg);
 
@@ -168,7 +172,7 @@
 
   .snippet-text3 {
     position: absolute;
-    bottom: 60px;
+    bottom: 39%; // statt bottom: 60px
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -177,20 +181,16 @@
     align-items: center;
     width: max-content;
     max-width: 350px;
+    gap: 1rem;
   }
 }
 
-
-
 .snippet-icon {
-  width: var(--icon-size-md);
-  height: var(--icon-size-md);
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
   flex-shrink: 0;
 }
 
-//
-//
-//
 //
 //
 //
@@ -203,9 +203,8 @@
 
 // Mobile: Stack vertical
 @media (max-width: 768px) {
-  #about-section .page-container {
+  #about-section {
     flex-direction: column-reverse;
-    gap: 3rem;
   }
 
   .about-me-container {
@@ -230,11 +229,17 @@
     padding: 0.5rem;
   }
 
-  .snippet-text1,
-  .snippet-text2,
-  .snippet-text3 {
-    flex-direction: column;
-    gap: 4px;
-    text-align: center;
+  .snippets-group {
+    min-height: 300px; // Kleinere Mindesthöhe auf Mobile
+  }
+
+  .snippet1 {
+    top: 10%;
+  }
+  .snippet2 {
+    top: 40%;
+  }
+  .snippet3 {
+    bottom: 10%;
   }
 }
