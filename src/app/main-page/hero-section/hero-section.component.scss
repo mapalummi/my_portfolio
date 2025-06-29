@@ -62,7 +62,6 @@
   margin: auto;
 }
 
-// Neuer übergeordneter Text-Container
 .text-container {
   @include flex-center;
   flex-direction: column;
@@ -197,7 +196,7 @@
 
 .polaroid-text {
   position: absolute;
-  bottom: 10%; // Prozentuale Position innerhalb des hero-section
+  bottom: 12%; // Prozentuale Position innerhalb des hero-section
   right: 30%; // Prozentuale Position innerhalb des hero-section
   transform: none; // Entfernt die Zentrierung
   color: var(--text-color-dark);
