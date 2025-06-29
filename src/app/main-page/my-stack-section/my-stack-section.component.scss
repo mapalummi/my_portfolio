@@ -170,19 +170,28 @@
 
 .peel-off-container {
   position: relative;
-  width: 400px;
+  // width: 400px;
+  width: clamp(300px, 30vw, 400px); // Responsive Breite
   flex-shrink: 0;
   height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .peel-off {
   position: static;
-  margin-top: 300px; // Fester Abstand von oben 
-  margin-left: 50px; // Fester Abstand von links
-  width: 250px;
-  height: 250px;
+  // margin-top: 300px; // Fester Abstand von oben
+  // margin-left: 50px; // Fester Abstand von links
+  // width: 250px;
+  // height: 250px;
+  margin-top: clamp(150px, 20vh, 300px); // Responsive top margin
+  margin-left: clamp(20px, 5vw, 50px); // Responsive left margin
+  width: clamp(200px, 18vw, 250px); // Responsive Größe
+  height: clamp(200px, 18vw, 250px);
   cursor: grab;
- transform: rotate(15deg);
+  transform: rotate(15deg);
 
   &.dragging {
     cursor: grabbing;
@@ -236,23 +245,29 @@
 
   > img {
     position: absolute;
-    top: 44px;
-    left: 94px;
-    width: 50px;
-    height: 50px;
+    // top: 44px;
+    // left: 94px;
+    // width: 50px;
+    // height: 50px;
+    top: clamp(32px, 18%, 44px); // Proportional zur Containergröße
+    left: clamp(72px, 38%, 94px);
+    width: clamp(35px, 20%, 50px);
+    height: clamp(35px, 20%, 50px);
     z-index: 5;
     transition: opacity 0.3s ease;
   }
 
   > span {
     position: absolute;
-    width: 200px;
+    // width: 200px;
+    width: clamp(150px, 80%, 200px);
     height: auto;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Kalam", sans-serif;
-    font-size: 44px;
+    // font-size: 44px;
+    font-size: clamp(28px, 18vw, 44px);
     line-height: 1.1;
     text-align: center;
     color: white;
@@ -270,7 +285,8 @@
 
   > span {
     position: absolute;
-    width: 180px;
+    // width: 180px;
+    width: clamp(140px, 75%, 180px);
     height: auto;
     top: 40%;
     left: 50%;
@@ -291,8 +307,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px;
-  height: 250px;
+  // width: 250px;
+  // height: 250px;
+  width: 100%; // Nimmt die volle Breite des peel-off Elements
+  height: 100%; // Nimmt die volle Höhe des peel-off Elements
   transition: opacity 0.6s ease-in-out;
   will-change: opacity;
   transform: translateZ(0);
@@ -318,7 +336,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 20px;
+  // gap: 20px;
+  gap: clamp(12px, 8%, 20px);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 4;
@@ -327,16 +346,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    // gap: 8px;
+    gap: clamp(4px, 4%, 8px);
   }
 
   img {
-    width: 40px;
-    height: 40px;
+    // width: 40px;
+    // height: 40px;
+    width: clamp(30px, 16%, 40px);
+    height: clamp(30px, 16%, 40px);
   }
 
   span {
-    font-size: 0.8rem;
+    // font-size: 0.8rem;
+    font-size: clamp(0.65rem, 3vw, 0.8rem);
     color: white;
     text-align: center;
   }
@@ -400,5 +423,376 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+// ===================
+// RESPONSIVE STYLES
+// ===================
+
+@media (max-width: 1435px) {
+  .headline-container {
+    width: 16%;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .main-title {
+    h1 {
+      font-size: 34px;
+    }
+    img {
+      width: 150px;
+    }
+  }
+
+  .skillset-container {
+    max-width: 500px;
+    gap: 3rem;
+  }
+
+  .skill-description {
+    > img {
+      width: 500px;
+      height: 150px;
+      display: block;
+    }
+    > span {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      padding: 0 5%;
+    }
+  }
+
+  .skill-icons {
+    width: 500px;
+    padding-bottom: 0;
+  }
+
+  .skill-item {
+    gap: 8px;
+
+    > img {
+      width: 50px;
+      height: 50px;
+    }
+
+    > span {
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+  }
+
+  .peel-off-container {
+    width: clamp(250px, 25vw, 350px);
+  }
+
+  .peel-off {
+    margin-top: clamp(120px, 15vh, 250px);
+    margin-left: clamp(15px, 3vw, 40px);
+    width: clamp(180px, 16vw, 220px);
+    height: clamp(180px, 16vw, 220px);
+  }
+}
+
+// Tablet Breakpoint (768px und kleiner)
+@media (max-width: 768px) {
+  #my-stack-section .page-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+    min-height: auto;
+  }
+
+  .headline-container {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+
+  .main-title {
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+    img {
+      width: clamp(150px, 40vw, 200px);
+    }
+  }
+
+  .skillset-container {
+    max-width: 100%;
+    gap: 2rem;
+  }
+
+  .skill-description {
+    > img {
+      width: clamp(300px, 90vw, 600px);
+      height: auto;
+    }
+    > span {
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      padding: 0 8%;
+    }
+  }
+
+  .skill-icons {
+    width: clamp(300px, 90vw, 600px);
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .skill-item {
+    > img {
+      width: clamp(50px, 12vw, 70px);
+      height: clamp(50px, 12vw, 70px);
+    }
+    > span {
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+    }
+  }
+
+  .peel-off-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  .peel-off {
+    margin: 0;
+    width: clamp(180px, 50vw, 280px);
+    height: clamp(180px, 50vw, 280px);
+  }
+
+  .peel-header {
+    > img {
+      top: clamp(30px, 17%, 42px);
+      left: clamp(65px, 36%, 85px);
+      width: clamp(30px, 18%, 45px);
+      height: clamp(30px, 18%, 45px);
+    }
+    > span {
+      font-size: clamp(24px, 8vw, 36px);
+      width: clamp(140px, 75%, 180px);
+    }
+  }
+
+  .peel-content > span {
+    font-size: clamp(12px, 4vw, 16px);
+    width: clamp(120px, 70%, 150px);
+  }
+
+  .future-skills {
+    gap: clamp(10px, 6%, 16px);
+
+    img {
+      width: clamp(25px, 14%, 35px);
+      height: clamp(25px, 14%, 35px);
+    }
+
+    span {
+      font-size: clamp(0.6rem, 2.5vw, 0.75rem);
+    }
+  }
+}
+
+// Mobile Breakpoint (480px und kleiner)
+@media (max-width: 480px) {
+  #my-stack-section .page-container {
+    padding: 0 0.5rem;
+    gap: 1.5rem;
+  }
+
+  .headline-container {
+    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+  }
+
+  .subtitle {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+  }
+
+  .main-title {
+    h1 {
+      font-size: clamp(2rem, 10vw, 3rem);
+    }
+    img {
+      width: clamp(120px, 50vw, 180px);
+    }
+  }
+
+  .skillset-container {
+    gap: 1.5rem;
+  }
+
+  .skill-description {
+    > img {
+      width: clamp(280px, 95vw, 500px);
+    }
+    > span {
+      font-size: clamp(0.8rem, 3vw, 1rem);
+      padding: 0 10%;
+    }
+  }
+
+  .skill-icons {
+    width: clamp(280px, 95vw, 500px);
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .skill-item {
+    flex: 0 1 calc(20% - 0.8rem);
+    min-width: 45px;
+
+    > img {
+      width: clamp(40px, 10vw, 60px);
+      height: clamp(40px, 10vw, 60px);
+    }
+    > span {
+      font-size: clamp(0.6rem, 2.2vw, 0.75rem);
+    }
+  }
+
+  .peel-off-container {
+    padding: 1.5rem 0;
+  }
+
+  .peel-off {
+    width: clamp(150px, 60vw, 220px);
+    height: clamp(150px, 60vw, 220px);
+  }
+
+  .peel-header {
+    > img {
+      top: clamp(25px, 16%, 35px);
+      left: clamp(55px, 35%, 75px);
+      width: clamp(25px, 16%, 40px);
+      height: clamp(25px, 16%, 40px);
+    }
+    > span {
+      font-size: clamp(20px, 9vw, 32px);
+      width: clamp(120px, 70%, 160px);
+    }
+  }
+
+  .peel-content > span {
+    font-size: clamp(10px, 4.5vw, 15px);
+    width: clamp(100px, 65%, 140px);
+  }
+
+  .future-skills {
+    gap: clamp(8px, 5%, 14px);
+
+    img {
+      width: clamp(20px, 12%, 30px);
+      height: clamp(20px, 12%, 30px);
+    }
+
+    span {
+      font-size: clamp(0.55rem, 2.8vw, 0.7rem);
+    }
+  }
+}
+
+// Extra kleine Bildschirme (400px und kleiner)
+@media (max-width: 400px) {
+  #my-stack-section .page-container {
+    padding: 0 0.25rem;
+  }
+
+  .headline-container {
+    padding: 1rem 0.25rem 0.25rem 0.25rem;
+  }
+
+  .main-title {
+    h1 {
+      font-size: clamp(1.8rem, 12vw, 2.5rem);
+    }
+    img {
+      width: clamp(100px, 60vw, 160px);
+    }
+  }
+
+  .skill-description {
+    > img {
+      width: clamp(260px, 98vw, 450px);
+    }
+    > span {
+      font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+    }
+  }
+
+  .skill-icons {
+    width: clamp(260px, 98vw, 450px);
+    gap: 0.5rem;
+  }
+
+  .skill-item {
+    flex: 0 1 calc(18% - 0.5rem);
+    min-width: 40px;
+
+    > img {
+      width: clamp(35px, 12vw, 55px);
+      height: clamp(35px, 12vw, 55px);
+    }
+    > span {
+      font-size: clamp(0.55rem, 2.5vw, 0.7rem);
+    }
+  }
+
+  .peel-off-container {
+    padding: 1rem 0;
+  }
+
+  .peel-off {
+    width: clamp(130px, 70vw, 200px);
+    height: clamp(130px, 70vw, 200px);
+  }
+
+  .peel-header {
+    > img {
+      top: clamp(22px, 15%, 32px);
+      left: clamp(48px, 33%, 68px);
+      width: clamp(22px, 15%, 35px);
+      height: clamp(22px, 15%, 35px);
+    }
+    > span {
+      font-size: clamp(18px, 10vw, 28px);
+      width: clamp(110px, 65%, 150px);
+    }
+  }
+
+  .peel-content > span {
+    font-size: clamp(9px, 5vw, 14px);
+    width: clamp(90px, 60%, 130px);
+  }
+
+  .future-skills {
+    gap: clamp(6px, 4%, 12px);
+
+    img {
+      width: clamp(18px, 10%, 28px);
+      height: clamp(18px, 10%, 28px);
+    }
+
+    span {
+      font-size: clamp(0.5rem, 3vw, 0.65rem);
+    }
   }
 }

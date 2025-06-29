@@ -8,9 +8,7 @@
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   position: relative;
 }
 
@@ -24,10 +22,8 @@
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   z-index: 1000;
 
   app-header {
@@ -50,7 +46,7 @@
 .socialbar-left {
   position: absolute;
   left: 60px;
-  bottom: -100px;
+  bottom: -180px;
 }
 
 .hero-content {
@@ -68,10 +64,8 @@
 
 // Neuer übergeordneter Text-Container
 .text-container {
-  display: flex;
+  @include flex-center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   max-width: 1200px; // Begrenzt die maximale Breite
   margin: 0 auto;
