@@ -12,11 +12,11 @@
 #my-stack-section .page-container {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   align-items: stretch;
   height: 100%;
   min-height: 80vh;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative; // Zusätzlicher Positionierungskontext
 }
 
@@ -111,7 +111,6 @@
 .skill-description {
   position: relative;
   display: inline-block;
-  // padding-bottom: 72px;
 
   > img {
     width: 700px;
@@ -134,12 +133,19 @@
   }
 }
 
+.skills-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; // Kontrolliert den Abstand zwischen den beiden skill-icons Reihen
+  align-items: center;
+}
+
 .skill-icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 700px;
-  padding-bottom: 24px;
+  padding-bottom: 0;
 }
 
 .skill-item {
@@ -147,10 +153,12 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  width: calc(100% / 5); // Feste Breite für gleichmäßige Verteilung
+  min-width: 0;
 
   > img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 
@@ -161,20 +169,22 @@
   }
 
   > span {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: white;
     text-align: center;
     font-weight: 300;
+    word-break: break-word;
+    hyphens: auto;
+    line-height: 1.2;
+    max-width: 100%;
   }
 }
 
 .peel-off-container {
   position: relative;
-  // width: 400px;
   width: clamp(300px, 30vw, 400px); // Responsive Breite
   flex-shrink: 0;
   height: 100%;
-
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -182,12 +192,7 @@
 
 .peel-off {
   position: static;
-  // margin-top: 300px; // Fester Abstand von oben
-  // margin-left: 50px; // Fester Abstand von links
-  // width: 250px;
-  // height: 250px;
   margin-top: clamp(150px, 20vh, 300px); // Responsive top margin
-  margin-left: clamp(20px, 5vw, 50px); // Responsive left margin
   width: clamp(200px, 18vw, 250px); // Responsive Größe
   height: clamp(200px, 18vw, 250px);
   cursor: grab;
@@ -245,10 +250,6 @@
 
   > img {
     position: absolute;
-    // top: 44px;
-    // left: 94px;
-    // width: 50px;
-    // height: 50px;
     top: clamp(32px, 18%, 44px); // Proportional zur Containergröße
     left: clamp(72px, 38%, 94px);
     width: clamp(35px, 20%, 50px);
@@ -259,14 +260,12 @@
 
   > span {
     position: absolute;
-    // width: 200px;
     width: clamp(150px, 80%, 200px);
     height: auto;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Kalam", sans-serif;
-    // font-size: 44px;
     font-size: clamp(28px, 18vw, 44px);
     line-height: 1.1;
     text-align: center;
@@ -285,7 +284,6 @@
 
   > span {
     position: absolute;
-    // width: 180px;
     width: clamp(140px, 75%, 180px);
     height: auto;
     top: 40%;
@@ -351,14 +349,11 @@
   }
 
   img {
-    // width: 40px;
-    // height: 40px;
     width: clamp(30px, 16%, 40px);
     height: clamp(30px, 16%, 40px);
   }
 
   span {
-    // font-size: 0.8rem;
     font-size: clamp(0.65rem, 3vw, 0.8rem);
     color: white;
     text-align: center;
@@ -431,9 +426,13 @@
 // ===================
 
 @media (max-width: 1435px) {
+  #my-stack-section .page-container {
+    gap: 0.5; // Reduziert den Abstand zwischen den Containern
+  }
+
   .headline-container {
     width: 16%;
-    padding: 2rem 1rem 1rem 1rem;
+    min-width: 200px;
   }
 
   .subtitle {
@@ -451,6 +450,8 @@
 
   .skillset-container {
     max-width: 500px;
+    align-self: flex-start; // Changed from center to flex-start
+    padding-top: 8rem;
     gap: 3rem;
   }
 
@@ -470,9 +471,12 @@
     }
   }
 
+  .skills-grid-container {
+    gap: 1rem;
+  }
+
   .skill-icons {
     width: 500px;
-    padding-bottom: 0;
   }
 
   .skill-item {
@@ -498,6 +502,46 @@
     margin-left: clamp(15px, 3vw, 40px);
     width: clamp(180px, 16vw, 220px);
     height: clamp(180px, 16vw, 220px);
+  }
+}
+
+//TODO:
+@media (max-width: 1050px) {
+  .skillset-container {
+    max-width: 500px;
+    align-self: flex-start; // Changed from center to flex-start
+    padding-top: 8rem;
+    gap: 3rem;
+  }
+
+  .skill-description {
+    > img {
+      width: 500px;
+      height: 150px;
+      display: block;
+    }
+    > span {
+      font-size: 0.9rem;
+    }
+  }
+
+  .skill-icons {
+    width: 500px;
+    padding-bottom: 0;
+  }
+
+  .skill-item {
+    gap: 8px;
+
+    > img {
+      width: 50px;
+      height: 50px;
+    }
+
+    > span {
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
   }
 }
 

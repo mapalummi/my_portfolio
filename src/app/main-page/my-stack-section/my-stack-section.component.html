@@ -1,105 +1,142 @@
 <section id="my-stack-section">
-<div class="page-container">
-  <div class="headline-container">
-    <p class="subtitle">{{ "my-stack-section.headline-one" | translate }}</p>
-    <div class="main-title">
-      <h1 class="">{{ "my-stack-section.headline-two" | translate }}</h1>
-      <img src="./assets/icons/skill_set.png" alt="Skill set icon" />
-    </div>
-  </div>
-
-  <div class="skillset-container">
-    <div class="skill-description">
-      <img src="./assets/icons/1.Skills_description.png" alt="Skills description icon" />
-      <span
-        >{{ "my-stack-section.text" | translate }}
-      </span>
-    </div>
-
-    <div class="skill-icons">
-      <div class="skill-item">
-        <img src="./assets/icons/HTML.png" alt="HTML programming language logo" /><span>HTML</span>
-      </div>
-
-      <div class="skill-item">
-        <img src="./assets/icons/CSS.png" alt="CSS styling language logo" /><span>CSS</span>
-      </div>
-      <div class="skill-item">
-        <img src="./assets/icons/JavaScript.png" alt="JavaScript programming language logo" /><span
-          >JavaScript</span
-        >
-      </div>
-      <div class="skill-item">
-        <img src="./assets/icons/TypeScript.png" alt="TypeScript programming language logo" /><span
-          >TypeScript</span
-        >
-      </div>
-      <div class="skill-item">
-        <img src="./assets/icons/Angular.png" alt="Angular framework logo" /><span
-          >Angular</span
-        >
+  <div class="page-container">
+    <div class="headline-container">
+      <p class="subtitle">{{ "my-stack-section.headline-one" | translate }}</p>
+      <div class="main-title">
+        <h1 class="">{{ "my-stack-section.headline-two" | translate }}</h1>
+        <img src="./assets/icons/skill_set.png" alt="Skill set icon" />
       </div>
     </div>
 
-    <div class="skill-icons">
-      <div class="skill-item">
-        <img src="./assets/icons/Firebase.png" alt="Firebase platform logo" /><span
-          >Firebase</span
-        >
-      </div>
-      <div class="skill-item">
-        <img src="./assets/icons/Git.png" alt="Git version control logo" /><span>Git</span>
-      </div>
-      <div class="skill-item">
-        <img src="./assets/icons/Rest-Api.png" alt="REST API technology icon" /><span
-          >Rest-Api</span
-        >
-      </div>
-      <div class="skill-item">
-        <img src="./assets/icons/Scrum.png" alt="Scrum methodology logo" /><span>Scrum</span>
-      </div>
-      <div class="skill-item">
-        <img src="./assets/icons/Material_Design.png" alt="Material Design system logo" /><span
-          >Material Design</span
-        >
-      </div>
-    </div>
-  </div>
-
-  <div class="peel-off-container">
-    <div class="peel-off" [class.peeled]="isPeeled" (click.dragging)="isDragging" [style.--drag-progress]="dragProgress" (mousedown)="onDragStart($event)">
-
-      <div class="peel-header">
-        <img src="./assets/icons/Arrow.png" alt="Arrow indicating expandable content" />
-        <span>{{ "my-stack-section.peel-one" | translate }}</span>
+    <div class="skillset-container">
+      <div class="skill-description">
+        <img
+          src="./assets/icons/1.Skills_description.png"
+          alt="Skills description icon"
+        />
+        <span>{{ "my-stack-section.text" | translate }} </span>
       </div>
 
-      <div class="peel-decorations">
-          <img src="./assets/icons/Peel_A.png" alt="Decorative peel element A" />
-          <img src="./assets/icons/Peel_B.png" alt="Decorative peel element B" />
-          <img src="./assets/icons/Peel_C.png" alt="Decorative peel element C" />
+      <div class="skills-grid-container">
+        <div class="skill-icons">
+          <div class="skill-item">
+            <img
+              src="./assets/icons/HTML.png"
+              alt="HTML programming language logo"
+            /><span>HTML</span>
+          </div>
+
+          <div class="skill-item">
+            <img
+              src="./assets/icons/CSS.png"
+              alt="CSS styling language logo"
+            /><span>CSS</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="./assets/icons/JavaScript.png"
+              alt="JavaScript programming language logo"
+            /><span>JavaScript</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="./assets/icons/TypeScript.png"
+              alt="TypeScript programming language logo"
+            /><span>TypeScript</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="./assets/icons/Angular.png"
+              alt="Angular framework logo"
+            /><span>Angular</span>
+          </div>
         </div>
 
-      <div class="peel-content">
-        <span>{{ "my-stack-section.peel-two" | translate }}</span>
-
-        
-
-        <div class="future-skills">
-          
-          <div>
-            <img src="./assets/icons/React.png" alt="React library logo" />
-            <span>React</span>
+        <div class="skill-icons">
+          <div class="skill-item">
+            <img
+              src="./assets/icons/Firebase.png"
+              alt="Firebase platform logo"
+            /><span>Firebase</span>
           </div>
-
-          <div>
-            <img src="./assets/icons/Vue Js.png" alt="Vue.js framework logo" />
-            <span>Vue Js</span>
+          <div class="skill-item">
+            <img
+              src="./assets/icons/Git.png"
+              alt="Git version control logo"
+            /><span>Git</span>
           </div>
-
+          <div class="skill-item">
+            <img
+              src="./assets/icons/Rest-Api.png"
+              alt="REST API technology icon"
+            /><span>REST-API</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="./assets/icons/Scrum.png"
+              alt="Scrum methodology logo"
+            /><span>Scrum</span>
+          </div>
+          <div class="skill-item">
+            <img
+              src="./assets/icons/Material_Design.png"
+              alt="Material Design system logo"
+            /><span>Material<br />Design</span>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="peel-off-container">
+      <div
+        class="peel-off"
+        [class.peeled]="isPeeled"
+        (click.dragging)="(isDragging)"
+        [style.--drag-progress]="dragProgress"
+        (mousedown)="onDragStart($event)"
+      >
+        <div class="peel-header">
+          <img
+            src="./assets/icons/Arrow.png"
+            alt="Arrow indicating expandable content"
+          />
+          <span>{{ "my-stack-section.peel-one" | translate }}</span>
+        </div>
+
+        <div class="peel-decorations">
+          <img
+            src="./assets/icons/Peel_A.png"
+            alt="Decorative peel element A"
+          />
+          <img
+            src="./assets/icons/Peel_B.png"
+            alt="Decorative peel element B"
+          />
+          <img
+            src="./assets/icons/Peel_C.png"
+            alt="Decorative peel element C"
+          />
+        </div>
+
+        <div class="peel-content">
+          <span>{{ "my-stack-section.peel-two" | translate }}</span>
+
+          <div class="future-skills">
+            <div>
+              <img src="./assets/icons/React.png" alt="React library logo" />
+              <span>React</span>
+            </div>
+
+            <div>
+              <img
+                src="./assets/icons/Vue Js.png"
+                alt="Vue.js framework logo"
+              />
+              <span>Vue Js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </section>
