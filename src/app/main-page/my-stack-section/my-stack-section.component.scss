@@ -775,15 +775,15 @@
   }
 }
 
-
 @media (max-width: 400px) {
   #my-stack-section .page-container {
-    padding: 0 0.25rem;
+    padding: 0 0.5rem;
     gap: 3rem;
   }
 
   .headline-container {
-    padding: 1rem 0.25rem 0.25rem 0.25rem;
+    align-items: flex-end;
+    padding: 1rem 0.5rem 0 0.5rem;
   }
 
   .main-title {
@@ -795,12 +795,17 @@
     }
   }
 
+  // .skillset-container {
+  // }
+
   .skill-description {
     > img {
-      width: clamp(260px, 98vw, 450px);
+      // width: clamp(260px, 98vw, 450px);
+      height: 190px;
     }
     > span {
       font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+      line-height: 1.5;
     }
   }
 
