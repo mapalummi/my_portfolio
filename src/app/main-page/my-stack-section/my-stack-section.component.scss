@@ -99,10 +99,10 @@
 
 .skillset-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  // flex: 1;
   align-self: center;
   max-width: 800px;
   gap: 3rem;
@@ -182,7 +182,7 @@
 
 .peel-off-container {
   position: relative;
-  width: clamp(300px, 30vw, 400px); // Responsive Breite
+  width: clamp(250px, 30vw, 350px); // Responsive Breite
   flex-shrink: 0;
   height: 100%;
   display: flex;
@@ -192,9 +192,9 @@
 
 .peel-off {
   position: static;
-  margin-top: clamp(150px, 20vh, 300px); // Responsive top margin
-  width: clamp(200px, 18vw, 250px); // Responsive Größe
-  height: clamp(200px, 18vw, 250px);
+  margin-top: 400px; // Responsive top margin
+  width: clamp(160px, 18vw, 210px); // Responsive Größe
+  height: clamp(160px, 18vw, 210px);
   cursor: grab;
   transform: rotate(15deg);
 
@@ -262,7 +262,7 @@
     position: absolute;
     width: clamp(150px, 80%, 200px);
     height: auto;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Kalam", sans-serif;
@@ -426,8 +426,15 @@
 // ===================
 
 @media (max-width: 1435px) {
+  #my-stack-section {
+    background-size: cover; // oder contain, auto, 100% 120%, etc.
+    background-position: center bottom; // oder center top, center center, etc.
+    min-height: 70vh; // Reduziert die Mindesthöhe der Sektion
+  }
+
   #my-stack-section .page-container {
-    gap: 0.5; // Reduziert den Abstand zwischen den Containern
+    gap: 0;
+    min-height: 70vh; // Passt die Container-Höhe an
   }
 
   .headline-container {
@@ -460,7 +467,6 @@
     > img {
       width: 500px;
       height: 100px;
-      
     }
     > span {
       font-size: 0.8rem;
@@ -496,14 +502,25 @@
   }
 
   .peel-off-container {
-    width: clamp(250px, 25vw, 350px);
+    width: clamp(200px, 20vw, 300px);
   }
 
   .peel-off {
-    margin-top: clamp(120px, 15vh, 250px);
-    margin-left: clamp(15px, 3vw, 40px);
-    width: clamp(180px, 16vw, 220px);
-    height: clamp(180px, 16vw, 220px);
+    margin-top: 300px;
+    margin-left: clamp(10px, 2vw, 30px);
+    width: clamp(140px, 14vw, 180px);
+    height: clamp(140px, 14vw, 180px);
+  }
+
+  .peel-header {
+    > span {
+      // position: absolute;
+      // width: clamp(150px, 80%, 200px);
+      // height: auto;
+      top: 70%;
+      // left: 50%;
+      font-size: 34px;
+    }
   }
 }
 
@@ -514,17 +531,6 @@
     align-self: flex-start; // Changed from center to flex-start
     padding-top: 8rem;
     gap: 3rem;
-  }
-
-  .skill-description {
-    > img {
-      // width: 500px;
-      // height: 150px;
-      // display: block;
-    }
-    > span {
-      // font-size: 0.9rem;
-    }
   }
 
   .skill-icons {
@@ -547,20 +553,28 @@
   }
 }
 
-// Tablet Breakpoint (768px und kleiner)
-@media (max-width: 768px) {
+//TODO:
+@media (max-width: 999px) {
+  #my-stack-section {
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh; // Maximale Höhe für den gesamten Viewport
+  }
+
   #my-stack-section .page-container {
+    justify-content: flex-start;
     flex-direction: column;
-    gap: 2rem;
+    gap: 6rem;
     padding: 0 1rem;
-    min-height: auto;
+    min-height: 100vh; // Container nimmt volle Viewport-Höhe ein
   }
 
   .headline-container {
     width: 100%;
     align-items: center;
     text-align: center;
-    padding: 2rem 1rem 1rem 1rem;
+    padding-top: 2rem;
+    padding-right: 0;
   }
 
   .subtitle {
@@ -576,9 +590,14 @@
     }
   }
 
+  //TODO:
   .skillset-container {
     max-width: 100%;
+    height: auto;
+    align-self: center;
+    padding: 0;
     gap: 2rem;
+    justify-content: flex-start;
   }
 
   .skill-description {
@@ -587,23 +606,21 @@
       height: auto;
     }
     > span {
-      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-      padding: 0 8%;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      padding: 0 5%;
     }
   }
 
   .skill-icons {
     width: clamp(300px, 90vw, 600px);
-    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0;
   }
 
   .skill-item {
     > img {
-      width: clamp(50px, 12vw, 70px);
-      height: clamp(50px, 12vw, 70px);
+      width: clamp(50px, 12vw, 50px);
+      height: clamp(50px, 12vw, 50px);
     }
     > span {
       font-size: clamp(0.7rem, 2vw, 0.8rem);
@@ -616,13 +633,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0;
+    padding: 0;
   }
 
   .peel-off {
     margin: 0;
-    width: clamp(180px, 50vw, 280px);
-    height: clamp(180px, 50vw, 280px);
+    width: clamp(180px, 50vw, 200px);
+    height: clamp(180px, 50vw, 200px);
   }
 
   .peel-header {
@@ -657,7 +674,9 @@
   }
 }
 
-// Mobile Breakpoint (480px und kleiner)
+@media (max-width: 768px) {
+}
+
 @media (max-width: 480px) {
   #my-stack-section .page-container {
     padding: 0 0.5rem;
@@ -756,10 +775,11 @@
   }
 }
 
-// Extra kleine Bildschirme (400px und kleiner)
+
 @media (max-width: 400px) {
   #my-stack-section .page-container {
     padding: 0 0.25rem;
+    gap: 3rem;
   }
 
   .headline-container {
@@ -803,12 +823,12 @@
   }
 
   .peel-off-container {
-    padding: 1rem 0;
+    padding: 0;
   }
 
   .peel-off {
-    width: clamp(130px, 70vw, 200px);
-    height: clamp(130px, 70vw, 200px);
+    width: 150px;
+    height: 150px;
   }
 
   .peel-header {
