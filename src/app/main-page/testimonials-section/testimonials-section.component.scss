@@ -362,34 +362,16 @@
     gap: 30px;
   }
 
-  .card-left,
-  .card-center,
-  .card-right {
-    transform: rotate(
-      -2deg
-    ); // Nur Rotation beibehalten, keine X/Y Verschiebung
-  }
-
-  // .card-center {
-  //   transform: rotate(0deg); // Mittlere Karte gerade
-  // }
-
-  // .card-right {
-  //   transform: rotate(2deg); // Rechte Karte leicht nach rechts rotiert
-  // }
 
   .card-left {
-    z-index: 3;
-    transform: translateY(0) rotate(-2deg) translateY(70px);
+    transform: translateY(0) rotate(-3deg) translateY(75px);
   }
 
   .card-center {
-    z-index: 2;
     transform: translateY(50px);
   }
 
   .card-right {
-    z-index: 1;
     transform: translateY(0) rotate(4deg) translateY(25px);
   }
 
