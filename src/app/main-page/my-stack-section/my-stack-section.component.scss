@@ -621,6 +621,7 @@
     > img {
       width: clamp(50px, 12vw, 50px);
       height: clamp(50px, 12vw, 50px);
+      filter: grayscale(0%);
     }
     > span {
       font-size: clamp(0.7rem, 2vw, 0.8rem);
@@ -674,13 +675,27 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
+  #my-stack-section .page-container {
+    gap: 4rem;
+  }
+
+  .skill-description {
+    > img {
+      width: clamp(280px, 90vw, 500px);
+      height: 200px;
+    }
+    > span {
+      font-size: 0.9rem;
+      padding: 0 8%; // Increase padding slightly
+      line-height: 1.5;
+    }
+  }
 }
 
 @media (max-width: 480px) {
   #my-stack-section .page-container {
-    padding: 0 0.5rem;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
   .headline-container {
@@ -707,10 +722,12 @@
   .skill-description {
     > img {
       width: clamp(280px, 95vw, 500px);
+      height: 250px;
     }
     > span {
-      font-size: clamp(0.8rem, 3vw, 1rem);
+      font-size: 1rem;
       padding: 0 10%;
+      line-height: 1.4;
     }
   }
 
@@ -795,16 +812,14 @@
     }
   }
 
-  // .skillset-container {
-  // }
-
   .skill-description {
     > img {
-      // width: clamp(260px, 98vw, 450px);
-      height: 190px;
+      width: clamp(260px, 98vw, 450px);
+      height: 350px;
     }
     > span {
-      font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+      font-size: 1rem; // Angepasste Schriftgröße
+      padding: 0 12%;
       line-height: 1.5;
     }
   }
