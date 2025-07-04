@@ -390,22 +390,32 @@ h2 {
     position: static;
     opacity: 1;
     margin-top: 15px;
-    width: 100%;
-    border: 1px solid #1aa8b4;
+    margin-left: auto;
+    width: 40%;
+    border: 1px solid black;
     background-color: transparent;
-    box-shadow: 2px 2px 0px #1aa8b4;
+    box-shadow: 2px 2px 0px black;
 
     a {
-      color: #1aa8b4;
+      color: black;
     }
 
     &:hover {
-      background-color: #1aa8b4;
-      box-shadow: 0.5px 0.5px 0px #1aa8b4;
+      box-shadow: 2px 2px 0px black; // Gleich wie normal
+      transform: none; // Keine Transformation
+      background-color: transparent; // Hintergrund bleibt gleich
 
       a {
-        color: white;
+        color: black; // Text bleibt schwarz
       }
     }
+  }
+}
+
+@media (max-width: 420px) {
+  .mobile-button {
+    margin-top: 15px;
+    margin-left: auto;
+    width: 55%;
   }
 }
