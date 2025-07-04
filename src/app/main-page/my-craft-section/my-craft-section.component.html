@@ -6,7 +6,10 @@
           <span>{{ "my-craft-section.headline-one" | translate }}</span>
           <h1 class="">{{ "my-craft-section.headline-two" | translate }}</h1>
           <div>
-            <img src="./assets/icons/underline2.png" alt="Decorative underline accent" />
+            <img
+              src="./assets/icons/underline2.png"
+              alt="Decorative underline accent"
+            />
           </div>
           <p>
             {{ "my-craft-section.text" | translate }}
@@ -34,7 +37,7 @@
             src="./assets/img/Laptop_Default.png"
             alt="Join project displayed on laptop screen - hover state"
           />
-          <button class="details-button">
+          <button class="details-button desktop-button">
             <a>{{ "my-craft-section.button" | translate }}</a>
           </button>
         </div>
@@ -42,6 +45,9 @@
         <p>
           {{ "my-craft-section.join" | translate }}
         </p>
+        <button class="details-button mobile-button">
+          <a>{{ "my-craft-section.button" | translate }}</a>
+        </button>
       </div>
     </div>
 
@@ -52,8 +58,11 @@
         style="cursor: pointer"
       >
         <div class="project-image">
-          <img src="./assets/img/ElPolloLoco.png" alt="El Pollo Loco game project screenshot" />
-          <button class="details-button">
+          <img
+            src="./assets/img/ElPolloLoco.png"
+            alt="El Pollo Loco game project screenshot"
+          />
+          <button class="details-button desktop-button">
             <a routerLink="elPolloLoco">{{
               "my-craft-section.button" | translate
             }}</a>
@@ -64,22 +73,35 @@
         <p>
           {{ "my-craft-section.el-pollo-loco" | translate }}
         </p>
+        <button class="details-button mobile-button">
+            <a routerLink="elPolloLoco">{{
+              "my-craft-section.button" | translate
+            }}</a>
+          </button>
       </div>
 
       <div class="da-bubble-project" routerLink="daBubble">
         <div class="project-image">
-          <img src="./assets/img/DABubble1.png" alt="DABubble chat application project screenshot" />
-          <button class="details-button">
+          <img
+            src="./assets/img/DABubble1.png"
+            alt="DABubble chat application project screenshot"
+          />
+          <button class="details-button desktop-button">
             <a routerLink="daBubble">{{
               "my-craft-section.button" | translate
             }}</a>
           </button>
-          </div>
+        </div>
 
         <h2>DABubble</h2>
         <p>
           {{ "my-craft-section.da-bubble" | translate }}
         </p>
+        <button class="details-button mobile-button">
+            <a routerLink="daBubble">{{
+              "my-craft-section.button" | translate
+            }}</a>
+          </button>
       </div>
     </div>
   </div>
