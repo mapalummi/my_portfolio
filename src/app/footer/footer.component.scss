@@ -138,3 +138,60 @@ footer {
     background-color: blue;
   }
 }
+
+.top-link {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+// ===================
+// RESPONSIVE STYLES
+// ===================
+
+@media (max-width: 576px) {
+  .logo-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+
+    img {
+      width: 45px;
+      height: auto;
+    }
+    span {
+      font-size: 0.9rem;
+    }
+  }
+
+  .link-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .top-link {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .bottom-links {
+    display: flex;
+    justify-content: space-between;
+  }
+}

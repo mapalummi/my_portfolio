@@ -1,7 +1,9 @@
 .back-to-top-button {
   position: fixed;
   bottom: 10%;
-  right: calc((100vw - 1440px) / 2 - 30px);
+  right: 30px;
+  // right: calc((100vw - 1440px) / 2 - 30px);
+  // right: max(30px, calc((100vw - 1440px) / 2 + 30px));
   width: 50px;
   height: 50px;
   background-color: #1aa8b4;
@@ -49,26 +51,26 @@
 
 @media (max-width: 1440px) {
   .back-to-top-button {
-    right: 30px; // Fallback für kleinere Bildschirme
+    // right: 120px;
   }
 }
 
 @media (max-width: 1200px) {
   .back-to-top-button {
-    right: 40px; // Weiter nach innen bei mittleren Bildschirmen
+    // right: 130px;
   }
 }
 
 @media (max-width: 992px) {
   .back-to-top-button {
-    right: 50px; // Noch weiter nach innen
+    // right: 50px;
   }
 }
 
 @media (max-width: 768px) {
   .back-to-top-button {
-    bottom: 20px;
-    right: 60px; // Ändert von 30px auf 60px
+    // bottom: 120px;
+    // right: 60px; // Ändert von 30px auf 60px
     width: 45px;
     height: 45px;
     font-size: 18px;
@@ -81,8 +83,8 @@
 
 @media (max-width: 576px) {
   .back-to-top-button {
-    right: 70px; // Noch weiter nach innen auf sehr kleinen Bildschirmen
-    bottom: 25px;
+    // right: 70px; // Noch weiter nach innen auf sehr kleinen Bildschirmen
+    // bottom: 25px;
   }
 }
 

@@ -216,11 +216,11 @@ app-contactform {
   }
 
   .text-container {
-    gap: 16px;
+    // gap: 16px;
 
     p {
-      align-self: flex-start;
-      width: 100%;
+      // align-self: flex-start;
+      // width: 100%;
       font-size: 16px;
       line-height: 1.5;
     }
@@ -229,12 +229,43 @@ app-contactform {
 
 //Mobile Layout
 @media (max-width: 576px) {
+  #contact-section {
+    min-height: 100vh;
+  }
+
+  #contact-section .page-container {
+    min-height: 100vh;
+  }
+
   .content-area {
     display: flex;
     flex-direction: column;
     margin-bottom: 5rem;
+    max-height: none;
   }
 
+  .headline-container {
+    span {
+      font-size: 18px;
+    }
+
+    h1 {
+      font-size: 34px;
+    }
+  }
+
+  .text-container {
+    // gap: 16px;
+
+    p {
+      align-self: flex-start;
+      width: 100%;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+  }
+
+  //TODO:
   .sticker {
     display: none;
   }
