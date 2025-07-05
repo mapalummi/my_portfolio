@@ -1,12 +1,10 @@
 @import "./../../../styles.scss";
 
 #contact-section {
-  min-height: 100vh;
+  min-height: 90vh;
   overflow: hidden;
   background-image: url("./../../../assets/img/Footer.png");
-  // background-size: 100%;
   background-size: cover;
-  // background-position: top 95%;
   background-position: center top;
   background-repeat: no-repeat;
   font-family: "Bricolage Grotesque", sans-serif;
@@ -16,14 +14,17 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // gap: 2rem;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .content-area {
   display: flex;
   width: 100%;
-  min-height: 0;
+  max-height: 70vh;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
 }
 
 .left-section {
@@ -67,6 +68,14 @@
   width: 300px;
   height: 40px;
   animation: pulseUnderline 3s ease-in-out infinite 2s;
+}
+
+.mobile-arrow {
+  display: none;
+}
+
+.desktop-arrow {
+  display: block;
 }
 
 @keyframes pulseUnderline {
@@ -176,7 +185,6 @@
   }
 }
 
-.contact-form,
 app-contactform {
   position: relative;
   z-index: 0;
@@ -216,5 +224,48 @@ app-contactform {
       font-size: 16px;
       line-height: 1.5;
     }
+  }
+}
+
+//Mobile Layout
+@media (max-width: 576px) {
+  .content-area {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+
+  .sticker {
+    display: none;
+  }
+
+  .desktop-arrow {
+    display: none; // Desktop-Arrow verstecken
+  }
+
+  .contact-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .mobile-arrow {
+    display: block;
+    position: absolute;
+    bottom: 10px; // Position relativ zur Contact-Form
+    left: 0;
+    width: 180px;
+    height: 35px;
+  }
+
+  .right-section {
+    width: 100%;
+    margin-left: 0;
+    align-items: flex-start; // Links ausrichten für mobil
+  }
+
+  .left-section {
+    width: 100%;
   }
 }

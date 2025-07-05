@@ -43,17 +43,32 @@
   }
 }
 
-// Responsive Anpassungen
+// ===================
+// RESPONSIVE STYLES
+// ===================
+
 @media (max-width: 1440px) {
   .back-to-top-button {
     right: 30px; // Fallback für kleinere Bildschirme
   }
 }
 
+@media (max-width: 1200px) {
+  .back-to-top-button {
+    right: 40px; // Weiter nach innen bei mittleren Bildschirmen
+  }
+}
+
+@media (max-width: 992px) {
+  .back-to-top-button {
+    right: 50px; // Noch weiter nach innen
+  }
+}
+
 @media (max-width: 768px) {
   .back-to-top-button {
     bottom: 20px;
-    right: 30px;
+    right: 60px; // Ändert von 30px auf 60px
     width: 45px;
     height: 45px;
     font-size: 18px;
@@ -64,8 +79,28 @@
   }
 }
 
+@media (max-width: 576px) {
+  .back-to-top-button {
+    right: 70px; // Noch weiter nach innen auf sehr kleinen Bildschirmen
+    bottom: 25px;
+  }
+}
+
 @media (max-width: 480px) {
   .back-to-top-button {
-    right: 20px;
+    right: 80px; // Ändert von 20px auf 80px
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+
+    &::before {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .back-to-top-button {
+    right: 90px; // Maximaler Abstand für sehr kleine Displays
   }
 }

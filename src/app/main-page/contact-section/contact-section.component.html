@@ -12,7 +12,7 @@
             {{ "contact-section.text" | translate }}
           </p>
           <img
-            class="arrow-image"
+            class="arrow-image desktop-arrow"
             src="./assets/icons/contact_arrow.png"
             alt="Arrow pointing to contact form"
           />
@@ -54,13 +54,23 @@
               </svg>
             </div>
             <div class="logo-center">
-              <img src="./assets/img/LogoMpNeu3.png" alt="Marco Palummieri personal logo" />
+              <img
+                src="./assets/img/LogoMpNeu3.png"
+                alt="Marco Palummieri personal logo"
+              />
             </div>
           </div>
         </div>
 
-        <div class="contact-form"></div>
-        <app-contactform></app-contactform>
+        <div class="contact-wrapper">
+          <app-contactform></app-contactform>
+
+          <img
+            class="arrow-image mobile-arrow"
+            src="./assets/icons/contact_arrow.png"
+            alt="Arrow pointing to contact form"
+          />
+        </div>
       </div>
     </div>
 

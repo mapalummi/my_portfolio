@@ -36,7 +36,6 @@ form {
       z-index: 2;
     }
 
-    //NEU
     &.error-label {
       border-top: 1px solid gray;
       border-bottom: 1px solid gray;
@@ -58,7 +57,6 @@ form {
     }
   }
 
-  // NEU
   input,
   textarea {
     &::placeholder {
@@ -72,69 +70,6 @@ form {
     }
   }
 
-  // NOTE: Kann das raus?
-  // label.privacy-label {
-  //   height: auto;
-  //   display: flex; //NEU
-  //   flex-direction: row;
-  //   align-items: center;
-  //   border: none;
-  //   margin-top: 20px;
-  //   gap: 8px;
-  //   font-size: 16px;
-
-  //   &:hover {
-  //     color: white;
-
-  //     a {
-  //       color: orange;
-  //     }
-  //   }
-
-  //   a {
-  //     color: #24dd80;
-  //     text-decoration: none;
-  //     font-family: inherit;
-  //     font-size: inherit;
-  //   }
-
-  //   input[type="checkbox"] {
-  //     width: 20px;
-  //     height: 20px;
-  //     appearance: none; // Entfernt Standard-Browser-Styles
-  //     border: 2px solid #24dd80;
-  //     border-radius: 4px;
-  //     background: transparent;
-  //     cursor: pointer;
-  //     position: relative;
-
-  //     &:checked {
-  //       &::after {
-  //         // content: "✓";
-  //         content: "";
-  //         position: absolute;
-  //         top: 50%;
-  //         left: 65%;
-  //         transform: translate(-50%, -50%);
-  //         // color: orange;
-  //         // font-size: 14px;
-  //         // font-weight: bold;
-  //         width: 18px;
-  //         height: 18px;
-  //         background-image: url("./../../../../assets/icons/check.png");
-  //         background-size: contain;
-  //         background-repeat: no-repeat;
-  //         background-position: center;
-  //       }
-  //     }
-
-  //     &:hover {
-  //       background-color: #24dd815f;
-  //     }
-  //   }
-  // }
-
-  // NEU
   .privacy-label {
     height: auto;
     display: flex; //NEU
@@ -176,15 +111,11 @@ form {
 
       &:checked {
         &::after {
-          // content: "✓";
           content: "";
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          // color: orange;
-          // font-size: 14px;
-          // font-weight: bold;
           width: 18px;
           height: 18px;
           background-image: url("./../../../../assets/icons/check.png");
@@ -207,7 +138,6 @@ form {
   }
 }
 
-// NEU
 .submit-button {
   width: 150px;
   height: 40px;
@@ -244,4 +174,14 @@ form {
   font-size: 12px;
   margin-top: 5px;
   display: block;
+}
+
+// ===================
+// RESPONSIVE STYLES
+// ===================
+
+@media (max-width: 1000px) {
+  .container {
+  width: 350px;
+}
 }
