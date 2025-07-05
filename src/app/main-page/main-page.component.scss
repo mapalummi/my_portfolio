@@ -83,14 +83,14 @@
 
 @media (max-width: 576px) {
   .back-to-top-button {
-    // right: 70px; // Noch weiter nach innen auf sehr kleinen Bildschirmen
+    // right: 70px;
     // bottom: 25px;
   }
 }
 
 @media (max-width: 480px) {
   .back-to-top-button {
-    right: 80px; // Ändert von 20px auf 80px
+    right: 80px; 
     width: 40px;
     height: 40px;
     font-size: 16px;
@@ -103,6 +103,6 @@
 
 @media (max-width: 360px) {
   .back-to-top-button {
-    right: 90px; // Maximaler Abstand für sehr kleine Displays
+    right: 90px; 
   }
 }
