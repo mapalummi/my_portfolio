@@ -86,7 +86,7 @@ h2 {
     }
   }
 
-  // Responsive Anpassungen für das Background
+  // Responsive Anpassungen für Background
   @media (max-width: 768px) {
     background-attachment: scroll; // Auf mobilen Geräten besser
     background-size: cover;
@@ -94,7 +94,7 @@ h2 {
   }
 
   @media (max-width: 471px) {
-    background-size: 100% contain; // Oder verwenden Sie contain für vollständige Sichtbarkeit
+    background-size: 100% contain; // Oder contain für vollständige Sichtbarkeit
     background-position: center top;
     min-height: 100vh;
   }
@@ -232,6 +232,11 @@ h2 {
   opacity: 1;
   pointer-events: none;
 
+  @media (max-width: 1280px){
+    width: 120px;
+    right: -30px;
+  }
+
   @media (max-width: 768px) {
     right: -15px; // Weniger auf Tablets
   }
@@ -299,4 +304,12 @@ h2 {
       color: #24dd80;
     }
   }
+}
+
+// ===================
+// RESPONSIVE STYLES
+// ===================
+
+@media (max-width: 1290px){
+
 }
