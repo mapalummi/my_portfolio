@@ -60,6 +60,10 @@ h2 {
     text-transform: uppercase;
   }
 
+  p {
+    text-wrap: balance;
+  }
+
   div {
     margin-bottom: 15px;
     width: 100%;
@@ -92,6 +96,10 @@ h2 {
   flex-direction: column;
   max-width: 600px;
   position: relative;
+
+  p {
+    text-wrap: balance;
+  }
 }
 
 .sticker-container {
@@ -109,38 +117,16 @@ h2 {
     pointer-events: none;
   }
 
-  .arrow-image {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(150deg);
-    width: 40%;
-    height: auto;
-    z-index: 5;
-    opacity: 0.7;
-  }
-
-  .text1,
-  .text2 {
-    position: absolute;
-    width: 200px;
-    height: auto;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Kalam", sans-serif;
-    font-size: 24px;
-    line-height: 1.1;
-    text-align: center;
-    color: white;
-    z-index: 4;
-    transition: opacity 0.3s ease;
-  }
-
-  .text2 {
-    top: 75%;
-    font-size: 24px;
-  }
+  // .arrow-image {
+  //   position: absolute;
+  //   top: 45%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%) rotate(150deg);
+  //   width: 40%;
+  //   height: auto;
+  //   z-index: 5;
+  //   opacity: 0.7;
+  // }
 }
 
 .laptop-container {
@@ -244,6 +230,10 @@ h2 {
   flex-direction: column;
   max-width: 600px;
   position: relative;
+
+  p {
+    text-wrap: balance;
+  }
 }
 
 .project-image {
@@ -301,9 +291,9 @@ h2 {
 // ===================
 
 @media (max-width: 999px) {
-  .laptop-container {
-    // margin-bottom: 5px;
-  }
+  // .laptop-container {
+  //   // margin-bottom: 5px;
+  // }
 
   .sticker-container {
     top: 30%;
