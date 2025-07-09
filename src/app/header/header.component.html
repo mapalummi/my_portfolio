@@ -1,29 +1,45 @@
 <div class="header-container">
   <nav>
-    <img src="./assets/img/LogoMpNeu3.png" alt="" />
+    <img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP" />
+
     <a href="#about-section" class="nav-about"
-      ><img src="./assets/icons/1.png" alt="" /><span>{{ 'header.link-one' | translate }}</span></a
+      ><img src="./assets/icons/1.png" alt="Über mich Icon" /><span>{{
+        "header.link-one" | translate
+      }}</span></a
     >
     <a href="#my-stack-section" class="nav-skills"
-      ><img src="./assets/icons/2.png" alt="" /><span>{{ 'header.link-two' | translate }}</span></a
+      ><img src="./assets/icons/2.png" alt="Skills Icon" /><span>{{
+        "header.link-two" | translate
+      }}</span></a
     >
     <a href="#my-craft-section" class="nav-projects"
-      ><img src="./assets/icons/4.png" alt="" /><span>{{ 'header.link-three' | translate }}</span></a
+      ><img src="./assets/icons/4.png" alt="Projekte Icon" /><span>{{
+        "header.link-three" | translate
+      }}</span></a
     >
     <a href="#contact-section" class="nav-contact"
-      ><img src="./assets/icons/3.png" alt="" /><span>{{ 'header.link-four' | translate }}</span></a
+      ><img src="./assets/icons/3.png" alt="Kontakt Icon" /><span>{{
+        "header.link-four" | translate
+      }}</span></a
     >
 
-
-<div class="toggle">
-      <span [class.active]="isEnglish" (click)="setEnglish()"><img src="./assets/icons/Toggle.png" alt="">EN</span>
+    <div class="toggle">
+      <span [class.active]="isEnglish" (click)="setEnglish()"
+        ><img
+          src="./assets/icons/Toggle.png"
+          alt="Sprache Englisch wählen"
+        />EN</span
+      >
       <label class="toggle-switch">
-        <input type="checkbox" [checked]="!isEnglish">
+        <input type="checkbox" [checked]="!isEnglish" />
         <span class="slider"></span>
       </label>
-      <span [class.active]="!isEnglish" (click)="setGerman()"><img src="./assets/icons/Toggle.png" alt="">DE</span>
+      <span [class.active]="!isEnglish" (click)="setGerman()"
+        ><img
+          src="./assets/icons/Toggle.png"
+          alt="Sprache Deutsch wählen"
+        />DE</span
+      >
     </div>
-
   </nav>
 </div>
-
