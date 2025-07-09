@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-imprint',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent],
+  imports: [HeaderComponent, FooterComponent, TranslatePipe],
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss'
 })
