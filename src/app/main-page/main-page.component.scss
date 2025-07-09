@@ -2,11 +2,9 @@
   position: fixed;
   bottom: 10%;
   right: 30px;
-  // right: calc((100vw - 1440px) / 2 - 30px);
-  // right: max(30px, calc((100vw - 1440px) / 2 + 30px));
   width: 50px;
   height: 50px;
-  background-color: #1aa8b4;
+  background-color: rgba(26, 168, 180, 0.6);
   border: none;
   border-radius: 50%;
   color: white;
@@ -21,6 +19,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
+  backdrop-filter: blur(2px);
 
   &.visible {
     opacity: 1;
@@ -28,7 +27,7 @@
   }
 
   &:hover {
-    background-color: #158a94;
+    background-color: rgba(26, 168, 180, 0.9);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   }
 

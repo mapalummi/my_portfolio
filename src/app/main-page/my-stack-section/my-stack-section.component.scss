@@ -198,9 +198,9 @@
   cursor: grab;
   transform: rotate(15deg);
 
-  &.dragging {
-    cursor: grabbing;
-  }
+  // &.dragging {
+  //   cursor: grabbing;
+  // }
 
   --drag-progress: 0;
 }

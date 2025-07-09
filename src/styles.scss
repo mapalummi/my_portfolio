@@ -240,6 +240,11 @@ body {
   box-sizing: border-box;
 }
 
+body.global-grabbing,
+body.global-grabbing * {
+  cursor: grabbing !important;
+}
+
 /* Responsive Anpassungen für den Container */
 @media (max-width: 768px) {
   .page-container {

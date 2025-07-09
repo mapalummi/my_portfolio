@@ -118,6 +118,9 @@
   animation-duration: 1s;
   animation-iteration-count: 1;
   display: inline-block;
+  // cursor: pointer;
+  // cursor: grab;
+  cursor: crosshair;
 }
 
 .bouncing-letters span:hover {
