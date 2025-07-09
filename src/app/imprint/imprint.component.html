@@ -1,29 +1,48 @@
 <div class="imprint-container">
   <div class="content-card">
-    <h1>Impressum</h1>
+    <h1 id="impressum-heading">Impressum</h1>
 
+    <address>
     <p>
-      Marc-Antonio Palummieri<br />
+      <strong>Marc-Antonio Palummieri<br /></strong>
       Volmerswerther Stra&szlig;e 441<br />
       40221 D&uuml;sseldorf
     </p>
+    </address>
 
-    <h2>Kontakt</h2>
+    <h2 id="kontakt-heading">Kontakt</h2>
+    <address>
     <p>
-      Telefon: 015779751134<br />
-      E-Mail:
-      <a href="mailto:marco.palummieri&#64;gmail.com"
-        >marco.palummieri&#64;gmail.com</a
-      >
+        Telefon: <a href="tel:+4915779751134" aria-label="Telefonnummer anrufen">015779751134</a><br />
+        E-Mail:
+        <a href="mailto:marco.palummieri&#64;gmail.com" 
+           aria-label="E-Mail an Marco Palummieri senden">
+          marco.palummieri&#64;gmail.com
+        </a>
+      </p>
+    </address>
+
+    <p>
+      <small>
+        Quelle: 
+        <a href="https://www.e-recht24.de" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="E-Recht24 Website in neuem Tab öffnen">
+          https://www.e-recht24.de
+        </a>
+      </small>
     </p>
 
-    <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
-
-    <div class="back-button-container">
-      <button class="back-button" (click)="goBack()">
-        <span class="arrow">←</span>
+    <nav class="back-button-container" aria-label="Seitennavigation">
+      <button class="back-button" 
+              (click)="goBack()" 
+              type="button"
+              aria-label="Zur vorherigen Seite zurückkehren">
+        <span class="arrow" aria-hidden="true">←</span>
         Zurück
       </button>
-    </div>
+    </nav>
+
   </div>
 </div>
