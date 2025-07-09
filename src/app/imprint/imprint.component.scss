@@ -1,23 +1,40 @@
 @import "./../../styles.scss";
 
 .imprint-container {
+  width: 100%;
   min-height: 100vh;
-  // background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   background: linear-gradient(135deg, #1073ea 0%, #24dd80 100%);
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+// Stellt sicher, dass Header und Footer die gleiche max-width haben
+.imprint-container > :first-child,
+.imprint-container > :last-child {
+  width: 100%;
+  max-width: 1440px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 1440px;
+  padding: 2rem;
+  padding-top: 120px;
+  margin: 0 auto;
 }
 
 .content-card {
+  max-width: 600px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 3rem;
-  max-width: 600px;
-  width: 100%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 1rem;
@@ -27,7 +44,6 @@
 .back-button-container {
   margin-bottom: 2rem;
 }
-
 
 h1 {
   color: #333;
