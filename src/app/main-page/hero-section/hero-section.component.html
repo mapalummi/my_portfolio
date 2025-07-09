@@ -1,5 +1,6 @@
 <section id="hero-section">
   <div class="page-container">
+
     <div class="mobile-menu-icon">
       <img
         src="./../../../assets/icons/menu_default.png"
@@ -7,6 +8,7 @@
         (click)="toggleMobileMenu()"
       />
     </div>
+
     <app-header></app-header>
 
     <div class="hero-content">
@@ -70,6 +72,6 @@
   </div>
 
   <div class="mobile-menu-dialog" *ngIf="isMobileMenuOpen">
-    <app-header></app-header>
+    <app-header (closeMenu)="toggleMobileMenu()"></app-header>
   </div>
 </section>

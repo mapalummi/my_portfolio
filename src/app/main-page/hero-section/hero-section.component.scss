@@ -323,9 +323,9 @@ app-navbar {
   width: 100%;
 }
 
-//
-// MEDIA QUERIES !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//
+//======================
+// Responsive Overrides
+//======================
 
 @media (max-width: 1800px) {
   .text-line-one {
@@ -540,9 +540,9 @@ app-navbar {
 }
 
 @media (max-width: 480px) {
-  app-header {
-    display: none;
-  }
+  // app-header {
+  //   display: none;
+  // }
 
   #hero-section {
     min-height: 90vh;

@@ -4,6 +4,14 @@
       ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
     /></a>
 
+    <div class="mobile-menu-icon">
+      <img
+        src="./../../assets/icons/menu_close.png"
+        alt="Mobile menu toggle button"
+        (click)="closeMenu.emit()"
+      />
+    </div>
+
     <a href="#about-section" class="nav-about"
       ><img src="./assets/icons/1.png" alt="Über mich Icon" /><span>{{
         "header.link-one" | translate

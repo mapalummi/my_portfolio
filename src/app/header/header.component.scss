@@ -277,7 +277,20 @@
   }
 }
 
+.mobile-menu-icon {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: auto;
+  z-index: 10;
+  cursor: pointer;
+}
+
+//==========================================
 // Mobile-Styles für Header im Mobile Dialog
+//==========================================
+
 :host-context(.mobile-menu-dialog) {
   .header-container {
     position: relative;
@@ -294,7 +307,15 @@
     gap: 2rem;
     height: 100%;
 
-    > img {
+    .nav-logo img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .nav-about img,
+    .nav-skills img,
+    .nav-projects img,
+    .nav-contact img {
       display: none;
     }
 
@@ -307,11 +328,6 @@
     a {
       font-size: 1.2rem;
       width: auto;
-
-      // Mobile: Deaktiviere Hover-Bilder
-      img {
-        display: none;
-      }
     }
   }
 

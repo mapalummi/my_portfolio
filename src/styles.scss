@@ -13,9 +13,35 @@ body {
   scroll-behavior: smooth;
 }
 
-// ===================
+/* =======================
+   Custom Scrollbar Styles
+   =================== */
+
+/* Für Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Für Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--background-dark);
+}
+
+// =================================
 // CSS Custom Properties (Variablen)
-// ===================
+// =================================
+
 :root {
   // Farben
   --primary-color: #1073ea;
@@ -63,9 +89,9 @@ body {
   --border-radius-md: 0.5rem;
   --border-radius-lg: 1rem;
 
-  // ===================
+  // ======================
   // Responsive Image Sizes
-  // ===================
+  // ======================
 
   // Logo Sizes (verschiedene Kontexte)
   --logo-size-xs: clamp(2.5rem, 6vw, 4rem); // Sehr klein (mobile nav)
@@ -102,9 +128,9 @@ body {
   --desktop-logo: clamp(4rem, 5vw, 5.5rem);
 }
 
-// ===================
+// =======================
 // Responsive Image Mixins
-// ===================
+// =======================
 @mixin responsive-image-size(
   $base-size,
   $mobile-factor: 0.7,
@@ -219,9 +245,9 @@ body {
   box-sizing: border-box;
 }
 
-// ===================
+// ====================
 // Theme Toggle Support
-// ===================
+// ====================
 [data-theme="dark"] {
   --header-link-color: white;
   --header-logo-filter: invert(1);

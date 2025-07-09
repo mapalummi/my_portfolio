@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
 import { Subscription } from 'rxjs';
@@ -20,6 +20,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
       (isEnglish) => (this.isEnglish = isEnglish)
     );
   }
+
+  // NEU !!!
+  @Output() closeMenu = new EventEmitter<void>();
+
+ 
+
 
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
