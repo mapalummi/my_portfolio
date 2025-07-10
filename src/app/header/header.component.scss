@@ -282,6 +282,10 @@
   display: none;
 }
 
+.mobile-socialbar {
+  display: none;
+}
+
 //==========================================
 // Mobile-Styles für Header im Mobile Dialog
 //==========================================
@@ -415,5 +419,9 @@
 
   .toggle-switch input:checked + .slider::before {
     transform: translate(26px, -50%);
+  }
+
+  .mobile-socialbar {
+    display: flex;
   }
 }

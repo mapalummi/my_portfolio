@@ -1,31 +1,5 @@
 @import "./../../../../styles.scss";
 
-// .social-icons {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 8px;
-//   div {
-//     width: 44px;
-//     height: 44px;
-//     border: 1px solid white;
-//     border-radius: 50%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     padding: 10px;
-//     transition: all 0.3s ease;
-
-//     &:hover {
-//       background-color: #1073ea;
-//     }
-//   }
-//   img {
-//     width: 35px;
-//     height: 35px;
-//     object-fit: contain;
-//   }
-// }
-
 .social-links {
   display: flex;
   flex-direction: column;
@@ -42,11 +16,17 @@
 
 .social-icon-container:hover {
   background-color: #007bff;
-  
 }
 
 .social-icon {
   width: 32px;
   height: 32px;
   display: block;
+}
+
+
+@media (max-width: 536px){
+  .social-links {
+    flex-direction: row;
+  }
 }

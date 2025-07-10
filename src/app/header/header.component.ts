@@ -2,11 +2,12 @@ import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/cor
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
 import { Subscription } from 'rxjs';
+import { SocialbarComponent } from "../main-page/hero-section/socialbar/socialbar.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, SocialbarComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
