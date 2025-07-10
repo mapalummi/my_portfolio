@@ -1,16 +1,25 @@
 <div class="header-container">
-  <nav>
+
+  
+  <div class="mobile-header-bar">
     <a href="#hero-section" class="nav-logo"
       ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
     /></a>
 
-    <div class="mobile-menu-icon">
+    <div class="mobile-menu-close-icon">
       <img
         src="./../../assets/icons/menu_close.png"
         alt="Mobile menu toggle button"
         (click)="closeMenu.emit()"
       />
     </div>
+  </div>
+
+
+  <nav>
+    <a href="#hero-section" class="nav-logo"
+      ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
+    /></a>
 
     <a href="#about-section" class="nav-about"
       ><img src="./assets/icons/1.png" alt="Über mich Icon" /><span>{{
