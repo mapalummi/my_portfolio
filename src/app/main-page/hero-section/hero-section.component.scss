@@ -12,12 +12,16 @@
   position: relative;
 }
 
+.nav-logo img {
+  display: none;
+}
+
 .mobile-menu-dialog {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background-image: url("./../../../assets/img/01_Hero.png");
   background-size: cover;
   background-position: center bottom;
@@ -511,8 +515,35 @@ app-navbar {
     display: none;
   }
 
+  .hero-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    padding: 0 2rem;
+    margin-top: 0.5rem;
+  }
+
+  .nav-logo img {
+    display: block;
+    height: 50px; 
+    width: auto;
+  }
+
   .mobile-menu-icon {
-    display: unset;
+    display: block;
+    position: static;
+    width: auto;
+    height: 50px;
+    cursor: pointer;
+    margin-left: auto;
+    img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
   }
 
   .hero-content {
@@ -576,10 +607,6 @@ app-navbar {
       width: 1ß0px;
     }
   }
-
-  // .bouncing-letters {
-  //   font-size: 60px;
-  // }
 
   .polaroid-container {
     width: 210px;

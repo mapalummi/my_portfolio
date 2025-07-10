@@ -24,9 +24,9 @@
   display: block;
 }
 
-
-@media (max-width: 536px){
+@media (max-width: 536px) {
   .social-links {
     flex-direction: row;
+    gap: 32px;
   }
 }
