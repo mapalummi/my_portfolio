@@ -19,22 +19,22 @@
       ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
     /></a>
 
-    <a href="#about-section" class="nav-about"
+    <a href="#about-section" class="nav-about" (click)="closeMenu.emit()"
       ><img src="./assets/icons/1.png" alt="Über mich Icon" /><span>{{
         "header.link-one" | translate
       }}</span></a
     >
-    <a href="#my-stack-section" class="nav-skills"
+    <a href="#my-stack-section" class="nav-skills" (click)="closeMenu.emit()"
       ><img src="./assets/icons/2.png" alt="Skills Icon" /><span>{{
         "header.link-two" | translate
       }}</span></a
     >
-    <a href="#my-craft-section" class="nav-projects"
+    <a href="#my-craft-section" class="nav-projects" (click)="closeMenu.emit()"
       ><img src="./assets/icons/4.png" alt="Projekte Icon" /><span>{{
         "header.link-three" | translate
       }}</span></a
     >
-    <a href="#contact-section" class="nav-contact"
+    <a href="#contact-section" class="nav-contact" (click)="closeMenu.emit()"
       ><img src="./assets/icons/3.png" alt="Kontakt Icon" /><span>{{
         "header.link-four" | translate
       }}</span></a
