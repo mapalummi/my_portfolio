@@ -276,6 +276,18 @@
   }
 }
 
+//NEU
+:host-context(.mobile-menu-dialog.mobile-menu-open) .header-container {
+  max-height: 1000px;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+:host-context(.mobile-menu-dialog) .header-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 // Standardmäßig mobile-header-bar ausblenden
 .mobile-header-bar {
   display: none;

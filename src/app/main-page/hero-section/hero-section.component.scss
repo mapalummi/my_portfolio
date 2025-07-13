@@ -30,11 +30,21 @@
   flex-direction: column;
   z-index: 1000;
 
+  //NEU
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
   app-header {
     display: block !important;
     position: relative;
     z-index: 1001;
   }
+}
+
+//NEU
+.mobile-menu-dialog.mobile-menu-open {
+  max-height: 100vh; // oder ein Wert, der für dein Menü reicht
 }
 
 .mobile-menu-icon {

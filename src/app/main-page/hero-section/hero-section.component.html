@@ -1,21 +1,29 @@
 <section id="hero-section">
   <div class="page-container">
+    <app-header *ngIf="!isMobileMenuOpen"></app-header>
 
-<div class="hero-mobile-header">
-    <a href="#hero-section" class="nav-logo"
-      ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
-    /></a>
+    <div class="hero-mobile-header">
+      <a href="#hero-section" class="nav-logo"
+        ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
+      /></a>
 
-    <div class="mobile-menu-icon">
-      <img
-        src="./../../../assets/icons/menu_default.png"
-        alt="Mobile menu toggle button"
-        (click)="toggleMobileMenu()"
-      />
+      <div class="mobile-menu-icon">
+        <img
+          src="./../../../assets/icons/menu_default.png"
+          alt="Mobile menu toggle button"
+          (click)="toggleMobileMenu()"
+        />
+      </div>
     </div>
-</div>
 
-    <app-header></app-header>
+    <!-- NEU -->
+    <div
+      class="mobile-menu-dialog"
+      [class.mobile-menu-open]="isMobileMenuOpen"
+    >
+      <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
+    </div>
+    <!-- NEU -->
 
     <div class="hero-content">
       <app-socialbar class="socialbar-left"></app-socialbar>
@@ -77,7 +85,7 @@
     </div>
   </div>
 
-  <div class="mobile-menu-dialog" *ngIf="isMobileMenuOpen">
+  <!-- <div class="mobile-menu-dialog" *ngIf="isMobileMenuOpen">
     <app-header (closeMenu)="toggleMobileMenu()"></app-header>
-  </div>
+  </div> -->
 </section>
