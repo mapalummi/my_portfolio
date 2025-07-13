@@ -312,26 +312,27 @@
     align-items: center;
     width: 100%;
     padding: 1rem 1.5rem 0.5rem 1.5rem;
+    margin-top: 0.5rem;
     box-sizing: border-box;
     flex-shrink: 0; // Verhindert, dass die Leiste schrumpft
   }
 
   .mobile-nav-logo img {
-    width: 50px;
+    width: auto;
     height: 50px;
   }
 
   .mobile-menu-close-icon {
     display: block;
     position: static;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     z-index: 10;
     cursor: pointer;
 
     > img {
-      width: 30px;
-      height: 30px;
+      width: 50px;
+      height: 50px;
     }
   }
 
