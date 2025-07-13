@@ -27,7 +27,7 @@ export class MainPageComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.showBackToTop = window.pageYOffset > 300;
+    this.showBackToTop = window.pageYOffset > 1000;
   }
 
   scrollToTop() {

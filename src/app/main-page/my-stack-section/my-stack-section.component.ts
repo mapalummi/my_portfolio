@@ -1,10 +1,10 @@
 import { Component, OnDestroy } from '@angular/core';
-import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-stack-section',
   standalone: true,
-  imports: [TranslatePipe, TranslateDirective],
+  imports: [TranslatePipe],
   templateUrl: './my-stack-section.component.html',
   styleUrl: './my-stack-section.component.scss',
 })
@@ -28,7 +28,7 @@ export class MyStackSectionComponent implements OnDestroy {
     this.removeGlobalEvents();
   }
 
-  // NEU: Body Element bekommt CSS-Klasse zugewiesen
+  // Body Element bekommt CSS-Klasse zugewiesen
   setGlobalGrabbingCursor(enable: boolean) {
     if (enable) {
       document.body.classList.add('global-grabbing');
@@ -37,14 +37,24 @@ export class MyStackSectionComponent implements OnDestroy {
     }
   }
 
-  // NEU
-  onDragStart(event: MouseEvent) {
-    if (this.isPeeled) return;
+  onDragStart(event: MouseEvent | TouchEvent) {
+    // if (this.isPeeled) return;
+
+    if (window.innerWidth <= 700) {
+      this.isPeeled = true;
+      return;
+    }
 
     this.isDragging = true;
-    this.dragStartY = event.clientY;
+    // this.dragStartY = event.clientY;
 
-    this.setGlobalGrabbingCursor(true); // <--- Cursor global setzen
+    if (event instanceof MouseEvent) {
+      this.dragStartY = event.clientY;
+    } else if (event instanceof TouchEvent) {
+      this.dragStartY = event.touches[0].clientY;
+    }
+
+    this.setGlobalGrabbingCursor(true); // Cursor global setzen
 
     window.addEventListener('mousemove', this.mouseMoveBound);
     window.addEventListener('mouseup', this.mouseUpBound);
@@ -52,32 +62,17 @@ export class MyStackSectionComponent implements OnDestroy {
     event.preventDefault();
   }
 
-  // NEU
   onDragEnd() {
     if (!this.isDragging) return;
 
     this.isDragging = false;
-    this.setGlobalGrabbingCursor(false); // <--- Cursor global entfernen
+    this.setGlobalGrabbingCursor(false); // Cursor global entfernen
     this.removeGlobalEvents();
 
     if (this.dragProgress < 100 && !this.isPeeled) {
       this.dragProgress = 0;
     }
   }
-
-  // onDragStart(event: MouseEvent) {
-  //   if (this.isPeeled) return;
-
-  //   this.isDragging = true;
-  //   this.dragStartY = event.clientY;
-
-  //   // Add global event listeners
-  //   window.addEventListener('mousemove', this.mouseMoveBound);
-  //   window.addEventListener('mouseup', this.mouseUpBound);
-
-  //   // Prevent text selection
-  //   event.preventDefault();
-  // }
 
   onDrag(event: MouseEvent) {
     if (!this.isDragging) return;
@@ -96,18 +91,6 @@ export class MyStackSectionComponent implements OnDestroy {
       this.completePeel();
     }
   }
-
-  // onDragEnd() {
-  //   if (!this.isDragging) return;
-
-  //   this.isDragging = false;
-  //   this.removeGlobalEvents();
-
-  //   // Reset if not completely peeled
-  //   if (this.dragProgress < 100 && !this.isPeeled) {
-  //     this.dragProgress = 0;
-  //   }
-  // }
 
   completePeel() {
     this.isPeeled = true;
