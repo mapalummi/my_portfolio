@@ -15,7 +15,6 @@ import { ContactSuccessDialogComponent } from '../../../contact-success-dialog/c
   styleUrl: './contactform.component.scss',
 })
 export class ContactformComponent {
-  
   // NEU
   constructor(private dialog: MatDialog) {}
 
@@ -28,7 +27,7 @@ export class ContactformComponent {
     privacyAccepted: false, // Richtig so ?
   };
 
-  mailTest = true;
+  mailTest = false; // false um live zu gehen!
 
   post = {
     endPoint: 'https://marcopalummieri.de/sendMail.php',

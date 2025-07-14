@@ -358,22 +358,36 @@ app-navbar {
 }
 
 @media (max-width: 1600px) {
-  .text-line-one {
-    margin-left: 12rem;
+  .text-container {
+    max-width: 1000px; // Passe nach Bedarf an
+    padding-left: 2rem; // Optional, für Abstand
+    padding-right: 2rem;
+  }
+  .text-line-one,
+  .text-line-two {
+    margin-left: 6rem;
+    margin-right: 2rem;
+    max-width: 100%;
   }
 
-  .text-line-two {
-    margin-right: 10rem;
-  }
+  // .text-line-one {
+  //   margin-left: 12rem;
+  // }
+
+  // .text-line-two {
+  //   margin-right: 10rem;
+  // }
 }
 
 @media (max-width: 1400px) {
   .text-line-one {
-    margin-left: 12rem; // Noch größer
+    margin-left: 5rem;
+    margin-right: 0;
   }
 
   .text-line-two {
-    margin-right: 15rem; // Noch größer
+    margin-right: 10rem;
+    margin-left: 0;
   }
 
   .polaroid-container {
@@ -425,7 +439,7 @@ app-navbar {
 @media (max-width: 1029px) {
   .text-container {
     align-items: center;
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .text-line-one,
