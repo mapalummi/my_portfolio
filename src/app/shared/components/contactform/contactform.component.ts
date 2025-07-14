@@ -4,6 +4,9 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 
+import { MatDialog } from '@angular/material/dialog';
+import { ContactSuccessDialogComponent } from '../../../contact-success-dialog/contact-success-dialog.component';
+
 @Component({
   selector: 'app-contactform',
   standalone: true,
@@ -12,6 +15,10 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './contactform.component.scss',
 })
 export class ContactformComponent {
+  
+  // NEU
+  constructor(private dialog: MatDialog) {}
+
   http = inject(HttpClient);
 
   contactData = {
@@ -24,7 +31,7 @@ export class ContactformComponent {
   mailTest = true;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://marcopalummieri.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -34,6 +41,25 @@ export class ContactformComponent {
     },
   };
 
+  // onSubmit(ngForm: NgForm) {
+  //   if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+  //     this.http
+  //       .post(this.post.endPoint, this.post.body(this.contactData))
+  //       .subscribe({
+  //         next: (response) => {
+  //           ngForm.resetForm();
+  //         },
+  //         error: (error) => {
+  //           console.error(error);
+  //         },
+  //         complete: () => console.info('send post complete'),
+  //       });
+  //   } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+  //     ngForm.resetForm();
+  //   }
+  // }
+
+  // NEU
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http
@@ -41,6 +67,10 @@ export class ContactformComponent {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.dialog.open(ContactSuccessDialogComponent, {
+              width: '350px',
+              panelClass: 'custom-dialog-container',
+            });
           },
           error: (error) => {
             console.error(error);
@@ -49,6 +79,10 @@ export class ContactformComponent {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
+      this.dialog.open(ContactSuccessDialogComponent, {
+        width: '350px',
+        panelClass: 'custom-dialog-container',
+      });
     }
   }
 }
