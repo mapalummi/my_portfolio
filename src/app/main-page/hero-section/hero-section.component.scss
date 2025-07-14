@@ -534,6 +534,18 @@ app-navbar {
   }
 }
 
+@media (max-width: 672px) {
+  .bouncing-letters {
+    font-size: clamp(36px, 12vw, 70px);
+  }
+}
+
+@media (max-width: 610px) {
+  .bouncing-letters {
+    font-size: 50px;
+  }
+}
+
 @media (max-width: 536px) {
   app-header {
     display: none;
@@ -596,11 +608,7 @@ app-navbar {
   }
 }
 
-@media (max-width: 480px) {
-  // app-header {
-  //   display: none;
-  // }
-
+@media (max-width: 499px) {
   #hero-section {
     min-height: 90vh;
   }
@@ -661,10 +669,6 @@ app-navbar {
 }
 
 @media (max-width: 390px) {
-  // .bouncing-letters {
-  //   font-size: 54px;
-  // }
-
   .polaroid-container {
     width: 190px;
   }
@@ -673,6 +677,10 @@ app-navbar {
 @media (max-width: 380px) {
   #hero-section {
     min-height: 100vh;
+  }
+
+  .bouncing-letters {
+    font-size: 44px;
   }
 
   .polaroid-container {
@@ -697,7 +705,7 @@ app-navbar {
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 340px) {
   .bouncing-letters {
     font-size: 39px;
   }
