@@ -42,8 +42,8 @@
 
 .main-title {
   margin: 0 0 1rem 0;
-  position: relative; // Positionierungskontext
-  display: inline-block; // Macht Container so breit wie den Inhalt
+  position: relative;
+  display: inline-block;
   h1 {
     font-size: 4rem;
     font-weight: bold;
@@ -59,7 +59,7 @@
     // animation: fadeAndGlow 4s ease-in-out infinite;
     // animation: fadeAndGlow 4s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
     // animation: fadeAndGlow 4s steps(10) infinite; // Stufen-Animation
-    position: absolute; // Positioniert absolut zum main-title
+    position: absolute;
     top: 50%;
     left: 0;
     transform: translate(-50%) scaleX(-1);
@@ -134,7 +134,6 @@
 .skills-grid-container {
   display: flex;
   flex-direction: column;
-  // gap: 1.5rem;
   align-items: center;
 }
 
@@ -180,7 +179,6 @@
 
 .peel-off-container {
   position: relative;
-  // width: clamp(250px, 30vw, 350px);
   width: auto;
   flex-shrink: 0;
   height: 100%;
@@ -200,14 +198,11 @@
   --drag-progress: 0;
 }
 
-// Elements that transform during drag
 .peel-off:not(.peeled) .peel-header > img {
-  // Arrow moves down as user drags
   transform: translateY(calc(var(--drag-progress) * 0.5px)) translateX(-50%);
   opacity: calc(1 - (var(--drag-progress) / 100));
 }
 
-// Pull to peel Text verschwindet sofort beim Drag-Start
 .peel-off:not(.peeled) .peel-header > span {
   opacity: calc(
     1 - (var(--drag-progress) / 10)
@@ -215,12 +210,10 @@
 }
 
 .peel-off:not(.peeled) .peel-decorations img:nth-child(1) {
-  // First layer fades out slower (0-60% instead of 0-50%)
   opacity: calc(max(0, 1 - var(--drag-progress) / 60));
 }
 
 .peel-off:not(.peeled) .peel-decorations img:nth-child(2) {
-  // Second layer appears earlier and stays longer (30-90% range)
   opacity: calc(
     max(0, min(1, (var(--drag-progress) - 30) / 30)) *
       max(0, min(1, (90 - var(--drag-progress)) / 30))
@@ -228,14 +221,12 @@
 }
 
 .peel-off:not(.peeled) .peel-decorations img:nth-child(3) {
-  // Third layer appears more gradually (60%+ instead of 70%+)
   opacity: calc(max(0, min(1, (var(--drag-progress) - 60) / 40)));
 }
 
-// Content (Text + Future Skills) bleibt während Drag unsichtbar
 .peel-off:not(.peeled) .peel-content > span,
 .peel-off:not(.peeled) .future-skills {
-  opacity: 0; // Komplett unsichtbar während Drag
+  opacity: 0;
 }
 
 .peel-header {
@@ -351,17 +342,15 @@
   }
 }
 
-// Peeled States
 .peel-off.peeled .peel-header > img,
 .peel-off.peeled .peel-header > span {
   opacity: 0;
 }
 
-// Content erscheint erst nach dem vollständigen Peel
 .peel-off.peeled .peel-content > span,
 .peel-off.peeled .future-skills {
   opacity: 1;
-  transition: opacity 0.5s ease-in; // Erscheint erst nach dem finalen Bild
+  transition: opacity 0.5s ease-in;
 }
 
 .peel-off.peeled .peel-decorations img:nth-child(1) {
@@ -468,7 +457,6 @@
   .peel-off-container {
     margin-top: -400px;
     margin-left: 500px;
-    // width: 300px;
   }
 }
 
@@ -497,20 +485,12 @@
   }
 
   .future-skills {
-    // position: absolute;
     top: 70%;
     left: 50%;
-    // transform: translate(-50%, -50%);
-    // display: flex;
+
     gap: 20px;
-    // opacity: 0;
-    // transition: opacity 0.3s ease;
-    // z-index: 4;
 
     > div {
-      // display: flex;
-      // flex-direction: column;
-      // align-items: center;
       gap: 8px;
     }
 
@@ -521,8 +501,6 @@
 
     span {
       font-size: 0.65rem;
-      // color: white;
-      // text-align: center;
     }
   }
 }
@@ -610,7 +588,6 @@
       height: 70px;
       margin-bottom: 12px;
       filter: grayscale(0%);
-      // transition: filter 0.3s ease;
     }
 
     > span {
@@ -662,11 +639,6 @@
     align-items: stretch;
     padding: 0 0.5rem;
   }
-
-  // .headline-container {
-  //   align-items: flex-end;
-  //   padding: 1.5rem 0.5rem 0.5rem 0.5rem;
-  // }
 
   .subtitle {
     font-size: 1.1rem;
@@ -742,13 +714,11 @@
   }
 
   .peel-content {
-   
     > span {
       // top: 30%;
       // left: 50%;
       font-size: 16px; // WICHTIG !!!
       width: 140px;
-      
     }
   }
 
@@ -756,11 +726,8 @@
     top: 70%;
     left: 50%;
     gap: 8px;
-    
+
     > div {
-      // display: flex;
-      // flex-direction: column;
-      // align-items: center;
       gap: 8px;
     }
 
@@ -771,8 +738,6 @@
 
     span {
       font-size: 0.7rem;
-      // color: white;
-      // text-align: center;
     }
   }
 }
@@ -834,7 +799,7 @@
     }
     > span {
       font-size: 1rem;
-      max-width: none; // Begrenzung aufheben
+      max-width: none;
       white-space: normal;
     }
   }
@@ -866,22 +831,16 @@
   }
 
   .skills-grid-container {
-    // width: 100%;
     padding: 0;
     gap: 0; // ???
-    // align-items: center;
-    // justify-content: center;
   }
 
   .skill-icons {
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr); // 3 Icons pro Reihe
     gap: 0.8rem;
-    // width: 100%;
   }
 
   .skill-item {
-    flex: 0 1 calc(33.33% - 0.8rem); // 3 Icons pro Reihe
+    flex: 0 1 calc(33.33% - 0.8rem);
     min-width: 0;
     max-width: 100px;
     margin-bottom: 0.5rem;
@@ -889,12 +848,9 @@
     > img {
       width: 60px;
       height: 60px;
-      // max-width: 100px;
     }
     > span {
       font-size: 1rem;
-      // max-width: none; // Begrenzung aufheben
-      // white-space: normal;
     }
   }
 
