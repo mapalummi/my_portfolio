@@ -742,37 +742,26 @@
   }
 
   .peel-content {
-    // position: absolute;
-    top: 0;
-    left: 0;
-
+   
     > span {
-      top: 30%; // WICHTIG !!!
-      left: 50%;
-      // transform: translate(-50%, -50%);
-      // font-family: "Bricolage Grotesque", sans-serif;
-      font-size: 18px; // WICHTIG !!!
-      // font-size: 14px;
-      // width: 130px;
+      // top: 30%;
+      // left: 50%;
+      font-size: 16px; // WICHTIG !!!
+      width: 140px;
+      
     }
   }
 
   .future-skills {
-    // position: absolute;
     top: 70%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    // display: flex;
-    gap: 20px;
-    // opacity: 0;
-    // transition: opacity 0.3s ease;
-    // z-index: 4;
-
+    gap: 8px;
+    
     > div {
       // display: flex;
       // flex-direction: column;
       // align-items: center;
-      gap: 4px;
+      gap: 8px;
     }
 
     img {
@@ -781,7 +770,7 @@
     }
 
     span {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       // color: white;
       // text-align: center;
     }
