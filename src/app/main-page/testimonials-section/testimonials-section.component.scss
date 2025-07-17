@@ -11,6 +11,10 @@
   align-items: flex-start;
   gap: 2rem;
   min-height: 850px;
+
+  @media (max-width: 1000px) {
+    gap: 0;
+  }
 }
 
 .headline-container {
@@ -48,6 +52,10 @@
       font-size: 2.5rem;
     }
   }
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+  }
 }
 
 @keyframes pulseArrow {
@@ -84,7 +92,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; // Karten vertikal im Container zentrieren
-    min-height: 100vh; // Optional: nimmt volle Höhe ein
+    min-height: 100vh;
   }
 }
 
@@ -121,8 +129,6 @@
   }
 }
 
-
-
 .testimonial-card {
   position: relative; // Container für absolute Positionierung
   cursor: pointer;
@@ -150,6 +156,9 @@
     width: 100%;
     box-sizing: border-box;
   }
+
+  @media (max-width: 460px) {
+  }
 }
 
 .card-image {
@@ -162,8 +171,11 @@
     width: 390px;
   }
 
-  @media (max-width: 1000px) {
-    
+  @media (max-width: 460px) {
+    aspect-ratio: 1 / 1;
+    width: 90vw; // flexibel, passt sich dem Viewport an
+    max-width: 390px; // optional, maximale Größe
+    min-width: 200px; // optional, minimale Größe
   }
 }
 
@@ -180,8 +192,11 @@
     width: 390px;
   }
 
-  @media (max-width: 1000px) {
-  
+  @media (max-width: 460px) {
+    aspect-ratio: 1 / 1;
+    width: 90vw; // flexibel, passt sich dem Viewport an
+    max-width: 390px; // optional, maximale Größe
+    min-width: 200px; // optional, minimale Größe
   }
 }
 
@@ -212,9 +227,8 @@
     justify-content: space-between;
   }
 
-  // @media (max-width: 1000px) {
-  //   font-size: 0.8rem;
-  // }
+  @media (max-width: 460px) {
+  }
 }
 
 .testimonial-text {
@@ -223,8 +237,8 @@
   margin-bottom: 16px;
 
   @media (max-width: 1350px) {
-      margin-bottom: 8px;
-    }
+    margin-bottom: 8px;
+  }
 }
 
 .bottom-row {
@@ -234,9 +248,9 @@
   align-items: flex-end;
   margin-top: 30px;
 
-   @media (max-width: 1350px) {
-      margin-top: 30px;
-    }
+  @media (max-width: 1350px) {
+    margin-top: 30px;
+  }
 }
 
 .author-info {
