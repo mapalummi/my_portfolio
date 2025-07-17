@@ -1,10 +1,10 @@
 @import "./../../../styles.scss";
 
 :host {
-  // Logo invertieren für schwarzen Hintergrund
+  // Logo invertieren
   --header-logo-filter: invert(1);
 
-  // Nur die ersten beiden Links schwarz
+  // Nur die ersten beiden Links
   --header-link-2-color: black;
   --header-link-3-color: black;
 
@@ -13,13 +13,11 @@
     --header-link-4-color: white;
   }
 
-  // Tablet (bis 768px)
   @media (max-width: 768px) {
     --header-link-3-color: white;
     --header-link-4-color: white;
   }
 
-  // Mobile (bis 480px)
   @media (max-width: 471px) {
     --header-link-2-color: white;
     --header-link-3-color: white;
@@ -33,7 +31,6 @@
     --header-link-4-color: white;
   }
 
-  // Large Desktop (ab 1200px)
   @media (min-width: 1200px) {
     --header-link-2-color: black;
     --header-link-3-color: black;
@@ -70,7 +67,7 @@ h2 {
     display: flex;
     gap: 50px;
     align-items: flex-start;
-    min-height: calc(100vh - 120px); // Adjust for header height
+    min-height: calc(100vh - 120px);
     padding-top: 120px;
     max-width: 1200px;
     width: 100%;
@@ -82,19 +79,18 @@ h2 {
     }
 
     @media (max-width: 480px) {
-      padding-top: 80px; // Für sehr kleine Bildschirme
+      padding-top: 80px;
     }
   }
 
-  // Responsive Anpassungen für das Background
   @media (max-width: 768px) {
-    background-attachment: scroll; // Auf mobilen Geräten besser
+    background-attachment: scroll;
     background-size: cover;
     background-position: center top;
   }
 
   @media (max-width: 471px) {
-    background-size: 100% contain; // Oder verwenden Sie contain für vollständige Sichtbarkeit
+    background-size: 100% contain;
     background-position: center top;
     min-height: 100vh;
   }
@@ -124,11 +120,11 @@ h2 {
   margin-left: -50px;
 
   @media (max-width: 768px) {
-    margin-left: -20px; // Weniger auf mobilen Geräten
+    margin-left: -20px;
   }
 
   @media (max-width: 480px) {
-    margin-left: 0; // Zurück auf mobile Geräte
+    margin-left: 0;
   }
 
   img {
@@ -223,13 +219,12 @@ h2 {
   border-radius: 24px;
 }
 
-
 .sticker {
   position: absolute;
   top: 35%;
   right: -50px;
   z-index: 1;
-  
+
   @media (max-width: 768px) {
     right: -15px;
   }
@@ -237,7 +232,7 @@ h2 {
   @media (max-width: 480px) {
     right: 0;
   }
-  
+
   .custom-sticker {
     width: 150px;
     height: 150px;
@@ -247,7 +242,7 @@ h2 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    
+
     .sticker-background {
       position: absolute;
       width: 100%;
@@ -256,18 +251,18 @@ h2 {
       border-radius: 50%;
       z-index: 0;
     }
-    
+
     .circular-text {
       position: absolute;
       width: 100%;
       height: 100%;
       z-index: 1;
       animation: rotate 20s linear infinite;
-      
+
       svg {
         width: 100%;
         height: 100%;
-        
+
         text {
           fill: #000000;
           font-family: "Bricolage Grotesque", sans-serif;
@@ -275,7 +270,7 @@ h2 {
           font-weight: 700;
           letter-spacing: 1px;
           text-transform: uppercase;
-          
+
           &:nth-child(even) {
             font-size: 12px;
             font-weight: 400;
@@ -283,7 +278,7 @@ h2 {
         }
       }
     }
-    
+
     .logo-center {
       position: absolute;
       width: 40px;
@@ -292,7 +287,7 @@ h2 {
       display: flex;
       align-items: center;
       justify-content: center;
-      
+
       img {
         width: 48px;
         height: 48px;

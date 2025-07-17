@@ -4,7 +4,6 @@
 .back-to-top-button {
   position: fixed;
   bottom: 10%;
-  // right: calc(50vw - #{$container-max-width / 2} + 30px);
   right: calc(50vw - #{math.div($container-max-width, 2)} + 30px);
   width: 50px;
   height: 50px;
