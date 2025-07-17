@@ -79,22 +79,49 @@
   display: flex;
   justify-content: center;
   align-items: flex-start; // Wichtig für unterschiedliche Transforms!
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; // Karten vertikal im Container zentrieren
+    min-height: 100vh; // Optional: nimmt volle Höhe ein
+  }
 }
 
 .card-left {
   z-index: 3;
   transform: translateY(0) rotate(-2deg) translateX(100px);
+
+  @media (max-width: 1000px) {
+    transform: translateY(0) rotate(3deg) translateX(-15px);
+    width: 100%; // Optional: volle Breite
+    max-width: 390px; // Optional: gleiche Breite wie Bild
+  }
 }
 
 .card-center {
   z-index: 2;
   transform: translateY(50px);
+
+  @media (max-width: 1000px) {
+    transform: translateY(0px);
+    width: 100%; // Optional: volle Breite
+    max-width: 390px; // Optional: gleiche Breite wie Bild
+  }
 }
 
 .card-right {
   z-index: 1;
   transform: translateY(0) rotate(4deg) translateX(-100px);
+
+  @media (max-width: 1000px) {
+    transform: translateY(0) rotate(4deg) translateX(15px);
+    width: 100%; // Optional: volle Breite
+    max-width: 390px; // Optional: gleiche Breite wie Bild
+  }
 }
+
+
 
 .testimonial-card {
   position: relative; // Container für absolute Positionierung
@@ -113,6 +140,16 @@
       color: white;
     }
   }
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Inhalt vertikal zentrieren
+    align-items: center;
+    min-height: 200px; // Passe ggf. an
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 .card-image {
@@ -123,6 +160,10 @@
 
   @media (max-width: 1350px) {
     width: 390px;
+  }
+
+  @media (max-width: 1000px) {
+    
   }
 }
 
@@ -137,6 +178,10 @@
 
   @media (max-width: 1350px) {
     width: 390px;
+  }
+
+  @media (max-width: 1000px) {
+  
   }
 }
 
@@ -166,6 +211,10 @@
     font-size: 0.9rem;
     justify-content: space-between;
   }
+
+  // @media (max-width: 1000px) {
+  //   font-size: 0.8rem;
+  // }
 }
 
 .testimonial-text {
@@ -193,7 +242,7 @@
 .author-info {
   .author-name,
   .author-title {
-    transition: color 0.5s ease-in-out; // Sanfte Farbanimation
+    transition: color 0.5s ease-in-out;
   }
 
   .author-name {
