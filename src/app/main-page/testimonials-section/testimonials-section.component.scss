@@ -56,6 +56,12 @@
   @media (max-width: 768px) {
     margin-top: 100px;
   }
+
+  @media (max-width: 410px) {
+    h1 {
+      line-height: 1.2;
+    }
+  }
 }
 
 @keyframes pulseArrow {
@@ -94,6 +100,10 @@
     justify-content: center; // Karten vertikal im Container zentrieren
     min-height: 100vh;
   }
+
+  @media (max-width: 410px) {
+    min-height: 90vh;
+  }
 }
 
 .card-left {
@@ -131,6 +141,12 @@
 
 .testimonial-card {
   position: relative; // Container für absolute Positionierung
+
+  //NEU
+  // width: 390px;
+  // aspect-ratio: 1 / 1;
+  max-width: 100%;
+
   cursor: pointer;
   transition: transform 0.3s ease-in-out, z-index 0s;
 
@@ -153,17 +169,19 @@
     justify-content: center; // Inhalt vertikal zentrieren
     align-items: center;
     min-height: 200px; // Passe ggf. an
-    width: 100%;
+    // width: 100%;
+    max-width: 350px;
     box-sizing: border-box;
-  }
-
-  @media (max-width: 460px) {
   }
 }
 
 .card-image {
+  //NEU
+width: 100%;
+  // aspect-ratio: 1 / 1;
+  display: block;
+
   width: 500px;
-  // height: auto;
   z-index: 0;
   display: block;
 
@@ -211,30 +229,38 @@
 }
 
 .card-content {
-  width: 100%;
-  min-height: 350px;
-  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
-  color: black;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
+  width: 100%;
+  // min-height: 350px;
+  height: 100%;
+  z-index: 2;
   box-sizing: border-box;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 17px;
   text-wrap: balance;
+
+  padding: 40px;
+  // font-size: 17px;
+
+  // Padding und Schriftgröße responsiv anpassen
+  // padding: clamp(12px, 4vw, 40px);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
 
   @media (max-width: 1350px) {
     min-height: 250px;
     padding: 20px;
     font-size: 0.9rem;
     justify-content: space-between;
+
+    // padding: clamp(8px, 3vw, 20px);
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
   }
 
   @media (max-width: 460px) {
@@ -248,11 +274,17 @@
     font-size: 0.9rem;
     box-sizing: border-box;
     justify-content: space-between;
+
+    // padding: clamp(6px, 2vw, 12px);
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
   }
 
-  @media (max-width: 410px) {
-    font-size: 0.8rem;
-    padding-top: 12px;
+  @media (min-width: 320px) and (max-width: 410px) {
+    padding: clamp(4px, 3vw, 10px); // Weniger Abstand zum Rand
+    font-size: clamp(0.75rem, 2vw, 0.85rem); // Kleinere Schrift
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
   }
 }
 
