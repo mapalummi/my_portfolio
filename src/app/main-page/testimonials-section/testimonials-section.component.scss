@@ -92,12 +92,12 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start; // Wichtig für unterschiedliche Transforms!
+  align-items: center;
 
   @media (max-width: 1000px) {
     flex-direction: column;
     align-items: center;
-    justify-content: center; // Karten vertikal im Container zentrieren
+    justify-content: center;
     min-height: 100vh;
   }
 
@@ -141,12 +141,7 @@
 
 .testimonial-card {
   position: relative; // Container für absolute Positionierung
-
-  //NEU
-  // width: 390px;
-  // aspect-ratio: 1 / 1;
   max-width: 100%;
-
   cursor: pointer;
   transition: transform 0.3s ease-in-out, z-index 0s;
 
@@ -168,16 +163,26 @@
     flex-direction: column;
     justify-content: center; // Inhalt vertikal zentrieren
     align-items: center;
-    min-height: 200px; // Passe ggf. an
+    min-height: 200px;
     // width: 100%;
     max-width: 350px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 320px) and (max-width: 410px) {
+    // position: absolute;
+    // top: 0;
+    // left: 50px;
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    min-width: 200px;
     box-sizing: border-box;
   }
 }
 
 .card-image {
-  //NEU
-width: 100%;
+  width: 100%;
   // aspect-ratio: 1 / 1;
   display: block;
 
@@ -223,8 +228,14 @@ width: 100%;
     min-width: 200px;
   }
 
-  @media (max-width: 410px) {
+  @media (min-width: 320px) and (max-width: 410px) {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 100%;
+    height: 100%;
     max-width: 250px;
+    box-sizing: border-box;
   }
 }
 
@@ -247,10 +258,7 @@ width: 100%;
   text-wrap: balance;
 
   padding: 40px;
-  // font-size: 17px;
 
-  // Padding und Schriftgröße responsiv anpassen
-  // padding: clamp(12px, 4vw, 40px);
   font-size: clamp(0.9rem, 2vw, 1.1rem);
 
   @media (max-width: 1350px) {
@@ -258,8 +266,6 @@ width: 100%;
     padding: 20px;
     font-size: 0.9rem;
     justify-content: space-between;
-
-    // padding: clamp(8px, 3vw, 20px);
     font-size: clamp(0.85rem, 2vw, 0.95rem);
   }
 
@@ -274,16 +280,19 @@ width: 100%;
     font-size: 0.9rem;
     box-sizing: border-box;
     justify-content: space-between;
-
-    // padding: clamp(6px, 2vw, 12px);
     font-size: clamp(0.8rem, 3vw, 0.9rem);
   }
 
   @media (min-width: 320px) and (max-width: 410px) {
-    padding: clamp(4px, 3vw, 10px); // Weniger Abstand zum Rand
-    font-size: clamp(0.75rem, 2vw, 0.85rem); // Kleinere Schrift
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    max-width: 250px;
+    min-width: 200px;
+    padding: 10px;
+    font-size: 0.8rem;
     box-sizing: border-box;
   }
 }
@@ -311,6 +320,10 @@ width: 100%;
 
   @media (max-width: 1350px) {
     margin-top: 30px;
+  }
+
+  @media (max-width: 1000px) {
+    margin-top: 6px;
   }
 
   @media (max-width: 410px) {
