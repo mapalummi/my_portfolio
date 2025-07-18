@@ -11,9 +11,16 @@
     "button-two": "Lass connecten"
   },
   "about-me-section": {
+    "snippet1":"in Düsseldorf zu Hause",
+    "snippet2":"interessiert an KI-gestützten Arbeitsprozessen",
+    "snippet3":"offen für Remote-Arbeit",
     "whois": "Wer ist Marco?",
     "about": "Über mich",
-    "text": "Hey! Ich bin Marco und liebe moderne Frontend-Technologien - deshalb werde ich Junior Webentwickler. Als Programmier-Neuling begeistert mich besonders, kreative Ideen in Anwendungen umzusetzen. Durch neue Projekte lerne ich ständig dazu. Mein Fokus liegt auf JavaScript und Angular, sowie Automatisierung und KI. Als Entwickler möchte ich Lösungen schaffen, die Menschen weiterbringen.",
+    "text1": "Hey! Ich bin Marco und liebe moderne Frontend-Technologien - deshalb werde ich Junior Webentwickler.",
+    
+    "text2": "Als Programmier-Neuling begeistert mich besonders, kreative Ideen in Anwendungen umzusetzen. Durch neue Projekte lerne ich ständig dazu. Mein Fokus liegt auf JavaScript und Angular, sowie Automatisierung und KI.",
+    
+    "text3": "Als Entwickler möchte ich Lösungen schaffen, die Menschen weiterbringen.",
     "button": "Reden wir?"
   },
   "my-stack-section": {

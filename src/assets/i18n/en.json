@@ -11,9 +11,14 @@
     "button-two": "Get in Touch"
   },
   "about-me-section": {
+    "snippet1":"Based in Düsseldorf",
+    "snippet2":"exploring AI-powered workflows",
+    "snippet3":"Open to work remote",
     "whois": "Who's Marco?",
     "about": "About me",
-    "text": "Hi! I'm Marco and I love modern frontend technologies - that's why I'm becoming a Junior Web Developer. As a programming newcomer, I'm particularly excited about turning creative ideas into applications. I'm constantly learning through new projects. My focus is on JavaScript and Angular, as well as automation and AI. As a developer, I want to create solutions that help people move forward.",
+    "text1": "Hi! I'm Marco and I love modern frontend technologies - that's why I'm becoming a Junior Web Developer.  ",
+    "text2":"As a programming newcomer, I'm particularly excited about turning creative ideas into applications. I'm constantly learning through new projects. My focus is on JavaScript and Angular, as well as automation and AI.",
+    "text3":"As a developer, I want to create solutions that help people move forward.",
     "button": "Let's talk"
   },
   "my-stack-section": {

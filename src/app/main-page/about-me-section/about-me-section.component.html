@@ -2,34 +2,39 @@
   <div class="snippet-container">
     <div class="snippets-group">
       <div class="snippet1">
-        <img src="./assets/icons/snippet1.png" alt="Decorative snippet background element" /><span
-          class="snippet-text1"
-        >
+        <img
+          src="./assets/icons/snippet1.png"
+          alt="Decorative snippet background element"
+        /><span class="snippet-text1">
           <img
             src="./assets/icons/State_Location.png"
             alt="Location pin icon"
             class="snippet-icon"
-          />Based in Düsseldorf</span
+          />{{ "about-me-section.snippet1" | translate }}</span
         >
       </div>
       <div class="snippet2">
-        <img src="./assets/icons/snippet3.png" alt="Decorative snippet background element" /><span
-          class="snippet-text2"
+        <img
+          src="./assets/icons/snippet3.png"
+          alt="Decorative snippet background element"
+        /><span class="snippet-text2"
           ><img
             src="./assets/icons/State_Relocation.png"
             alt="Relocation icon"
             class="snippet-icon"
-          />Open to relocate</span
+          />{{ "about-me-section.snippet2" | translate }}</span
         >
       </div>
       <div class="snippet3">
-        <img src="./assets/icons/snippet2.png" alt="Decorative snippet background element" /><span
-          class="snippet-text3"
+        <img
+          src="./assets/icons/snippet2.png"
+          alt="Decorative snippet background element"
+        /><span class="snippet-text3"
           ><img
             src="./assets/icons/Status_Remote.png"
             alt="Remote work icon"
             class="snippet-icon"
-          />Open to work remote</span
+          />{{ "about-me-section.snippet3" | translate }}</span
         >
       </div>
     </div>
@@ -39,11 +44,18 @@
     <p class="subtitle">{{ "about-me-section.whois" | translate }}</p>
     <div class="main-title">
       <h1 class="">{{ "about-me-section.about" | translate }}</h1>
-      <img src="./assets/icons/underline1.png" alt="Decorative underline accent" />
+      <img
+        src="./assets/icons/underline1.png"
+        alt="Decorative underline accent"
+      />
     </div>
 
     <p class="description">
-      {{ "about-me-section.text" | translate }}
+      {{ "about-me-section.text1" | translate }} <br /><br />{{
+        "about-me-section.text2" | translate
+      }}
+      <br /><br />
+      {{ "about-me-section.text3" | translate }}
     </p>
 
     <button
