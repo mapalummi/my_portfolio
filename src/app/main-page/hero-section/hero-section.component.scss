@@ -62,7 +62,6 @@
   flex-direction: column;
   z-index: 1000;
 
-  //NEU
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -75,7 +74,7 @@
 }
 
 .mobile-menu-dialog.mobile-menu-open {
-  max-height: 100vh; // oder ein Wert, der für dein Menü reicht
+  max-height: 100vh; // oder ein Wert, der für das Menü reicht
 }
 
 .mobile-menu-icon {
@@ -162,6 +161,8 @@
 
 // --- BOUNCING LETTERS ---
 .bouncing-letters {
+  //TODO:
+  // font-family: "Bricolage Grotesque", sans-serif;
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 800;
   letter-spacing: 0.05em;
