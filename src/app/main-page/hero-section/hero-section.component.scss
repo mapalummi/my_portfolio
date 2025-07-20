@@ -161,8 +161,6 @@
 
 // --- BOUNCING LETTERS ---
 .bouncing-letters {
-  //TODO:
-  // font-family: "Bricolage Grotesque", sans-serif;
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -175,7 +173,7 @@
     font-size: 100px;
   }
 
-  @media (max-width: 672px) {
+  @media (max-width: 767px) {
     font-size: clamp(36px, 12vw, 70px);
   }
 
@@ -196,7 +194,7 @@
   max-width: 1200px; // Begrenzt die maximale Breite
   margin: 0 auto;
 
-  @media (max-width: 1600px) {
+  @media (max-width: 1630px) {
     max-width: 1000px;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -233,11 +231,7 @@
 .text-line-one {
   align-items: flex-start;
   align-self: flex-start;
-  margin-left: 6rem;
-
-  @media (min-width: 1670px) {
-    margin-left: 13rem;
-  }
+  margin-left: 12rem;
 
   .hello-button {
     order: 1;
@@ -286,8 +280,8 @@
     }
   }
 
-  @media (max-width: 1600px) {
-    margin-left: 6rem;
+  @media (max-width: 1630px) {
+    margin-left: 4rem;
     margin-right: 2rem;
     max-width: 100%;
   }
@@ -300,7 +294,7 @@
     width: 100%;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 769px) {
     font-size: clamp(40px, 12vw, 100px);
   }
 }
@@ -476,8 +470,8 @@
 // --- POLAROID TEXT ---
 .polaroid-text {
   position: absolute;
-  bottom: 8%; // Prozentuale Position innerhalb des hero-section
-  right: 30%; // Prozentuale Position innerhalb des hero-section
+  bottom: 12%;
+  right: 30%;
   transform: none; // Entfernt die Zentrierung
   color: var(--text-color-dark);
   font-family: "Kalam", sans-serif;
@@ -489,6 +483,10 @@
 
   @media (max-width: 1670px) {
     bottom: 9%;
+  }
+
+  @media (max-width: 1630px) {
+    bottom: 12%;
   }
 
   @media (max-width: 1165px) {
