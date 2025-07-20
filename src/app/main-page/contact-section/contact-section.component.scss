@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   font-family: "Bricolage Grotesque", sans-serif;
 
-  @media (max-width: 576px) {
+  @media (max-width: 999px) {
     min-height: 100vh;
   }
 }
@@ -21,7 +21,7 @@
   min-height: 90vh;
   font-family: "Bricolage Grotesque", sans-serif;
 
-  @media (max-width: 576px) {
+  @media (max-width: 999px) {
     min-height: 100vh;
   }
 }
@@ -35,7 +35,7 @@
   justify-content: center;
   margin-bottom: 5rem;
 
-  @media (max-width: 576px) {
+  @media (max-width: 999px) {
     display: flex;
     flex-direction: column;
     margin-bottom: 5rem;
@@ -57,7 +57,7 @@
 
   // border: 1px solid red;
 
-  @media (max-width: 576px) {
+  @media (max-width: 999px) {
     width: 100%;
   }
 }
@@ -76,7 +76,7 @@
       font-size: 18px;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 999px) {
       font-size: 18px;
     }
   }
@@ -91,7 +91,7 @@
       font-size: 44px;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 999px) {
       font-size: 34px;
     }
   }
@@ -101,7 +101,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  
+
   gap: 16px;
 
   p {
@@ -134,7 +134,7 @@
 .mobile-arrow {
   display: none;
 
-  @media (max-width: 576px) {
+  @media (max-width: 999px) {
     display: block;
     position: absolute;
     bottom: 10px; // Position relativ zur Contact-Form
@@ -147,7 +147,7 @@
 .desktop-arrow {
   display: block;
 
-  @media (max-width: 576px) {
+  @media (max-width: 999px) {
     display: none; // Desktop-Arrow verstecken
   }
 }
@@ -184,8 +184,9 @@
     margin-left: 50px;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 999px) {
     width: 100%;
+    max-width: 700px;
     margin-left: 0;
     align-items: flex-start; // Links ausrichten für mobil
   }
@@ -200,7 +201,7 @@
   width: 150px;
   height: 150px;
 
-  @media (max-width: 576px) {
+  @media (max-width: 999px) {
     display: none;
   }
 
@@ -282,7 +283,7 @@ app-contactform {
   z-index: 0;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 999px) {
   .contact-wrapper {
     width: 100%;
     display: flex;
