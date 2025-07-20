@@ -353,7 +353,8 @@
       margin-right: 0;
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 499px) {
+      width: 170px;
       margin-top: 0;
     }
   }
@@ -420,6 +421,10 @@
     top: -120px;
   }
 
+  @media (max-width: 1400px) {
+    right: 15rem;
+  }
+
   @media (max-width: 1165px) {
     position: static;
     margin: var(--spacing-xl) auto 0 auto;
@@ -456,26 +461,22 @@
 @keyframes colorBounce {
   0% {
     filter: grayscale(100%);
-    // transform: scale(1);
   }
   30% {
     filter: grayscale(50%) saturate(1.5);
-    // transform: scale(1.05);
   }
   60% {
     filter: grayscale(0%) saturate(2) brightness(1.2);
-    // transform: scale(0.98);
   }
   100% {
     filter: grayscale(0%) saturate(1) brightness(1);
-    // transform: scale(1);
   }
 }
 
 // --- POLAROID TEXT ---
 .polaroid-text {
   position: absolute;
-  bottom: 12%; // Prozentuale Position innerhalb des hero-section
+  bottom: 8%; // Prozentuale Position innerhalb des hero-section
   right: 30%; // Prozentuale Position innerhalb des hero-section
   transform: none; // Entfernt die Zentrierung
   color: var(--text-color-dark);
