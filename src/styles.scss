@@ -18,6 +18,12 @@ $my-theme: mat.define-light-theme((
 
 @include mat.all-component-themes($my-theme);
 
+// WICHTIG!
+.mat-h1, .mat-typography h1, .mat-headline-5 {
+  font-size: 48px !important;
+  font-family: "Bricolage Grotesque", sans-serif !important;
+}
+
 
 * {
   margin: 0;

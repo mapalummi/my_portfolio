@@ -328,7 +328,7 @@
 
 @media (max-width: 400px) {
   .snippet1 {
-    top: 19%;
+    top: 10%;
   }
 
   .snippet2 .snippet-text2 {
@@ -337,7 +337,7 @@
   }
 
   .snippet3 {
-    top: 58%;
+    top: 52%;
   }
 }
 
@@ -347,5 +347,39 @@
     margin: 0;
     padding: 0;
     justify-content: center;
+  }
+
+  .snippet1 {
+    top: 12%;
+
+    .snippet-text1 {
+      top: 19%;
+      font-size: 0.8rem;
+    }
+  }
+
+  .snippet2 {
+    top: 30%;
+
+    .snippet-text2 {
+      top: 30%;
+      font-size: 0.8rem;
+      max-width: 300px;
+      gap: 4px;
+    }
+  }
+
+  .snippet3 {
+    top: 50%;
+
+    .snippet-text3 {
+      top: 40%;
+      font-size: 0.8rem;
+    }
+  }
+
+  .snippet-icon {
+    width: 24px;
+    height: 24px;
   }
 }

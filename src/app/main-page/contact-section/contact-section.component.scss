@@ -8,6 +8,10 @@
   background-position: center top;
   background-repeat: no-repeat;
   font-family: "Bricolage Grotesque", sans-serif;
+
+  @media (max-width: 576px) {
+    min-height: 100vh;
+  }
 }
 
 #contact-section .page-container {
@@ -15,39 +19,81 @@
   flex-direction: column;
   justify-content: flex-end;
   min-height: 90vh;
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  @media (max-width: 576px) {
+    min-height: 100vh;
+  }
 }
 
 .content-area {
   display: flex;
   width: 100%;
-  max-height: 70vh;
+  // max-height: 70vh;
   flex: none;
   align-items: center;
   justify-content: center;
   margin-bottom: 5rem;
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    max-height: none;
+  }
 }
 
 .left-section {
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
+  min-height: 0;
+  height: auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
   color: white;
   gap: 24px;
+
+  // border: 1px solid red;
+
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 }
 
 .headline-container {
   display: flex;
   flex-direction: column;
 
+  // border: 1px solid blue;
+
   span {
     font-size: 20px;
     text-transform: uppercase;
+
+    @media (max-width: 1111px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 18px;
+    }
   }
 
   h1 {
-    font-size: 64px;
+    font-size: 48px;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: 1111px) {
+      font-size: 44px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 34px;
+    }
   }
 }
 
@@ -55,6 +101,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  
   gap: 16px;
 
   p {
@@ -62,6 +109,19 @@
     width: 100%;
     font-size: 18px;
     text-wrap: balance;
+    line-height: 1.5;
+
+    @media (max-width: 1111px) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 576px) {
+      align-self: flex-start;
+      width: 100%;
+      font-size: 15px;
+      line-height: 1.5;
+    }
   }
 }
 
@@ -73,10 +133,23 @@
 
 .mobile-arrow {
   display: none;
+
+  @media (max-width: 576px) {
+    display: block;
+    position: absolute;
+    bottom: 10px; // Position relativ zur Contact-Form
+    left: 0;
+    width: 180px;
+    height: 35px;
+  }
 }
 
 .desktop-arrow {
   display: block;
+
+  @media (max-width: 576px) {
+    display: none; // Desktop-Arrow verstecken
+  }
 }
 
 @keyframes pulseUnderline {
@@ -102,6 +175,20 @@
   justify-content: center;
   align-items: center;
   color: white;
+
+  @media (max-width: 1480px) {
+    margin-left: 100px;
+  }
+
+  @media (max-width: 1111px) {
+    margin-left: 50px;
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+    margin-left: 0;
+    align-items: flex-start; // Links ausrichten für mobil
+  }
 }
 
 .sticker {
@@ -112,6 +199,10 @@
   position: relative;
   width: 150px;
   height: 150px;
+
+  @media (max-width: 576px) {
+    display: none;
+  }
 
   .custom-sticker {
     width: 150px;
@@ -191,113 +282,11 @@ app-contactform {
   z-index: 0;
 }
 
-// ===================
-// RESPONSIVE STYLES
-// ===================
-
-@media (max-width: 1480px) {
-  .right-section {
-    margin-left: 100px;
-  }
-}
-
-@media (max-width: 1111px) {
-  .right-section {
-    margin-left: 50px;
-  }
-
-  .headline-container {
-    span {
-      font-size: 18px;
-    }
-
-    h1 {
-      font-size: 44px;
-    }
-  }
-
-  .text-container {
-    // gap: 16px;
-
-    p {
-      // align-self: flex-start;
-      // width: 100%;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-  }
-}
-
-//Mobile Layout
 @media (max-width: 576px) {
-  #contact-section {
-    min-height: 100vh;
-  }
-
-  #contact-section .page-container {
-    min-height: 100vh;
-  }
-
-  .content-area {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5rem;
-    max-height: none;
-  }
-
-  .headline-container {
-    span {
-      font-size: 18px;
-    }
-
-    h1 {
-      font-size: 34px;
-    }
-  }
-
-  .text-container {
-    // gap: 16px;
-
-    p {
-      align-self: flex-start;
-      width: 100%;
-      font-size: 15px;
-      line-height: 1.5;
-    }
-  }
-
-  //TODO:
-  .sticker {
-    display: none;
-  }
-
-  .desktop-arrow {
-    display: none; // Desktop-Arrow verstecken
-  }
-
   .contact-wrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
-  }
-
-  .mobile-arrow {
-    display: block;
-    position: absolute;
-    bottom: 10px; // Position relativ zur Contact-Form
-    left: 0;
-    width: 180px;
-    height: 35px;
-  }
-
-  .right-section {
-    width: 100%;
-    margin-left: 0;
-    align-items: flex-start; // Links ausrichten für mobil
-  }
-
-  .left-section {
-    width: 100%;
   }
 }
