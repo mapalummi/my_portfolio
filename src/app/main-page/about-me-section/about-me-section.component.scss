@@ -155,8 +155,12 @@
     display: flex;
     align-items: center;
     width: max-content;
-    max-width: 370px;
+    max-width: 450px;
     gap: 1rem;
+
+    // @media (max-width: 950px) {
+    //   max-width: 200px;
+    // }
   }
 }
 
@@ -213,17 +217,10 @@
   .snippet1 .snippet-text1,
   .snippet2 .snippet-text2,
   .snippet3 .snippet-text3 {
-    // position: absolute;
-    // bottom: 39%; // statt bottom: 60px
     left: 50%;
     transform: translateX(-50%);
-    // color: white;
     font-size: 1rem;
-    // display: flex;
-    // align-items: center;
-    // width: max-content;
     max-width: 300px;
-    // gap: 1rem;
   }
 
   .snippet-icon {
@@ -242,6 +239,18 @@
   }
   .snippet3 {
     top: 60%;
+  }
+}
+
+@media (max-width: 950px) {
+  #about-section {
+    gap: 0;
+  }
+  .about-me-container {
+    padding: 0.5rem;
+  }
+  .snippet2 .snippet-text2 {
+    top: 30%;
   }
 }
 
@@ -294,9 +303,6 @@
   .snippet1 {
     top: 19%;
   }
-  // .snippet2 {
-  //   top: 36%;
-  // }
 
   .snippet2 .snippet-text2 {
     top: 24%;
