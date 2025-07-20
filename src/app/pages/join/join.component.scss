@@ -67,6 +67,14 @@ h2 {
   position: relative;
   font-family: "Bricolage Grotesque", sans-serif;
 
+  @media (max-width: 800px) {
+    background-image: url("./../../../assets/img/Note book rotate.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
   .page-container {
     display: flex;
     align-items: stretch;
@@ -74,6 +82,15 @@ h2 {
     box-sizing: border-box;
     min-height: 100vh; // oder 100vh, je nach Bedarf
     height: 100%;
+
+    @media (max-width: 1000px) {
+      gap: 40px;
+    }
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+      gap: 24px;
+    }
   }
 
   .left-section,
@@ -89,6 +106,16 @@ h2 {
     padding: var(--spacing-lg);
     box-sizing: border-box;
     height: 100%;
+
+    @media (max-width: 1000px) {
+      padding: 24px;
+    }
+
+    @media (max-width: 800px) {
+      padding: 12px;
+      min-height: unset;
+      height: auto;
+    }
   }
 
   .left-section {
