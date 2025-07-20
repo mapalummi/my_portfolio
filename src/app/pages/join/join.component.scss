@@ -52,6 +52,7 @@ h2 {
 
 #content {
   min-height: 100vh;
+  height: 100%;
   margin-top: 0;
   padding-top: 0;
   background-color: rgb(21, 21, 21);
@@ -68,237 +69,230 @@ h2 {
 
   .page-container {
     display: flex;
-    gap: 50px;
-    // align-items: flex-start;
     align-items: stretch;
-    min-height: calc(100vh - 120px); // Adjust for header height
-    padding-top: 120px;
-    max-width: 1200px;
-    width: 100%;
+    gap: 100px; // Abstand zwischen Sections
+    box-sizing: border-box;
+    min-height: 100vh; // oder 100vh, je nach Bedarf
     height: 100%;
+  }
+
+  .left-section,
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // vertikal
+    flex: 1 1 0;
+
+    flex-basis: 0;
+    min-width: 0;
+
+    padding: var(--spacing-lg);
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .left-section {
+    align-items: flex-start; // horizontal
+  }
+
+  .right-section {
+    align-items: flex-end; // horizontal
+  }
+
+  .back-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 12px;
+    cursor: pointer;
+    margin-left: -50px;
 
     @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 30px;
-      padding-top: 100px;
+      margin-left: -20px; // Weniger auf mobilen Geräten
     }
 
     @media (max-width: 480px) {
-      padding-top: 80px;
+      margin-left: 0; // Zurück auf mobile Geräte
+    }
+
+    img {
+      width: 30px;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        color: #1073ea;
+      }
     }
   }
 
- 
-
-.left-section {
-  flex: 1;
-  max-width: 600px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-  }
-}
-
-.back-button {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-  gap: 12px;
-  cursor: pointer;
-  margin-left: -50px;
-
-  @media (max-width: 768px) {
-    margin-left: -20px; // Weniger auf mobilen Geräten
+  .underline-image {
+    width: 110px;
+    height: 20px;
+    animation: pulseUnderline 2s ease-in-out infinite;
   }
 
-  @media (max-width: 480px) {
-    margin-left: 0; // Zurück auf mobile Geräte
-  }
-
-  img {
-    width: 30px;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-
-    &:hover {
-      color: #1073ea;
+  @keyframes pulseUnderline {
+    0% {
+      clip-path: inset(0 100% 0 0);
+    }
+    25% {
+      clip-path: inset(0% 0 0 0);
+    }
+    75% {
+      clip-path: inset(0% 0 0 0);
+    }
+    100% {
+      clip-path: inset(0 100% 0 0);
     }
   }
-}
 
-.underline-image {
-  width: 110px;
-  height: 20px;
-  animation: pulseUnderline 2s ease-in-out infinite;
-}
+  .text-section {
+    max-width: 450px; // Begrenzt die Textbreite
+    font-size: clamp(14px, 2vw, 18px);
 
-@keyframes pulseUnderline {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  25% {
-    clip-path: inset(0% 0 0 0);
-  }
-  75% {
-    clip-path: inset(0% 0 0 0);
-  }
-  100% {
-    clip-path: inset(0 100% 0 0);
-  }
-}
+    p {
+      line-height: 1.5; // Kompaktere Zeilenhöhe
+      margin-bottom: 12px; // Weniger Abstand zwischen Absätzen
+      text-align: justify; // Blocksatz für saubere Kanten
+    }
 
-.text-section {
-  max-width: 450px; // Begrenzt die Textbreite
-  font-size: clamp(14px, 2vw, 20px);
+    h2 {
+      margin-bottom: 8px; // Weniger Abstand unter Überschriften
+    }
 
-  p {
-    line-height: 1.5; // Kompaktere Zeilenhöhe
-    margin-bottom: 12px; // Weniger Abstand zwischen Absätzen
-    text-align: justify; // Blocksatz für saubere Kanten
+    @media (max-width: 768px) {
+      max-width: 100%; // Auf mobilen Geräten volle Breite
+    }
   }
 
-  h2 {
-    margin-bottom: 8px; // Weniger Abstand unter Überschriften
+  .icon-wrapper {
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
   }
 
-  @media (max-width: 768px) {
-    max-width: 100%; // Auf mobilen Geräten volle Breite
-  }
-}
+  .icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-.icons {
-  width: 80%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 14px;
+    img {
+      width: 30px;
+    }
 
-  img {
-    width: 30px;
-  }
-}
-
-.right-section {
-  flex: 1;
-  max-width: 600px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 50px;
-  align-self: center;
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-    align-self: auto; // Reset auf mobilen Geräten
-  }
-}
-
-.project-sample {
-  position: relative;
-}
-
-.project-image {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 24px;
-}
-
-.sticker-image {
-  position: absolute;
-  top: 35%;
-  right: -50px;
-  width: 150px;
-  height: auto;
-  opacity: 1;
-  pointer-events: none;
-
-  @media (max-width: 1280px){
-    width: 120px;
-    right: -30px;
+    p {
+      font-size: 14px;
+    }
   }
 
-  @media (max-width: 768px) {
-    right: -15px; // Weniger auf Tablets
+  .project-sample {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
   }
 
-  @media (max-width: 480px) {
-    right: 0; // Zurück auf mobile Geräte
-  }
-}
-
-.project-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.right-section-button {
-  width: 140px;
-  height: 40px;
-  padding: 12px 24px;
-  border: 1px solid white;
-  box-shadow: 0px 5px 0px rgb(255, 255, 255);
-  background: transparent;
-  color: white;
-  border-radius: 24px;
-  font-size: 16px;
-  cursor: pointer;
-
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-
-  &:hover {
-    box-shadow: none;
-    transform: translateY(5px);
-    background-color: #1073ea;
-  }
-}
-
-.next-button {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 18px;
-  font-weight: bold;
-  gap: 12px;
-  cursor: pointer;
-  margin-right: -50px;
-
-  @media (max-width: 768px) {
-    margin-right: -20px; // Weniger auf mobilen Geräten
+  .project-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 24px;
   }
 
-  @media (max-width: 480px) {
-    margin-right: 0; // Zurück auf mobile Geräte
+  .sticker-image {
+    position: absolute;
+    top: 40%;
+    right: -50px;
+    width: 150px;
+    height: auto;
+    opacity: 1;
+    pointer-events: none;
+
+    @media (max-width: 1280px) {
+      width: 120px;
+      right: -30px;
+    }
+
+    @media (max-width: 768px) {
+      right: -15px; // Weniger auf Tablets
+    }
+
+    @media (max-width: 480px) {
+      right: 0; // Zurück auf mobile Geräte
+    }
   }
 
-  img {
-    width: 30px;
+  .project-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
   }
 
-  a {
+  .right-section-button {
+    width: 140px;
+    height: 40px;
+    padding: 12px 24px;
+    border: 1px solid white;
+    box-shadow: 0px 5px 0px rgb(255, 255, 255);
+    background: transparent;
     color: white;
-    text-decoration: none;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 
     &:hover {
-      color: #24dd80;
+      box-shadow: none;
+      transform: translateY(5px);
+      background-color: #1073ea;
     }
   }
-}
 
+  .next-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    gap: 12px;
+    cursor: pointer;
+    margin-right: -50px;
 
- // Responsive Anpassungen für Background
+    @media (max-width: 768px) {
+      margin-right: -20px; // Weniger auf mobilen Geräten
+    }
+
+    @media (max-width: 480px) {
+      margin-right: 0; // Zurück auf mobile Geräte
+    }
+
+    img {
+      width: 30px;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: #24dd80;
+      }
+    }
+  }
+
+  // Responsive Anpassungen für Background
   @media (max-width: 768px) {
     background-attachment: scroll; // Auf mobilen Geräten besser
     background-size: cover;
@@ -311,5 +305,3 @@ h2 {
     min-height: 100vh;
   }
 }
-
-
