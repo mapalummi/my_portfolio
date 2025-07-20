@@ -254,7 +254,7 @@
   }
 }
 
-// Mobile: Stack vertical
+// Mobile - Stack vertical
 @media (max-width: 768px) {
   #about-section {
     flex-direction: column-reverse;
@@ -273,6 +273,33 @@
   .snippet-container {
     margin: 20px auto;
     order: -1; // Snippets zuerst auf Mobile
+  }
+
+  .snippet1 {
+    top: 5%;
+
+    .snippet-text1 {
+      top: 30%;
+      font-size: 1.1rem;
+      max-width: 350px;
+    }
+  }
+  .snippet2 {
+    top: 30%;
+
+    .snippet-text2 {
+      top: 40%;
+      font-size: 1.1rem;
+      max-width: 350px;
+    }
+  }
+  .snippet3 {
+    top: 60%;
+
+    .snippet-text3 {
+      font-size: 1.1rem;
+      max-width: 350px;
+    }
   }
 }
 
