@@ -20,14 +20,20 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './join.component.scss',
 })
 export class JoinComponent implements OnInit {
-  //NEU
   constructor(private router: Router, private projectService: ProjectNavigationService) {}
 
 
   //NEU
+  isMobileMenuOpen = false;
+  //NEU
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+  
+  
   ngOnInit(): void {
   }
-//NEU
+
   goToNextProject(): void {
     this.projectService.navigateToNext(this.router.url);
   }
