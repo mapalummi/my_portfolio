@@ -4,6 +4,11 @@
   width: 500px;
   font-family: "Bricolage Grotesque", sans-serif;
   color: white;
+
+  @media (max-width: 1000px) {
+    width: 90%;
+    margin-top: 50px;
+  }
 }
 
 form {
@@ -40,6 +45,11 @@ form {
       border-top: 1px solid gray;
       border-bottom: 1px solid gray;
     }
+
+    @media (max-width: 460px) {
+      height: 80px;
+      font-size: 18px;
+    }
   }
 
   input,
@@ -55,6 +65,10 @@ form {
     &::placeholder {
       color: white;
     }
+
+    @media (max-width: 460px) {
+      font-size: 15px;
+    }
   }
 
   input,
@@ -67,18 +81,25 @@ form {
     &.error-placeholder::placeholder {
       color: #ff4444 !important;
       font-size: 18px;
+
+      @media (max-width: 460px) {
+        font-size: 15px;
+      }
     }
   }
 
   .privacy-label {
     height: auto;
-    display: flex; //NEU
+    display: flex;
     flex-direction: row;
     align-items: flex-start;
     border: none;
     margin-top: 20px;
     gap: 8px;
-    font-size: 16px;
+
+    @media (max-width: 460px) {
+      align-items: center;
+    }
 
     &:hover {
       color: white;
@@ -134,6 +155,10 @@ form {
       flex: 1;
       font-size: 16px;
       line-height: 1.4;
+
+      @media (max-width: 460px) {
+        font-size: 12px;
+      }
     }
   }
 }
@@ -167,6 +192,10 @@ form {
     border-color: #7d7d7d;
     box-shadow: 3px 4px 0px #7d7d7d;
   }
+
+  @media (max-width: 460px) {
+    width: 100px;
+  }
 }
 
 .error-message {
@@ -174,14 +203,4 @@ form {
   font-size: 12px;
   margin-top: 5px;
   display: block;
-}
-
-// ===================
-// RESPONSIVE STYLES
-// ===================
-
-@media (max-width: 1000px) {
-  .container {
-  width: 350px;
-}
 }
