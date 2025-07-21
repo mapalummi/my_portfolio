@@ -2,28 +2,24 @@
   <app-header *ngIf="!isMobileMenuOpen"></app-header>
 
   <div class="join-mobile-header">
-      <a href="#hero-section" class="nav-logo"
-        ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
-      /></a>
+    <a href="#hero-section" class="nav-logo"
+      ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
+    /></a>
 
-      <div class="mobile-menu-icon">
-        <img
-          src="./../../../assets/icons/menu_default.png"
-          alt="Mobile menu toggle button"
-          (click)="toggleMobileMenu()"
-        />
-      </div>
+    <div class="mobile-menu-icon">
+      <img
+        src="./../../../assets/icons/menu_default.png"
+        alt="Mobile menu toggle button"
+        (click)="toggleMobileMenu()"
+      />
     </div>
+  </div>
 
-    <!-- NEU -->
-    <div
-      class="mobile-menu-dialog"
-      [class.mobile-menu-open]="isMobileMenuOpen"
-    >
-      <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
-    </div>
-    <!-- NEU -->
-
+  <!-- NEU -->
+  <div class="mobile-menu-dialog" [class.mobile-menu-open]="isMobileMenuOpen">
+    <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
+  </div>
+  <!-- NEU -->
 
   <div class="page-container">
     <div class="left-section">
@@ -31,8 +27,8 @@
         <img
           src="./assets/icons/Breadcrumb arrow 3.png"
           alt="Back navigation arrow"
+          (click)="goBack()"
         />
-        <!-- <a routerLink="/" fragment="my-craft-section">Go Back</a> -->
         <a (click)="goBack()" style="cursor: pointer">{{
           "join.button-back" | translate
         }}</a>
@@ -111,11 +107,11 @@
           src="./assets/img/featured_sticker.png"
           alt="Featured project sticker badge"
         />
-      </div>
 
-      <div class="project-buttons">
-        <button class="right-section-button">GitHub</button>
-        <button class="right-section-button">Live Test</button>
+        <div class="project-buttons">
+          <button class="right-section-button">GitHub</button>
+          <button class="right-section-button">Live Test</button>
+        </div>
       </div>
 
       <div class="next-button">
@@ -125,6 +121,7 @@
         <img
           src="./assets/icons/Next project arrow 3.png"
           alt="Next project navigation arrow"
+          (click)="goToNextProject()"
         />
       </div>
     </div>
