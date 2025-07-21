@@ -14,10 +14,19 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './da-bubble.component.scss',
 })
 export class DaBubbleComponent implements OnInit {
-  constructor(private router: Router, private projectService: ProjectNavigationService) {}
+  constructor(
+    private router: Router,
+    private projectService: ProjectNavigationService
+  ) {}
 
-   ngOnInit(): void {
+  //NEU
+  isMobileMenuOpen = false;
+  //NEU
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
+
+  ngOnInit(): void {}
 
   goToNextProject(): void {
     this.projectService.navigateToNext(this.router.url);
