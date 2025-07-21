@@ -20,8 +20,10 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './join.component.scss',
 })
 export class JoinComponent implements OnInit {
-  constructor(private router: Router, private projectService: ProjectNavigationService) {}
-
+  constructor(
+    private router: Router,
+    private projectService: ProjectNavigationService
+  ) {}
 
   //NEU
   isMobileMenuOpen = false;
@@ -29,17 +31,12 @@ export class JoinComponent implements OnInit {
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
-  
-  
-  ngOnInit(): void {
-  }
+
+  ngOnInit(): void {}
 
   goToNextProject(): void {
     this.projectService.navigateToNext(this.router.url);
   }
-
-
-
 
   goBack(): void {
     this.router.navigate(['/']).then(() => {

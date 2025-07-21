@@ -16,6 +16,12 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class ElPolloLocoComponent implements OnInit {
   constructor(private router: Router, private projectService: ProjectNavigationService) {}
 
+   //NEU
+  isMobileMenuOpen = false;
+  //NEU
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 
    ngOnInit(): void {
   }

@@ -328,7 +328,7 @@ h2 {
   }
 
   .text-section {
-    max-width: 450px; // Begrenzt die Textbreite
+    max-width: 450px;
     font-size: clamp(14px, 2vw, 18px);
 
     @media (max-width: 800px) {
@@ -336,11 +336,11 @@ h2 {
     }
 
     @media (max-width: 768px) {
-      max-width: 100%; // Auf mobilen Geräten volle Breite
+      max-width: 100%;
     }
 
     h2 {
-      margin-bottom: 8px; // Weniger Abstand unter Überschriften
+      margin-bottom: 8px;
 
       @media (max-width: 1000px) {
         font-size: 16px;

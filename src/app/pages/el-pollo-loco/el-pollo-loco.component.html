@@ -1,11 +1,34 @@
 <section id="content">
-  <app-header></app-header>
+  <app-header *ngIf="!isMobileMenuOpen"></app-header>
+
+  <div class="join-mobile-header">
+    <a href="#hero-section" class="nav-logo"
+      ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
+    /></a>
+
+    <div class="mobile-menu-icon">
+      <img
+        src="./../../../assets/icons/menu_default.png"
+        alt="Mobile menu toggle button"
+        (click)="toggleMobileMenu()"
+      />
+    </div>
+  </div>
+
+  <!-- NEU -->
+  <div class="mobile-menu-dialog" [class.mobile-menu-open]="isMobileMenuOpen">
+    <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
+  </div>
+  <!-- NEU -->
 
   <div class="page-container">
     <div class="left-section">
       <div class="back-button">
-        <img src="./assets/icons/Breadcrumb arrow 3.png" alt="Back navigation arrow" />
-        <!-- <a routerLink="/" fragment="my-craft-section">Go Back</a> -->
+        <img
+          src="./assets/icons/Breadcrumb arrow 3.png"
+          alt="Back navigation arrow"
+          (click)="goBack()"
+        />
         <a (click)="goBack()" style="cursor: pointer">{{
           "el-pollo-loco.button-back" | translate
         }}</a>
@@ -39,19 +62,31 @@
         </p>
       </div>
 
-      <div class="icons">
-        <img src="./assets/icons/JavaScript.png" alt="JavaScript programming language logo" />
-        <p>JavaScript</p>
-        <img src="./assets/icons/HTML.png" alt="HTML programming language logo" />
-        <p>HTML</p>
-        <img src="./assets/icons/CSS.png" alt="CSS styling language logo" />
-        <p>CSS</p>
+      <div class="icon-wrapper">
+        <div class="icons">
+          <img
+            src="./assets/icons/JavaScript.png"
+            alt="JavaScript programming language logo"
+          />
+          <p>JavaScript</p>
+          <img
+            src="./assets/icons/HTML.png"
+            alt="HTML programming language logo"
+          />
+          <p>HTML</p>
+          <img src="./assets/icons/CSS.png" alt="CSS styling language logo" />
+          <p>CSS</p>
+        </div>
       </div>
     </div>
 
     <div class="right-section">
       <div class="project-sample">
-        <img class="project-image" src="./assets/img/ElPolloLoco.png" alt="El Pollo Loco game project screenshot" />
+        <img
+          class="project-image"
+          src="./assets/img/ElPolloLoco.png"
+          alt="El Pollo Loco game project screenshot"
+        />
         <div class="sticker">
           <div class="custom-sticker">
             <img
@@ -86,7 +121,10 @@
               </svg>
             </div>
             <div class="logo-center">
-              <img src="./assets/img/LogoMpNeu3.png" alt="Marco Palummieri personal logo" />
+              <img
+                src="./assets/img/LogoMpNeu3.png"
+                alt="Marco Palummieri personal logo"
+              />
             </div>
           </div>
         </div>
@@ -101,7 +139,11 @@
         <a (click)="goToNextProject()" style="cursor: pointer">{{
           "el-pollo-loco.button-next" | translate
         }}</a>
-        <img src="./assets/icons/Next project arrow 3.png" alt="Next project navigation arrow" />
+        <img
+          src="./assets/icons/Next project arrow 3.png"
+          alt="Next project navigation arrow"
+          (click)="goToNextProject()"
+        />
       </div>
     </div>
   </div>

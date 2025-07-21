@@ -70,7 +70,7 @@ h2 {
     display: flex;
     gap: 50px;
     align-items: flex-start;
-    min-height: calc(100vh - 120px); // Adjust for header height
+    min-height: calc(100vh - 120px);
     padding-top: 120px;
     max-width: 1200px;
     width: 100%;
@@ -82,19 +82,18 @@ h2 {
     }
 
     @media (max-width: 480px) {
-      padding-top: 80px; // Für sehr kleine Bildschirme
+      padding-top: 80px;
     }
   }
 
-  // Responsive Anpassungen für das Background
   @media (max-width: 768px) {
-    background-attachment: scroll; // Auf mobilen Geräten besser
+    background-attachment: scroll;
     background-size: cover;
     background-position: center top;
   }
 
   @media (max-width: 471px) {
-    background-size: 100% contain; // Oder verwenden Sie contain für vollständige Sichtbarkeit
+    background-size: 100% contain;
     background-position: center top;
     min-height: 100vh;
   }
@@ -124,11 +123,11 @@ h2 {
   margin-left: -50px;
 
   @media (max-width: 768px) {
-    margin-left: -20px; // Weniger auf mobilen Geräten
+    margin-left: -20px;
   }
 
   @media (max-width: 480px) {
-    margin-left: 0; // Zurück auf mobile Geräte
+    margin-left: 0;
   }
 
   img {
@@ -167,20 +166,20 @@ h2 {
 }
 
 .text-section {
-  max-width: 450px; // Begrenzt die Textbreite
+  max-width: 450px;
 
   p {
-    line-height: 1.5; // Kompaktere Zeilenhöhe
-    margin-bottom: 12px; // Weniger Abstand zwischen Absätzen
-    text-align: justify; // Blocksatz für saubere Kanten
+    line-height: 1.5;
+    margin-bottom: 12px;
+    text-align: justify;
   }
 
   h2 {
-    margin-bottom: 8px; // Weniger Abstand unter Überschriften
+    margin-bottom: 8px;
   }
 
   @media (max-width: 768px) {
-    max-width: 100%; // Auf mobilen Geräten volle Breite
+    max-width: 100%;
   }
 }
 
@@ -203,13 +202,12 @@ h2 {
   flex-direction: column;
   align-items: flex-end;
   gap: 50px;
-  // margin-top: 80px; // Verschiebt alle Inhalte nach unten
-  // padding-top: 80px; // Schiebt den Inhalt nach unten
+
   align-self: center;
 
   @media (max-width: 768px) {
     max-width: 100%;
-    align-self: auto; // Reset auf mobilen Geräten
+    align-self: auto;
   }
 }
 
@@ -228,7 +226,7 @@ h2 {
   top: 35%;
   right: -50px;
   z-index: 1;
-  
+
   @media (max-width: 768px) {
     right: -15px;
   }
@@ -236,7 +234,7 @@ h2 {
   @media (max-width: 480px) {
     right: 0;
   }
-  
+
   .custom-sticker {
     width: 150px;
     height: 150px;
@@ -246,7 +244,7 @@ h2 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    
+
     .sticker-background {
       position: absolute;
       width: 100%;
@@ -255,18 +253,18 @@ h2 {
       border-radius: 50%;
       z-index: 0;
     }
-    
+
     .circular-text {
       position: absolute;
       width: 100%;
       height: 100%;
       z-index: 1;
       animation: rotate 20s linear infinite;
-      
+
       svg {
         width: 100%;
         height: 100%;
-        
+
         text {
           fill: #000000;
           font-family: "Bricolage Grotesque", sans-serif;
@@ -274,7 +272,7 @@ h2 {
           font-weight: 700;
           letter-spacing: 1px;
           text-transform: uppercase;
-          
+
           &:nth-child(even) {
             font-size: 12px;
             font-weight: 400;
@@ -282,7 +280,7 @@ h2 {
         }
       }
     }
-    
+
     .logo-center {
       position: absolute;
       width: 40px;
@@ -291,7 +289,7 @@ h2 {
       display: flex;
       align-items: center;
       justify-content: center;
-      
+
       img {
         width: 48px;
         height: 48px;
@@ -349,11 +347,11 @@ h2 {
   margin-right: -50px;
 
   @media (max-width: 768px) {
-    margin-right: -20px; // Weniger auf mobilen Geräten
+    margin-right: -20px;
   }
 
   @media (max-width: 480px) {
-    margin-right: 0; // Zurück auf mobile Geräte
+    margin-right: 0;
   }
 
   img {
