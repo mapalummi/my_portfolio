@@ -148,13 +148,18 @@ h2 {
 
   @media (max-width: 800px) {
     background-image: url("./../../../assets/img/Note book rotate.png");
-    background-size: cover;
+    // background-size: cover;
+    background-size: 1000px auto;
     background-position: center top;
     background-repeat: no-repeat;
 
     background-attachment: scroll;
     min-height: 100vh;
     height: auto;
+  }
+
+  @media (max-width: 536px) {
+    background-size: 1000px auto;
   }
 
   @media (max-width: 320px) {
@@ -180,8 +185,12 @@ h2 {
       gap: 24px;
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 536px) {
       padding: 0 8px;
+    }
+
+    @media (max-width: 320px) {
+      // padding: 0 8px;
     }
   }
 
@@ -218,7 +227,7 @@ h2 {
       align-self: center;
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 536px) {
       width: 100%;
     }
 
@@ -231,6 +240,10 @@ h2 {
 
       @media (max-width: 800px) {
         font-size: 44px;
+      }
+
+      @media (max-width: 536px) {
+        margin-top: 18px;
       }
     }
   }
@@ -266,7 +279,7 @@ h2 {
       margin-left: 0; // Zurück auf mobile Geräte
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 536px) {
       font-size: 15px;
       font-weight: lighter;
     }
@@ -274,7 +287,7 @@ h2 {
     img {
       width: 30px;
 
-      @media (max-width: 320px) {
+      @media (max-width: 536px) {
         width: 24px;
       }
     }
@@ -293,6 +306,10 @@ h2 {
     width: 110px;
     height: 20px;
     animation: pulseUnderline 2s ease-in-out infinite;
+
+    @media (max-width: 536px) {
+      height: 14px;
+    }
   }
 
   @keyframes pulseUnderline {
@@ -349,9 +366,9 @@ h2 {
         max-width: 100%;
       }
 
-      @media (max-width: 320px) {
+      @media (max-width: 536px) {
         line-height: normal;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
       }
     }
   }
@@ -362,8 +379,9 @@ h2 {
     flex-wrap: wrap;
     gap: 18px;
 
-    @media (max-width: 320px) {
+    @media (max-width: 536px) {
       max-width: 100%;
+      gap: 12px;
     }
   }
 
@@ -411,15 +429,12 @@ h2 {
       right: -30px;
     }
 
-    @media (max-width: 768px) {
-      right: -15px; // Weniger auf Tablets
+    @media (max-width: 800px) {
+      top: 35%;
+      right: -35px;
     }
 
-    @media (max-width: 480px) {
-      right: 0; // Zurück auf mobile Geräte
-    }
-
-    @media (max-width: 320px) {
+    @media (max-width: 536px) {
       display: none;
     }
   }
@@ -456,7 +471,7 @@ h2 {
       background-color: #1073ea;
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 536px) {
       width: 120px;
     }
   }
@@ -488,12 +503,18 @@ h2 {
       margin-right: 0;
     }
 
-    @media (max-width: 320px) {
+    @media (max-width: 536px) {
+      font-size: 16px;
+      font-weight: lighter;
       margin-bottom: 24px;
     }
 
     img {
       width: 30px;
+
+      @media (max-width: 536px) {
+        width: 24px;
+      }
     }
 
     a {
