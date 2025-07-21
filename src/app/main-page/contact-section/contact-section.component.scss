@@ -63,6 +63,11 @@
 
   @media (max-width: 999px) {
     width: 100%;
+    margin-top: 100px;
+  }
+
+  @media (max-width: 999px) {
+    margin-top: 0;
   }
 }
 
@@ -153,8 +158,8 @@
 
   @media (max-width: 460px) {
     bottom: 0px;
-    left: 0;
-    width: 110px;
+    left: 10px;
+    width: 140px;
     height: 35px;
   }
 }
