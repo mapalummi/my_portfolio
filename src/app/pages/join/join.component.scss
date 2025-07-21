@@ -1,5 +1,9 @@
 @import "./../../../styles.scss";
 
+//==============
+// HEADER
+//==============
+
 :host {
   // Logo invertieren für schwarzen Hintergrund
   // --header-logo-filter: invert(1);
@@ -121,6 +125,10 @@ h2 {
   margin-bottom: 12px;
 }
 
+//==============
+// CONTENT
+//==============
+
 #content {
   min-height: 100vh;
   height: 100%;
@@ -149,6 +157,10 @@ h2 {
     height: auto;
   }
 
+  @media (max-width: 320px) {
+    background-size: 300% auto;
+  }
+
   .page-container {
     display: flex;
     align-items: stretch;
@@ -166,6 +178,10 @@ h2 {
       margin-top: 100px;
       padding: 0 50px 0 50px;
       gap: 24px;
+    }
+
+    @media (max-width: 320px) {
+      padding: 0 8px;
     }
   }
 
@@ -202,6 +218,10 @@ h2 {
       align-self: center;
     }
 
+    @media (max-width: 320px) {
+      width: 100%;
+    }
+
     h1 {
       margin-top: 24px;
 
@@ -235,8 +255,8 @@ h2 {
     }
 
     @media (max-width: 800px) {
-        margin-left: -40px;
-      }
+      margin-left: -40px;
+    }
 
     @media (max-width: 768px) {
       margin-left: -20px; // Weniger auf mobilen Geräten
@@ -246,8 +266,17 @@ h2 {
       margin-left: 0; // Zurück auf mobile Geräte
     }
 
+    @media (max-width: 320px) {
+      font-size: 15px;
+      font-weight: lighter;
+    }
+
     img {
       width: 30px;
+
+      @media (max-width: 320px) {
+        width: 24px;
+      }
     }
 
     a {
@@ -318,7 +347,11 @@ h2 {
 
       @media (max-width: 800px) {
         max-width: 100%;
-        // font-size: 15px;
+      }
+
+      @media (max-width: 320px) {
+        line-height: normal;
+        margin-bottom: 8px;
       }
     }
   }
@@ -328,6 +361,10 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
+
+    @media (max-width: 320px) {
+      max-width: 100%;
+    }
   }
 
   .icon {
@@ -381,6 +418,10 @@ h2 {
     @media (max-width: 480px) {
       right: 0; // Zurück auf mobile Geräte
     }
+
+    @media (max-width: 320px) {
+      display: none;
+    }
   }
 
   .project-buttons {
@@ -391,7 +432,7 @@ h2 {
     gap: 30px;
 
     @media (max-width: 800px) {
-      margin-bottom: 22px;
+      margin-bottom: 28px;
     }
   }
 
@@ -414,6 +455,10 @@ h2 {
       transform: translateY(5px);
       background-color: #1073ea;
     }
+
+    @media (max-width: 320px) {
+      width: 120px;
+    }
   }
 
   .next-button {
@@ -432,8 +477,8 @@ h2 {
     }
 
     @media (max-width: 800px) {
-        margin-right: -40px;
-      }
+      margin-right: -40px;
+    }
 
     @media (max-width: 768px) {
       margin-right: -20px;
@@ -441,6 +486,10 @@ h2 {
 
     @media (max-width: 480px) {
       margin-right: 0;
+    }
+
+    @media (max-width: 320px) {
+      margin-bottom: 24px;
     }
 
     img {
