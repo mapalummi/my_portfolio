@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <div class="join-project" routerLink="join" style="cursor: pointer">
+      <div class="join-project">
         <div class="sticker-container">
           <img
             class="sticker-image"
@@ -38,7 +38,7 @@
             alt="Join project displayed on laptop screen - hover state"
           />
           <button class="details-button desktop-button">
-            <a>{{ "my-craft-section.button" | translate }}</a>
+            <a routerLink="join">{{ "my-craft-section.button" | translate }}</a>
           </button>
         </div>
         <h2>Join</h2>
@@ -46,17 +46,13 @@
           {{ "my-craft-section.join" | translate }}
         </p>
         <button class="details-button mobile-button">
-          <a>{{ "my-craft-section.button" | translate }}</a>
+          <a routerLink="join">{{ "my-craft-section.button" | translate }}</a>
         </button>
       </div>
     </div>
 
     <div class="section2">
-      <div
-        class="pollo-loco-project"
-        routerLink="elPolloLoco"
-        style="cursor: pointer"
-      >
+      <div class="pollo-loco-project">
         <div class="project-image">
           <img
             src="./assets/img/ElPolloLoco.png"
@@ -74,13 +70,13 @@
           {{ "my-craft-section.el-pollo-loco" | translate }}
         </p>
         <button class="details-button mobile-button">
-            <a routerLink="elPolloLoco">{{
-              "my-craft-section.button" | translate
-            }}</a>
-          </button>
+          <a routerLink="elPolloLoco">{{
+            "my-craft-section.button" | translate
+          }}</a>
+        </button>
       </div>
 
-      <div class="da-bubble-project" routerLink="daBubble">
+      <div class="da-bubble-project">
         <div class="project-image">
           <img
             src="./assets/img/DABubble1.png"
@@ -98,10 +94,10 @@
           {{ "my-craft-section.da-bubble" | translate }}
         </p>
         <button class="details-button mobile-button">
-            <a routerLink="daBubble">{{
-              "my-craft-section.button" | translate
-            }}</a>
-          </button>
+          <a routerLink="daBubble">{{
+            "my-craft-section.button" | translate
+          }}</a>
+        </button>
       </div>
     </div>
   </div>
