@@ -5,6 +5,9 @@
 //==============
 
 :host {
+  // Logo invertieren für schwarzen Hintergrund
+  --header-logo-filter: invert(1);
+  
   --header-link-2-color: black;
   --header-link-3-color: black;
 
@@ -47,7 +50,7 @@
   margin-top: 0.5rem;
 }
 
-.nav-logo img {
+.nav-mobile-logo img {
   display: none;
   filter: invert(1);
 
