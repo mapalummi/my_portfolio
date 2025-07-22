@@ -59,6 +59,7 @@
   color: white;
   gap: 24px;
 
+
   @media (max-width: 999px) {
     width: 100%;
     margin-top: 100px;
@@ -73,6 +74,7 @@
   display: flex;
   flex-direction: column;
 
+
   span {
     font-size: 20px;
     text-transform: uppercase;
@@ -81,7 +83,6 @@
       font-size: 18px;
     }
 
-    //evtl raus!?
     @media (max-width: 999px) {
       font-size: 18px;
     }
@@ -210,12 +211,11 @@
 }
 
 .sticker {
-  position: relative;
   display: flex;
   align-self: flex-end;
   margin-bottom: -40px;
   z-index: 1;
-
+  position: relative;
   width: 150px;
   height: 150px;
 
