@@ -11,11 +11,18 @@ import { HeaderComponent } from '../../header/header.component';
 //NEU
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+import { MobileHeaderComponent } from '../../mobile-header/mobile-header.component';
 
 @Component({
   selector: 'app-join',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, CommonModule, TranslatePipe],
+  imports: [
+    RouterModule,
+    HeaderComponent,
+    CommonModule,
+    TranslatePipe,
+    MobileHeaderComponent,
+  ],
   templateUrl: './join.component.html',
   styleUrl: './join.component.scss',
 })
@@ -25,9 +32,8 @@ export class JoinComponent implements OnInit {
     private projectService: ProjectNavigationService
   ) {}
 
-  //NEU
   isMobileMenuOpen = false;
-  //NEU
+
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }

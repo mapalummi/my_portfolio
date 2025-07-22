@@ -1,25 +1,11 @@
 <section id="content">
   <app-header *ngIf="!isMobileMenuOpen"></app-header>
 
-  <div class="join-mobile-header">
-    <a href="#hero-section" class="nav-mobile-logo"
-      ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
-    /></a>
+  <app-mobile-header (toggleMenu)="toggleMobileMenu()"></app-mobile-header>
 
-    <div class="mobile-menu-icon">
-      <img
-        src="./../../../assets/icons/menu_default.png"
-        alt="Mobile menu toggle button"
-        (click)="toggleMobileMenu()"
-      />
-    </div>
-  </div>
-
-  <!-- NEU -->
   <div class="mobile-menu-dialog" [class.mobile-menu-open]="isMobileMenuOpen">
     <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
   </div>
-  <!-- NEU -->
 
   <div class="page-container">
     <div class="left-section">

@@ -5,11 +5,18 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../header/header.component';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+import { MobileHeaderComponent } from '../../mobile-header/mobile-header.component';
 
 @Component({
   selector: 'app-da-bubble',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, CommonModule, TranslatePipe],
+  imports: [
+    RouterModule,
+    HeaderComponent,
+    CommonModule,
+    TranslatePipe,
+    MobileHeaderComponent,
+  ],
   templateUrl: './da-bubble.component.html',
   styleUrl: './da-bubble.component.scss',
 })
@@ -19,9 +26,8 @@ export class DaBubbleComponent implements OnInit {
     private projectService: ProjectNavigationService
   ) {}
 
-  //NEU
   isMobileMenuOpen = false;
-  //NEU
+
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }

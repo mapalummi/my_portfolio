@@ -5,26 +5,34 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../header/header.component';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
+import { MobileHeaderComponent } from '../../mobile-header/mobile-header.component';
 
 @Component({
   selector: 'app-el-pollo-loco',
   standalone: true,
-  imports: [RouterModule, HeaderComponent, CommonModule, TranslatePipe],
+  imports: [
+    RouterModule,
+    HeaderComponent,
+    CommonModule,
+    TranslatePipe,
+    MobileHeaderComponent,
+  ],
   templateUrl: './el-pollo-loco.component.html',
   styleUrl: './el-pollo-loco.component.scss',
 })
 export class ElPolloLocoComponent implements OnInit {
-  constructor(private router: Router, private projectService: ProjectNavigationService) {}
+  constructor(
+    private router: Router,
+    private projectService: ProjectNavigationService
+  ) {}
 
-   //NEU
   isMobileMenuOpen = false;
-  //NEU
+
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-   ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   goToNextProject(): void {
     this.projectService.navigateToNext(this.router.url);
