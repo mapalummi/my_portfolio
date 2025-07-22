@@ -59,23 +59,19 @@
   color: white;
   gap: 24px;
 
-  // border: 1px solid red;
-
   @media (max-width: 999px) {
     width: 100%;
     margin-top: 100px;
   }
 
-  @media (max-width: 999px) {
-    margin-top: 0;
-  }
+  // @media (max-width: 999px) {
+  //   margin-top: 0;
+  // }
 }
 
 .headline-container {
   display: flex;
   flex-direction: column;
-
-  // border: 1px solid blue;
 
   span {
     font-size: 20px;
@@ -85,6 +81,7 @@
       font-size: 18px;
     }
 
+    //evtl raus!?
     @media (max-width: 999px) {
       font-size: 18px;
     }
@@ -213,11 +210,12 @@
 }
 
 .sticker {
+  position: relative;
   display: flex;
   align-self: flex-end;
   margin-bottom: -40px;
   z-index: 1;
-  position: relative;
+
   width: 150px;
   height: 150px;
 
@@ -258,13 +256,13 @@
         text {
           fill: #000000;
           font-family: "Bricolage Grotesque", sans-serif;
-          font-size: 8px;
+          font-size: 10px;
           font-weight: 700;
           letter-spacing: 1px;
           text-transform: uppercase;
 
           &:nth-child(even) {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 400;
           }
         }
