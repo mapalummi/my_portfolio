@@ -203,18 +203,18 @@
         }
       }
       img {
-        @include icon-responsive("sm"); // Responsive Icon Größe
+        @include icon-responsive("sm");
         position: absolute;
         top: 50%;
         left: 10%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        opacity: 0; // Standardmäßig unsichtbar
-        transition: opacity var(--transition-normal); // Übergangsanimation
+        opacity: 0;
+        transition: opacity var(--transition-normal);
       }
 
       &:hover img {
-        opacity: 1; // Sichtbarkeit beim Hovern
+        opacity: 1;
       }
 
       &:nth-child(3) img {
@@ -324,7 +324,7 @@
     padding: 1rem 1.5rem 0.5rem 1.5rem;
     margin-top: 0.5rem;
     box-sizing: border-box;
-    flex-shrink: 0; // Verhindert, dass die Leiste schrumpft
+    flex-shrink: 0;
   }
 
   .mobile-nav-logo img {
@@ -347,11 +347,11 @@
   }
 
   nav {
-    flex: 1 1 auto; // Nimmt den restlichen Platz ein
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; // Links starten weiter unten
+    justify-content: flex-start;
     gap: 2.5rem;
     margin-top: 6rem;
     width: 100%;
@@ -383,7 +383,7 @@
   }
 
   nav .nav-logo {
-    display: none; // Logo im nav in mobiler Ansicht ausblenden
+    display: none;
   }
 
   .toggle {
