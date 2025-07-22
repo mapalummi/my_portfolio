@@ -32,20 +32,22 @@
 .imprint-container {
   width: 100%;
   min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #0f0f23 50%, #1a1a2e 100%);
   // background: linear-gradient(135deg, #000000 0%, #434343 100%);
   //  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
   //  background: linear-gradient(135deg, #000000 0%, #2d1b69 50%, #11998e 100%);
   //  background: linear-gradient(135deg, #0f0f0f 0%, #2c2c2c 50%, #1a1a1a 100%);
   // background: linear-gradient(135deg, #000000 0%, #1e1e1e 25%, #2d1b69 75%, #000000 100%);
   // background: linear-gradient(135deg, #0a0a0a 0%, #1f1f1f 100%);
-  background: linear-gradient(135deg, #000000 0%, #0f0f23 50%, #1a1a2e 100%);
   // background: linear-gradient(135deg, #1c1c1c 0%, #2d2d2d 50%, #0f0f0f 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 2rem;
+  margin: 0 auto;
 }
 
-// Stellt sicher, dass Header und Footer die gleiche max-width haben
+// Header und Footer gleiche max-width
 .imprint-container > :first-child,
 .imprint-container > :last-child {
   width: 100%;
@@ -58,10 +60,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1440px;
-  padding: 2rem;
   padding-top: 120px;
-  margin: 0 auto;
+  
 }
 
 .content-card {
