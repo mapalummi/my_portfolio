@@ -1,5 +1,19 @@
 <div class="privacy-container">
-  <app-header></app-header>
+  <app-header *ngIf="!isMobileMenuOpen"></app-header>
+
+<app-mobile-header (toggleMenu)="toggleMobileMenu()"></app-mobile-header>
+
+  
+  
+    <div
+      class="mobile-menu-dialog"
+      [class.mobile-menu-open]="isMobileMenuOpen"
+    >
+      <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
+    </div>
+    
+
+
   <div class="main-content">
     <div class="content-card">
       <h1>{{ "privacy-policy.headline-1" | translate }}</h1>

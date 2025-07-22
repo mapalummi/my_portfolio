@@ -3,11 +3,12 @@ import { SocialbarComponent } from './socialbar/socialbar.component';
 import { HeaderComponent } from '../../header/header.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
+import { MobileHeaderComponent } from '../../mobile-header/mobile-header.component';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SocialbarComponent, TranslatePipe],
+  imports: [CommonModule, HeaderComponent, SocialbarComponent, TranslatePipe, MobileHeaderComponent],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss',
 })
