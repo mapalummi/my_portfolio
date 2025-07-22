@@ -61,7 +61,6 @@
   justify-content: center;
   width: 100%;
   padding-top: 120px;
-  
 }
 
 .content-card {
@@ -75,11 +74,12 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 1rem;
   line-height: 1.5;
+
+  @media (max-width: 350px) {
+    padding: 1rem;
+  }
 }
 
-.back-button-container {
-  margin-bottom: 2rem;
-}
 
 h1 {
   color: #333;
@@ -90,6 +90,10 @@ h1 {
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
   background-clip: text;
+
+  @media (max-width: 350px) {
+    font-size: 2rem;
+  }
 }
 
 h2 {
@@ -99,12 +103,20 @@ h2 {
   margin-bottom: 1rem;
   border-bottom: 2px solid #1aa8b4;
   padding-bottom: 0.5rem;
+
+  @media (max-width: 350px) {
+    font-size: 1.2rem;
+  }
 }
 
 p {
   color: #666;
   line-height: 1.6;
   margin-bottom: 1rem;
+
+  @media (max-width: 350px) {
+    font-size: 0.8rem;
+  }
 }
 
 a {
@@ -121,6 +133,10 @@ a:hover {
 .back-button-container {
   margin-top: 2rem;
   text-align: center;
+
+  @media (max-width: 350px) {
+    margin: 0;
+  }
 }
 
 .back-button {
@@ -137,6 +153,11 @@ a:hover {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px #1a1a2e;
+
+  @media (max-width: 350px) {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 .back-button:hover {
