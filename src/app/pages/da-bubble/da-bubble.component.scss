@@ -6,7 +6,7 @@
 
 :host {
   --mobile-menu-icon-filter: invert(1); //NEU Menü-Icon
-  
+
   // Logo invertieren für schwarzen Hintergrund
   --header-logo-filter: invert(1);
 
@@ -39,30 +39,6 @@
   }
 }
 
-// .join-mobile-header {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   width: 100%;
-//   z-index: 10;
-//   padding: 1rem 1.5rem 0.5rem 1.5rem;
-//   margin-top: 0.5rem;
-// }
-
-// .nav-mobile-logo img {
-//   display: none;
-//   filter: invert(1);
-
-//   @media (max-width: 536px) {
-//     display: block;
-//     height: 50px;
-//     width: auto;
-//   }
-// }
-
 .mobile-menu-dialog {
   position: fixed;
   top: 0;
@@ -91,31 +67,6 @@
 .mobile-menu-dialog.mobile-menu-open {
   max-height: 100vh; // oder ein Wert, der für das Menü reicht
 }
-
-// .mobile-menu-icon {
-//   display: none;
-//   position: absolute;
-//   top: 20px;
-//   right: 20px;
-//   width: auto;
-//   z-index: 10;
-//   cursor: pointer;
-
-//   @media (max-width: 536px) {
-//     display: block;
-//     position: static;
-//     width: auto;
-//     height: 50px;
-//     cursor: pointer;
-//     margin-left: auto;
-//     img {
-//       height: 100%;
-//       width: auto;
-//       display: block;
-//       filter: invert(1);
-//     }
-//   }
-// }
 
 h1 {
   font-size: 64px;
@@ -276,13 +227,14 @@ h2 {
       margin-left: -20px; // Weniger auf mobilen Geräten
     }
 
-    @media (max-width: 480px) {
-      margin-left: 0; // Zurück auf mobile Geräte
-    }
+    // @media (max-width: 480px) {
+    //   margin-left: 0; // Zurück auf mobile Geräte
+    // }
 
     @media (max-width: 536px) {
       font-size: 15px;
       font-weight: lighter;
+      margin-left: 0;
     }
 
     img {
@@ -416,42 +368,16 @@ h2 {
     border-radius: 24px;
   }
 
-  // .sticker-image {
-  //   position: absolute;
-  //   top: 40%;
-  //   right: -50px;
-  //   width: 150px;
-  //   height: auto;
-  //   opacity: 1;
-  //   pointer-events: none;
-
-  //   @media (max-width: 1280px) {
-  //     width: 120px;
-  //     right: -30px;
-  //   }
-
-  //   @media (max-width: 800px) {
-  //     top: 35%;
-  //     right: -35px;
-  //   }
-
-  //   @media (max-width: 536px) {
-  //     display: none;
-  //   }
-  // }
-
   .sticker {
     position: absolute;
     top: 35%;
     right: -50px;
     z-index: 1;
 
-    @media (max-width: 768px) {
-      right: -15px;
-    }
+    border: 1px solid red; // TEST
 
-    @media (max-width: 480px) {
-      right: 0;
+    @media (max-width: 800px) {
+      display: none;
     }
 
     .custom-sticker {
@@ -463,6 +389,8 @@ h2 {
       align-items: center;
       justify-content: center;
       overflow: hidden;
+
+      border: 1px solid blue; // TEST
 
       .sticker-background {
         position: absolute;
@@ -587,13 +515,14 @@ h2 {
       margin-right: -20px;
     }
 
-    @media (max-width: 480px) {
-      margin-right: 0;
-    }
+    // @media (max-width: 480px) {
+    //   margin-right: 0;
+    // }
 
     @media (max-width: 536px) {
       font-size: 16px;
       font-weight: lighter;
+      margin-right: 0;
       margin-bottom: 24px;
     }
 

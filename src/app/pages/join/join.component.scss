@@ -227,14 +227,15 @@ h2 {
       margin-left: -20px; // Weniger auf mobilen Geräten
     }
 
-    @media (max-width: 480px) {
-      margin-left: 0; // Zurück auf mobile Geräte
-    }
-
     @media (max-width: 536px) {
       font-size: 15px;
       font-weight: lighter;
+      margin-left: 0;
     }
+
+    // @media (max-width: 480px) {
+    //   margin-left: 0; // Zurück auf mobile Geräte
+    // }
 
     img {
       width: 30px;
@@ -451,15 +452,18 @@ h2 {
       margin-right: -20px;
     }
 
-    @media (max-width: 480px) {
-      margin-right: 0;
-    }
-
     @media (max-width: 536px) {
       font-size: 16px;
       font-weight: lighter;
+      margin-right: 0;
       margin-bottom: 24px;
     }
+
+    // @media (max-width: 480px) {
+    //   margin-right: 0;
+    // }
+
+    
 
     img {
       width: 30px;
