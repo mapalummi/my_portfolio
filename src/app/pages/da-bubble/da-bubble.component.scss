@@ -374,7 +374,15 @@ h2 {
     right: -50px;
     z-index: 1;
 
-    border: 1px solid red; // TEST
+    // border: 1px solid red; // TEST
+
+    @media (max-width: 1280px) {
+      right: -30px;
+    }
+
+    @media (max-width: 1000px) {
+      top: 40%;
+    }
 
     @media (max-width: 800px) {
       display: none;
@@ -390,7 +398,17 @@ h2 {
       justify-content: center;
       overflow: hidden;
 
-      border: 1px solid blue; // TEST
+      // border: 1px solid blue; // TEST
+
+      @media (max-width: 1280px) {
+        width: 120px;
+        height: 120px;
+      }
+
+      @media (max-width: 1000px) {
+        width: 100px;
+        height: 100px;
+      }
 
       .sticker-background {
         position: absolute;
