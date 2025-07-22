@@ -5,9 +5,11 @@
 //==============
 
 :host {
+  --mobile-menu-icon-filter: invert(1); //NEU Menü-Icon
+
   // Logo invertieren für schwarzen Hintergrund
   --header-logo-filter: invert(1);
-  
+
   --header-link-2-color: black;
   --header-link-3-color: black;
 
@@ -37,30 +39,6 @@
   }
 }
 
-// .join-mobile-header {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   width: 100%;
-//   z-index: 10;
-//   padding: 1rem 1.5rem 0.5rem 1.5rem;
-//   margin-top: 0.5rem;
-// }
-
-// .nav-mobile-logo img {
-//   display: none;
-//   filter: invert(1);
-
-//   @media (max-width: 536px) {
-//     display: block;
-//     height: 50px;
-//     width: auto;
-//   }
-// }
-
 .mobile-menu-dialog {
   position: fixed;
   top: 0;
@@ -89,31 +67,6 @@
 .mobile-menu-dialog.mobile-menu-open {
   max-height: 100vh; // oder ein Wert, der für das Menü reicht
 }
-
-// .mobile-menu-icon {
-//   display: none;
-//   position: absolute;
-//   top: 20px;
-//   right: 20px;
-//   width: auto;
-//   z-index: 10;
-//   cursor: pointer;
-
-//   @media (max-width: 536px) {
-//     display: block;
-//     position: static;
-//     width: auto;
-//     height: 50px;
-//     cursor: pointer;
-//     margin-left: auto;
-//     img {
-//       height: 100%;
-//       width: auto;
-//       display: block;
-//       filter: invert(1);
-//     }
-//   }
-// }
 
 h1 {
   font-size: 64px;

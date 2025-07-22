@@ -5,6 +5,8 @@
 //==============
 
 :host {
+  --mobile-menu-icon-filter: invert(1); //NEU Menü-Icon
+  
   // Logo invertieren für schwarzen Hintergrund
   --header-logo-filter: invert(1);
   

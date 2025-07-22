@@ -1,3 +1,11 @@
+.mobile-menu-icon img {
+  filter: var(--mobile-menu-icon-filter, none);
+}
+
+.nav-logo img {
+  filter: var(--mobile-menu-icon-filter, none);
+}
+
 .hero-mobile-header {
   position: absolute;
   top: 0;
