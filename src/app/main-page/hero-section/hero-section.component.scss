@@ -12,16 +12,10 @@
   @include flex-center;
   position: relative;
 
-  // @media (max-width: 1165px) {
-  //   min-height: 120vh;
-  // }
-
   @media (max-width: 767px) {
     background-size: cover;
     background-position: center top;
   }
-
-  
 }
 
 .mobile-menu-dialog {
@@ -54,8 +48,6 @@
   max-height: 100vh; // oder ein Wert, der für das Menü reicht
   max-height: 100dvh;
 }
-
-
 
 .socialbar-left {
   position: absolute;
@@ -366,7 +358,6 @@
     right: 15rem;
   }
 
-  //TODO:
   @media (max-width: 1165px) {
     position: static;
     width: clamp(180px, 25vw, 350px);
@@ -420,10 +411,10 @@
   position: absolute;
   bottom: 12%;
   right: 30%;
-  transform: none; // Entfernt die Zentrierung
+  transform: none;
   color: var(--text-color-dark);
   font-family: "Kalam", sans-serif;
-  font-size: clamp(1.125rem, 1.5vw, 1.625rem);
+  font-size: clamp(1.5rem, 1.5vw, 1.625rem);
   font-weight: bold;
   transition: opacity var(--transition-normal);
   pointer-events: none;
@@ -440,27 +431,16 @@
   @media (max-width: 1165px) {
     position: absolute;
     bottom: 11%;
-    right: 40%;
-    font-size: clamp(1.125rem, 1.9vw, 1.625rem);
+    right: 35%;
   }
 
   @media (max-width: 1029px) {
     bottom: 10%;
-    right: 35%;
     font-size: 1.5rem;
-    font-weight: bold;
   }
 
   @media (max-width: 767px) {
-    bottom: 10%;
-    right: 35%;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-
-  @media (max-width: 499px) {
-    bottom: 11%;
-    right: 20%;
+    right: 28%;
   }
 }
 
@@ -587,5 +567,3 @@ app-navbar {
   left: 0;
   width: 100%;
 }
-
-
