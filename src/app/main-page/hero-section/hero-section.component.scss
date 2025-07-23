@@ -11,11 +11,17 @@
   background-repeat: no-repeat;
   @include flex-center;
   position: relative;
+  
 
   @media (max-width: 767px) {
     background-size: cover;
     background-position: center top;
   }
+}
+
+.hello-button,
+.getintouch-button {
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 
 .mobile-menu-dialog {
@@ -136,6 +142,7 @@
   max-width: 1200px; // Begrenzt die maximale Breite
   margin: 0 auto;
   gap: 44px;
+  
 
   @media (max-width: 1630px) {
     max-width: 1000px;
