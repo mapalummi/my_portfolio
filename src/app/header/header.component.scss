@@ -269,8 +269,13 @@
   }
 }
 
+//==========================================
+// Host Context
+//==========================================
+
 :host-context(.mobile-menu-dialog.mobile-menu-open) .header-container {
-  height: 80dvh;
+  height: 100vh;
+  height: 100dvh;
   overflow: visible;
   transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -294,25 +299,23 @@
 // Mobile-Styles für Header im Mobile Dialog
 //==========================================
 
-//TODO: Inhalt verschwindet nach oben !!!
-
 :host-context(.mobile-menu-dialog) {
   .header-container {
-    position: static; // Überschreibt position: absolute aus Desktop!
+    position: static; 
     left: auto;
     top: auto;
 
-    max-width: 100vw;
     width: 100vw;
-
-    // min-height: 100vh;
-    // min-height: 100dvh;
+    max-width: 100vw;
+    
+    height: 100vh;
     height: 100dvh;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+
     padding: 0;
     transform: none;
     box-sizing: border-box;
