@@ -93,13 +93,23 @@
           src="./assets/img/featured_sticker.png"
           alt="Featured project sticker badge"
         />
-
         <div class="project-buttons">
-          <button class="right-section-button">GitHub</button>
-          <button class="right-section-button">Live Test</button>
+          <a
+            href="https://github.com/mapalummi/join"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="right-section-button"
+            >Github</a
+          >
+          <a
+            href="http://join.marcopalummieri.de/#/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="right-section-button"
+            >Live Test</a
+          >
         </div>
       </div>
-
       <div class="next-button">
         <a (click)="goToNextProject()" style="cursor: pointer">{{
           "join.button-next" | translate
