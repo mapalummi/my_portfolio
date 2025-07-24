@@ -288,6 +288,10 @@
   }
 }
 
+.peel-header .mobile-peel {
+  display: none;
+}
+
 .peel-decorations img {
   position: absolute;
   top: 0;
@@ -711,6 +715,13 @@
     }
   }
 
+  .peel-header .desktop-peel {
+    display: none;
+  }
+  .peel-header .mobile-peel {
+    display: block;
+  }
+
   .peel-content {
     > span {
       // top: 30%;
@@ -741,18 +752,13 @@
 }
 
 @media (max-width: 400px) {
-  // .headline-container {
-  //   align-items: flex-end;
-  //   padding: 3rem 1.5rem 0 0.5rem;
-  // }
-
   .main-title {
     h1 {
       font-size: 2.5rem;
     }
     img {
       width: 170px;
-      left: -20px;
+      left: -10px;
     }
   }
 
@@ -814,7 +820,7 @@
   }
 
   .headline-container {
-    padding: 0;
+    padding: 2rem 0 0 0;
   }
 
   .skill-description {
@@ -852,6 +858,7 @@
     }
   }
 
+  //TODO:
   .peel-off-container {
     margin-top: -670px;
     margin-left: 60px;

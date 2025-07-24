@@ -1,17 +1,16 @@
 <section id="my-stack-section">
   <div class="page-container">
-
-
     <div class="headline-container">
-<div class="headline-inner">
-      <p class="subtitle">{{ "my-stack-section.headline-one" | translate }}</p>
-      <div class="main-title">
-        <h1 class="">{{ "my-stack-section.headline-two" | translate }}</h1>
-        <img src="./assets/icons/skill_set.png" alt="Skill set icon" />
+      <div class="headline-inner">
+        <p class="subtitle">
+          {{ "my-stack-section.headline-one" | translate }}
+        </p>
+        <div class="main-title">
+          <h1 class="">{{ "my-stack-section.headline-two" | translate }}</h1>
+          <img src="./assets/icons/skill_set.png" alt="Skill set icon" />
+        </div>
       </div>
-</div>
     </div>
-
 
     <div class="skillset-container">
       <div class="skill-description">
@@ -55,9 +54,9 @@
               alt="Angular framework logo"
             /><span>Angular</span>
           </div>
-        <!-- </div> -->
+          <!-- </div> -->
 
-        <!-- <div class="skill-icons"> -->
+          <!-- <div class="skill-icons"> -->
           <div class="skill-item">
             <img
               src="./assets/icons/Firebase.png"
@@ -105,7 +104,12 @@
             src="./assets/icons/Arrow.png"
             alt="Arrow indicating expandable content"
           />
-          <span>{{ "my-stack-section.peel-one" | translate }}</span>
+          <span class="desktop-peel">{{
+            "my-stack-section.peel-one" | translate
+          }}</span>
+          <span class="mobile-peel">{{
+            "my-stack-section.peel-one-mobile" | translate
+          }}</span>
         </div>
 
         <div class="peel-decorations">
