@@ -235,7 +235,6 @@ h2 {
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
-  // height: 400px;
   border-radius: 22px;
   overflow: hidden; // Verhindert das Herausragen beim Zoom
 
@@ -286,7 +285,7 @@ h2 {
   bottom: 1%;
   left: 1%;
   width: 25%;
-  aspect-ratio: 1 / 1; // sorgt für ein Quadrat
+  aspect-ratio: 1 / 1;
   z-index: 10;
   border-radius: 50%;
   display: flex;
@@ -345,10 +344,6 @@ h2 {
 // ===================
 
 @media (max-width: 999px) {
-  // .laptop-container {
-  //   // margin-bottom: 5px;
-  // }
-
   .sticker-container {
     top: 30%;
     width: 35%;

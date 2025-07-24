@@ -39,7 +39,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  // Pfeil nach oben Icon
   &::before {
     content: "↑";
     font-weight: bold;
@@ -50,9 +49,6 @@
     // Fallback: Button bleibt 30px vom rechten Rand entfernt
     right: 30px;
   }
-
-
-
 }
 
 // ===================

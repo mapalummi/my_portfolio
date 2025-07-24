@@ -3,7 +3,6 @@
 //==============
 // HEADER
 //==============
-
 :host {
   --mobile-menu-icon-filter: invert(1); //NEU Menü-Icon
 
@@ -39,40 +38,13 @@
   }
 }
 
-.mobile-menu-dialog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80vh;
-  background-image: url("./../../../assets/img/01_Hero.png");
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  @include flex-center;
-  flex-direction: column;
-  z-index: 1000;
-
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-  app-header {
-    display: block !important;
-    position: relative;
-    z-index: 1001;
-  }
-}
-
-.mobile-menu-dialog.mobile-menu-open {
-  max-height: 100vh; // oder ein Wert, der für das Menü reicht
-}
-
 h1 {
-  font-size: 64px;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  margin-top: 24px;
 }
 
 h2 {
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
   margin-top: 12px;
   margin-bottom: 12px;
 }
@@ -80,7 +52,6 @@ h2 {
 //==============
 // CONTENT
 //==============
-
 #content {
   min-height: 100vh;
   height: 100%;
@@ -100,11 +71,9 @@ h2 {
 
   @media (max-width: 800px) {
     background-image: url("./../../../assets/img/Note book rotate.png");
-    // background-size: cover;
     background-size: 1000px auto;
     background-position: center top;
     background-repeat: no-repeat;
-
     background-attachment: scroll;
     min-height: 100vh;
     height: auto;
@@ -121,9 +90,9 @@ h2 {
   .page-container {
     display: flex;
     align-items: stretch;
-    gap: 100px; // Abstand zwischen Sections
+    gap: 100px;
     box-sizing: border-box;
-    min-height: 100vh; // oder 100vh, je nach Bedarf
+    min-height: 100vh;
     height: 100%;
 
     @media (max-width: 1000px) {
@@ -140,10 +109,6 @@ h2 {
     @media (max-width: 536px) {
       padding: 0 8px;
     }
-
-    @media (max-width: 320px) {
-      // padding: 0 8px;
-    }
   }
 
   .left-section,
@@ -152,10 +117,8 @@ h2 {
     flex-direction: column;
     justify-content: center; // vertikal
     flex: 1 1 0;
-
     flex-basis: 0;
     min-width: 0;
-
     padding: var(--spacing-lg);
     box-sizing: border-box;
     height: 100%;
@@ -181,22 +144,6 @@ h2 {
 
     @media (max-width: 536px) {
       width: 100%;
-    }
-
-    h1 {
-      margin-top: 24px;
-
-      @media (max-width: 1000px) {
-        font-size: 46px;
-      }
-
-      @media (max-width: 800px) {
-        font-size: 44px;
-      }
-
-      @media (max-width: 536px) {
-        margin-top: 18px;
-      }
     }
   }
 
@@ -224,12 +171,8 @@ h2 {
     }
 
     @media (max-width: 768px) {
-      margin-left: -20px; // Weniger auf mobilen Geräten
+      margin-left: -20px;
     }
-
-    // @media (max-width: 480px) {
-    //   margin-left: 0; // Zurück auf mobile Geräte
-    // }
 
     @media (max-width: 536px) {
       font-size: 15px;
@@ -256,9 +199,13 @@ h2 {
   }
 
   .underline-image {
-    width: 110px;
+    width: 310px;
     height: 20px;
     animation: pulseUnderline 2s ease-in-out infinite;
+
+    @media (max-width: 1000px) {
+      width: 230px;
+    }
 
     @media (max-width: 536px) {
       height: 14px;
@@ -374,8 +321,6 @@ h2 {
     right: -50px;
     z-index: 1;
 
-    // border: 1px solid red; // TEST
-
     @media (max-width: 1280px) {
       right: -30px;
     }
@@ -397,8 +342,6 @@ h2 {
       align-items: center;
       justify-content: center;
       overflow: hidden;
-
-      // border: 1px solid blue; // TEST
 
       @media (max-width: 1280px) {
         width: 120px;
@@ -534,10 +477,6 @@ h2 {
     @media (max-width: 768px) {
       margin-right: -20px;
     }
-
-    // @media (max-width: 480px) {
-    //   margin-right: 0;
-    // }
 
     @media (max-width: 536px) {
       font-size: 16px;

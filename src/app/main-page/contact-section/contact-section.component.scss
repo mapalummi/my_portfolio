@@ -29,7 +29,6 @@
 .content-area {
   display: flex;
   width: 100%;
-  // max-height: 70vh;
   flex: none;
   align-items: center;
   justify-content: center;
@@ -59,21 +58,15 @@
   color: white;
   gap: 24px;
 
-
   @media (max-width: 999px) {
     width: 100%;
     margin-top: 100px;
   }
-
-  // @media (max-width: 999px) {
-  //   margin-top: 0;
-  // }
 }
 
 .headline-container {
   display: flex;
   flex-direction: column;
-
 
   span {
     font-size: 20px;
@@ -112,7 +105,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
   gap: 16px;
 
   p {
@@ -206,7 +198,7 @@
     width: 100%;
     max-width: 700px;
     margin-left: 0;
-    align-items: flex-start; // Links ausrichten für mobil
+    align-items: flex-start;
   }
 }
 

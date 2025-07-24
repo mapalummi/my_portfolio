@@ -3,13 +3,12 @@
 //==============
 // HEADER
 //==============
-
 :host {
   --mobile-menu-icon-filter: invert(1); //NEU Menü-Icon
 
   // Logo invertieren für schwarzen Hintergrund
   --header-logo-filter: invert(1);
-  
+
   --header-link-2-color: black;
   --header-link-3-color: black;
 
@@ -39,89 +38,13 @@
   }
 }
 
-// .join-mobile-header {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   width: 100%;
-//   z-index: 10;
-//   padding: 1rem 1.5rem 0.5rem 1.5rem;
-//   margin-top: 0.5rem;
-// }
-
-// .nav-mobile-logo img {
-//   display: none;
-//   filter: invert(1);
-
-//   @media (max-width: 536px) {
-//     display: block;
-//     height: 50px;
-//     width: auto;
-//   }
-// }
-
-.mobile-menu-dialog {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80vh;
-  background-image: url("./../../../assets/img/01_Hero.png");
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  @include flex-center;
-  flex-direction: column;
-  z-index: 1000;
-
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-  app-header {
-    display: block !important;
-    position: relative;
-    z-index: 1001;
-  }
-}
-
-.mobile-menu-dialog.mobile-menu-open {
-  max-height: 100vh; // oder ein Wert, der für das Menü reicht
-}
-
-// .mobile-menu-icon {
-//   display: none;
-//   position: absolute;
-//   top: 20px;
-//   right: 20px;
-//   width: auto;
-//   z-index: 10;
-//   cursor: pointer;
-
-//   @media (max-width: 536px) {
-//     display: block;
-//     position: static;
-//     width: auto;
-//     height: 50px;
-//     cursor: pointer;
-//     margin-left: auto;
-//     img {
-//       height: 100%;
-//       width: auto;
-//       display: block;
-//       filter: invert(1);
-//     }
-//   }
-// }
-
 h1 {
-  font-size: 64px;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  margin-top: 24px;
 }
 
 h2 {
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
   margin-top: 12px;
   margin-bottom: 12px;
 }
@@ -129,7 +52,6 @@ h2 {
 //==============
 // CONTENT
 //==============
-
 #content {
   min-height: 100vh;
   height: 100%;
@@ -152,7 +74,6 @@ h2 {
     background-size: 1000px auto;
     background-position: center top;
     background-repeat: no-repeat;
-
     background-attachment: scroll;
     min-height: 100vh;
     height: auto;
@@ -169,7 +90,7 @@ h2 {
   .page-container {
     display: flex;
     align-items: stretch;
-    gap: 100px; // Abstand zwischen Sections
+    gap: 100px;
     box-sizing: border-box;
     min-height: 100vh;
     height: 100%;
@@ -196,10 +117,8 @@ h2 {
     flex-direction: column;
     justify-content: center;
     flex: 1 1 0;
-
     flex-basis: 0;
     min-width: 0;
-
     padding: var(--spacing-lg);
     box-sizing: border-box;
     height: 100%;
@@ -225,22 +144,6 @@ h2 {
 
     @media (max-width: 536px) {
       width: 100%;
-    }
-
-    h1 {
-      margin-top: 24px;
-
-      @media (max-width: 1000px) {
-        font-size: 46px;
-      }
-
-      @media (max-width: 800px) {
-        font-size: 44px;
-      }
-
-      @media (max-width: 536px) {
-        margin-top: 18px;
-      }
     }
   }
 
@@ -271,10 +174,6 @@ h2 {
       margin-left: -20px;
     }
 
-    // @media (max-width: 480px) {
-    //   margin-left: 0;
-    // }
-
     @media (max-width: 536px) {
       font-size: 15px;
       font-weight: lighter;
@@ -300,9 +199,13 @@ h2 {
   }
 
   .underline-image {
-    width: 110px;
+    width: 380px;
     height: 20px;
     animation: pulseUnderline 2s ease-in-out infinite;
+
+    @media (max-width: 1042px) {
+      width: 230px;
+    }
 
     @media (max-width: 536px) {
       height: 14px;
@@ -430,8 +333,6 @@ h2 {
       display: none;
     }
 
-    
-
     .custom-sticker {
       width: 150px;
       height: 150px;
@@ -451,7 +352,6 @@ h2 {
         width: 100px;
         height: 100px;
       }
-      
 
       .sticker-background {
         position: absolute;
@@ -584,12 +484,6 @@ h2 {
       margin-right: 0;
       margin-bottom: 24px;
     }
-
-    // @media (max-width: 480px) {
-    //   margin-right: 0;
-    // }
-
-   
 
     img {
       width: 30px;
