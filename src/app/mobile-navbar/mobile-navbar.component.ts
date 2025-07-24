@@ -10,11 +10,12 @@ import { SocialbarComponent } from '../main-page/hero-section/socialbar/socialba
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
 import { Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-mobile-navbar',
   standalone: true,
-  imports: [TranslatePipe, SocialbarComponent],
+  imports: [CommonModule, TranslatePipe, SocialbarComponent],
   templateUrl: './mobile-navbar.component.html',
   styleUrl: './mobile-navbar.component.scss',
   animations: [
@@ -37,6 +38,7 @@ import { Subscription } from 'rxjs';
 })
 export class MobileNavbarComponent implements OnInit, OnDestroy {
   isEnglish: boolean = true;
+  isOpen: boolean = true;
   private languageSubscription: Subscription = new Subscription();
 
   constructor(private languageService: LanguageService) {}
@@ -58,5 +60,15 @@ export class MobileNavbarComponent implements OnInit, OnDestroy {
 
   setGerman(): void {
     this.languageService.setGerman();
+  }
+
+  onCloseMenu(): void {
+    this.isOpen = false;
+  }
+
+  onAnimationDone(event: any): void {
+    if (event.toState === 'void') {
+      this.closeMenu.emit()
+    }
   }
 }

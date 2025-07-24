@@ -1,4 +1,9 @@
-<div class="header-container" @slideDown>
+<div
+  *ngIf="isOpen"
+  class="header-container"
+  @slideDown
+  (@slideDown.done)="onAnimationDone($event)"
+>
   <div class="mobile-header-bar">
     <a href="#hero-section" class="mobile-nav-logo"
       ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
@@ -8,22 +13,22 @@
       <img
         src="./../../assets/icons/menu_close.png"
         alt="Mobile menu toggle button"
-        (click)="closeMenu.emit()"
+        (click)="onCloseMenu()"
       />
     </div>
   </div>
 
   <nav>
-    <a href="#about-section" class="nav-about" (click)="closeMenu.emit()"
+    <a href="#about-section" class="nav-about" (click)="onCloseMenu()"
       ><span>{{ "header.link-one" | translate }}</span></a
     >
-    <a href="#my-stack-section" class="nav-skills" (click)="closeMenu.emit()"
+    <a href="#my-stack-section" class="nav-skills" (click)="onCloseMenu()"
       ><span>{{ "header.link-two" | translate }}</span></a
     >
-    <a href="#my-craft-section" class="nav-projects" (click)="closeMenu.emit()"
+    <a href="#my-craft-section" class="nav-projects" (click)="onCloseMenu()"
       ><span>{{ "header.link-three" | translate }}</span></a
     >
-    <a href="#contact-section" class="nav-contact" (click)="closeMenu.emit()"
+    <a href="#contact-section" class="nav-contact" (click)="onCloseMenu()"
       ><span>{{ "header.link-four" | translate }}</span></a
     >
 
