@@ -28,7 +28,7 @@
   z-index: 10;
   cursor: pointer;
 
-  @media (max-width: 536px) {
+  @media (max-width: 600px) {
     display: block;
     position: static;
     width: auto;
@@ -46,7 +46,7 @@
 .nav-logo img {
   display: none;
 
-  @media (max-width: 536px) {
+  @media (max-width: 600px) {
     display: block;
     height: 50px;
     width: auto;
