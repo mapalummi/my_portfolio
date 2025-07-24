@@ -515,23 +515,8 @@
   }
 }
 
-app-header {
-  @media (max-width: 600px) {
-    display: none;
-  }
-}
-
-// app-mobile-header {
-//   display: none;
-
-//   @media (max-width: 888px) {
-//     display: block;
+// app-header {
+//   @media (max-width: 600px) {
+//     display: none;
 //   }
-// }
-
-// app-navbar {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
 // }

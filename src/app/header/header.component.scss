@@ -277,9 +277,9 @@
   display: none;
 }
 
-// Desktop Navbar/Header wird ausgeblendet
-// @media (max-width: 600px) {
-//   :host {
-//     display: none;
-//   }
-// }
+// Desktop Navbar/Header wird überall ausgeblendet!
+@media (max-width: 600px) {
+  :host {
+    display: none;
+  }
+}
