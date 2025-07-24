@@ -1,15 +1,8 @@
 @import "./../../../styles.scss";
 
-//==============
-// HEADER
-//==============
-
 :host {
-  --mobile-menu-icon-filter: invert(1); //NEU Menü-Icon
-
-  // Logo invertieren für schwarzen Hintergrund
+  --mobile-menu-icon-filter: invert(1);
   --header-logo-filter: invert(1);
-
   --header-link-2-color: black;
   --header-link-3-color: black;
 
@@ -50,11 +43,8 @@ h2 {
   margin-bottom: 12px;
 }
 
-//==============
-// CONTENT
-//==============
-
 #content {
+  position: relative;
   min-height: 100vh;
   height: 100%;
   margin-top: 0;
@@ -65,20 +55,17 @@ h2 {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  @include flex-center;
   font-family: "Bricolage Grotesque", sans-serif;
 
   @media (max-width: 800px) {
+    min-height: 100vh;
+    height: auto;
     background-image: url("./../../../assets/img/Note book rotate.png");
     background-size: 1000px auto;
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    min-height: 100vh;
-    height: auto;
   }
 
   @media (max-width: 536px) {
@@ -137,7 +124,7 @@ h2 {
   }
 
   .left-section {
-    align-items: flex-start; // horizontal
+    align-items: flex-start;
 
     @media (max-width: 800px) {
       width: 90%;
@@ -150,7 +137,7 @@ h2 {
   }
 
   .right-section {
-    align-items: flex-end; // horizontal
+    align-items: flex-end;
   }
 
   .back-button {
@@ -201,13 +188,9 @@ h2 {
   }
 
   .underline-image {
-    width: 110px;
-    height: 20px;
+    width: clamp(60px, 15vw, 110px);
+    height: clamp(10px, 3vw, 20px);
     animation: pulseUnderline 2s ease-in-out infinite;
-
-    @media (max-width: 536px) {
-      height: 14px;
-    }
   }
 
   @keyframes pulseUnderline {
