@@ -191,16 +191,26 @@ h2 {
   position: absolute;
   bottom: 40px;
   right: 20px;
+
+  // width: 160px;
+  // height: 40px;
+  width: clamp(110px, 30vw, 160px);
+  height: clamp(32px, 6vw, 40px);
+
   opacity: 0;
   z-index: 10;
-  width: 160px;
-  height: 40px;
-  padding: 12px 24px;
+
+  // padding: 12px 24px;
+  padding: clamp(8px, 2vw, 12px) clamp(16px, 5vw, 24px);
+
   border: 1px solid white;
   box-shadow: 3px 4px 0px white;
   background: transparent;
   border-radius: 24px;
-  font-size: 16px;
+
+  // font-size: 16px;
+  font-size: clamp(13px, 2vw, 16px);
+
   cursor: pointer;
   transition: opacity 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
 
@@ -362,6 +372,10 @@ h2 {
     top: 25%;
     width: 40%;
   }
+
+  // .details-button .desktop-button{
+
+  // }
 }
 
 // Mobile Layout (untereinander)
@@ -428,25 +442,28 @@ h2 {
   .mobile-button {
     display: block;
     position: static;
+    width: 30%;
     opacity: 1;
     margin-top: 15px;
     margin-left: auto;
-    width: 40%;
     border: 1px solid black;
     background-color: transparent;
     box-shadow: 2px 2px 0px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     a {
       color: black;
     }
 
     &:hover {
-      box-shadow: 2px 2px 0px black; // Gleich wie normal
-      transform: none; // Keine Transformation
-      background-color: transparent; // Hintergrund bleibt gleich
+      box-shadow: 2px 2px 0px black;
+      transform: none;
+      background-color: transparent;
 
       a {
-        color: black; // Text bleibt schwarz
+        color: black;
       }
     }
   }
@@ -454,8 +471,16 @@ h2 {
 
 @media (max-width: 420px) {
   .mobile-button {
-    width: 56%;
+    width: 100%;
     margin-top: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    // left: 50%;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
     margin-left: auto;
   }
 }

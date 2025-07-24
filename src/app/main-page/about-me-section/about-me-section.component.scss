@@ -191,9 +191,9 @@
   flex-shrink: 0;
 }
 
-//
-//
-//
+// ===================
+// RESPONSIVE STYLES
+// ===================
 
 @media (max-width: 1300px) {
   .snippet1 {
@@ -304,7 +304,7 @@
   }
 
   .snippets-group {
-    min-height: 300px; // Kleinere Mindesthöhe auf Mobile
+    min-height: 300px;
   }
 
   .snippet1 .snippet-text1 {
