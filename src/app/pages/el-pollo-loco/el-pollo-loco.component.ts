@@ -6,6 +6,7 @@ import { HeaderComponent } from '../../header/header.component';
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MobileHeaderComponent } from '../../mobile-header/mobile-header.component';
+import { MobileNavbarComponent } from '../../mobile-navbar/mobile-navbar.component';
 
 @Component({
   selector: 'app-el-pollo-loco',
@@ -16,6 +17,7 @@ import { MobileHeaderComponent } from '../../mobile-header/mobile-header.compone
     CommonModule,
     TranslatePipe,
     MobileHeaderComponent,
+    MobileNavbarComponent,
   ],
   templateUrl: './el-pollo-loco.component.html',
   styleUrl: './el-pollo-loco.component.scss',
