@@ -75,48 +75,36 @@
   font-size: 1rem;
   line-height: 1.5;
 
-  @media (max-width: 350px) {
+  @media (max-width: 420px) {
     padding: 1rem;
   }
 }
 
-
 h1 {
   color: #333;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 2rem;
   text-align: center;
   // background: linear-gradient(135deg, #000000 0%, #0f0f23 50%, #1a1a2e 100%);
   // -webkit-background-clip: text;
   // -webkit-text-fill-color: transparent;
   background-clip: text;
-
-  @media (max-width: 350px) {
-    font-size: 2rem;
-  }
 }
 
 h2 {
   color: #555;
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid #1aa8b4;
   padding-bottom: 0.5rem;
-
-  @media (max-width: 350px) {
-    font-size: 1.2rem;
-  }
 }
 
 p {
   color: #666;
+  font-size: clamp(0.8rem, 4vw, 1rem);
   line-height: 1.6;
   margin-bottom: 1rem;
-
-  @media (max-width: 350px) {
-    font-size: 0.8rem;
-  }
 }
 
 a {
