@@ -173,11 +173,11 @@ form {
   color: white;
   border-radius: 24px;
   font-size: 16px;
-font-family: "Bricolage Grotesque", sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   margin-top: 30px;
   align-self: flex-end;
-
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  @include flex-center;
 
   &:hover:not(:disabled) {
     box-shadow: 0.5px 0.5px 0px white;

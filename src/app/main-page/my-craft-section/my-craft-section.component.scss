@@ -45,20 +45,20 @@ h2 {
 }
 
 .headline-container {
+  max-width: 600px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 100%;
   justify-content: center;
-  max-width: 600px;
 }
 
 .main-title {
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
 
   span {
     font-size: clamp(1rem, 2.5vw, 1.3rem);
@@ -203,6 +203,7 @@ h2 {
   background: transparent;
   border-radius: 24px;
   font-size: clamp(13px, 2vw, 16px);
+  @include flex-center;
 
   cursor: pointer;
   transition: opacity 0.3s ease, box-shadow 0.2s ease, transform 0.2s ease;
@@ -293,9 +294,12 @@ h2 {
   aspect-ratio: 1 / 1;
   z-index: 10;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  // @include flex-center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+
   overflow: hidden;
 
   .sticker-background {
@@ -439,9 +443,7 @@ h2 {
     border: 1px solid black;
     background-color: transparent;
     box-shadow: 2px 2px 0px black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
 
     a {
       color: black;
@@ -465,12 +467,9 @@ h2 {
     margin-top: 15px;
     margin-left: 0;
     margin-right: 0;
-    // left: 50%;
-    transform: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-right: auto;
     margin-left: auto;
+    transform: none;
+    @include flex-center;
   }
 }
