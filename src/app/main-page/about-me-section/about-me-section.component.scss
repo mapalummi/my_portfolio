@@ -54,13 +54,12 @@
 }
 
 .description {
+  max-width: 700px;
   font-size: var(--font-size-base);
-  line-height: 1.6;
+  line-height: 1.4;
   text-align: justify;
-  text-wrap: balance;
   margin: 0;
   color: #444;
-  max-width: 700px;
   margin-bottom: 1rem;
 }
 
@@ -261,8 +260,9 @@
   }
 
   .description {
-    text-align: left; // Bessere Lesbarkeit auf Mobile
     max-width: 100%;
+    text-align: left; // Bessere Lesbarkeit auf Mobile
+    line-height: 1.5;
   }
 
   .snippet-container {
