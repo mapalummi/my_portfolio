@@ -6,12 +6,10 @@
     <app-mobile-header (toggleMenu)="toggleMobileMenu()"></app-mobile-header>
 
     <!-- Navbar in mobiler Ansicht -->
-    <app-mobile-navbar *ngIf="isMobileMenuOpen" (closeMenu)="isMobileMenuOpen = false"></app-mobile-navbar>
-
-    <!-- <div class="mobile-menu-dialog" [class.mobile-menu-open]="isMobileMenuOpen">
-      <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
-    </div> -->
-
+    <app-mobile-navbar
+      *ngIf="isMobileMenuOpen"
+      (closeMenu)="isMobileMenuOpen = false"
+    ></app-mobile-navbar>
 
     <div class="hero-content">
       <app-socialbar class="socialbar-left"></app-socialbar>
