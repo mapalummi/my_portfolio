@@ -3,9 +3,10 @@
 
   <app-mobile-header (toggleMenu)="toggleMobileMenu()"></app-mobile-header>
 
-  <div class="mobile-menu-dialog" [class.mobile-menu-open]="isMobileMenuOpen">
-    <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
-  </div>
+  <app-mobile-navbar
+    *ngIf="isMobileMenuOpen"
+    (closeMenu)="isMobileMenuOpen = false"
+  ></app-mobile-navbar>
 
   <div class="main-content">
     <div class="content-card">

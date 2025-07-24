@@ -5,11 +5,12 @@ import { FooterComponent } from "../footer/footer.component";
 import { TranslatePipe } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { MobileHeaderComponent } from '../mobile-header/mobile-header.component';
+import { MobileNavbarComponent } from '../mobile-navbar/mobile-navbar.component';
 
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent, TranslatePipe, MobileHeaderComponent],
+  imports: [CommonModule, HeaderComponent, FooterComponent, TranslatePipe, MobileHeaderComponent, MobileNavbarComponent],
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })

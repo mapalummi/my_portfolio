@@ -5,6 +5,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MobileHeaderComponent } from '../mobile-header/mobile-header.component';
 import { CommonModule } from '@angular/common';
+import { MobileNavbarComponent } from '../mobile-navbar/mobile-navbar.component';
 
 @Component({
   selector: 'app-imprint',
@@ -15,6 +16,7 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     TranslatePipe,
     MobileHeaderComponent,
+    MobileNavbarComponent,
   ],
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss',
