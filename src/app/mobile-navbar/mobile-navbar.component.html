@@ -1,0 +1,51 @@
+<div class="header-container">
+  <div class="mobile-header-bar">
+    <a href="#hero-section" class="mobile-nav-logo"
+      ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
+    /></a>
+
+    <div class="mobile-menu-close-icon">
+      <img
+        src="./../../assets/icons/menu_close.png"
+        alt="Mobile menu toggle button"
+        (click)="closeMenu.emit()"
+      />
+    </div>
+  </div>
+
+  <nav>
+    <a href="#about-section" class="nav-about" (click)="closeMenu.emit()"
+      ><span>{{ "header.link-one" | translate }}</span></a
+    >
+    <a href="#my-stack-section" class="nav-skills" (click)="closeMenu.emit()"
+      ><span>{{ "header.link-two" | translate }}</span></a
+    >
+    <a href="#my-craft-section" class="nav-projects" (click)="closeMenu.emit()"
+      ><span>{{ "header.link-three" | translate }}</span></a
+    >
+    <a href="#contact-section" class="nav-contact" (click)="closeMenu.emit()"
+      ><span>{{ "header.link-four" | translate }}</span></a
+    >
+
+    <div class="toggle">
+      <span [class.active]="isEnglish" (click)="setEnglish()"
+        ><img
+          src="./assets/icons/Toggle.png"
+          alt="Sprache Englisch wählen"
+        />EN</span
+      >
+      <label class="toggle-switch">
+        <input type="checkbox" [checked]="!isEnglish" />
+        <span class="slider"></span>
+      </label>
+      <span [class.active]="!isEnglish" (click)="setGerman()"
+        ><img
+          src="./assets/icons/Toggle.png"
+          alt="Sprache Deutsch wählen"
+        />DE</span
+      >
+    </div>
+
+    <app-socialbar class="mobile-socialbar"></app-socialbar>
+  </nav>
+</div>

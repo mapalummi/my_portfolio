@@ -5,19 +5,19 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
+import { SocialbarComponent } from '../main-page/hero-section/socialbar/socialbar.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../services/language.service';
 import { Subscription } from 'rxjs';
-import { SocialbarComponent } from '../main-page/hero-section/socialbar/socialbar.component';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-mobile-navbar',
   standalone: true,
   imports: [TranslatePipe, SocialbarComponent],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  templateUrl: './mobile-navbar.component.html',
+  styleUrl: './mobile-navbar.component.scss',
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class MobileNavbarComponent implements OnInit, OnDestroy {
   isEnglish: boolean = true;
   private languageSubscription: Subscription = new Subscription();
 

@@ -2,11 +2,16 @@
   <div class="page-container">
     <app-header *ngIf="!isMobileMenuOpen"></app-header>
 
+    <!-- Header in mobiler Ansicht -->
     <app-mobile-header (toggleMenu)="toggleMobileMenu()"></app-mobile-header>
 
-    <div class="mobile-menu-dialog" [class.mobile-menu-open]="isMobileMenuOpen">
+    <!-- Navbar in mobiler Ansicht -->
+    <app-mobile-navbar *ngIf="isMobileMenuOpen" (closeMenu)="isMobileMenuOpen = false"></app-mobile-navbar>
+
+    <!-- <div class="mobile-menu-dialog" [class.mobile-menu-open]="isMobileMenuOpen">
       <app-header (closeMenu)="isMobileMenuOpen = false"></app-header>
-    </div>
+    </div> -->
+
 
     <div class="hero-content">
       <app-socialbar class="socialbar-left"></app-socialbar>

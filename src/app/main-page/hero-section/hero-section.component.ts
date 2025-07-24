@@ -4,11 +4,12 @@ import { HeaderComponent } from '../../header/header.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { MobileHeaderComponent } from '../../mobile-header/mobile-header.component';
+import { MobileNavbarComponent } from '../../mobile-navbar/mobile-navbar.component';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SocialbarComponent, TranslatePipe, MobileHeaderComponent],
+  imports: [CommonModule, HeaderComponent, SocialbarComponent, TranslatePipe, MobileHeaderComponent, MobileNavbarComponent],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.scss',
 })
@@ -18,9 +19,9 @@ export class HeroSectionComponent implements AfterViewInit {
     private viewportScroller: ViewportScroller
   ) {}
 
-  //NEU
+  
   isMobileMenuOpen = false;
-  //NEU
+  
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }

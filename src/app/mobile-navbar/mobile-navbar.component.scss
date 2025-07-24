@@ -1,0 +1,198 @@
+@import "./../../styles.scss";
+
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  padding: clamp(var(--spacing-sm), 2vw, var(--spacing-lg));
+
+  background-image: url("./../../assets/img/01_Hero.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+
+  z-index: 10;
+  box-sizing: border-box;
+
+  border: 2px solid red;
+}
+
+.mobile-header-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+  margin-top: 2rem; // Abstad evtl. nachjustieren!
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  border: 2px solid blue;
+}
+
+.mobile-nav-logo img {
+  width: auto;
+  height: 50px;
+}
+
+.mobile-menu-close-icon {
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: static;
+  z-index: 10;
+  cursor: pointer;
+
+  > img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 2.5rem; // Abstand evtl. nachjustieren!
+  gap: 3rem;
+
+  .nav-about {
+    color: var(--header-link-2-color, var(--header-link-color, white));
+  }
+
+  .nav-skills {
+    color: var(--header-link-3-color, var(--header-link-color, white));
+  }
+
+  .nav-projects {
+    color: var(--header-link-4-color, var(--header-link-color, white));
+  }
+
+  .nav-contact {
+    color: var(--header-link-5-color, var(--header-link-color, white));
+  }
+
+  a {
+    text-decoration: none;
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+
+    span {
+      position: relative;
+      z-index: 0;
+    }
+  }
+
+  border: 1px solid yellow;
+}
+
+.toggle {
+  position: relative;
+  @include flex-center;
+  gap: clamp(0.5rem, 2vw, 0.625rem);
+
+  span {
+    color: white;
+    transition: color var(--transition-normal);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+
+    &.active {
+      color: var(--primary-color);
+      cursor: default;
+
+      img {
+        display: none; // Image wird ausgeblendet wenn aktiv!
+      }
+    }
+    img {
+      @include icon-responsive("sm");
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+    }
+
+    &:hover img {
+      opacity: 1;
+    }
+
+    &:nth-child(3) img {
+      left: 90%;
+      transform: translate(-50%, -50%) scaleX(-1) scaleY(-1);
+    }
+  }
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: clamp(2rem, 5vw, 2.5rem); // Gesamtbreite des Toggle-Containers
+  height: clamp(1.5rem, 4vw, 1.875rem); // Gesamthöhe des Toggle-Containers
+  margin: 0;
+  pointer-events: none; // Toggle-Switch nicht anklickbar!
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: clamp(1.8rem, 4.5vw, 2.1875rem); // Breite der Slider-Schiene
+  height: clamp(0.5rem, 1.5vw, 0.625rem); // Höhe der Slider-Schiene
+  background-color: #1aa8b4;
+  border: 1px solid white;
+  border-radius: 0.875rem;
+  transition: background-color 0.4s;
+  overflow: visible;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: clamp(0.7rem, 2vw, 0.875rem); // Höhe des runden Slider-Knopfs
+  width: clamp(0.7rem, 2vw, 0.875rem); // Breite des runden Slider-Knopfs
+  left: -0.125rem; // Horizontale Position (überlappt leicht)
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1073ea;
+  transition: transform 0.4s;
+  border: 1px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.3);
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translate(clamp(1rem, 3vw, 1.5rem), -50%);
+}
+
+.mobile-socialbar {
+  display: flex;
+  margin-top: 4rem; // Abstand evtl. nachjustieren!
+}
