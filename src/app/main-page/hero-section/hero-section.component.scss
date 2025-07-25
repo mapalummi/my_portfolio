@@ -82,11 +82,11 @@
 
 // --- BOUNCING LETTERS ---
 .bouncing-letters {
+  display: flex;
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 800;
   letter-spacing: 0.05em;
   line-height: 1.1;
-  display: flex;
   gap: 0.05em;
   text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.08);
 }
@@ -129,9 +129,9 @@
 
 // --- TEXT LINE ONE ---
 .text-line {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
   gap: var(--spacing-md);
 }
 
@@ -153,7 +153,6 @@
     margin: 0;
   }
 
-  //NOTE:
   .hello-button {
     order: 1;
     margin-bottom: var(--spacing-sm);
@@ -169,10 +168,10 @@
 
 // --- TEXT LINE TWO ---
 .text-line-two {
+  width: fit-content;
   align-items: flex-end;
   align-self: flex-end;
   margin-right: 2rem;
-  width: fit-content;
 
   @media (min-width: 1670px) {
     margin-right: 13rem;
@@ -373,7 +372,6 @@
   }
 }
 
-//NOTE:
 .hello-button {
   position: relative;
   overflow: visible;
@@ -465,7 +463,6 @@
   }
 }
 
-//NOTE:
 .getintouch-button {
   width: 170px;
   height: 40px;
@@ -515,9 +512,3 @@
     }
   }
 }
-
-// app-header {
-//   @media (max-width: 600px) {
-//     display: none;
-//   }
-// }
