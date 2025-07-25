@@ -8,8 +8,6 @@ import { TranslatePipe } from '@ngx-translate/core';
   standalone: true,
   imports: [ContactformComponent, FooterComponent, TranslatePipe],
   templateUrl: './contact-section.component.html',
-  styleUrl: './contact-section.component.scss'
+  styleUrl: './contact-section.component.scss',
 })
-export class ContactSectionComponent {
-
-}
+export class ContactSectionComponent {}
