@@ -1,0 +1,124 @@
+.polaroid-container {
+  position: absolute;
+  top: -90px;
+  right: 18rem;
+  width: 230px;
+  transform: rotate(10deg);
+  z-index: 2;
+  transition: transform var(--transition-normal);
+
+  @media (max-width: 1670px) {
+    top: -50px;
+  }
+
+  @media (max-width: 1400px) {
+    top: -80px;
+    right: 15rem;
+  }
+
+  @media (max-width: 1165px) {
+    position: static;
+    width: clamp(180px, 25vw, 350px);
+    margin: 10px auto 0 auto;
+    order: 3;
+    align-self: center;
+  }
+
+  @media (max-width: 1030px) {
+    margin: 50px auto 0 auto;
+  }
+
+  @media (max-width: 499px) {
+    width: 210px;
+  }
+}
+
+.polaroid-container img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter var(--transition-slow), transform var(--transition-normal);
+
+  &:hover {
+    filter: grayscale(0%);
+    animation: colorBounce 0.5s ease-in-out;
+  }
+
+  @media (max-width: 600px) {
+    filter: grayscale(0%);
+  }
+}
+
+@keyframes colorBounce {
+  0% {
+    filter: grayscale(100%);
+  }
+  30% {
+    filter: grayscale(50%) saturate(1.5);
+  }
+  60% {
+    filter: grayscale(0%) saturate(2) brightness(1.2);
+  }
+  100% {
+    filter: grayscale(0%) saturate(1) brightness(1);
+  }
+}
+
+// --- POLAROID TEXT ---
+.polaroid-text {
+  position: absolute;
+  bottom: 12%;
+  right: 30%;
+  transform: none;
+  color: var(--text-color-dark);
+  font-family: "Kalam", sans-serif;
+  font-size: clamp(1.5rem, 1.5vw, 1.625rem);
+  font-weight: bold;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+  z-index: 3;
+
+  @media (max-width: 1670px) {
+    bottom: 9%;
+  }
+
+  @media (max-width: 1630px) {
+    bottom: 12%;
+  }
+
+  @media (max-width: 1165px) {
+    position: absolute;
+    bottom: 11%;
+    right: 35%;
+  }
+
+  @media (max-width: 1029px) {
+    bottom: 10%;
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 767px) {
+    right: 28%;
+  }
+}
+
+.polaroid-text::before {
+  content: "Marco :)";
+  transition: opacity 0.3s ease;
+}
+
+.polaroid-container:hover .polaroid-text::before {
+  content: "Marco :D";
+  animation: textSwap 0.5s ease-in-out;
+}
+
+@keyframes textSwap {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

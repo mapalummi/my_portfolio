@@ -1,4 +1,7 @@
 @import "./../../../styles.scss";
+@import "./buttons.scss";
+@import "./polaroid.scss";
+@import "./bouncing-letters.scss";
 
 #hero-section {
   min-height: 100vh;
@@ -18,7 +21,6 @@
   }
 }
 
-// --- HERO CONTENT ---
 .hero-content {
   position: relative;
   font-family: "Bricolage Grotesque", sans-serif;
@@ -80,18 +82,6 @@
   }
 }
 
-// --- BOUNCING LETTERS ---
-.bouncing-letters {
-  display: flex;
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  line-height: 1.1;
-  gap: 0.05em;
-  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-// --- TEXT CONTAINER ---
 .text-container {
   @include flex-center;
   flex-direction: column;
@@ -127,7 +117,6 @@
   }
 }
 
-// --- TEXT LINE ONE ---
 .text-line {
   width: 100%;
   display: flex;
@@ -152,21 +141,8 @@
     text-align: left;
     margin: 0;
   }
-
-  .hello-button {
-    order: 1;
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .bouncing-letters {
-    order: 2;
-    @media (max-width: 1029px) {
-      align-self: flex-start;
-    }
-  }
 }
 
-// --- TEXT LINE TWO ---
 .text-line-two {
   width: fit-content;
   align-items: flex-end;
@@ -183,332 +159,10 @@
     text-align: left;
     margin: 0;
   }
-
-  .bouncing-letters {
-    order: 1;
-
-    @media (max-width: 1029px) {
-      align-self: flex-start;
-    }
-  }
-
-  // --- GET IN TOUCH BUTTON ---
-  .getintouch-button {
-    order: 2;
-    margin-top: var(--spacing-sm);
-  }
 }
 
 .hero-content h1:first-child,
 .hero-content h1:last-child {
   text-align: unset;
   margin-left: 0;
-}
-
-.bouncing-letters span {
-  animation-timing-function: linear;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  display: inline-block;
-  cursor: crosshair;
-}
-
-.bouncing-letters span:hover {
-  color: var(--third-color);
-}
-
-.bouncing-letters span.bounce {
-  animation: bounce 1s ease-in-out;
-}
-
-@keyframes bounce {
-  20%,
-  50%,
-  80%,
-  to {
-    transform: scale(1, 1);
-  }
-
-  40% {
-    transform: scale(1.75, 0.65);
-  }
-
-  45% {
-    transform: scale(1.75, 0.65);
-  }
-
-  70% {
-    transform: scale(1.25, 0.75);
-  }
-
-  90% {
-    transform: scale(1.15, 0.85);
-  }
-}
-
-// --- POLAROID CONTAINER ---
-.polaroid-container {
-  position: absolute;
-  top: -90px;
-  right: 18rem;
-  width: 230px;
-  transform: rotate(10deg);
-  z-index: 2;
-  transition: transform var(--transition-normal);
-
-  @media (max-width: 1670px) {
-    top: -50px;
-  }
-
-  @media (max-width: 1400px) {
-    top: -80px;
-    right: 15rem;
-  }
-
-  @media (max-width: 1165px) {
-    position: static;
-    width: clamp(180px, 25vw, 350px);
-    margin: 10px auto 0 auto;
-    order: 3;
-    align-self: center;
-  }
-
-  @media (max-width: 1030px) {
-    margin: 50px auto 0 auto;
-  }
-
-  @media (max-width: 499px) {
-    width: 210px;
-  }
-}
-
-.polaroid-container img {
-  width: 100%;
-  height: auto;
-  filter: grayscale(100%);
-  transition: filter var(--transition-slow), transform var(--transition-normal);
-
-  &:hover {
-    filter: grayscale(0%);
-    animation: colorBounce 0.5s ease-in-out;
-  }
-
-  @media (max-width: 600px) {
-    filter: grayscale(0%);
-  }
-}
-
-@keyframes colorBounce {
-  0% {
-    filter: grayscale(100%);
-  }
-  30% {
-    filter: grayscale(50%) saturate(1.5);
-  }
-  60% {
-    filter: grayscale(0%) saturate(2) brightness(1.2);
-  }
-  100% {
-    filter: grayscale(0%) saturate(1) brightness(1);
-  }
-}
-
-// --- POLAROID TEXT ---
-.polaroid-text {
-  position: absolute;
-  bottom: 12%;
-  right: 30%;
-  transform: none;
-  color: var(--text-color-dark);
-  font-family: "Kalam", sans-serif;
-  font-size: clamp(1.5rem, 1.5vw, 1.625rem);
-  font-weight: bold;
-  transition: opacity var(--transition-normal);
-  pointer-events: none;
-  z-index: 3;
-
-  @media (max-width: 1670px) {
-    bottom: 9%;
-  }
-
-  @media (max-width: 1630px) {
-    bottom: 12%;
-  }
-
-  @media (max-width: 1165px) {
-    position: absolute;
-    bottom: 11%;
-    right: 35%;
-  }
-
-  @media (max-width: 1029px) {
-    bottom: 10%;
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: 767px) {
-    right: 28%;
-  }
-}
-
-.polaroid-text::before {
-  content: "Marco :)";
-  transition: opacity 0.3s ease;
-}
-
-.polaroid-container:hover .polaroid-text::before {
-  content: "Marco :D";
-  animation: textSwap 0.5s ease-in-out;
-}
-
-@keyframes textSwap {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.hello-button {
-  position: relative;
-  overflow: visible;
-  width: 150px;
-  height: 40px;
-  padding: 12px 24px;
-  border: 1px solid var(--text-color-light);
-  background: transparent;
-  color: var(--text-color-light);
-  border-radius: 24px;
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  transition: width var(--transition-slow);
-
-  img {
-    position: absolute;
-    width: var(--icon-size-sm);
-    height: var(--icon-size-sm);
-    top: -50px; // Positionierung Icon oberhalb Button
-    left: 50%;
-    filter: invert(100%);
-    transform: translateX(-50%) translateX(-60px);
-    opacity: 0; // Standard unsichtbar
-    transition: opacity 0.5s ease, transform 1s ease;
-  }
-
-  span {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity var(--transition-normal);
-    white-space: nowrap;
-  }
-
-  .text-default {
-    opacity: 1;
-  }
-
-  .text-hover {
-    opacity: 0;
-  }
-
-  &:hover {
-    width: 250px;
-    background-color: var(--secondary-color);
-    text-transform: uppercase;
-
-    .text-default {
-      opacity: 0;
-    }
-
-    .text-hover {
-      opacity: 1;
-    }
-
-    img {
-      opacity: 1; // Icon wird bei Hover sichtbar
-      transform: translateX(-50%) translateX(100px) rotate(20deg) scale(1.5); // Animation nach oben, vergrößert..
-    }
-  }
-
-  @media (max-width: 1029px) {
-    align-self: flex-start;
-  }
-
-  @media (max-width: 767px) {
-    padding: 10px 18px;
-    img {
-      top: -40px;
-    }
-
-    &:hover {
-      width: 230px;
-    }
-  }
-
-  @media (max-width: 499px) {
-    width: 120px;
-    height: 40px;
-    padding: 6px 12px;
-
-    img {
-      left: 45%;
-      width: calc(var(--icon-size-xs) * 1.5);
-      height: calc(var(--icon-size-xs) * 1.5);
-    }
-  }
-}
-
-.getintouch-button {
-  width: 170px;
-  height: 40px;
-  padding: 12px 24px;
-  border: 1px solid var(--text-color-light);
-  box-shadow: 3px 4px 0px var(--text-color-light);
-  background: transparent;
-  color: var(--text-color-light);
-  border-radius: 24px;
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  @include flex-center;
-  transition: box-shadow var(--transition-fast),
-    transform var(--transition-fast);
-
-  &:hover {
-    box-shadow: 0.5px 0.5px 0px var(--text-color-light);
-    transform: translate(2.5px, 3.5px);
-    background-color: var(--primary-color);
-  }
-
-  @media (max-width: 1600px) {
-    margin-left: 6rem;
-    max-width: 100%;
-  }
-
-  @media (max-width: 1029px) {
-    align-self: flex-end;
-    margin-top: var(--spacing-sm);
-  }
-
-  @media (max-width: 536px) {
-    align-self: flex-end;
-    margin-right: 0;
-  }
-
-  @media (max-width: 499px) {
-    width: 170px;
-    height: 40px;
-    padding: 6px 12px;
-    box-shadow: 1.5px 2px 0px var(--text-color-light);
-    margin-top: 0;
-
-    &:hover {
-      transform: translate(1.5px, 2px);
-    }
-  }
 }
