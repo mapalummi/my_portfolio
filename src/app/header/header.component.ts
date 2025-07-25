@@ -22,22 +22,39 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private languageSubscription: Subscription = new Subscription();
 
   constructor(private languageService: LanguageService) {}
+  /**
+   * Initializes the component and subscribes to the language status.
+   * Called when the component is created.
+   */
   ngOnInit(): void {
     this.languageSubscription = this.languageService.isEnglish$.subscribe(
       (isEnglish) => (this.isEnglish = isEnglish)
     );
   }
 
+  /**
+   * Emits an event to close the menu.
+   */
   @Output() closeMenu = new EventEmitter<void>();
 
+  /**
+   * Cleans up resources by unsubscribing from the language observable.
+   * Called when the component is destroyed.
+   */
   ngOnDestroy(): void {
     this.languageSubscription.unsubscribe();
   }
 
+  /**
+   * Sets the language to English.
+   */
   setEnglish(): void {
     this.languageService.setEnglish();
   }
 
+  /**
+   * Sets the language to German.
+   */
   setGerman(): void {
     this.languageService.setGerman();
   }

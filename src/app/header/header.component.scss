@@ -236,7 +236,6 @@
 
   .slider {
     position: absolute;
-    cursor: pointer;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
@@ -247,6 +246,7 @@
     border-radius: 0.875rem;
     transition: background-color 0.4s;
     overflow: visible;
+    cursor: pointer;
   }
 
   .slider::before {
@@ -277,7 +277,7 @@
   display: none;
 }
 
-// Desktop Navbar/Header wird überall ausgeblendet!
+// Desktop Navbar/Header wird ausgeblendet (global)!
 @media (max-width: 600px) {
   :host {
     display: none;
