@@ -7,6 +7,10 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactSuccessDialogComponent } from '../../../contact-success-dialog/contact-success-dialog.component';
 
+/**
+ * ContactformComponent provides a contact form for users to send messages.
+ * Handles form submission, validation, and displays a success dialog upon completion.
+ */
 @Component({
   selector: 'app-contactform',
   standalone: true,
@@ -15,20 +19,27 @@ import { ContactSuccessDialogComponent } from '../../../contact-success-dialog/c
   styleUrl: './contactform.component.scss',
 })
 export class ContactformComponent {
-  // NEU
+  /**
+   * Creates an instance of ContactformComponent.
+   * @param dialog Service for opening dialogs.
+   */
   constructor(private dialog: MatDialog) {}
 
+  /** Injected HttpClient for making HTTP requests. */
   http = inject(HttpClient);
 
+  /** Stores the contact form data. */
   contactData = {
     name: '',
     email: '',
     message: '',
-    privacyAccepted: false, // Richtig so ?
+    privacyAccepted: false,
   };
 
-  mailTest = false; // false um live zu gehen!
+  /** If true, disables live mail sending and only shows the success dialog. */
+  mailTest = false; // Set to false for live mode!
 
+  /** Configuration for the HTTP POST request to send the contact form data. */
   post = {
     endPoint: 'https://marcopalummieri.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -40,6 +51,11 @@ export class ContactformComponent {
     },
   };
 
+  /**
+   * Handles the form submission event.
+   * Sends the contact data via HTTP POST if not in test mode, otherwise only shows the success dialog.
+   * @param ngForm The NgForm instance representing the contact form.
+   */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http

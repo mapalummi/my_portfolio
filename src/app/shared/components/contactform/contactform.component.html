@@ -18,7 +18,6 @@
         required
       />
     </label>
-
     <label for="email" [class.error-label]="!email.valid && email.touched"
       >{{ "contactform.mail" | translate }}
       <input
@@ -37,7 +36,6 @@
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
     </label>
-
     <label for="message" [class.error-label]="!message.valid && message.touched"
       >{{ "contactform.text" | translate }}
       <textarea
@@ -55,7 +53,6 @@
         required
       ></textarea>
     </label>
-
     <div class="privacy-label">
       <input
         [(ngModel)]="contactData.privacyAccepted"
@@ -73,13 +70,11 @@
         {{ "contactform.privacy-text-two" | translate }}</span
       >
     </div>
-
     @if (!contactData.privacyAccepted && privacy.touched){
     <span class="error-message">{{
       "contactform.privacy-error" | translate
     }}</span>
     }
-
     <button
       class="submit-button"
       type="submit"

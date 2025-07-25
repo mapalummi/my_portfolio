@@ -13,7 +13,6 @@
   @include flex-center;
   flex-direction: column;
   z-index: 1000;
-
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -49,9 +48,7 @@
 
 .main-content {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   width: 100%;
   padding-top: 120px;
   margin-bottom: 24px;
