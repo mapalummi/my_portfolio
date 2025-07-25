@@ -1,0 +1,95 @@
+.sticker-container {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 30%;
+  z-index: 10;
+
+  .sticker-image {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    pointer-events: none;
+  }
+}
+
+.progress-sticker {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+  width: 25%;
+  aspect-ratio: 1 / 1;
+  z-index: 10;
+  border-radius: 50%;
+  overflow: hidden;
+
+  .sticker-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .circular-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: rotate 20s linear infinite;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      text {
+        fill: #ffffff;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        &:nth-child(even) {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ===================
+// RESPONSIVE STYLES
+// ===================
+
+@media (max-width: 999px) {
+  .sticker-container {
+    top: 30%;
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sticker-container {
+    top: 25%;
+    width: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .sticker-container {
+    top: 20%;
+    width: 30%;
+  }
+}
