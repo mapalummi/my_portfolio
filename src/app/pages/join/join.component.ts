@@ -1,19 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-//Neu
 import { Router } from '@angular/router';
-
-//NEU
 import { ProjectNavigationService } from '../../services/project-navigation.service';
-
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../header/header.component';
-
-//NEU
 import { CommonModule } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MobileHeaderComponent } from '../../mobile-header/mobile-header.component';
 import { MobileNavbarComponent } from '../../mobile-navbar/mobile-navbar.component';
 
+/**
+ * JoinComponent displays the Join project page.
+ * Includes header, mobile navigation, and provides navigation between projects and back to the main page.
+ */
 @Component({
   selector: 'app-join',
   standalone: true,
@@ -29,23 +27,44 @@ import { MobileNavbarComponent } from '../../mobile-navbar/mobile-navbar.compone
   styleUrl: './join.component.scss',
 })
 export class JoinComponent implements OnInit {
+  /**
+   * Creates an instance of JoinComponent.
+   * @param router Angular Router for navigation.
+   * @param projectService Service for navigating between projects.
+   */
   constructor(
     private router: Router,
     private projectService: ProjectNavigationService
   ) {}
 
+  /**
+   * Indicates whether the mobile menu is open.
+   */
   isMobileMenuOpen = false;
 
+  /**
+   * Toggles the mobile menu open or closed.
+   */
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
+  /**
+   * Angular lifecycle hook called when the component is initialized.
+   */
   ngOnInit(): void {}
 
+  /**
+   * Navigates to the next project using the ProjectNavigationService.
+   */
   goToNextProject(): void {
     this.projectService.navigateToNext(this.router.url);
   }
 
+  /**
+   * Navigates back to the main page and scrolls to the "my-craft-section".
+   * Temporarily disables smooth scroll for instant navigation.
+   */
   goBack(): void {
     this.router.navigate(['/']).then(() => {
       requestAnimationFrame(() => {
