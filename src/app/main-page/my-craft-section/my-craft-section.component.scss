@@ -25,9 +25,7 @@ h2 {
 .section2 {
   width: 100%;
   height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  @include flex-start;
   gap: 5rem;
 }
 
@@ -47,18 +45,14 @@ h2 {
 .headline-container {
   max-width: 600px;
   height: 100%;
-  display: flex;
+  @include flex-start;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
 }
 
 .main-title {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  @include flex-start;
   flex-direction: column;
-  align-items: flex-start;
 
   span {
     font-size: clamp(1rem, 2.5vw, 1.3rem);
@@ -226,10 +220,10 @@ h2 {
 
 .pollo-loco-project,
 .da-bubble-project {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  position: relative;
 
   p {
     font-size: clamp(0.9rem, 2.5vw, 1rem);
@@ -294,12 +288,6 @@ h2 {
   aspect-ratio: 1 / 1;
   z-index: 10;
   border-radius: 50%;
-
-  // @include flex-center;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-
   overflow: hidden;
 
   .sticker-background {
@@ -436,7 +424,7 @@ h2 {
   .mobile-button {
     display: block;
     position: static;
-    width: 30%;
+    width: 34%;
     opacity: 1;
     margin-top: 15px;
     margin-left: auto;
@@ -461,7 +449,13 @@ h2 {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 430px) {
+  .join-project,
+  .pollo-loco-project,
+  .da-bubble-project {
+    margin-bottom: 24px;
+  }
+
   .mobile-button {
     width: 100%;
     margin-top: 15px;

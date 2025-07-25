@@ -240,6 +240,11 @@ body.global-grabbing * {
 // ==========
 // Mixins
 // ==========
+@mixin flex-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
 @mixin flex-center {
   display: flex;
