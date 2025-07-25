@@ -1,0 +1,386 @@
+.peel-off-container {
+  position: relative;
+  width: auto;
+  flex-shrink: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.peel-off {
+  position: static;
+  margin-top: 400px;
+  width: 210px;
+  height: 210px;
+  cursor: grab;
+  transform: rotate(15deg);
+
+  --drag-progress: 0;
+}
+
+.peel-off:not(.peeled) .peel-header > img {
+  transform: translateY(calc(var(--drag-progress) * 0.5px)) translateX(-50%);
+  opacity: calc(1 - (var(--drag-progress) / 100));
+}
+
+.peel-off:not(.peeled) .peel-header > span {
+  opacity: calc(
+    1 - (var(--drag-progress) / 10)
+  ); // Verschwindet sehr schnell (bei 10% Drag)
+}
+
+.peel-off:not(.peeled) .peel-decorations img:nth-child(1) {
+  opacity: calc(max(0, 1 - var(--drag-progress) / 60));
+}
+
+.peel-off:not(.peeled) .peel-decorations img:nth-child(2) {
+  opacity: calc(
+    max(0, min(1, (var(--drag-progress) - 30) / 30)) *
+      max(0, min(1, (90 - var(--drag-progress)) / 30))
+  );
+}
+
+.peel-off:not(.peeled) .peel-decorations img:nth-child(3) {
+  opacity: calc(max(0, min(1, (var(--drag-progress) - 60) / 40)));
+}
+
+.peel-off:not(.peeled) .peel-content > span,
+.peel-off:not(.peeled) .future-skills {
+  opacity: 0;
+}
+
+.peel-header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  > img {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+  }
+
+  > span {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Kalam", sans-serif;
+    font-size: 44px;
+    line-height: 1.1;
+    text-align: center;
+    color: white;
+    z-index: 4;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.peel-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  > span {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    top: 30%; // WICHTIG !!!
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 18px; // WICHTIG !!!
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    color: white;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.peel-header .mobile-peel {
+  display: none;
+}
+
+.peel-decorations img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.6s ease-in-out;
+  will-change: opacity;
+  transform: translateZ(0);
+}
+
+.peel-decorations img:nth-child(1) {
+  z-index: 3;
+}
+
+.peel-decorations img:nth-child(2) {
+  z-index: 2;
+  opacity: 0;
+}
+
+.peel-decorations img:nth-child(3) {
+  z-index: 1;
+  opacity: 0;
+}
+
+.future-skills {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 4;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: white;
+    text-align: center;
+  }
+}
+
+.peel-off.peeled .peel-header > img,
+.peel-off.peeled .peel-header > span {
+  opacity: 0;
+}
+
+.peel-off.peeled .peel-content > span,
+.peel-off.peeled .future-skills {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.peel-off.peeled .peel-decorations img:nth-child(1) {
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+}
+
+.peel-off.peeled .peel-decorations img:nth-child(2) {
+  opacity: 1;
+  animation: showMiddleThenHide 0.1s ease-out forwards;
+}
+
+.peel-off.peeled .peel-decorations img:nth-child(3) {
+  opacity: 0;
+  animation: showFinalDelayed 0.1s ease-out forwards;
+}
+
+@keyframes showMiddleThenHide {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes showFinalDelayed {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// ===================
+// RESPONSIVE STYLES
+// ===================
+
+@media (max-width: 1385px) {
+  .peel-off-container {
+    margin-top: -400px;
+    margin-left: 500px;
+  }
+}
+
+@media (max-width: 1175px) {
+  .peel-header {
+    > img {
+      width: 40px;
+      height: 40px;
+    }
+    > span {
+      width: 150px;
+      top: 65%;
+      left: 50%;
+      font-size: 38px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .peel-content {
+    > span {
+      top: 30%;
+      left: 50%;
+      font-size: 16px;
+    }
+  }
+
+  .future-skills {
+    top: 70%;
+    left: 50%;
+
+    gap: 20px;
+
+    > div {
+      gap: 8px;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    span {
+      font-size: 0.65rem;
+    }
+  }
+}
+
+@media (max-width: 855px) {
+  .peel-off-container {
+    margin-top: -450px;
+    margin-left: 250px;
+  }
+}
+
+@media (max-width: 700px) {
+  .peel-off-container {
+    margin-top: -490px;
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 626px) {
+    .peel-off-container {
+    margin-top: -650px;
+    margin-left: 300px;
+  } 
+}
+
+@media (max-width: 575px) {
+    .peel-off-container {
+    margin-top: -670px;
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .peel-off-container {
+    width: auto;
+    margin-top: -630px;
+    margin-left: 180px;
+  }
+
+  .peel-off {
+    width: 150px;
+    height: 150px;
+  }
+
+  .peel-header {
+    > img {
+      top: 32px;
+      left: 68px;
+      width: 35px;
+      height: 35px;
+    }
+    > span {
+      font-size: 28px;
+      width: 150px;
+    }
+  }
+
+  .peel-header .desktop-peel {
+    display: none;
+  }
+  .peel-header .mobile-peel {
+    display: block;
+  }
+
+  .peel-content {
+    > span {
+      // top: 30%;
+      // left: 50%;
+      font-size: 16px; // WICHTIG !!!
+      width: 140px;
+    }
+  }
+
+  .future-skills {
+    top: 70%;
+    left: 50%;
+    gap: 8px;
+
+    > div {
+      gap: 8px;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    span {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+    .peel-off-container {
+    margin-top: -700px;
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+    .peel-off-container {
+    margin-top: -670px;
+    margin-left: 60px;
+  }
+}
