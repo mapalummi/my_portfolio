@@ -1,26 +1,26 @@
 @import "./../../../styles.scss";
 
 #about-section {
-  font-family: "Bricolage Grotesque", sans-serif;
+  min-height: 80vh;
   display: flex;
   align-items: center;
+  font-family: "Bricolage Grotesque", sans-serif;
   gap: var(--spacing-lg);
-  min-height: 80vh;
 }
 
 .about-me-container {
-  text-align: start;
   max-width: 800px;
+  text-align: start;
   padding: var(--spacing-lg);
   flex: 1;
 }
 
 .subtitle {
   font-size: var(--font-size-base);
-  color: #666;
-  margin-bottom: 1.5rem;
   font-weight: 300;
+  margin-bottom: 1.5rem;
   text-transform: uppercase;
+  color: #666;
 }
 
 .main-title {
@@ -77,7 +77,6 @@
   cursor: pointer;
   @include flex-center;
   margin-left: auto;
-  // display: block;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
@@ -89,14 +88,12 @@
 }
 
 .snippet-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
   width: clamp(300px, 80vw, 600px);
   min-height: clamp(300px, 50vw, 600px);
+  @include flex-center;
   flex-shrink: 0;
   flex: 1;
+  z-index: 1;
 }
 
 .snippets-group {
@@ -123,19 +120,19 @@
     bottom: 45%;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 400px;
+    width: max-content;
     color: white;
     font-size: var(--font-size-lg);
     display: flex;
     align-items: center;
-    width: max-content;
-    max-width: 400px;
     gap: 1rem;
   }
 }
 
 .snippet2 {
   position: absolute;
-  top: 37%; // statt top: 210px
+  top: 37%;
   left: 0;
   z-index: 2;
 
@@ -146,23 +143,23 @@
 
   .snippet-text2 {
     position: absolute;
-    top: 39%; // statt bottom: 60px
+    top: 39%;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
-    font-size: var(--font-size-lg);
-    display: flex;
-    align-items: center;
     width: max-content;
     max-width: 450px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: var(--font-size-lg);
     gap: 1rem;
   }
 }
 
 .snippet3 {
   position: absolute;
-  top: 69%; // statt bottom: 110px
-  left: 3%; // statt left: 15px
+  top: 69%;
+  left: 3%;
   z-index: 1;
   transform: rotate(3deg);
 
@@ -173,15 +170,15 @@
 
   .snippet-text3 {
     position: absolute;
-    bottom: 45%; // statt bottom: 60px
+    bottom: 45%;
     left: 50%;
     transform: translateX(-50%);
+    width: max-content;
+    max-width: 400px;
     color: white;
     font-size: var(--font-size-lg);
     display: flex;
     align-items: center;
-    width: max-content;
-    max-width: 400px;
     gap: 1rem;
   }
 }
@@ -262,13 +259,13 @@
 
   .description {
     max-width: 100%;
-    text-align: left; // Bessere Lesbarkeit auf Mobile
+    text-align: left;
     line-height: 1.5;
   }
 
   .snippet-container {
     margin: 20px auto;
-    order: -1; // Snippets zuerst auf Mobile
+    order: -1;
   }
 
   .snippet1 {
@@ -339,7 +336,7 @@
 
 @media (max-width: 330px) {
   .snippet-container {
-    width: 90vw; // Volle Viewport-Breite
+    width: 90vw;
     margin: 0;
     padding: 0;
     justify-content: center;
