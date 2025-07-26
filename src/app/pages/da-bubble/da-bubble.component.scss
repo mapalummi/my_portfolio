@@ -183,7 +183,6 @@ h2 {
       }
     }
 
-    //TODO: Textausrichtung optimieren!
     p {
       word-break: break-word;
       overflow-wrap: break-word;
@@ -191,7 +190,6 @@ h2 {
       max-width: 100%;
       line-height: 1.5;
       margin-bottom: 12px;
-      // text-align: justify;
       text-wrap: balance;
 
       @media (max-width: 1000px) {

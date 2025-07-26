@@ -101,29 +101,28 @@
 
 .progress-sticker {
   position: absolute;
-//   bottom: 26%;
   bottom: clamp(20%, 26%, 35%);
-//   right: 20px;
-  right: clamp(10px, 3vw, 40px);
-//   width: 30%;
+  right: clamp(10px, 1vw, 40px);
   width: clamp(80px, 30vw, 200px);
   aspect-ratio: 1 / 1;
   z-index: 10;
   border-radius: 50%;
   overflow: hidden;
 
-//   @media (max-width: 1150px) {
-//     bottom: 35%;
-//   }
+  @media (max-width: 1400px) {
+    width: clamp(80px, 25vw, 180px);
+    bottom: clamp(20%, 30%, 35%);
+  }
 
-//   @media (max-width: 800px) {
-//     bottom: 15%;
-//     width: 30%;
-//   }
+  @media (max-width: 1150px) {
+    width: clamp(80px, 20vw, 150px);
+    bottom: clamp(20%, 35%, 40%);
+  }
 
-//   @media (max-width: 400px) {
-//     bottom: 30%;
-//   }
+  @media (max-width: 800px) {
+    width: clamp(80px, 30vw, 200px);
+    bottom: clamp(10%, 15%, 35%);
+  }
 
   .sticker-background {
     position: absolute;
