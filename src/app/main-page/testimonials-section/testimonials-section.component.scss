@@ -1,13 +1,10 @@
 @import "./../../../styles.scss";
 
-#testimonial-section {
-  font-family: "Bricolage Grotesque", sans-serif;
-}
-
 #testimonial-section .page-container {
   min-height: 850px;
   @include flex-start;
   flex-direction: column;
+  font-family: "Bricolage Grotesque", sans-serif;
   gap: 2rem;
 
   @media (max-width: 1000px) {
@@ -305,7 +302,7 @@
 .testimonial-text {
   font-family: "Bricolage Grotesque", sans-serif;
   text-wrap: balance;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
   text-align: center;
   line-height: 1.4;
   margin-bottom: 16px;
@@ -316,11 +313,11 @@
   }
 
   @media (max-width: 1000px) {
-    font-size: clamp(0.9rem, 3vw, 1rem);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
   }
 
-  @media (max-width: 479px) {
-    font-size: clamp(0.9rem, 4vw, 1rem);
+  @media (max-width: 460px) {
+    font-size: clamp(0.9rem, 3vw, 1rem);
   }
 
   @media (max-width: 410px) {
@@ -328,7 +325,7 @@
   }
 
   @media (min-width: 320px) and (max-width: 410px) {
-    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
   }
 }
 
@@ -340,7 +337,7 @@
   margin-top: 30px;
 
   @media (max-width: 1350px) {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   @media (max-width: 1000px) {
@@ -378,6 +375,10 @@
     display: block;
     font-size: 0.9em;
     opacity: 0.8;
+
+    @media (max-width: 410px) {
+      font-size: 0.7em;
+    }
   }
 }
 
