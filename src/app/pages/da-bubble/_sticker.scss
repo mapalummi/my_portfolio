@@ -101,7 +101,7 @@
 
 .progress-sticker {
   position: absolute;
-  bottom: 34%;
+  bottom: 30%;
   right: 20px;
   width: 30%;
   aspect-ratio: 1 / 1;
@@ -110,11 +110,11 @@
   overflow: hidden;
 
   @media (max-width: 1150px) {
-    bottom: 40%;
+    bottom: 35%;
   }
 
   @media (max-width: 800px) {
-    bottom: 20%;
+    bottom: 15%;
     width: 30%;
   }
 
