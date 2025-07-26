@@ -66,7 +66,7 @@
     "headline-one": "Description",
     "headline-two": "implementation Details",
     "text-one": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
-    "text-two": "As a team, we developed a Kanban board, where I actively contributed and took responsibility for specific tasks – mainly in the front-end area. Using agile methods, I was able to work in a structured and independent way while collaborating closely with the team.",
+    "text-two": "DABubble is a collaboratively developed Slack clone, created as part of a team project at the Developer Akademie. The application allows user registration, channel-based communication, and real-time messaging. The goal is to independently recreate all core features of Slack – including a modern UI, authentication, and data handling.",
     "info": "Duration:",
     "time": "3 weeks",
     "button-next": "Next Project"
