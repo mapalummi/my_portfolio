@@ -58,8 +58,8 @@
 }
 
 .right-section-button {
-  width: 140px;
-  height: 40px;
+  width: clamp(110px, 15vw, 140px);
+  height: clamp(30px, 5vw, 40px);
   @include flex-center;
   padding: 12px 24px;
   border: 1px solid white;
@@ -67,7 +67,7 @@
   background: transparent;
   color: white;
   border-radius: 24px;
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 18px);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -78,15 +78,11 @@
     transform: translateY(5px);
     background-color: #1073ea;
   }
-
-  @media (max-width: 536px) {
-    width: 120px;
-  }
 }
 
 .right-section-button.disabled {
-    pointer-events: none;
-    opacity: 0.3;
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 .next-button {
