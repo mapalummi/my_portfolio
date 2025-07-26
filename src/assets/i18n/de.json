@@ -57,7 +57,7 @@
     "headline-one": "Beschreibung",
     "headline-two": "Details zur Implementierung",
     "text-one": "Jump’n’Run- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
-    "text-two": "Als Team haben wir ein Kanban-Board entwickelt, wobei ich aktiv mitgewirkt und Verantwortung für bestimmte Aufgaben – hauptsächlich im Frontend-Bereich – übernommen habe. Durch den Einsatz agiler Methoden konnte ich strukturiert und eigenständig arbeiten und gleichzeitig eng mit dem Team zusammenarbeiten.",
+    "text-two": "„El Pollo Loco“ ist ein browserbasiertes Jump'n'Run-Spiel, welches ich mit HTML, CSS und JavaScript entwickelt habe. Die Spiellogik ist objektorientiert aufgebaut und nutzt das Canvas-Element für Animation und Darstellung. Gegner, Level-Elemente und der Held interagieren über einfache Kollisionserkennung. Alle Spielelemente wurden vollständig in Vanilla JavaScript umgesetzt – ganz ohne Game Engine.",
     "info": "Dauer:",
     "time": "3 Wochen",
     "button-next": "Nächstes Projekt"

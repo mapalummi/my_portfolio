@@ -73,7 +73,41 @@
           src="./assets/img/ElPolloLoco.png"
           alt="El Pollo Loco game project screenshot"
         />
-        <div class="sticker">
+
+        <div class="progress-sticker">
+          <img
+            class="sticker-background"
+            src="./assets/icons/round_sticker.png"
+            alt="Featured project sticker badge"
+          />
+          <div class="circular-text">
+            <svg viewBox="0 0 150 150">
+              <defs>
+                <path
+                  id="circle"
+                  d="M 75, 75 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"
+                />
+              </defs>
+              <text>
+                <textPath href="#circle" startOffset="2%">In Progress</textPath>
+              </text>
+              <text>
+                <textPath href="#circle" startOffset="44%">•</textPath>
+              </text>
+              <text>
+                <textPath href="#circle" startOffset="50%">
+                  In Progress
+                </textPath>
+              </text>
+              <text>
+                <textPath href="#circle" startOffset="94%">•</textPath>
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Sticker wird ausgetauscht sobald Projekt Live geschaltet wurde -->
+        <!-- <div class="sticker">
           <div class="custom-sticker">
             <img
               src="./assets/icons/round_sticker.png"
@@ -113,20 +147,26 @@
               />
             </div>
           </div>
-        </div>
+        </div> -->
+        <!-- Sticker wird ausgetauscht sobald Projekt Live geschaltet wurde -->
+
         <div class="project-buttons">
           <a
             href="https://github.com/mapalummi"
             target="_blank"
             rel="noopener noreferrer"
-            class="right-section-button"
+            class="right-section-button disabled"
+            tabindex="-1"
+            aria-disabled="true"
             >Github</a
           >
           <a
             href="#"
             target="_blank"
             rel="noopener noreferrer"
-            class="right-section-button"
+            class="right-section-button disabled"
+            tabindex="-1"
+            aria-disabled="true"
             >Live Test</a
           >
         </div>

@@ -55,7 +55,7 @@
     "headline-one": "Description",
     "headline-two": "implementation Details",
     "text-one": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
-    "text-two": "As a team, we developed a Kanban board, where I actively contributed and took responsibility for specific tasks – mainly in the front-end area. Using agile methods, I was able to work in a structured and independent way while collaborating closely with the team.",
+    "text-two": "„El Pollo Loco“  is a browser-based jump'n'run game that I developed using HTML, CSS, and JavaScript. The game logic is built in an object-oriented structure and uses the canvas element for rendering and animation. Enemies, level elements, and the player character interact through simple collision detection. All game components were fully implemented in vanilla JavaScript – completely without a game engine.",
     "info": "Duration:",
     "time": "3 weeks",
     "button-next": "Next Project"
