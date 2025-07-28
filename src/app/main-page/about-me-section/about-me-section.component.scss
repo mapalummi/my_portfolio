@@ -57,7 +57,7 @@
   max-width: 700px;
   font-size: var(--font-size-base);
   line-height: 1.4;
-  text-align: justify;
+  text-align: left;
   margin: 0;
   color: #444;
   margin-bottom: 1rem;
@@ -187,6 +187,12 @@
   width: var(--icon-size-sm);
   height: var(--icon-size-sm);
   flex-shrink: 0;
+}
+
+.snippet-icon-2{
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+  filter: invert(100%);
 }
 
 // ===================
