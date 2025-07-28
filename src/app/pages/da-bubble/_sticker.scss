@@ -101,7 +101,7 @@
 
 .progress-sticker {
   position: absolute;
-  bottom: clamp(30%, 32%, 35%);
+  bottom: clamp(30%, 33%, 35%);
   right: clamp(4px, 0.5vw, 40px);
   width: clamp(80px, 30vw, 200px);
   aspect-ratio: 1 / 1;
@@ -114,7 +114,7 @@
     bottom: clamp(32%, 35%, 40%);
   }
 
-   @media (max-width: 1250px) {
+  @media (max-width: 1250px) {
     width: clamp(80px, 20vw, 150px);
     bottom: clamp(32%, 40%, 45%);
   }

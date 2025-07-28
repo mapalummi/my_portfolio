@@ -101,7 +101,7 @@
 
 .progress-sticker {
   position: absolute;
-  bottom: clamp(20%, 30%, 40%);
+  bottom: clamp(20%, 38%, 40%);
   right: clamp(10px, 1vw, 40px);
   width: clamp(80px, 30vw, 200px);
   aspect-ratio: 1 / 1;
@@ -110,32 +110,37 @@
   overflow: hidden;
 
   @media (max-width: 1415px) {
-    bottom: clamp(20%, 35%, 40%);
-    width: clamp(80px, 30vw, 180px);
+    bottom: clamp(20%, 40%, 45%);
+    width: clamp(80px, 25vw, 180px);
   }
 
-  @media (max-width: 1415px) {
-    bottom: clamp(20%, 38%, 40%);
-    width: clamp(80px, 30vw, 150px);
+  @media (max-width: 1200px) {
+    bottom: clamp(20%, 45%, 50%);
+    width: clamp(80px, 20vw, 150px);
+  }
+
+  @media (max-width: 1000px) {
+    width: clamp(80px, 15vw, 120px);
   }
 
   @media (max-width: 800px) {
-    bottom: clamp(10%, 15%, 30%);
-    right: clamp(10px, 6vw, 40px);
+    bottom: clamp(10%, 29%, 30%);
+    right: clamp(8px, 6vw, 16px);
     width: clamp(60px, 40vw, 180px);
   }
 
-  @media (max-width: 800px) {
-    bottom: clamp(10%, 20%, 30%);
-    width: clamp(60px, 40vw, 150px);
+  @media (max-width: 600px) {
+    bottom: clamp(10%, 33%, 35%);
+    width: clamp(60px, 30vw, 150px);
   }
 
   @media (max-width: 536px) {
-    width: clamp(60px, 40vw, 150px);
+    bottom: clamp(10%, 35%, 40%);
   }
 
   @media (max-width: 400px) {
-    bottom: clamp(20%, 30%, 40%);
+    bottom: clamp(10%, 38%, 40%);
+    right: clamp(8px, 2vw, 8px);
     width: clamp(40px, 50vw, 100px);
   }
 
