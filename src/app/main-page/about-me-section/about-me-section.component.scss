@@ -189,7 +189,7 @@
   flex-shrink: 0;
 }
 
-.snippet-icon-2{
+.snippet-icon-2 {
   width: var(--icon-size-md);
   height: var(--icon-size-md);
   filter: invert(100%);
@@ -252,7 +252,6 @@
   }
 }
 
-// Mobile - Stack vertical
 @media (max-width: 768px) {
   #about-section {
     flex-direction: column-reverse;
@@ -299,6 +298,18 @@
       font-size: 1.1rem;
       max-width: 350px;
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .snippet1 {
+    top: 12%;
+  }
+  .snippet2 {
+    top: 30%;
+  }
+  .snippet3 {
+    top: 50%;
   }
 }
 
