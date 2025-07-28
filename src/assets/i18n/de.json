@@ -175,5 +175,13 @@
   },
   "footer": {
     "link-one": "Impressum"
+  },
+  "contact-success-dialog": {
+    "headline-one": "Hallo",
+    "text-one": "Danke für deine Nachricht und dein Interesse an meiner Arbeit.",
+    "text-two": "Ich freue mich sehr darüber und werde mich in Kürze persönlich bei dir melden.",
+    "text-three": "Falls es um ein konkretes Projekt geht, gib mir gern schon ein paar Details – das beschleunigt alles ein wenig.",
+    "greeting": "Viele Grüße",
+    "button": "Schließen"
   }
 }

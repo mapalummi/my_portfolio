@@ -173,5 +173,13 @@
   },
   "footer": {
     "link-one": "Legal Notice"
+  },
+  "contact-success-dialog": {
+    "headline-one": "Hello",
+    "text-one": "Thank you for your message and your interest in my work.",
+    "text-two": "I really appreciate it and will get back to you personally shortly.",
+    "text-three": "If it's about a specific project, feel free to share some details already – that will help speed things up a bit.",
+    "greeting": "Best regards",
+    "button": "Close"
   }
 }
