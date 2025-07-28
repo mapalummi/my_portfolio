@@ -80,10 +80,11 @@
   }
 }
 
-.right-section-button.disabled {
-  pointer-events: none;
-  opacity: 0.3;
-}
+// Für den Fall, dass Buttons gesperrt werden müssen:
+// .right-section-button.disabled {
+//   pointer-events: none;
+//   opacity: 0.3;
+// }
 
 .next-button {
   width: 100%;
