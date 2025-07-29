@@ -122,7 +122,7 @@ form {
       min-width: 20px;
       min-height: 20px;
       flex-shrink: 0;
-      appearance: none; // Entfernt Standard-Browser-Styles
+      appearance: none;
       border: 2px solid #24dd80;
       border-radius: 4px;
       background: transparent;
@@ -178,6 +178,7 @@ form {
   align-self: flex-end;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   @include flex-center;
+  cursor: pointer;
 
   &:hover:not(:disabled) {
     box-shadow: 0.5px 0.5px 0px white;
@@ -187,7 +188,6 @@ form {
   }
 
   &:disabled {
-    // opacity: 0.5;
     color: #7d7d7d;
     border-color: #7d7d7d;
     box-shadow: 3px 4px 0px #7d7d7d;
