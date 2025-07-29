@@ -94,6 +94,7 @@
     "mail": "What's your email?",
     "mail-default": "youremail@email.com",
     "mail-error": "Hoppla! your email is required",
+    "mail-error-two": "Please enter a valid email address.",
     "text": "How can I help you",
     "text-default": "Hello Marco, I am interested in...",
     "text-error": "What do you need to develop?",

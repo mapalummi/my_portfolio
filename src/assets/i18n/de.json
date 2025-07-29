@@ -96,6 +96,7 @@
     "mail": "Wie lautet deine Email?",
     "mail-default": "deinemail@email.de",
     "mail-error": "Hoppla! Deine Email wird benötigt",
+    "mail-error-two": "Bitte gib eine gültige E-Mail-Adresse ein.",
     "text": "Wie kann ich dir helfen",
     "text-default": "Hallo Marco, Ich bin interessiert an...",
     "text-error": "Was möchtest du entwickeln?",

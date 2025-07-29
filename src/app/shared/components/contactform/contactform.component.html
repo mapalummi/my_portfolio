@@ -18,7 +18,7 @@
         required
       />
     </label>
-    
+
     <label for="email" [class.error-label]="!email.valid && email.touched"
       >{{ "contactform.mail" | translate }}
       <input
@@ -36,7 +36,16 @@
         required
         pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
       />
+
+      <!-- NEU -->
+      @if (!email.valid && email.touched) {
+      <span class="error-message-mail">
+        {{ "contactform.mail-error-two" | translate }}
+      </span>
+      }
+      <!-- NEU -->
     </label>
+
     <label for="message" [class.error-label]="!message.valid && message.touched"
       >{{ "contactform.text" | translate }}
       <textarea
@@ -76,12 +85,25 @@
       "contactform.privacy-error" | translate
     }}</span>
     }
-    <button
+
+    <!-- ALT -->
+    <!-- <button
       class="submit-button"
       type="submit"
       [disabled]="!contactData.privacyAccepted"
     >
       {{ "contactform.button" | translate }}
+    </button> -->
+    <!-- ALT -->
+
+    <!-- NEU -->
+    <button
+      class="submit-button"
+      type="submit"
+      [disabled]="!contactForm.form.valid"
+    >
+      {{ "contactform.button" | translate }}
     </button>
+    <!-- NEU -->
   </form>
 </div>
