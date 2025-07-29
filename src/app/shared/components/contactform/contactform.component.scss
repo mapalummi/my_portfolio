@@ -205,10 +205,11 @@ form {
   display: block;
 }
 
-//TODO: Anders positionieren!?
 .error-message {
   color: rgb(255, 128, 0);
   font-size: 12px;
-  margin-top: 5px;
   display: block;
+  margin-top: 5px;
+  text-align: right;
+  width: 100%;
 }
