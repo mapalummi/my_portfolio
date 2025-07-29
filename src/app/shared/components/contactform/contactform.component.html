@@ -38,7 +38,7 @@
       />
 
       <!-- NEU -->
-      @if (!email.valid && email.touched) {
+      @if (!email.valid && contactData.email && email.dirty && email.touched) {
       <span class="error-message-mail">
         {{ "contactform.mail-error-two" | translate }}
       </span>
