@@ -20,7 +20,7 @@ I’m a passionate Front-End Developer focused on building responsive and user-f
 - Angular  
 - Responsive Design  
 - Git & GitHub  
-- Deployed via Netlify
+- Hosted under a custom domain: [marcopalummieri.de](https://marcopalummieri.de)
 
 ---
 
