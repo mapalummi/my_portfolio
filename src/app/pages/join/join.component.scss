@@ -35,6 +35,10 @@
 h1 {
   font-size: clamp(1.5rem, 4vw, 4rem);
   margin-top: 24px;
+
+  @media (max-width: 925px) {
+    margin-top: 8px;
+  }
 }
 
 h2 {
@@ -50,7 +54,7 @@ h2 {
   margin-top: 0;
   padding-top: 0;
   background-color: rgb(21, 21, 21);
-  background-image: url("./../../../assets/img/Note book paper.png");
+  background-image: url("./../../../assets/img/Note-book-paper.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -126,9 +130,14 @@ h2 {
   .left-section {
     align-items: flex-start;
 
+    @media (max-width: 925px) {
+      padding-top: 100px;
+    }
+
     @media (max-width: 800px) {
       width: 90%;
       align-self: center;
+      padding-top: var(--spacing-lg);
     }
 
     @media (max-width: 536px) {
@@ -192,6 +201,10 @@ h2 {
     height: clamp(10px, 3vw, 20px);
     margin-bottom: 24px;
     animation: pulseUnderline 4s ease-in-out infinite;
+
+    @media (max-width: 925px) {
+      margin-bottom: 8px;
+    }
   }
 
   @keyframes pulseUnderline {
