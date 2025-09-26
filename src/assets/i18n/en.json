@@ -11,14 +11,14 @@
     "button-two": "Get in Touch"
   },
   "about-me-section": {
-    "snippet1":"Based in Düsseldorf",
-    "snippet2":"Exploring AI-powered workflows",
-    "snippet3":"Open to work remote",
+    "snippet1": "Based in Düsseldorf",
+    "snippet2": "Exploring AI-powered workflows",
+    "snippet3": "Open to work remote",
     "whois": "Who's Marco?",
     "about": "About me",
     "text1": "Hi, I’m Marco – a Junior Web Developer with a passion for modern frontend technologies. I love turning creative ideas into interactive applications while continuously expanding my skills.",
-    "text2":"My focus is on JavaScript and Angular, complemented by automation and AI, to build smart, future-oriented solutions.",
-    "text3":"My goal: to develop applications that deliver real value and genuinely help people move forward.",
+    "text2": "My focus is on JavaScript and Angular, complemented by automation and AI, to build smart, future-oriented solutions.",
+    "text3": "My goal: to develop applications that deliver real value and genuinely help people move forward.",
     "button": "Let's talk"
   },
   "my-stack-section": {
@@ -36,6 +36,7 @@
     "join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "el-pollo-loco": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
     "da-bubble": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
+    "pokedex": "A responsive, browser-based Pokédex that provides information about Pokémon using the public PokeAPI. Users can browse Pokémon cards, view detailed information, and explore their respective evolution chains.",
     "button": "Project details"
   },
   "join": {
@@ -69,6 +70,17 @@
     "text-two": "DABubble is a collaboratively developed Slack clone, created as part of a team project at the Developer Akademie. The application allows user registration, channel-based communication, and real-time messaging. The goal is to independently recreate all core features of Slack – including a modern UI, authentication, and data handling.",
     "info": "Duration:",
     "time": "3 weeks",
+    "button-next": "Next Project"
+  },
+  "pokedex": {
+    "button-back": "Go Back",
+    "title": "Pokedex",
+    "headline-one": "Description",
+    "headline-two": "implementation Details",
+    "text-one": "A responsive, browser-based Pokédex that provides information about Pokémon using the public PokeAPI. Users can browse Pokémon cards, view detailed information, and explore their respective evolution chains.",
+    "text-two": "The application includes a searchable Pokémon database and offers dynamic detail views for each individual Pokémon. Key focuses were on achieving efficient API integration as well as designing an intuitive, flexible, and responsive user interface.",
+    "info": "Duration:",
+    "time": "2 weeks",
     "button-next": "Next Project"
   },
   "testimonial-section": {

@@ -1,0 +1,180 @@
+.sticker {
+  position: absolute;
+  top: 35%;
+  right: -50px;
+  z-index: 1;
+
+  @media (max-width: 1280px) {
+    right: -30px;
+  }
+
+  @media (max-width: 1000px) {
+    top: 40%;
+  }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+
+  .custom-sticker {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    @include flex-center;
+    overflow: hidden;
+
+    @media (max-width: 1280px) {
+      width: 120px;
+      height: 120px;
+    }
+
+    @media (max-width: 1000px) {
+      width: 100px;
+      height: 100px;
+    }
+
+    .sticker-background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .circular-text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      animation: rotate 20s linear infinite;
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        text {
+          fill: #000000;
+          font-family: "Bricolage Grotesque", sans-serif;
+          font-size: 8px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+
+          &:nth-child(even) {
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+
+    .logo-center {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      z-index: 2;
+      @include flex-center;
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//=================
+// Progress Sticker
+//=================
+
+.progress-sticker {
+  position: absolute;
+  bottom: clamp(20%, 33%, 40%);
+  right: clamp(10px, 1vw, 40px);
+  width: clamp(80px, 30vw, 200px);
+  aspect-ratio: 1 / 1;
+  z-index: 10;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @media (max-width: 1350px) {
+    bottom: clamp(20%, 36%, 45%);
+    width: clamp(80px, 22vw, 150px);
+  }
+
+  @media (max-width: 1195px) {
+    bottom: clamp(20%, 40%, 45%);
+    width: clamp(80px, 18vw, 140px);
+  }
+
+  @media (max-width: 1000px) {
+    bottom: clamp(20%, 42%, 45%);
+    width: clamp(80px, 15vw, 120px);
+  }
+
+  @media (max-width: 800px) {
+    bottom: clamp(10%, 20%, 30%);
+    right: clamp(18px, 5vw, 30px);
+    width: clamp(60px, 40vw, 180px);
+  }
+
+  @media (max-width: 600px) {
+    bottom: clamp(10%, 28%, 35%);
+    right: clamp(18px, 5vw, 20px);
+    width: clamp(60px, 25vw, 130px);
+  }
+
+  @media (max-width: 400px) {
+    bottom: clamp(10%, 32%, 40%);
+    right: clamp(8px, 2vw, 8px);
+    width: clamp(40px, 50vw, 100px);
+  }
+
+  .sticker-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 0;
+  }
+
+  .circular-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: rotate 20s linear infinite;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      text {
+        fill: #ffffff;
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+
+        &:nth-child(even) {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

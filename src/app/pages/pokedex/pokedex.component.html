@@ -17,11 +17,11 @@
           (click)="goBack()"
         />
         <a (click)="goBack()" style="cursor: pointer">{{
-          "el-pollo-loco.button-back" | translate
+          "pokedex.button-back" | translate
         }}</a>
       </div>
       <div>
-        <h1>El Pollo Loco</h1>
+        <h1>Pokedex</h1>
         <img
           class="underline-image"
           src="./assets/icons/underline3.png"
@@ -29,29 +29,27 @@
         />
       </div>
       <div class="text-section">
-        <h2>{{ "el-pollo-loco.headline-one" | translate }}</h2>
+        <h2>{{ "pokedex.headline-one" | translate }}</h2>
         <p>
-          {{ "el-pollo-loco.text-one" | translate }}
+          {{ "pokedex.text-one" | translate }}
         </p>
       </div>
       <div class="text-section">
-        <h2>{{ "el-pollo-loco.headline-two" | translate }}</h2>
+        <h2>{{ "pokedex.headline-two" | translate }}</h2>
         <p>
-          {{ "el-pollo-loco.text-two" | translate }}
+          {{ "pokedex.text-two" | translate }}
         </p>
         <br />
         <p>
-          <b>{{ "el-pollo-loco.info" | translate }}</b>
-          {{ "el-pollo-loco.time" | translate }}
+          <b>{{ "pokedex.info" | translate }}</b>
+          {{ "pokedex.time" | translate }}
         </p>
       </div>
+
       <div class="icon-wrapper">
         <div class="icon">
-          <img
-            src="./assets/icons/JavaScript.png"
-            alt="JavaScript programming language logo"
-          />
-          <p>JavaScript</p>
+          <img src="./assets/icons/CSS.png" alt="CSS styling language logo" />
+          <p>CSS</p>
         </div>
         <div class="icon">
           <img
@@ -61,17 +59,22 @@
           <p>HTML</p>
         </div>
         <div class="icon">
-          <img src="./assets/icons/CSS.png" alt="CSS styling language logo" />
-          <p>CSS</p>
+          <img src="./assets/icons/JavaScript.png" alt="Javascript platform logo" />
+          <p>JavaScript</p>
+        </div>
+        <div class="icon">
+          <img src="./assets/icons/Rest-Api.png" alt="Rest api logo" />
+          <p>API</p>
         </div>
       </div>
+
     </div>
     <div class="right-section">
       <div class="project-sample">
         <img
           class="project-image"
-          src="./assets/img/ElPolloLoco.png"
-          alt="El Pollo Loco game project screenshot"
+          src="./assets/img/Pokedex1.png"
+          alt="Pokedex screenshot"
         />
 
         <div class="sticker">
@@ -118,24 +121,24 @@
 
         <div class="project-buttons">
           <a
-            href="https://github.com/mapalummi/El-Pollo-Loco"
+            href="https://github.com/mapalummi/Pokedex"
             target="_blank"
             rel="noopener noreferrer"
-            class="right-section-button disabled"
+            class="right-section-button"
             >Github</a
           >
           <a
-            href="https://el-pollo-loco.marcopalummieri.de/"
+            href="https://pokedex.marcopalummieri.de/"
             target="_blank"
             rel="noopener noreferrer"
-            class="right-section-button disabled"
+            class="right-section-button"
             >Live Test</a
           >
         </div>
       </div>
       <div class="next-button">
         <a (click)="goToNextProject()" style="cursor: pointer">{{
-          "el-pollo-loco.button-next" | translate
+          "pokedex.button-next" | translate
         }}</a>
         <img
           src="./assets/icons/Next project arrow 3.png"

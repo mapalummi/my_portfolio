@@ -23,6 +23,8 @@ export class ProjectNavigationService {
     { id: 'join', name: 'Join', route: '/join' },
     { id: 'da-bubble', name: 'DA Bubble', route: '/daBubble' },
     { id: 'el-pollo-loco', name: 'El Pollo Loco', route: '/elPolloLoco' },
+
+    { id: 'pokedex', name: 'Pokedex', route: '/pokedex' },
   ];
 
   /**

@@ -1,6 +1,7 @@
 .join-project,
 .pollo-loco-project,
-.da-bubble-project {
+.da-bubble-project,
+.pokedex-project {
   flex: 1;
 }
 
@@ -17,7 +18,8 @@
 }
 
 .pollo-loco-project,
-.da-bubble-project {
+.da-bubble-project,
+.pokedex-project {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -195,7 +197,8 @@
 @media (max-width: 576px) {
   .join-project,
   .pollo-loco-project,
-  .da-bubble-project {
+  .da-bubble-project,
+  .pokedex-project {
     max-width: 100%;
   }
 
@@ -270,7 +273,8 @@
 @media (max-width: 430px) {
   .join-project,
   .pollo-loco-project,
-  .da-bubble-project {
+  .da-bubble-project,
+  .pokedex-project {
     margin-bottom: 24px;
   }
 

@@ -22,13 +22,18 @@
   gap: 5rem;
 }
 
+.section3 {
+  @include flex-center;
+}
+
 // ===================
 // RESPONSIVE STYLES
 // ===================
 
 @media (max-width: 768px) {
   .section1,
-  .section2 {
+  .section2,
+  .section3 {
     gap: 2rem;
     height: auto;
   }
@@ -36,7 +41,8 @@
 
 @media (max-width: 576px) {
   .section1,
-  .section2 {
+  .section2,
+  .section3 {
     flex-direction: column;
     gap: 3rem;
     height: auto;
