@@ -15,16 +15,17 @@
 }
 
 .section1,
-.section2 {
+.section2,
+.section3 {
   width: 100%;
   height: 600px;
   @include flex-start;
   gap: 5rem;
 }
 
-.section3 {
-  @include flex-center;
-}
+// .section3 {
+//   @include flex-center;
+// }
 
 // ===================
 // RESPONSIVE STYLES

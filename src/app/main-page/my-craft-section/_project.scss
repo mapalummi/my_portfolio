@@ -1,7 +1,8 @@
 .join-project,
 .pollo-loco-project,
 .da-bubble-project,
-.pokedex-project {
+.pokedex-project,
+.maschenzauber-project {
   flex: 1;
 }
 
@@ -19,7 +20,8 @@
 
 .pollo-loco-project,
 .da-bubble-project,
-.pokedex-project {
+.pokedex-project,
+.maschenzauber-project {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -198,7 +200,8 @@
   .join-project,
   .pollo-loco-project,
   .da-bubble-project,
-  .pokedex-project {
+  .pokedex-project,
+  .maschenzauber-project {
     max-width: 100%;
   }
 
@@ -274,7 +277,8 @@
   .join-project,
   .pollo-loco-project,
   .da-bubble-project,
-  .pokedex-project {
+  .pokedex-project,
+  .maschenzauber-project {
     margin-bottom: 24px;
   }
 
