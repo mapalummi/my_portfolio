@@ -58,7 +58,7 @@
     "headline-one": "Description",
     "headline-two": "implementation Details",
     "text-one": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
-    "text-two": "„El Pollo Loco“  is a browser-based jump'n'run game that I developed using HTML, CSS, and JavaScript. The game logic is built in an object-oriented structure and uses the canvas element for rendering and animation. Enemies, level elements, and the player character interact through simple collision detection. All game components were fully implemented in vanilla JavaScript – completely without a game engine.",
+    "text-two": "„El Pollo Loco“  is a browser-based jump'n'run game that I developed using HTML, CSS, and JavaScript. The game logic is built in an object-oriented structure and uses the canvas element for rendering and animation. Enemies, level elements, and the player character interact through simple collision detection. All game components were fully implemented in vanilla JavaScript - completely without a game engine.",
     "info": "Duration:",
     "time": "3 weeks",
     "button-next": "Next Project"
@@ -69,7 +69,7 @@
     "headline-one": "Description",
     "headline-two": "implementation Details",
     "text-one": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
-    "text-two": "DABubble is a collaboratively developed Slack clone, created as part of a team project at the Developer Akademie. The application allows user registration, channel-based communication, and real-time messaging. The goal is to independently recreate all core features of Slack – including a modern UI, authentication, and data handling.",
+    "text-two": "DABubble is a collaboratively developed Slack clone, created as part of a team project at the Developer Akademie. The application allows user registration, channel-based communication, and real-time messaging. The goal is to independently recreate all core features of Slack - including a modern UI, authentication, and data handling.",
     "info": "Duration:",
     "time": "3 weeks",
     "button-next": "Next Project"
@@ -99,7 +99,7 @@
   "contact-section": {
     "headline-one": "Feel free to reach out!",
     "headline-two": "Ready to work together?",
-    "text": "I'm always open to new projects, ideas, and exciting challenges – especially when it comes to coding and finding creative solutions. If you're looking for someone who's passionate, eager to learn, and ready to be a real asset to your team, then you've come to the right place. Just drop me a message – I'm looking forward to hearing from you and hopefully creating something awesome together!"
+    "text": "I'm always open to new projects, ideas, and exciting challenges - especially when it comes to coding and finding creative solutions. If you're looking for someone who's passionate, eager to learn, and ready to be a real asset to your team, then you've come to the right place. Just drop me a message - I'm looking forward to hearing from you and hopefully creating something awesome together!"
   },
   "contactform": {
     "name": "What's your name?",

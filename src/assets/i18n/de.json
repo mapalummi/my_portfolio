@@ -16,7 +16,7 @@
     "snippet3": "Offen für Remote-Arbeit",
     "whois": "Wer ist Marco?",
     "about": "Über mich",
-    "text1": "Hi, ich bin Marco – Junior Webentwickler mit einer Leidenschaft für moderne Frontend-Technologien. Ich liebe es, kreative Ideen in interaktive Anwendungen zu verwandeln und dabei ständig neue Fähigkeiten zu entwickeln.",
+    "text1": "Hi, ich bin Marco - Junior Webentwickler mit einer Leidenschaft für moderne Frontend-Technologien. Ich liebe es, kreative Ideen in interaktive Anwendungen zu verwandeln und dabei ständig neue Fähigkeiten zu entwickeln.",
     "text2": "Mein Fokus liegt auf JavaScript und Angular, ergänzt durch Automatisierung und KI, um smarte, zukunftsorientierte Lösungen zu realisieren.",
     "text3": "Mein Ziel: Anwendungen zu entwickeln, die echten Mehrwert bieten und Menschen nachhaltig weiterbringen.",
     "button": "Reden wir?"
@@ -32,8 +32,8 @@
   "my-craft-section": {
     "headline-one": "Mein Handwerk",
     "headline-two": "Projekte",
-    "text": "Schön, dass du da bist! Ich liebe es, Ideen in funktionierende, benutzerfreundliche Webseiten zu verwandeln. Bei meinen Projekten achte ich auf ein modernes, responsives Design und sauberen, gut strukturierten Code. Mir ist wichtig, dass Anwendungen nicht nur technisch gut laufen, sondern sich auch für Nutzer*innen intuitiv anfühlen. Schau dich gern um, probier alles in Ruhe aus – und wenn du magst, freue ich mich über dein Feedback!",
-    "join": "Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer*innen und Kategorien zu.",
+    "text": "Schön, dass du da bist! Ich liebe es, Ideen in funktionierende, benutzerfreundliche Webseiten zu verwandeln. Bei meinen Projekten achte ich auf ein modernes, responsives Design und sauberen, gut strukturierten Code. Mir ist wichtig, dass Anwendungen nicht nur technisch gut laufen, sondern sich auch für Nutzer intuitiv anfühlen. Schau dich gern um, probier alles in Ruhe aus - und wenn du magst, freue ich mich über dein Feedback!",
+    "join": "Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.",
     "el-pollo-loco": "Jump-and-Run-Spiel mit Wurf-Funktion auf objektorientierter Basis. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
     "da-bubble": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und Zusammenarbeit durch eine intuitive Benutzeroberfläche, Echtzeitnachrichten und eine durchdachte Kanalstruktur.",
     "pokedex": "Ein responsiver, browserbasierter Pokédex, der Informationen über Pokémon mithilfe der öffentlichen PokeAPI bereitstellt. Nutzer können Pokémon-Karten ansehen, detaillierte Informationen abrufen und sich die jeweiligen Entwicklungsketten anzeigen lassen.",
@@ -46,7 +46,7 @@
     "headline-one": "Beschreibung",
     "headline-two": "Details zur Implementierung",
     "text-one": "Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mithilfe von Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.",
-    "text-two": "Als Team haben wir ein Kanban-Board entwickelt, wobei ich aktiv mitgewirkt und Verantwortung für bestimmte Aufgaben – hauptsächlich im Frontend-Bereich – übernommen habe. Durch den Einsatz agiler Methoden konnte ich strukturiert und eigenständig arbeiten und gleichzeitig eng mit dem Team zusammenarbeiten.",
+    "text-two": "Als Team haben wir ein Kanban-Board entwickelt, wobei ich aktiv mitgewirkt und Verantwortung für bestimmte Aufgaben - hauptsächlich im Frontend-Bereich - übernommen habe. Durch den Einsatz agiler Methoden konnte ich strukturiert und eigenständig arbeiten und gleichzeitig eng mit dem Team zusammenarbeiten.",
     "info": "Dauer:",
     "time": "5 Wochen",
     "button-next": "Nächstes Projekt"
@@ -57,7 +57,7 @@
     "headline-one": "Beschreibung",
     "headline-two": "Details zur Implementierung",
     "text-one": "Jump’n’Run- und Wurfspiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
-    "text-two": "„El Pollo Loco“ ist ein browserbasiertes Jump'n'Run-Spiel, welches ich mit HTML, CSS und JavaScript entwickelt habe. Die Spiellogik ist objektorientiert aufgebaut und nutzt das Canvas-Element für Animation und Darstellung. Gegner, Level-Elemente und der Held interagieren über einfache Kollisionserkennung. Alle Spielelemente wurden vollständig in Vanilla JavaScript umgesetzt – ganz ohne Game Engine.",
+    "text-two": "„El Pollo Loco“ ist ein browserbasiertes Jump'n'Run-Spiel, welches ich mit HTML, CSS und JavaScript entwickelt habe. Die Spiellogik ist objektorientiert aufgebaut und nutzt das Canvas-Element für Animation und Darstellung. Gegner, Level-Elemente und der Held interagieren über einfache Kollisionserkennung. Alle Spielelemente wurden vollständig in Vanilla JavaScript umgesetzt - ganz ohne Game Engine.",
     "info": "Dauer:",
     "time": "3 Wochen",
     "button-next": "Nächstes Projekt"
@@ -68,7 +68,7 @@
     "headline-one": "Beschreibung",
     "headline-two": "Details zur Implementierung",
     "text-one": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit durch eine intuitive Benutzeroberfläche, Echtzeitnachrichten und eine leistungsstarke Kanalorganisation.",
-    "text-two": "DABubble ist ein kollaborativ entwickelter Slack-Clone, der im Rahmen eines Teamprojekts bei der Developer Akademie entsteht. Die Anwendung ermöglicht Nutzerregistrierung, Channel-basierte Kommunikation und den Austausch von Nachrichten in Echtzeit. Ziel ist es, alle Kernfunktionen von Slack eigenständig nachzubilden – inklusive moderner UI, Authentifizierung und Datenverarbeitung.",
+    "text-two": "DABubble ist ein kollaborativ entwickelter Slack-Clone, der im Rahmen eines Teamprojekts bei der Developer Akademie entsteht. Die Anwendung ermöglicht Nutzerregistrierung, Channel-basierte Kommunikation und den Austausch von Nachrichten in Echtzeit. Ziel ist es, alle Kernfunktionen von Slack eigenständig nachzubilden - inklusive moderner UI, Authentifizierung und Datenverarbeitung.",
     "info": "Dauer:",
     "time": "3 Wochen",
     "button-next": "Nächstes Projekt"
@@ -87,7 +87,7 @@
   "testimonial-section": {
     "headline-one": "So sehen mich andere:",
     "headline-two": "Feedback aus dem Team",
-    "card-one": "Mit dir ein Projekt zu bauen, ist eine Freude: Dein Ehrgeiz, Dinge richtig gut zu machen, ist ansteckend. Du investierst Zeit in Recherchen und Training, kommunizierst klar und arbeitest zuverlässig. Besonders schätze ich deine empathische Art – menschlich wie fachlich ein Gewinn für jedes Team.",
+    "card-one": "Mit dir ein Projekt zu bauen, ist eine Freude: Dein Ehrgeiz, Dinge richtig gut zu machen, ist ansteckend. Du investierst Zeit in Recherchen und Training, kommunizierst klar und arbeitest zuverlässig. Besonders schätze ich deine empathische Art - menschlich wie fachlich ein Gewinn für jedes Team.",
     "card-two": "Deine Zielstrebigkeit und dein hoher Qualitätsanspruch beeindrucken mich jedes Mal und das meine ich wirklich ernst. Du weißt genau, wohin du willst, packst die Dinge super strukturiert und präzise an, und bereicherst unser Projekt mit deinem Perfektionismus und deinem klaren Fokus enorm. Richtig stark!",
     "card-three": "Marco habe ich als engagierten, hilfsbereiten und empathischen Menschen kennengelernt. Er arbeitet strukturiert, bringt ein starkes technisches Verständnis mit und denkt stets lösungsorientiert. Besonders schätze ich den respektvollen Austausch auf Augenhöhe und seine Bereitschaft, Wissen zu teilen. Die Zusammenarbeit mit ihm war sehr angenehm.",
     "title-one": "Frontend Entwicklerin",
@@ -98,7 +98,7 @@
   "contact-section": {
     "headline-one": "Meld dich gern bei mir!",
     "headline-two": "Bereit zusammen was zu erschaffen?",
-    "text": "Ich bin immer offen für neue Projekte, Ideen und spannende Aufgaben – vor allem, wenn’s ums Coden und kreative Lösungen geht. Wenn du jemanden suchst, der mit Herzblut dabei ist, Lust hat dazuzulernen und echte Unterstützung ins Team bringt, dann bist du bei mir genau richtig. Schreib mir einfach – ich freu mich drauf, von dir zu hören und vielleicht gemeinsam was Cooles auf die Beine zu stellen!"
+    "text": "Ich bin immer offen für neue Projekte, Ideen und spannende Aufgaben - vor allem, wenn’s ums Coden und kreative Lösungen geht. Wenn du jemanden suchst, der mit Herzblut dabei ist, Lust hat dazuzulernen und echte Unterstützung ins Team bringt, dann bist du bei mir genau richtig. Schreib mir einfach - ich freu mich drauf, von dir zu hören und vielleicht gemeinsam was Cooles auf die Beine zu stellen!"
   },
   "contactform": {
     "name": "Wie ist dein Name?",
@@ -192,7 +192,7 @@
     "headline-one": "Hallo",
     "text-one": "Danke für deine Nachricht und dein Interesse an meiner Arbeit.",
     "text-two": "Ich freue mich sehr darüber und werde mich in Kürze persönlich bei dir melden.",
-    "text-three": "Falls es um ein konkretes Projekt geht, gib mir gern schon ein paar Details – das beschleunigt alles ein wenig.",
+    "text-three": "Falls es um ein konkretes Projekt geht, gib mir gern schon ein paar Details - das beschleunigt alles ein wenig.",
     "greeting": "Viele Grüße",
     "button": "Schließen"
   }
