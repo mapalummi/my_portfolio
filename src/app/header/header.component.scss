@@ -60,6 +60,15 @@
       img {
         width: var(--nav-hover-img-sm);
       }
+
+      // Hier?
+      &:hover img {
+        animation: revealFromBottom 0.4s ease-out forwards;
+      }
+      // Neu
+      &.has-been-hovered:not(:hover) img {
+        animation: hideToTop 0.4s ease-out forwards;
+      }
     }
 
     .nav-skills {
@@ -67,6 +76,15 @@
 
       img {
         width: var(--nav-hover-img-md);
+      }
+
+      // Hier?
+      &:hover img {
+        animation: revealFromLeft 0.4s ease-out forwards;
+      }
+      // Neu
+      &.has-been-hovered:not(:hover) img {
+        animation: hideToRight 0.4s ease-out forwards;
       }
     }
 
@@ -76,6 +94,15 @@
       img {
         width: var(--nav-hover-img-lg);
       }
+
+      // Hier?
+      &:hover img {
+        animation: revealFromLeft 0.4s ease-out forwards;
+      }
+      // Neu
+      &.has-been-hovered:not(:hover) img {
+        animation: hideToRight 0.4s ease-out forwards;
+      }
     }
 
     .nav-contact {
@@ -84,28 +111,44 @@
       img {
         width: var(--nav-hover-img-lg);
       }
+
+      // Hier?
+      &:hover img {
+        animation: revealFromLeft 0.4s ease-out forwards;
+      }
+      // Neu
+      &.has-been-hovered:not(:hover) img {
+        animation: hideToRight 0.4s ease-out forwards;
+      }
     }
 
-    .nav-about:hover img {
-      animation: revealFromBottom 0.4s ease-out forwards;
-    }
+    // NOTE: ALT
+    // .nav-about:hover img {
+    //   animation: revealFromBottom 0.4s ease-out forwards;
+    // }
 
-    .nav-about:not(:hover) img {
-      animation: hideToTop 0.4s ease-out forwards;
-    }
+    // &.has-been-hovered:not(:hover) img {
+    //   animation: hideToTop 0.4s ease-out forwards;
+    // }
+
+    // NOTE: Diesen Teil könnte man raus nehmen...:
+    // .nav-about:not(:hover) img {
+    //   animation: hideToTop 0.4s ease-out forwards;
+    // }
 
     // Überschreibe die Animationen für bestimmte Links:
-    .nav-skills:hover img,
-    .nav-projects:hover img,
-    .nav-contact:hover img {
-      animation: revealFromLeft 0.4s ease-out forwards;
-    }
+    // .nav-skills:hover img,
+    // .nav-projects:hover img,
+    // .nav-contact:hover img {
+    //   animation: revealFromLeft 0.4s ease-out forwards;
+    // }
 
-    .nav-skills:not(:hover) img,
-    .nav-projects:not(:hover) img,
-    .nav-contact:not(:hover) img {
-      animation: hideToRight 0.4s ease-out forwards;
-    }
+    // NOTE: Diese Befehle evtl. löschen!?
+    // .nav-skills:not(:hover) img,
+    // .nav-projects:not(:hover) img,
+    // .nav-contact:not(:hover) img {
+    //   animation: hideToRight 0.4s ease-out forwards;
+    // }
 
     a {
       text-decoration: none;
@@ -127,6 +170,10 @@
         height: auto;
         z-index: 1;
         clip-path: inset(100% 0 0 0);
+
+        // EVTL:
+        // clip-path: inset(100% 0 0 0);
+        // transition: clip-path 0.4s ease-out;
       }
 
       span {
@@ -283,4 +330,3 @@
     display: none;
   }
 }
-

@@ -32,6 +32,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
     );
   }
 
+  // NOTE: NEU zum TESTEN:
+  hoveredLinks = new Set<string>();
+
+  markAsHovered(linkName: string) {
+    this.hoveredLinks.add(linkName);
+  }
+
   /**
    * Emits an event to close the menu.
    */

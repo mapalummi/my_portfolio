@@ -150,6 +150,10 @@ h2 {
   }
 
   .back-button {
+    position: relative;
+    z-index: 50;
+    pointer-events: auto;
+
     width: 100%;
     display: flex;
     justify-content: flex-start;
