@@ -5,8 +5,15 @@
   </div>
   <div class="link-container">
     <div class="top-link">
-      <a routerLink="/imprint" style="cursor: pointer" class="link-underline">
-        <img src="./assets/icons/3.png" alt="" />
+      <a
+        routerLink="/imprint"
+        style="cursor: pointer"
+        class="link-underline"
+        (mouseenter)="markAsHovered('about')"
+        [class.has-been-hovered]="hoveredLinks.has('about')"
+        (focus)="markAsHovered('about')"
+      >
+        <img src="./assets/icons/3.png" alt="" aria-hidden="true" />
         <span>{{ "footer.link-one" | translate }}</span>
       </a>
     </div>

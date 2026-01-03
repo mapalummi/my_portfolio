@@ -9,4 +9,11 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  // NOTE: NEU:
+  hoveredLinks = new Set<string>();
+
+  markAsHovered(linkName: string) {
+    this.hoveredLinks.add(linkName);
+  }
+}

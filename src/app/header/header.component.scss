@@ -122,34 +122,6 @@
       }
     }
 
-    // NOTE: ALT
-    // .nav-about:hover img {
-    //   animation: revealFromBottom 0.4s ease-out forwards;
-    // }
-
-    // &.has-been-hovered:not(:hover) img {
-    //   animation: hideToTop 0.4s ease-out forwards;
-    // }
-
-    // NOTE: Diesen Teil könnte man raus nehmen...:
-    // .nav-about:not(:hover) img {
-    //   animation: hideToTop 0.4s ease-out forwards;
-    // }
-
-    // Überschreibe die Animationen für bestimmte Links:
-    // .nav-skills:hover img,
-    // .nav-projects:hover img,
-    // .nav-contact:hover img {
-    //   animation: revealFromLeft 0.4s ease-out forwards;
-    // }
-
-    // NOTE: Diese Befehle evtl. löschen!?
-    // .nav-skills:not(:hover) img,
-    // .nav-projects:not(:hover) img,
-    // .nav-contact:not(:hover) img {
-    //   animation: hideToRight 0.4s ease-out forwards;
-    // }
-
     a {
       text-decoration: none;
       color: var(--header-link-color);

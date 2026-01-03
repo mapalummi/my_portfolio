@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     );
   }
 
-  // NOTE: NEU zum TESTEN:
+  // NOTE: NEU:
   hoveredLinks = new Set<string>();
 
   markAsHovered(linkName: string) {
