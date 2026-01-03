@@ -378,3 +378,26 @@ body.global-grabbing * {
   src: url("./assets/fonts/bricolage-grotesque-v8-latin-800.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+// Reduce motion for users who prefer it:
+// @media (prefers-reduced-motion: reduce) {
+//   *,
+//   *::before,
+//   *::after {
+//     animation: none !important;
+//     transition: none !important;
+//     scroll-behavior: auto !important;
+//   }
+// }
+
+// Optimierte Version:
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

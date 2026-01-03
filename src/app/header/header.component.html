@@ -17,23 +17,47 @@
       ><img src="./assets/img/LogoMpNeu3.png" alt="Logo von MP"
     /></a>
 
-    <a href="#about-section" class="nav-about" (mouseenter)="markAsHovered('about')" [class.has-been-hovered]="hoveredLinks.has('about')" (click)="closeMenu.emit()"
-      ><img src="./assets/icons/1.png" alt="Über mich Icon" /><span>{{
+    <a
+      href="#about-section"
+      class="nav-about"
+      (mouseenter)="markAsHovered('about')"
+      [class.has-been-hovered]="hoveredLinks.has('about')"
+      (focus)="markAsHovered('about')"
+      (click)="closeMenu.emit()"
+      ><img src="./assets/icons/1.png" alt="" aria-hidden="true" /><span>{{
         "header.link-one" | translate
       }}</span></a
     >
-    <a href="#my-stack-section" class="nav-skills" (mouseenter)="markAsHovered('skills')" [class.has-been-hovered]="hoveredLinks.has('skills')" (click)="closeMenu.emit()"
-      ><img src="./assets/icons/2.png" alt="Skills Icon" /><span>{{
+    <a
+      href="#my-stack-section"
+      class="nav-skills"
+      (mouseenter)="markAsHovered('skills')"
+      [class.has-been-hovered]="hoveredLinks.has('skills')"
+      (focus)="markAsHovered('skills')"
+      (click)="closeMenu.emit()"
+      ><img src="./assets/icons/2.png" alt="" aria-hidden="true" /><span>{{
         "header.link-two" | translate
       }}</span></a
     >
-    <a href="#my-craft-section" class="nav-projects" (mouseenter)="markAsHovered('projects')" [class.has-been-hovered]="hoveredLinks.has('projects')" (click)="closeMenu.emit()"
-      ><img src="./assets/icons/4.png" alt="Projekte Icon" /><span>{{
+    <a
+      href="#my-craft-section"
+      class="nav-projects"
+      (mouseenter)="markAsHovered('projects')"
+      [class.has-been-hovered]="hoveredLinks.has('projects')"
+      (focus)="markAsHovered('projects')"
+      (click)="closeMenu.emit()"
+      ><img src="./assets/icons/4.png" alt="" aria-hidden="true" /><span>{{
         "header.link-three" | translate
       }}</span></a
     >
-    <a href="#contact-section" class="nav-contact" (mouseenter)="markAsHovered('contact')" [class.has-been-hovered]="hoveredLinks.has('contact')" (click)="closeMenu.emit()"
-      ><img src="./assets/icons/3.png" alt="Kontakt Icon" /><span>{{
+    <a
+      href="#contact-section"
+      class="nav-contact"
+      (mouseenter)="markAsHovered('contact')"
+      [class.has-been-hovered]="hoveredLinks.has('contact')"
+      (focus)="markAsHovered('contact')"
+      (click)="closeMenu.emit()"
+      ><img src="./assets/icons/3.png" alt="" aria-hidden="true" /><span>{{
         "header.link-four" | translate
       }}</span></a
     >
@@ -41,7 +65,8 @@
       <span [class.active]="isEnglish" (click)="setEnglish()"
         ><img
           src="./assets/icons/Toggle.png"
-          alt="Sprache Englisch wählen"
+          alt=""
+          aria-hidden="true"
         />EN</span
       >
       <label class="toggle-switch">
@@ -51,7 +76,8 @@
       <span [class.active]="!isEnglish" (click)="setGerman()"
         ><img
           src="./assets/icons/Toggle.png"
-          alt="Sprache Deutsch wählen"
+          alt=""
+          aria-hidden="true"
         />DE</span
       >
     </div>

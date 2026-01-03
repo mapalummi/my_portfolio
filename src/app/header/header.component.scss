@@ -61,12 +61,12 @@
         width: var(--nav-hover-img-sm);
       }
 
-      // Hier?
-      &:hover img {
+      &:hover img,
+      &:focus img {
         animation: revealFromBottom 0.4s ease-out forwards;
       }
       // Neu
-      &.has-been-hovered:not(:hover) img {
+      &.has-been-hovered:not(:hover, :focus) img {
         animation: hideToTop 0.4s ease-out forwards;
       }
     }
@@ -78,12 +78,12 @@
         width: var(--nav-hover-img-md);
       }
 
-      // Hier?
-      &:hover img {
+      &:hover img,
+      &:focus img {
         animation: revealFromLeft 0.4s ease-out forwards;
       }
       // Neu
-      &.has-been-hovered:not(:hover) img {
+      &.has-been-hovered:not(:hover, :focus) img {
         animation: hideToRight 0.4s ease-out forwards;
       }
     }
@@ -95,12 +95,12 @@
         width: var(--nav-hover-img-lg);
       }
 
-      // Hier?
-      &:hover img {
+      &:hover img,
+      &:focus img {
         animation: revealFromLeft 0.4s ease-out forwards;
       }
       // Neu
-      &.has-been-hovered:not(:hover) img {
+      &.has-been-hovered:not(:hover, :focus) img {
         animation: hideToRight 0.4s ease-out forwards;
       }
     }
@@ -112,12 +112,12 @@
         width: var(--nav-hover-img-lg);
       }
 
-      // Hier?
-      &:hover img {
+      &:hover img,
+      &:focus img {
         animation: revealFromLeft 0.4s ease-out forwards;
       }
       // Neu
-      &.has-been-hovered:not(:hover) img {
+      &.has-been-hovered:not(:hover, :focus) img {
         animation: hideToRight 0.4s ease-out forwards;
       }
     }
