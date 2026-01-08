@@ -1,0 +1,247 @@
+@import "./../../styles.scss";
+
+#chat-widget-container {
+  position: absolute;
+  /* position: fixed; */
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#chat-widget-header {
+  background: var(--bot-secondary-color);
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+#chat-widget-body {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  color: rgb(43, 43, 43);
+}
+
+/* Increased spacing between messages */
+#chat-widget-body p {
+  margin-bottom: 15px; /* Adjust spacing between messages */
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+#chat-widget-footer {
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 10px;
+}
+
+#chat-widget-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+#chat-widget-send {
+  background: var(--bot-primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Make the chat bubble a perfect circle */
+#chat-widget-button {
+  position: absolute;
+  /* position: fixed; */
+  bottom: 20px;
+  right: 20px;
+  background: var(--bot-primary-color);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#chat-widget-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CSS for typing animation */
+.typing-indicator {
+  display: inline-block;
+  background: var(--bot-primary-color);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  margin-right: 4px;
+  animation: blink 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+/* ############### */
+/* Bubble-styling  */
+/* #############   */
+
+#chat-widget-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Etwas mehr Platz zwischen den Nachrichten */
+}
+
+/* Gemeinsame Basis für die Nachrichten-Container */
+.chat-message {
+  display: flex;
+  gap: 8px;
+  max-width: 85%;
+  align-items: flex-start;
+}
+
+/* Avatar Styling */
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex-shrink: 0; /* Verhindert, dass der Avatar gequetscht wird */
+}
+
+/* Die eigentliche Sprechblase */
+.bubble {
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 1.4rem; /* Passend zu deiner 62.5% html-Einstellung */
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* BOT: links ausgerichtet */
+.bot-message {
+  align-self: flex-start;
+}
+
+.bot-message .bubble {
+  background: var(--bot-primary-color); /* Nutzt dein neues Türkis/Blau */
+  color: var(--bot-text-light);
+  border-top-left-radius: 4px;
+}
+
+/* USER: rechts ausgerichtet */
+.user-message {
+  align-self: flex-end;
+  flex-direction: row-reverse; /* Spiegelt Avatar und Bubble */
+}
+
+.user-message .bubble {
+  background: var(--bot-bg-user);
+  color: var(--bot-text-dark);
+  border-top-right-radius: 4px;
+}
+
+/* ###################### */
+/* Responsive Design     */
+/* #################### */
+
+@media (max-width: 480px) {
+  #chat-widget-container {
+    display: none; /* Bleibt durch JS gesteuert, aber wenn aktiv: */
+    position: fixed;
+    top: 0; /* Wichtig: Ganz oben ansetzen */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw; /* Volle Viewport-Breite */
+    height: auto;
+    margin: 0;
+    border-radius: 0;
+    z-index: 10000; /* Höher als der Header (1000) */
+  }
+
+  #chat-widget-header {
+    height: 60px; /* Feste Höhe für den Header im Chat */
+    padding: 0 15px;
+    border-radius: 0;
+  }
+
+  #chat-widget-body {
+    flex: 1; /* Nimmt den restlichen Platz ein */
+    padding: 15px;
+    -webkit-overflow-scrolling: touch; /* Smoothes Scrollen auf iOS */
+  }
+
+  #chat-widget-button {
+    position: fixed; /* Button bleibt an Ort und Stelle */
+    bottom: 80px; /* Deine gewünschte Höhe */
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    z-index: 9999;
+  }
+
+  #chat-widget-input {
+    font-size: 16px !important; /* Verhindert den Auto-Zoom auf iOS */
+  }
+}

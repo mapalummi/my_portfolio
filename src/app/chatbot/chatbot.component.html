@@ -1,0 +1,32 @@
+<main>
+  <section>
+    <!-- Chat Widget Button -->
+    <button id="chat-widget-button" (click)="toggleChat()" *ngIf="!isChatOpen">💬</button>
+    <!-- Chat Widget Button -->
+
+    <!-- Chat Widget Container -->
+    <div id="chat-widget-container">
+      <div id="chat-widget-header">
+        <span>Chat 💬</span>
+        <button id="chat-widget-close" onclick="closeChatWidget()">✖</button>
+      </div>
+      <div id="chat-widget-body">
+        <p style="margin-bottom: 20px">
+          <strong
+            >Hallo 👋, ich bin der persönliche Assistent von Marco Palummieri.
+            Was möchtest du gerne wissen?</strong
+          >
+        </p>
+      </div>
+      <div id="chat-widget-footer">
+        <input
+          type="text"
+          id="chat-widget-input"
+          placeholder="Tippe deine Nachricht hier ein..."
+        />
+        <button id="chat-widget-send">Senden</button>
+      </div>
+    </div>
+    <!-- Chat Widget Container -->
+  </section>
+</main>
