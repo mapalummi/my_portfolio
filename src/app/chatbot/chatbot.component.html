@@ -4,7 +4,6 @@
     <button id="chat-widget-button" (click)="toggleChat()" *ngIf="!isChatOpen">
       💬
     </button>
-    <!-- Chat Widget Button -->
 
     <!-- Chat Widget Container -->
     <div
@@ -16,7 +15,7 @@
         <button id="chat-widget-close" (click)="toggleChat()">✖</button>
       </div>
       <div id="chat-widget-body" #chatBody>
-        <p>
+        <p *ngIf="messages.length === 0">
           {{ "chatbot.greeting" | translate }}
         </p>
 
@@ -41,7 +40,7 @@
 
         <div *ngIf="isTyping" class="chat-message bot-message typing-indicator">
           <img src="./assets/icons/bot-100.png" class="avatar" alt="Bot" />
-          <div class="bubble"><span>.</span><span>.</span><span>.</span></div>
+          <div class="bubble"><span></span><span></span><span></span></div>
         </div>
       </div>
       <div id="chat-widget-footer">
@@ -55,6 +54,5 @@
         <button id="chat-widget-send" (click)="sendMessage()">Senden</button>
       </div>
     </div>
-    <!-- Chat Widget Container -->
   </section>
 </main>
