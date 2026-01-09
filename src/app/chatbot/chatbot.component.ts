@@ -6,6 +6,7 @@ import {
   ViewChild,
   SecurityContext,
 } from '@angular/core';
+import DOMPurify from 'dompurify';
 import { marked } from 'marked';
 import { NgIf, NgForOf, NgClass, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -67,8 +68,6 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
     // User Nachricht lokal hinzufügen
     this.messages.push({ type: 'user', text });
     this.userInput = '';
-    this.saveChatToLocalStorage();
-
     this.isTyping = true;
 
     try {
@@ -89,17 +88,29 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
         data.output || 'Leider konnte ich das nicht verstehen.'
       ).trim();
 
-      // Wenn Markdown enthalten ist, in HTML konvertieren
+      // Markdown Check
       const looksLikeMarkdown =
         /(^#{1,6}\s)|(\*\*.*\*\*)|(^-\s)|(^\*\s)|(```)/m.test(botText);
-      let html = botText;
+
+      let finalHtml: SafeHtml | string = botText;
+
       if (looksLikeMarkdown) {
-        html = marked.parse(botText);
+        // 1. Markdown in HTML umwandeln
+        const rawHtml = marked.parse(botText) as string;
+
+        // 2. HTML säubern (Entfernt <script>, onerror, etc.)
+        const cleanHtml = DOMPurify.sanitize(rawHtml);
+
+        // 3. Angular sagen, dass dieses saubere HTML sicher ist
+        finalHtml = this.sanitizer.bypassSecurityTrustHtml(cleanHtml);
       }
 
-      // HTML sanitizen und als SafeHtml speichern
-      const safeHtml = this.sanitizer.bypassSecurityTrustHtml(html);
-      this.messages.push({ type: 'bot', text: botText, htmlContent: safeHtml });
+      this.messages.push({
+        type: 'bot',
+        text: botText,
+        htmlContent: finalHtml,
+      });
+
       this.saveChatToLocalStorage();
     } catch (error) {
       this.isTyping = false;
@@ -148,12 +159,11 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
         // Auf SafeHtml zurückkonvertieren
         this.messages = data.messages.map((m: any) => {
           if (m.htmlContent) {
+            const clean = DOMPurify.sanitize(m.htmlContent);
             return {
               type: m.type,
               text: m.text,
-              htmlContent: this.sanitizer.bypassSecurityTrustHtml(
-                m.htmlContent
-              ),
+              htmlContent: this.sanitizer.bypassSecurityTrustHtml(clean),
             };
           }
           return { type: m.type, text: m.text };
