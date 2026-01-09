@@ -1,40 +1,34 @@
-interface ChatMessage {
-  type: 'user' | 'bot';
-  text: string;
-}
-
 import {
   Component,
   OnInit,
   AfterViewChecked,
   ElementRef,
   ViewChild,
+  SecurityContext,
 } from '@angular/core';
-import {
-  NgIf,
-  NgForOf,
-  NgClass,
-  CommonModule,
-} from '@angular/common';
+import { marked } from 'marked';
+import { NgIf, NgForOf, NgClass, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
+interface ChatMessage {
+  type: 'user' | 'bot';
+  text: string;
+  htmlContent?: SafeHtml | string;
+}
 
 @Component({
   selector: 'app-chatbot',
   standalone: true,
-  imports: [
-    NgIf,
-    NgForOf,
-    NgClass,
-    CommonModule,
-    FormsModule,
-    TranslatePipe
-  ],
+  imports: [NgIf, NgForOf, NgClass, CommonModule, FormsModule, TranslatePipe],
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.scss',
 })
 export class ChatbotComponent implements OnInit, AfterViewChecked {
   @ViewChild('chatBody') private chatBodyContainer!: ElementRef;
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   messages: ChatMessage[] = [];
   userInput: string = '';
@@ -94,7 +88,18 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
       const botText = (
         data.output || 'Leider konnte ich das nicht verstehen.'
       ).trim();
-      this.messages.push({ type: 'bot', text: botText });
+
+      // Wenn Markdown enthalten ist, in HTML konvertieren
+      const looksLikeMarkdown =
+        /(^#{1,6}\s)|(\*\*.*\*\*)|(^-\s)|(^\*\s)|(```)/m.test(botText);
+      let html = botText;
+      if (looksLikeMarkdown) {
+        html = marked.parse(botText);
+      }
+
+      // HTML sanitizen und als SafeHtml speichern
+      const safeHtml = this.sanitizer.bypassSecurityTrustHtml(html);
+      this.messages.push({ type: 'bot', text: botText, htmlContent: safeHtml });
       this.saveChatToLocalStorage();
     } catch (error) {
       this.isTyping = false;
@@ -106,8 +111,26 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   }
 
   private saveChatToLocalStorage() {
+    // SafeHtml nicht direkt serialisierbar -> als string speichern (sicher sanitizen)
+    const serializable = this.messages.map((m) => {
+      let htmlString: string | null = null;
+      if (m.htmlContent) {
+        // Falls bereits SafeHtml, sanitiere es zu String
+        try {
+          htmlString =
+            this.sanitizer.sanitize(
+              SecurityContext.HTML,
+              m.htmlContent as any
+            ) || null;
+        } catch {
+          htmlString = typeof m.htmlContent === 'string' ? m.htmlContent : null;
+        }
+      }
+      return { type: m.type, text: m.text, htmlContent: htmlString };
+    });
+
     const payload = {
-      messages: this.messages.slice(-50), // Letzte 50 Nachrichten
+      messages: serializable.slice(-50), // Letzte 50 Nachrichten
       savedAt: Date.now(),
     };
     localStorage.setItem('chatMessages', JSON.stringify(payload));
@@ -122,7 +145,19 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
       const EXPIRATION_TIME = 2 * 60 * 60 * 1000;
 
       if (Date.now() - data.savedAt < EXPIRATION_TIME) {
-        this.messages = data.messages;
+        // Auf SafeHtml zurückkonvertieren
+        this.messages = data.messages.map((m: any) => {
+          if (m.htmlContent) {
+            return {
+              type: m.type,
+              text: m.text,
+              htmlContent: this.sanitizer.bypassSecurityTrustHtml(
+                m.htmlContent
+              ),
+            };
+          }
+          return { type: m.type, text: m.text };
+        });
       } else {
         localStorage.removeItem('chatMessages');
       }

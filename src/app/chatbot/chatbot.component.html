@@ -29,7 +29,10 @@
             class="avatar"
             alt="Bot"
           />
-          <div class="bubble">{{ msg.text }}</div>
+          <div class="bubble">
+            <div *ngIf="msg.htmlContent" [innerHTML]="msg.htmlContent"></div>
+            <div *ngIf="!msg.htmlContent">{{ msg.text }}</div>
+          </div>
           <img
             *ngIf="msg.type === 'user'"
             src="./assets/icons/kopf-100.png"
@@ -40,7 +43,9 @@
 
         <div *ngIf="isTyping" class="chat-message bot-message">
           <img src="./assets/icons/bot-100.png" class="avatar" alt="Bot" />
-          <div class="bubble typing"><span></span><span></span><span></span></div>
+          <div class="bubble typing">
+            <span></span><span></span><span></span>
+          </div>
         </div>
       </div>
       <div id="chat-widget-footer">
