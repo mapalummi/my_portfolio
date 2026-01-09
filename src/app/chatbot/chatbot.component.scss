@@ -107,31 +107,57 @@
 }
 
 /* CSS for typing animation */
-.typing-indicator {
-  display: inline-block;
-  background: var(--bot-primary-color);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-size: 14px;
-  margin-top: 10px;
+// ALT
+// .typing-indicator {
+//   display: inline-block;
+//   background: var(--bot-primary-color);
+//   color: white;
+//   padding: 8px 12px;
+//   border-radius: 10px;
+//   font-size: 14px;
+//   margin-top: 10px;
+// }
+
+// .typing-indicator span {
+//   display: inline-block;
+//   width: 6px;
+//   height: 6px;
+//   background: white;
+//   border-radius: 50%;
+//   margin-right: 4px;
+//   animation: blink 1.4s infinite both;
+// }
+
+// .typing-indicator span:nth-child(2) {
+//   animation-delay: 0.2s;
+// }
+
+// .typing-indicator span:nth-child(3) {
+//   animation-delay: 0.4s;
+// }
+
+// NEU
+.bubble.typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 18px; /* Sorgt für Stabilität */
 }
 
-.typing-indicator span {
+.bubble.typing span {
   display: inline-block;
   width: 6px;
   height: 6px;
-  background: white;
+  background: currentColor; /* Nutzt die Textfarbe der Bubble (weiß) */
   border-radius: 50%;
-  margin-right: 4px;
   animation: blink 1.4s infinite both;
 }
 
-.typing-indicator span:nth-child(2) {
+.bubble.typing span:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.typing-indicator span:nth-child(3) {
+.bubble.typing span:nth-child(3) {
   animation-delay: 0.4s;
 }
 
