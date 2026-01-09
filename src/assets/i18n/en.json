@@ -197,5 +197,8 @@
     "text-three": "If it's about a specific project, feel free to share some details already – that will help speed things up a bit.",
     "greeting": "Best regards",
     "button": "Close"
+  },
+  "chatbot": {
+    "greeting": "Hi 👋, I'm Marco Palummieri's personal assistant. What would you like to know?"
   }
 }

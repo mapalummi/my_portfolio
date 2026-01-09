@@ -16,11 +16,8 @@
         <button id="chat-widget-close" (click)="toggleChat()">✖</button>
       </div>
       <div id="chat-widget-body" #chatBody>
-        <p style="margin-bottom: 20px">
-          <strong
-            >Hallo 👋, ich bin der persönliche Assistent von Marco Palummieri.
-            Was möchtest du gerne wissen?</strong
-          >
+        <p>
+          {{ "chatbot.greeting" | translate }}
         </p>
 
         <div

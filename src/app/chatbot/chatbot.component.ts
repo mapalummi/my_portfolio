@@ -17,6 +17,7 @@ import {
   CommonModule,
 } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chatbot',
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     NgClass,
     CommonModule,
     FormsModule,
+    TranslatePipe
   ],
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.scss',
