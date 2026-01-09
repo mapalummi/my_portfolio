@@ -1,30 +1,61 @@
 <main>
   <section>
     <!-- Chat Widget Button -->
-    <button id="chat-widget-button" (click)="toggleChat()" *ngIf="!isChatOpen">💬</button>
+    <button id="chat-widget-button" (click)="toggleChat()" *ngIf="!isChatOpen">
+      💬
+    </button>
     <!-- Chat Widget Button -->
 
     <!-- Chat Widget Container -->
-    <div id="chat-widget-container">
+    <div
+      id="chat-widget-container"
+      [style.display]="isChatOpen ? 'flex' : 'none'"
+    >
       <div id="chat-widget-header">
         <span>Chat 💬</span>
-        <button id="chat-widget-close" onclick="closeChatWidget()">✖</button>
+        <button id="chat-widget-close" (click)="toggleChat()">✖</button>
       </div>
-      <div id="chat-widget-body">
+      <div id="chat-widget-body" #chatBody>
         <p style="margin-bottom: 20px">
           <strong
             >Hallo 👋, ich bin der persönliche Assistent von Marco Palummieri.
             Was möchtest du gerne wissen?</strong
           >
         </p>
+
+        <div
+          *ngFor="let msg of messages"
+          [ngClass]="['chat-message', msg.type + '-message']"
+        >
+          <img
+            *ngIf="msg.type === 'bot'"
+            src="./assets/icons/bot-100.png"
+            class="avatar"
+            alt="Bot"
+          />
+          <div class="bubble">{{ msg.text }}</div>
+          <img
+            *ngIf="msg.type === 'user'"
+            src="./assets/icons/kopf-100.png"
+            class="avatar"
+            alt="User"
+          />
+        </div>
+
+        <div *ngIf="isTyping" class="chat-message bot-message typing-indicator">
+          <img src="./assets/icons/bot-100.png" class="avatar" alt="Bot" />
+          <div class="bubble"><span>.</span><span>.</span><span>.</span></div>
+        </div>
       </div>
       <div id="chat-widget-footer">
         <input
           type="text"
           id="chat-widget-input"
+          [(ngModel)]="userInput"
+          (keydown.enter)="sendMessage()"
           placeholder="Tippe deine Nachricht hier ein..."
         />
-        <button id="chat-widget-send">Senden</button>
+        <button id="chat-widget-send" (click)="sendMessage()">Senden</button>
       </div>
     </div>
     <!-- Chat Widget Container -->

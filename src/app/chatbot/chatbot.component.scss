@@ -1,8 +1,8 @@
 @import "./../../styles.scss";
 
 #chat-widget-container {
-  position: absolute;
-  /* position: fixed; */
+  //   position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   width: 350px;
@@ -67,10 +67,10 @@
   cursor: pointer;
 }
 
-/* Make the chat bubble a perfect circle */
+/* The chat bubble */
 #chat-widget-button {
-  position: absolute;
-  /* position: fixed; */
+  //   position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   background: var(--bot-primary-color);

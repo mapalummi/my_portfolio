@@ -10,12 +10,24 @@ import {
   ElementRef,
   ViewChild,
 } from '@angular/core';
-import { NgIf } from "../../../node_modules/@angular/common/index";
+import {
+  NgIf,
+  NgForOf,
+  NgClass,
+  CommonModule,
+} from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-chatbot',
   standalone: true,
-  imports: [NgIf],
+  imports: [
+    NgIf,
+    NgForOf,
+    NgClass,
+    CommonModule,
+    FormsModule,
+  ],
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.scss',
 })
