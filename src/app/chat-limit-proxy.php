@@ -39,7 +39,7 @@ file_put_contents($limit_file, json_encode($data));
 
 
 // 1. Sicherheit: Nur Anfragen von deiner eigenen Domain erlauben
-header("Access-Control-Allow-Origin: https://deine-website.de"); 
+header("Access-Control-Allow-Origin: https://marcopalummieri.de/");
 header("Content-Type: application/json");
 
 // 2. Deine versteckte n8n URL

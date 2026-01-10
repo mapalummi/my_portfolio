@@ -36,10 +36,11 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   isChatOpen: boolean = false;
   isTyping: boolean = false;
 
+  // Localhost:
   // private readonly webhookUrl =
   //   'https://n8n.marcopalummieri.de/webhook/138e6ea1-ec82-4503-9126-0f74d9b88a99/chat';
   // Live:
-  private readonly webhookUrl = 'chat-proxy.php';
+  private readonly webhookUrl = 'chat-limit-proxy.php';
 
   ngOnInit(): void {
     this.loadChatFromLocalStorage();
@@ -84,8 +85,20 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
       });
 
       const data = await response.json();
-      this.isTyping = false;
 
+      // PRÜFUNG AUF RATE LIMIT (429) ODER ANDERE FEHLER
+      if (!response.ok) {
+        this.isTyping = false;
+        const errorMessage = data.message || 'Ein Fehler ist aufgetreten.';
+
+        this.messages.push({
+          type: 'bot',
+          text: errorMessage,
+        });
+        return; // Abbrechen, damit der Rest nicht ausgeführt wird
+      }
+
+      this.isTyping = false;
       const botText = (
         data.output || 'Leider konnte ich das nicht verstehen.'
       ).trim();
@@ -99,10 +112,8 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
       if (looksLikeMarkdown) {
         // 1. Markdown in HTML umwandeln
         const rawHtml = marked.parse(botText) as string;
-
         // 2. HTML säubern (Entfernt <script>, onerror, etc.)
         const cleanHtml = DOMPurify.sanitize(rawHtml);
-
         // 3. Angular sagen, dass dieses saubere HTML sicher ist
         finalHtml = this.sanitizer.bypassSecurityTrustHtml(cleanHtml);
       }
