@@ -48,23 +48,34 @@
           </div>
         </div>
       </div>
-      <div id="chat-widget-footer">
-        <input
-          type="text"
-          id="chat-widget-input"
-          [(ngModel)]="userInput"
-          (keydown.enter)="sendMessage()"
-          [disabled]="isTyping"
-          autocomplete="off"
-          placeholder="Tippe deine Nachricht hier ein..."
-        />
-        <button
-          id="chat-widget-send"
-          (click)="sendMessage()"
-          [disabled]="isTyping || !userInput.trim()"
-        >
-          Senden
-        </button>
+
+      <div>
+        <!-- Info-field -->
+        <div class="chat-footer-info">
+          <p>
+            {{ "chatbot.privacyhint" | translate }}
+          </p>
+        </div>
+        <!-- Info-field -->
+
+        <div id="chat-widget-footer">
+          <input
+            type="text"
+            id="chat-widget-input"
+            [(ngModel)]="userInput"
+            (keydown.enter)="sendMessage()"
+            [disabled]="isTyping"
+            autocomplete="off"
+            placeholder="Tippe deine Nachricht hier ein..."
+          />
+          <button
+            id="chat-widget-send"
+            (click)="sendMessage()"
+            [disabled]="isTyping || !userInput.trim()"
+          >
+            Senden
+          </button>
+        </div>
       </div>
     </div>
   </section>

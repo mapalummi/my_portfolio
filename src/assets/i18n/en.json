@@ -199,6 +199,7 @@
     "button": "Close"
   },
   "chatbot": {
-    "greeting": "Hi 👋, I'm Marco Palummieri's personal assistant. What would you like to know?"
+    "greeting": "Hi 👋, I'm Marco Palummieri's personal assistant. What would you like to know?",
+    "privacyhint": "Note: To protect against spam, your IP address will be stored anonymously for a maximum of 60 minutes."
   }
 }
