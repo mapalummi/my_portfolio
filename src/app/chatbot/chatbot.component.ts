@@ -36,8 +36,10 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   isChatOpen: boolean = false;
   isTyping: boolean = false;
 
-  private readonly webhookUrl =
-    'https://n8n.marcopalummieri.de/webhook/138e6ea1-ec82-4503-9126-0f74d9b88a99/chat';
+  // private readonly webhookUrl =
+  //   'https://n8n.marcopalummieri.de/webhook/138e6ea1-ec82-4503-9126-0f74d9b88a99/chat';
+  // Live:
+  private readonly webhookUrl = 'chat-proxy.php';
 
   ngOnInit(): void {
     this.loadChatFromLocalStorage();
