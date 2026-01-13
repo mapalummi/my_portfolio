@@ -5,8 +5,15 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 350px;
-  height: 550px;
+
+  width: 90%;
+  max-width: 380px;
+
+  height: 70vh;
+
+  min-height: 400px;
+  max-height: 700px;
+
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -264,12 +271,18 @@
   #chat-widget-container {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    // top: 0;
+    // left: 0;
     right: 0;
     bottom: 0;
+
     width: 100vw;
-    height: auto;
+    max-width: none;
+    
+    // height: auto;
+    height: 100vh;
+    max-height: none;
+
     margin: 0;
     border-radius: 0;
     z-index: 10000;

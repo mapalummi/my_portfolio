@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
+// Neu
+import { TranslateService } from '@ngx-translate/core';
+import { delay } from 'rxjs';
+
 interface ChatMessage {
   type: 'user' | 'bot';
   text: string;
@@ -29,21 +33,58 @@ interface ChatMessage {
 export class ChatbotComponent implements OnInit, AfterViewChecked {
   @ViewChild('chatBody') private chatBodyContainer!: ElementRef;
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private translate: TranslateService
+  ) {}
 
   messages: ChatMessage[] = [];
   userInput: string = '';
   isChatOpen: boolean = false;
   isTyping: boolean = false;
 
-  // Localhost:
+  // LOCALHOST:
   // private readonly webhookUrl =
   //   'https://n8n.marcopalummieri.de/webhook/138e6ea1-ec82-4503-9126-0f74d9b88a99/chat';
-  // Live:
+  // LIVE:
   private readonly webhookUrl = 'chat-limit-proxy.php';
+
+  // NEU:
+  private greetingShown = false;
 
   ngOnInit(): void {
     this.loadChatFromLocalStorage();
+
+    // NEU:
+    // if (this.messages.length === 0) {
+    //   this.initGreeting();
+    // }
+  }
+
+  // NEU:
+  private initGreeting(): void {
+    this.isTyping = true;
+
+    this.translate
+      .stream('chatbot.greeting')
+      .pipe(delay(1000))
+      .subscribe((translation: string) => {
+        this.isTyping = false;
+
+        if (this.messages.length === 0) {
+          this.messages.push({
+            type: 'bot',
+            text: translation,
+          });
+        } else if (this.messages[0].type === 'bot' && !this.isUserInitiated()) {
+          this.messages[0].text = translation;
+        }
+      });
+  }
+
+  // NEU:
+  private isUserInitiated(): boolean {
+    return this.messages.some((m) => m.type === 'user');
   }
 
   // Sorgt dafür, dass bei neuen Nachrichten automatisch nach unten gescrollt wird
@@ -53,6 +94,12 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
 
   toggleChat() {
     this.isChatOpen = !this.isChatOpen;
+
+    // NEU:
+    if (this.isChatOpen && this.messages.length === 0 && !this.greetingShown) {
+      this.initGreeting();
+      this.greetingShown = true;
+    }
   }
 
   getChatId(): string {
@@ -181,6 +228,11 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
           }
           return { type: m.type, text: m.text };
         });
+
+        // NEU:
+        if (this.messages.length > 0) {
+          this.greetingShown = true;
+        }
       } else {
         localStorage.removeItem('chatMessages');
       }
