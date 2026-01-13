@@ -6,7 +6,7 @@
   bottom: 20px;
   right: 20px;
   width: 350px;
-  height: 500px;
+  height: 550px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -33,19 +33,19 @@
   overflow-y: auto;
   color: rgb(43, 43, 43);
 
-  p {
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
+  // p {
+  //   font-weight: 600;
+  //   margin-bottom: 20px;
+  // }
 }
 
-#chat-widget-body p {
-  margin-bottom: 15px; /* Adjust spacing between messages */
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  word-wrap: break-word;
-}
+// #chat-widget-body p {
+//   margin-bottom: 15px;
+//   padding: 12px;
+//   border-radius: 8px;
+//   font-size: 14px;
+//   word-wrap: break-word;
+// }
 
 #chat-widget-footer {
   padding: 12px;
