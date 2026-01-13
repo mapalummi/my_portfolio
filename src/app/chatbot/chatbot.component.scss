@@ -76,11 +76,14 @@
   padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
+
+  &:hover {
+    background: var(--bot-secondary-color);
+  }
 }
 
 /* The chat bubble */
 #chat-widget-button {
-  //   position: absolute;
   position: fixed;
   bottom: 25px;
   right: 25px;
@@ -97,6 +100,38 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+  /* Initialzustand: Unsichtbar und leicht nach unten verschoben */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: all 0.4s ease-out;
+  pointer-events: none; /* Verhindert Klicks, wenn unsichtbar */
+
+  /* Zustand, wenn die Klasse 'visible' aktiv ist */
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+
+    animation: pulse-once 1.5s ease-out;
+  }
+}
+
+@keyframes pulse-once {
+  0% {
+    // Ein kleiner Schatten direkt am Button
+    box-shadow: 0 0 0 0 rgba(50, 127, 221, 0.7);
+  }
+  70% {
+    // Der Ring weitet sich aus und wird fast unsichtbar
+    box-shadow: 0 0 0 20px rgba(50, 127, 221, 0);
+  }
+  100% {
+    // Ende der Animation
+    box-shadow: 0 0 0 0 rgba(50, 127, 221, 0);
+  }
 }
 
 #chat-widget-close {
@@ -278,7 +313,7 @@
 
     width: 100vw;
     max-width: none;
-    
+
     // height: auto;
     height: 100vh;
     max-height: none;

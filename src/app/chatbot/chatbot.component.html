@@ -1,7 +1,18 @@
 <main>
   <section>
     <!-- Chat Widget Button -->
-    <button id="chat-widget-button" (click)="toggleChat()" *ngIf="!isChatOpen">
+    <!-- <button id="chat-widget-button" 
+    (click)="toggleChat()" 
+    *ngIf="!isChatOpen">
+      💬
+    </button> -->
+
+    <button
+      id="chat-widget-button"
+      [class.visible]="showButton || isChatOpen"
+      (click)="toggleChat()"
+      *ngIf="!isChatOpen"
+    >
       💬
     </button>
 

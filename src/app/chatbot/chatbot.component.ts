@@ -1,5 +1,6 @@
 import {
   Component,
+  HostListener,
   OnInit,
   AfterViewChecked,
   ElementRef,
@@ -12,10 +13,8 @@ import { NgIf, NgForOf, NgClass, CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-
-// Neu
 import { TranslateService } from '@ngx-translate/core';
-import { delay } from 'rxjs';
+import { delay, take } from 'rxjs/operators';
 
 interface ChatMessage {
   type: 'user' | 'bot';
@@ -42,6 +41,8 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   userInput: string = '';
   isChatOpen: boolean = false;
   isTyping: boolean = false;
+  showButton: boolean = false;
+  private greetingShown = false;
 
   // LOCALHOST:
   // private readonly webhookUrl =
@@ -50,41 +51,58 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
   private readonly webhookUrl = 'chat-limit-proxy.php';
 
   // NEU:
-  private greetingShown = false;
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPos =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+
+    // 1. Schwellenwert für den Start (wie gehabt)
+    const startThreshold = 400;
+    // 2. Berechnung: Wie weit ist es noch bis ganz unten?
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const distanceFromBottom = documentHeight - (scrollPos + windowHeight);
+    // 3. Schwellenwert für das Ende (z.B. 100px vor dem Boden der Seite)
+    const endThreshold = 100;
+
+    // Der Button ist sichtbar, wenn:
+    // Über 400px gescrollt wurde UND wir noch nicht ganz unten sind
+    // ODER wenn der Chat bereits offen ist (damit er nicht beim Tippen verschwindet)
+    // this.showButton =
+    //   scrollPos > startThreshold && distanceFromBottom > endThreshold;
+    // NEU:
+    this.showButton =
+      (scrollPos > startThreshold && distanceFromBottom > endThreshold) ||
+      this.isChatOpen;
+  }
 
   ngOnInit(): void {
     this.loadChatFromLocalStorage();
-
-    // NEU:
-    // if (this.messages.length === 0) {
-    //   this.initGreeting();
-    // }
   }
 
-  // NEU:
   private initGreeting(): void {
     this.isTyping = true;
 
     this.translate
       .stream('chatbot.greeting')
-      .pipe(delay(1000))
+      .pipe(
+        delay(1000), // Simuliert das "Tippen" des Bots
+        take(1) // Schließt den Stream nach der ersten Antwort ab
+      )
       .subscribe((translation: string) => {
         this.isTyping = false;
 
+        // Wir pushen die Nachricht nur, wenn der Verlauf leer ist
         if (this.messages.length === 0) {
           this.messages.push({
             type: 'bot',
             text: translation,
           });
-        } else if (this.messages[0].type === 'bot' && !this.isUserInitiated()) {
-          this.messages[0].text = translation;
         }
       });
-  }
-
-  // NEU:
-  private isUserInitiated(): boolean {
-    return this.messages.some((m) => m.type === 'user');
   }
 
   // Sorgt dafür, dass bei neuen Nachrichten automatisch nach unten gescrollt wird
@@ -94,8 +112,6 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
 
   toggleChat() {
     this.isChatOpen = !this.isChatOpen;
-
-    // NEU:
     if (this.isChatOpen && this.messages.length === 0 && !this.greetingShown) {
       this.initGreeting();
       this.greetingShown = true;
