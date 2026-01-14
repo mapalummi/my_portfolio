@@ -408,3 +408,11 @@ body.global-grabbing * {
     scroll-behavior: auto !important;
   }
 }
+
+@media (max-width: 480px) {
+  body.chat-open-scroll-lock {
+    overflow: hidden;
+    position: fixed; /* Extra Sicherheit für iOS Safari */
+    width: 100%;
+  }
+}

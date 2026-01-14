@@ -3,6 +3,7 @@ import {
   HostListener,
   OnInit,
   AfterViewChecked,
+  OnDestroy,
   ElementRef,
   ViewChild,
   SecurityContext,
@@ -15,6 +16,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { delay, take } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 
 interface ChatMessage {
   type: 'user' | 'bot';
@@ -29,7 +31,8 @@ interface ChatMessage {
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.scss',
 })
-export class ChatbotComponent implements OnInit, AfterViewChecked {
+export class ChatbotComponent implements OnInit, AfterViewChecked, OnDestroy {
+  private langChangeSub?: Subscription;
   @ViewChild('chatBody') private chatBodyContainer!: ElementRef;
 
   constructor(
@@ -81,11 +84,34 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.loadChatFromLocalStorage();
+
+    // Höre auf Sprachwechsel, um die Begrüßung zu aktualisieren
+    this.langChangeSub = this.translate.onLangChange.subscribe(() => {
+      this.updateGreetingLanguage();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.langChangeSub) {
+      this.langChangeSub.unsubscribe();
+    }
+
+    document.body.classList.remove('chat-open-scroll-lock');
+  }
+
+  private updateGreetingLanguage(): void {
+    if (this.messages.length === 1 && this.messages[0].type === 'bot') {
+      this.translate
+        .get('chatbot.greeting')
+        .pipe(take(1))
+        .subscribe((translation: string) => {
+          this.messages[0].text = translation;
+        });
+    }
   }
 
   private initGreeting(): void {
     this.isTyping = true;
-
     this.translate
       .stream('chatbot.greeting')
       .pipe(
@@ -94,7 +120,6 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
       )
       .subscribe((translation: string) => {
         this.isTyping = false;
-
         // Wir pushen die Nachricht nur, wenn der Verlauf leer ist
         if (this.messages.length === 0) {
           this.messages.push({
@@ -110,8 +135,25 @@ export class ChatbotComponent implements OnInit, AfterViewChecked {
     this.scrollToBottom();
   }
 
+  // toggleChat() {
+  //   this.isChatOpen = !this.isChatOpen;
+  //   if (this.isChatOpen && this.messages.length === 0 && !this.greetingShown) {
+  //     this.initGreeting();
+  //     this.greetingShown = true;
+  //   }
+  // }
+
+  // NEU
   toggleChat() {
     this.isChatOpen = !this.isChatOpen;
+
+    // SCROLL-LOCK hinzufügen/entfernen
+    if (this.isChatOpen) {
+      document.body.classList.add('chat-open-scroll-lock');
+    } else {
+      document.body.classList.remove('chat-open-scroll-lock');
+    }
+
     if (this.isChatOpen && this.messages.length === 0 && !this.greetingShown) {
       this.initGreeting();
       this.greetingShown = true;

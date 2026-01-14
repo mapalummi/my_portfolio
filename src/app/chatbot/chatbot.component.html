@@ -89,6 +89,7 @@
             id="chat-widget-send"
             (click)="sendMessage()"
             [disabled]="isTyping || !userInput.trim()"
+            [class.active]="userInput.trim().length > 0"
           >
             Senden
           </button>

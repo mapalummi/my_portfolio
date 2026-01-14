@@ -70,16 +70,34 @@
 }
 
 #chat-widget-send {
-  background: var(--bot-primary-color);
+  background-color: #ccc;
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
 
-  &:hover {
-    background: var(--bot-secondary-color);
+  // Wenn Text im Feld ist
+  &.active {
+    background-color: var(--bot-primary-color); // Dein Blau #327fdd
+    cursor: pointer;
+    transform: scale(1.05); // Wird minimal größer
+
+    &:hover {
+      background-color: var(--bot-secondary-color); // Etwas dunkler beim Hover
+    }
+
+    &:active {
+      transform: scale(0.95); // "Klick"-Effekt
+    }
   }
+
+  // Optional: Wenn der Button deaktiviert ist (für Browser-Sicherheit)
+  // &:disabled {
+  //   opacity: 0.6;
+  //   pointer-events: none;
+  // }
 }
 
 /* The chat bubble */
