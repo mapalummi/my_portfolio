@@ -1,8 +1,7 @@
 <?php
-// chat-proxy.php
 
 // --- RATE LIMIT START ---
-$limit_file = __DIR__ . '/rate_limit_db.json';
+$limit_file = __DIR__ . '/.state_7a2b99.json';
 $ip = $_SERVER['REMOTE_ADDR'];
 $now = time();
 $limit_window = 3600; // Zeitfenster: 1 Stunde (in Sekunden)
@@ -12,14 +11,24 @@ $max_requests = 20;   // Erlaubte Fragen pro Stunde
 $data = file_exists($limit_file) ? json_decode(file_get_contents($limit_file), true) : [];
 
 // Alte Einträge löschen (außerhalb des Zeitfensters)
-if (!is_array($data)) $data = [];
-$data = array_filter($data, function($timestamp) use ($now, $limit_window) {
-    return $timestamp > ($now - $limit_window);
+// if (!is_array($data)) $data = [];
+// $data = array_filter($data, function($timestamp) use ($now, $limit_window) {
+//     return $timestamp > ($now - $limit_window);
+// });
+
+// KORREKTUR: Filtere basierend auf dem Zeitstempel (Key ist der Zeitstempel)
+$data = array_filter($data, function($entry) use ($now, $limit_window) {
+    return $entry['time'] > ($now - $limit_window);
 });
 
 // Zähle Anfragen für diese IP
-$user_requests = array_filter($data, function($val) use ($ip) {
-    return $val === $ip;
+// $user_requests = array_filter($data, function($val) use ($ip) {
+//     return $val === $ip;
+// });
+
+// Zähle Anfragen für diese IP
+$user_requests = array_filter($data, function($entry) use ($ip) {
+    return $entry['ip'] === $ip;
 });
 
 if (count($user_requests) >= $max_requests) {
@@ -33,8 +42,12 @@ if (count($user_requests) >= $max_requests) {
 }
 
 // Aktuelle Anfrage hinzufügen und speichern
-$data[] = $ip;
-file_put_contents($limit_file, json_encode($data));
+// $data[] = $ip;
+// file_put_contents($limit_file, json_encode($data));
+
+// KORREKTUR: Speichere IP UND Zeitstempel als Objekt
+$data[] = ['ip' => $ip, 'time' => $now];
+file_put_contents($limit_file, json_encode(array_values($data)));
 // --- RATE LIMIT ENDE ---
 
 
