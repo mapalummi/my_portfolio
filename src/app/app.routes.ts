@@ -29,21 +29,21 @@ export const routes: Routes = [
     path: 'elPolloLoco',
     loadComponent: () =>
       import('./pages/el-pollo-loco/el-pollo-loco.component').then(
-        (m) => m.ElPolloLocoComponent
+        (m) => m.ElPolloLocoComponent,
       ),
   },
-  {
-    path: 'daBubble',
-    loadComponent: () =>
-      import('./pages/da-bubble/da-bubble.component').then(
-        (m) => m.DaBubbleComponent
-      ),
-  },
+  // {
+  //   path: 'daBubble',
+  //   loadComponent: () =>
+  //     import('./pages/da-bubble/da-bubble.component').then(
+  //       (m) => m.DaBubbleComponent
+  //     ),
+  // },
   {
     path: 'pokedex',
     loadComponent: () =>
       import('./pages/pokedex/pokedex.component').then(
-        (m) => m.PokedexComponent
+        (m) => m.PokedexComponent,
       ),
   },
   {
@@ -55,7 +55,7 @@ export const routes: Routes = [
     path: 'privacyPolicy',
     loadComponent: () =>
       import('./privacy-policy/privacy-policy.component').then(
-        (m) => m.PrivacyPolicyComponent
+        (m) => m.PrivacyPolicyComponent,
       ),
   },
 ];

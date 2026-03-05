@@ -21,7 +21,7 @@ export class ProjectNavigationService {
   /** List of available projects for navigation. */
   private projects: Project[] = [
     { id: 'join', name: 'Join', route: '/join' },
-    { id: 'da-bubble', name: 'DA Bubble', route: '/daBubble' },
+    // { id: 'da-bubble', name: 'DA Bubble', route: '/daBubble' },
     { id: 'el-pollo-loco', name: 'El Pollo Loco', route: '/elPolloLoco' },
 
     { id: 'pokedex', name: 'Pokedex', route: '/pokedex' },
@@ -57,7 +57,7 @@ export class ProjectNavigationService {
    */
   getNextProject(currentRoute: string): Project {
     const currentIndex = this.projects.findIndex(
-      (p) => p.route === currentRoute || currentRoute.includes(p.id)
+      (p) => p.route === currentRoute || currentRoute.includes(p.id),
     );
     const nextIndex = (currentIndex + 1) % this.projects.length;
     return this.projects[nextIndex];
@@ -70,7 +70,7 @@ export class ProjectNavigationService {
    */
   getPreviousProject(currentRoute: string): Project {
     const currentIndex = this.projects.findIndex(
-      (p) => p.route === currentRoute || currentRoute.includes(p.id)
+      (p) => p.route === currentRoute || currentRoute.includes(p.id),
     );
     const prevIndex =
       currentIndex <= 0 ? this.projects.length - 1 : currentIndex - 1;
