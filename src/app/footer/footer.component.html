@@ -1,7 +1,7 @@
 <footer>
   <div class="logo-container">
     <img src="./assets/img/LogoMpNeu3.png" alt="" />
-    <span>© Marco Palummieri 2025</span>
+    <span>© Marco Palummieri 2026</span>
   </div>
   <div class="link-container">
     <div class="top-link">
@@ -17,8 +17,16 @@
         <span>{{ "footer.link-one" | translate }}</span>
       </a>
 
-      <a routerLink="privacyPolicy" style="cursor: pointer"
-        >{{ "contactform.privacy-policy" | translate }}
+      <a
+        routerLink="privacyPolicy"
+        style="cursor: pointer"
+        class="link-underline"
+        (mouseenter)="markAsHovered('about')"
+        [class.has-been-hovered]="hoveredLinks.has('about')"
+        (focus)="markAsHovered('about')"
+        ><img src="./assets/icons/3.png" alt="" aria-hidden="true" />{{
+          "contactform.privacy-policy" | translate
+        }}
       </a>
     </div>
     <div class="bottom-links">
@@ -57,7 +65,7 @@
       >
 
       <!-- Start Partnerprogramm ALL‑INKL.COM -->
-      <a href="https://all-inkl.com/PAB415747BD0000">
+      <a class="allInklLink" href="https://all-inkl.com/PAB415747BD0000">
         <img
           border="0"
           src="assets/img/all-inkl_banner_2.svg"
