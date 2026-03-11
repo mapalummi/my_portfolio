@@ -39,6 +39,7 @@ footer {
   width: 100%;
   height: 60px;
   @include flex-between;
+  gap: 5rem;
 
   a {
     text-decoration: none;
@@ -151,14 +152,16 @@ footer {
 }
 
 .top-link {
-  display: flex;
-  justify-content: flex-start;
-  width: 35%;
+  // display: flex;
+  // justify-content: flex-start;
+  @include flex-between;
+  width: 30%;
+  gap: 1rem
 }
 
 .bottom-links {
   @include flex-between;
-  width: 100%;
+  width: 70%;
   gap: 1rem;
 }
 
