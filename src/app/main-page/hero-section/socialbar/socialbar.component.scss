@@ -12,11 +12,16 @@
 }
 
 .social-icon-container {
-  padding: 6px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #ddd;
   border-radius: 50%;
   transition: all 0.3s ease;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .social-icon-container:hover {
@@ -31,5 +36,16 @@
   @media (max-width: 600px) {
     width: 28px;
     height: 28px;
+  }
+}
+
+.whatsapp-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+
+  @media (max-width: 600px) {
+    width: 19px;
+    height: 19px;
   }
 }
