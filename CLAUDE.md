@@ -11,7 +11,7 @@ als Live-Demo meiner technischen Fähigkeiten.
 - **Framework:** Angular 17+ (Standalone Components, Signals, neuer Control Flow)
 - **Sprache:** TypeScript (strict mode bevorzugt)
 - **Backend/Proxy:** PHP (läuft auf All-Inkl Shared Hosting)
-- **Styling:** CSS/SCSS (kein Tailwind, kein UI-Framework)
+- **Styling:** CSS/SCSS (kein Tailwind); Angular Material/CDK für einzelne UI-Komponenten installiert
 - **Build:** Angular CLI mit esbuild (Standard seit Angular 17)
 - **Package Manager:** npm
 - **IDE:** VS Code
@@ -29,13 +29,21 @@ als Live-Demo meiner technischen Fähigkeiten.
 - Nutzt **OpenAI Embeddings** + **Supabase Vector Store** für kontextbasierte Antworten
 - Der Chatbot wird über ein persönliches Datenblatt (Markdown) gespeist
 - n8n-Webhook empfängt Anfragen vom Angular-Frontend
+- **`marked`** rendert Chatbot-Antworten als Markdown; **`dompurify`** sanitiert den HTML-Output (XSS-Schutz)
+
+### Mehrsprachigkeit (DE/EN)
+- Implementiert mit **`@ngx-translate`** (`@ngx-translate/core` + `@ngx-translate/http-loader`)
+- Sprachdateien: `src/assets/i18n/de.json` und `src/assets/i18n/en.json`
+- `AppComponent` registriert beide Sprachen; Standard ist `'en'`
+- Beim Bearbeiten von UI-Texten immer beide JSON-Dateien pflegen
 
 ### WhatsApp Business Button
 - Direkter Kontakt-Button für potenzielle Kunden
 - Öffnet WhatsApp Business Chat mit vordefinierter Nachricht
 
-### PHP-Proxy & Backend-Dateien (im Projekt-Root)
-Diese PHP-Dateien liegen im Root und werden auf All-Inkl serverseitig ausgeführt:
+### PHP-Proxy & Backend-Dateien
+Diese PHP-Dateien liegen im Projekt unter `src/app/` und werden beim Deployment manuell
+in den Webroot auf All-Inkl hochgeladen, wo sie serverseitig ausgeführt werden:
 - **`chat-proxy.php`** — Leitet Chatbot-Anfragen vom Angular-Frontend an den n8n-Webhook weiter.
   Dient als Proxy, um CORS-Probleme zu umgehen und den Webhook-Endpunkt nicht im Frontend offenzulegen.
 - **`chat-limit-proxy.php`** — Rate-Limiting / Anfragebegrenzung für den Chatbot,
@@ -50,7 +58,7 @@ Rate-Limiting und das Verstecken von Endpunkten/Credentials achten.
 ### Allgemein
 - **Clean Code first:** Lesbarkeit und Wartbarkeit haben Vorrang vor Cleverness
 - **Sprache im Code:** Englisch (Variablen, Funktionen, Kommentare)
-- **Sprache in UI-Texten:** Deutsch
+- **Sprache in UI-Texten:** DE/EN via ngx-translate (beide JSON-Dateien immer synchron halten)
 - **Kommentare:** Nur wo das "Warum" nicht offensichtlich ist, nicht das "Was"
 
 ### Angular-spezifisch
@@ -66,26 +74,45 @@ Rate-Limiting und das Verstecken von Endpunkten/Credentials achten.
 my_portfolio/
 ├── src/
 │   ├── app/
-│   │   ├── chatbot/            # Chatbot-Komponente (n8n-Integration)
+│   │   ├── chatbot/                    # Chatbot-Komponente (n8n-Integration)
 │   │   ├── contact-success-dialog/
 │   │   ├── footer/
 │   │   ├── header/
 │   │   ├── imprint/
-│   │   ├── main-page/
+│   │   ├── main-page/                  # One-Pager-Hauptseite
+│   │   │   ├── hero-section/
+│   │   │   │   └── socialbar/
+│   │   │   ├── about-me-section/
+│   │   │   ├── my-craft-section/
+│   │   │   ├── my-stack-section/
+│   │   │   ├── testimonials-section/
+│   │   │   └── contact-section/
 │   │   ├── mobile-header/
 │   │   ├── mobile-navbar/
-│   │   ├── pages/
+│   │   ├── pages/                      # Lazy-loaded Projektseiten
+│   │   │   ├── join/
+│   │   │   ├── el-pollo-loco/
+│   │   │   ├── pokedex/
+│   │   │   └── da-bubble/              # Route derzeit auskommentiert
 │   │   ├── privacy-policy/
-│   │   ├── services/           # Angular Services
-│   │   ├── shared/             # Wiederverwendbare Components, Pipes, Directives
+│   │   ├── services/                   # Angular Services
+│   │   │   ├── language.service.ts
+│   │   │   └── project-navigation.service.ts
+│   │   ├── shared/                     # Wiederverwendbare Components
+│   │   │   └── components/contactform/
+│   │   ├── sendMail.php                # → wird manuell in Webroot deployed
+│   │   ├── chat-proxy.php              # → wird manuell in Webroot deployed
+│   │   ├── chat-limit-proxy.php        # → wird manuell in Webroot deployed
 │   │   ├── app.component.ts
 │   │   ├── app.config.ts
 │   │   └── app.routes.ts
 │   ├── assets/
-│   └── styles.scss             # Globale Styles
-├── chat-proxy.php              # Proxy → n8n Webhook (CORS-Umgehung)
-├── chat-limit-proxy.php        # Rate-Limiting für Chatbot
-├── sendMail.php                # Kontaktformular-Mailversand
+│   │   ├── i18n/                       # Übersetzungsdateien (ngx-translate)
+│   │   │   ├── de.json
+│   │   │   └── en.json
+│   │   ├── fonts/
+│   │   └── icons/
+│   └── styles.scss                     # Globale Styles
 ├── angular.json
 ├── package.json
 └── CLAUDE.md
