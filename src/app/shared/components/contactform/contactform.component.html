@@ -96,14 +96,15 @@
     </button> -->
     <!-- ALT -->
 
-    <!-- NEU -->
-    <button
-      class="submit-button"
-      type="submit"
-      [disabled]="!contactForm.form.valid"
-    >
-      {{ "contactform.button" | translate }}
-    </button>
-    <!-- NEU -->
+    <div class="submit-row">
+      <ng-content></ng-content>
+      <button
+        class="submit-button"
+        type="submit"
+        [disabled]="!contactForm.form.valid"
+      >
+        {{ "contactform.button" | translate }}
+      </button>
+    </div>
   </form>
 </div>

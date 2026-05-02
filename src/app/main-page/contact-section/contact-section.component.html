@@ -10,11 +10,28 @@
           <p>
             {{ "contact-section.text" | translate }}
           </p>
-          <img
-            class="arrow-image desktop-arrow"
-            src="./assets/icons/contact_arrow.png"
-            alt="Arrow pointing to contact form"
-          />
+          <div class="seal-arrow-row">
+            <a
+              rel="nofollow"
+              href="https://www.exali.de/siegel/Marco_Palummieri"
+              target="_blank"
+              title="Weiter zur Media-Haftpflicht von Marc-Antonio Palummieri"
+              class="exali-seal"
+            >
+              <img
+                border="0"
+                src="https://www.exali.de/siegel/siegel_de-2_eac554ddb98918df10294c338d7eeb7d.png"
+                width="90"
+                height="90"
+                alt="Weiter zur Media-Haftpflicht von Marc-Antonio Palummieri"
+              />
+            </a>
+            <img
+              class="arrow-image desktop-arrow"
+              src="./assets/icons/contact_arrow.png"
+              alt="Arrow pointing to contact form"
+            />
+          </div>
         </div>
       </div>
       <div class="right-section">
@@ -64,12 +81,30 @@
           </div>
         </div>
         <div class="contact-wrapper">
-          <app-contactform></app-contactform>
-          <img
-            class="arrow-image mobile-arrow"
-            src="./assets/icons/contact_arrow.png"
-            alt="Arrow pointing to contact form"
-          />
+          <app-contactform>
+            <div class="seal-arrow-mobile">
+              <a
+                rel="nofollow"
+                href="https://www.exali.de/siegel/Marco_Palummieri"
+                target="_blank"
+                title="Weiter zur Media-Haftpflicht von Marc-Antonio Palummieri"
+                class="exali-seal-mobile"
+              >
+                <img
+                  border="0"
+                  src="https://www.exali.de/siegel/siegel_de-1_eac554ddb98918df10294c338d7eeb7d.png"
+                  width="65"
+                  height="65"
+                  alt="Weiter zur Media-Haftpflicht von Marc-Antonio Palummieri"
+                />
+              </a>
+              <img
+                class="arrow-image mobile-arrow"
+                src="./assets/icons/contact_arrow.png"
+                alt="Arrow pointing to contact_arrow"
+              />
+            </div>
+          </app-contactform>
         </div>
       </div>
     </div>
