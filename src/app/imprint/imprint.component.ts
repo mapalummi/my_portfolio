@@ -1,16 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, Inject, AfterViewInit } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
-import { TranslatePipe } from '@ngx-translate/core';
 import { MobileHeaderComponent } from '../mobile-header/mobile-header.component';
-import { CommonModule } from '@angular/common';
 import { MobileNavbarComponent } from '../mobile-navbar/mobile-navbar.component';
 
-/**
- * ImprintComponent displays the imprint (legal notice) page.
- * Includes header, footer, mobile navigation, and provides navigation back to the main page.
- */
 @Component({
   selector: 'app-imprint',
   standalone: true,
@@ -25,42 +21,42 @@ import { MobileNavbarComponent } from '../mobile-navbar/mobile-navbar.component'
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss',
 })
-export class ImprintComponent {
-  /**
-   * Creates an instance of ImprintComponent.
-   * @param router Angular Router for navigation.
-   */
-  constructor(private router: Router) {}
+export class ImprintComponent implements AfterViewInit {
+  constructor(
+    private router: Router,
+    private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
-  /**
-   * Indicates whether the mobile menu is open.
-   */
   isMobileMenuOpen = false;
 
-  /**
-   * Toggles the mobile menu open or closed.
-   */
+  ngAfterViewInit(): void {
+    const script = this.renderer.createElement('script');
+    this.renderer.setAttribute(
+      script,
+      'src',
+      'https://www.it-recht-kanzlei.de/js/itrk-legaltext.js'
+    );
+    this.renderer.appendChild(this.document.body, script);
+  }
+
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  /**
-   * Navigates back to the main page and scrolls to the contact section.
-   * Temporarily disables smooth scroll for instant navigation.
-   */
   goBack(): void {
     this.router.navigate(['/']).then(() => {
       requestAnimationFrame(() => {
-        const originalBehavior = document.documentElement.style.scrollBehavior;
-        document.documentElement.style.scrollBehavior = 'auto';
+        const originalBehavior = this.document.documentElement.style.scrollBehavior;
+        this.document.documentElement.style.scrollBehavior = 'auto';
 
-        const element = document.getElementById('contact-section');
+        const element = this.document.getElementById('contact-section');
         if (element) {
           element.scrollIntoView({ behavior: 'auto', block: 'start' });
         }
 
         requestAnimationFrame(() => {
-          document.documentElement.style.scrollBehavior = originalBehavior;
+          this.document.documentElement.style.scrollBehavior = originalBehavior;
         });
       });
     });

@@ -1,16 +1,12 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderComponent } from "../header/header.component";
-import { FooterComponent } from "../footer/footer.component";
-import { TranslatePipe } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 import { MobileHeaderComponent } from '../mobile-header/mobile-header.component';
 import { MobileNavbarComponent } from '../mobile-navbar/mobile-navbar.component';
 
-/**
- * PrivacyPolicyComponent displays the privacy policy page.
- * Includes header, footer, mobile navigation, and provides navigation back to the main page.
- */
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
@@ -20,14 +16,16 @@ import { MobileNavbarComponent } from '../mobile-navbar/mobile-navbar.component'
     FooterComponent,
     TranslatePipe,
     MobileHeaderComponent,
-    MobileNavbarComponent
+    MobileNavbarComponent,
   ],
   templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+  styleUrl: './privacy-policy.component.scss',
 })
 export class PrivacyPolicyComponent implements OnInit {
   isMobileMenuOpen = false;
   showBackToTop = false;
+
+  constructor(private router: Router) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -36,35 +34,18 @@ export class PrivacyPolicyComponent implements OnInit {
     this.showBackToTop = atBottom;
   }
 
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  /**
-   * Creates an instance of PrivacyPolicyComponent.
-   * @param router Angular Router for navigation.
-   */
-  constructor(private router: Router) { }
-
-  /**
-   * Toggles the mobile menu open or closed.
-   */
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-
-  /**
-   * Angular lifecycle hook called when the component is initialized.
-   * Scrolls to the top of the page.
-   */
   ngOnInit() {
     window.scrollTo(0, 0);
   }
 
-  /**
-   * Navigates back to the main page and scrolls to the contact section.
-   * Temporarily disables smooth scroll for instant navigation.
-   */
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   goBack(): void {
     this.router.navigate(['/']).then(() => {
       requestAnimationFrame(() => {
