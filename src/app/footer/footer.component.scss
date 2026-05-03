@@ -17,12 +17,19 @@ footer {
   gap: 8px;
 }
 
-.logo-container {
+.footer-bottom {
   width: 100%;
-  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.25rem;
+}
+
+.logo-container {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
   font-family: "Bricolage Grotesque", sans-serif;
   gap: 4px;
 
@@ -34,6 +41,12 @@ footer {
     color: white;
     font-size: 0.9rem;
   }
+}
+
+.trust-seals {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 
 .link-container {
@@ -163,6 +176,34 @@ footer {
   display: contents;
 }
 
+.trust-seal {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.65;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.exali-footer-seal img {
+  width: 80px;
+  height: auto;
+}
+
+.itrk-footer-badge img {
+  height: 42px;
+  width: auto;
+  filter: brightness(0.9);
+}
+
+.allinkl-footer-badge img {
+  height: 42px;
+  width: auto;
+  filter: brightness(0.9);
+}
+
 // ===================
 // RESPONSIVE STYLES
 // ===================
@@ -222,7 +263,32 @@ footer {
     padding: 8px;
   }
 
-  .allInklLink {
-    display: none;
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .logo-container {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+
+    span {
+      font-size: 0.7rem;
+    }
+  }
+
+  .trust-seals {
+    gap: 1.5rem;
+  }
+
+  .allinkl-footer-badge img {
+    height: 34px;
+  }
+
+  .exali-footer-seal img {
+    width: 65px;
   }
 }
