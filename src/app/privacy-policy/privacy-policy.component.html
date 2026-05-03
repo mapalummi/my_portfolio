@@ -165,12 +165,19 @@
       <p>{{ "privacy-policy.text-22" | translate }}</p>
       <h3>{{ "privacy-policy.headline-27" | translate }}</h3>
       <p>{{ "privacy-policy.text-23" | translate }}</p>
-      <div class="back-button-container">
+      <!-- <div class="back-button-container">
         <button class="back-button" (click)="goBack()">
           <span class="arrow">←</span>{{ "privacy-policy.button" | translate }}
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
   <app-footer></app-footer>
 </div>
+
+<button
+  class="back-to-top-button"
+  [class.visible]="showBackToTop"
+  (click)="scrollToTop()"
+  aria-label="Nach oben scrollen"
+></button>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
@@ -26,10 +26,19 @@ import { MobileNavbarComponent } from '../mobile-navbar/mobile-navbar.component'
   styleUrl: './privacy-policy.component.scss'
 })
 export class PrivacyPolicyComponent implements OnInit {
-  /**
-   * Indicates whether the mobile menu is open.
-   */
   isMobileMenuOpen = false;
+  showBackToTop = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const atBottom =
+      window.pageYOffset + window.innerHeight >= document.body.scrollHeight;
+    this.showBackToTop = atBottom;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   /**
    * Creates an instance of PrivacyPolicyComponent.
