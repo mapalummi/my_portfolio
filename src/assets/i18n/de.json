@@ -32,7 +32,9 @@
   "my-craft-section": {
     "headline-one": "Mein Handwerk",
     "headline-two": "Projekte",
-    "text": "Ich liebe es, Ideen in funktionierende Webseiten und Web-Anwendungen zu verwandeln. Dabei zeige ich dir sowohl meine Custom Development Projekte als auch WordPress-Lösungen für Kunden - alle mit modernem, responsivem Design und sauberer, wartbarer Struktur. Mir ist wichtig, dass Anwendungen nicht nur technisch gut laufen, sondern auch für Nutzer intuitiv funktionieren. Schau dir gerne um, probier alles in Ruhe aus - und wenn du Feedback hast, freue ich mich drauf!",
+    "text1": "Ich liebe es, Ideen in funktionierende Webseiten und Web-Anwendungen zu verwandeln. Dabei zeige ich dir sowohl meine Custom Development Projekte als auch WordPress-Lösungen für Kunden - alle mit modernem, responsivem Design und sauberer, wartbarer Struktur.",
+    "text2": "Mir ist wichtig, dass Anwendungen nicht nur technisch gut laufen, sondern auch für Nutzer intuitiv funktionieren.",
+    "text3": "Schau dich gerne um, probier alles in Ruhe aus - und wenn du Feedback hast, freue ich mich drauf!",
     "join": "Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben per Drag-and-Drop, weise Benutzer und Kategorien zu.",
     "el-pollo-loco": "Jump-and-Run-Spiel mit Wurf-Funktion auf objektorientierter Basis. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.",
     "da-bubble": "Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und Zusammenarbeit durch eine intuitive Benutzeroberfläche, Echtzeitnachrichten und eine durchdachte Kanalstruktur.",
@@ -100,7 +102,8 @@
   "contact-section": {
     "headline-one": "Meld dich gern bei mir!",
     "headline-two": "Bereit zusammen was zu erschaffen?",
-    "text": "Ich bin immer offen für neue Projekte, Ideen und spannende Aufgaben - vor allem, wenn’s ums Coden und kreative Lösungen geht. Wenn du jemanden suchst, der mit Herzblut dabei ist, Lust hat dazuzulernen und echte Unterstützung ins Team bringt, dann bist du bei mir genau richtig. Schreib mir einfach - ich freu mich drauf, von dir zu hören und vielleicht gemeinsam was Cooles auf die Beine zu stellen!"
+    "text1": "Ich bin immer offen für neue Projekte, spannende Herausforderungen und kreative Lösungen - egal ob Website-Relaunch, Custom Web-App oder WordPress-Lösung. Wenn du jemanden suchst, der mit Leidenschaft umsetzt, schnell lernt und echte Unterstützung bringt, dann bist du bei mir genau richtig.",
+    "text2": "Schreib mir einfach - ich freue mich auf deine Idee und wir schauen gemeinsam, wie ich dir helfen kann!"
   },
   "contactform": {
     "name": "Wie ist dein Name?",
