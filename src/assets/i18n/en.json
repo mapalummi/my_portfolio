@@ -32,9 +32,8 @@
   "my-craft-section": {
     "headline-one": "My Craft",
     "headline-two": "Projects",
-    "text1": "I love turning ideas into functioning websites and web applications. Here you'll see both my custom development projects and WordPress solutions for clients - all built with modern, responsive design and clean, maintainable code. It's important to me that applications not only work technically, but also feel intuitive to users. Feel free to explore, try everything out - and if you have any feedback, I'd love to hear it!",
-    "text2": "I love turning ideas into functioning websites and web applications. Here you'll see both my custom development projects and WordPress solutions for clients - all built with modern, responsive design and clean, maintainable code.",
-    "text3": "Feel free to explore, try everything out - and if you have any feedback, I'd love to hear it!",
+    "text1": "I love turning ideas into functioning websites and web applications. Here you'll see both my custom development projects and WordPress solutions for clients - all built with modern, responsive design and clean, maintainable code.",
+    "text2": "It's important to me that applications not only work technically, but also feel intuitive to users. Feel free to explore, try everything out - and if you have any feedback, I'd love to hear it!",
     "join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
     "el-pollo-loco": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
     "da-bubble": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.",
