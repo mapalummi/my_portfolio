@@ -4,7 +4,7 @@
   //   position: absolute;
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: max(20px, calc((100vw - 1440px) / 2 + 20px));
 
   width: 90%;
   max-width: 380px;
@@ -104,7 +104,7 @@
 #chat-widget-button {
   position: fixed;
   bottom: 25px;
-  right: 25px;
+  right: max(25px, calc((100vw - 1440px) / 2 + 25px));
   background: var(--bot-primary-color);
   color: white;
   border: none;
