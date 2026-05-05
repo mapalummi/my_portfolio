@@ -24,7 +24,9 @@
   "my-stack-section": {
     "headline-one": "My Stack",
     "headline-two": "Skill set",
-    "text": "I develop modern and responsive web applications using HTML, CSS, JavaScript, and Angular. I focus on writing clean code, use Git and GitHub for version control, and quickly and enthusiastically learn new tools and technologies.",
+    "text": "I build modern websites and web applications – from WordPress solutions for clients to custom frontends with TypeScript and Angular. I focus on clean code, clear structure, and long-term maintainability.",
+    "category-custom-dev": "Custom Development",
+    "category-wordpress": "WordPress & Tools",
     "peel-one": "Pull to peel",
     "peel-one-mobile": "Click me",
     "peel-two": "Also, I'm interested in diving into:"
