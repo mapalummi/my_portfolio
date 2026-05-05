@@ -12,7 +12,7 @@
 }
 
 .subtitle {
-  font-size: 1.3rem;
+  font-size: var(--font-size-base);
   color: white;
   font-weight: 300;
   text-transform: uppercase;
@@ -23,7 +23,7 @@
   position: relative;
   display: inline-block;
   h1 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: bold;
     color: white;
     position: relative;
@@ -39,8 +39,8 @@
     // animation: fadeAndGlow 4s steps(10) infinite; // Stufen-Animation
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translate(-50%) scaleX(-1);
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(-1);
     z-index: 1;
     height: auto;
   }
@@ -48,27 +48,27 @@
 
 @keyframes fadeAndGlow {
   0% {
-    transform: translate(0, -50%) scaleX(-1);
+    transform: translate(-50%, -50%) scaleX(-1);
     opacity: 1;
     filter: brightness(1) drop-shadow(0 0 0px rgba(255, 255, 255, 0));
   }
   25% {
-    transform: translate(0, -50%) scaleX(-1);
+    transform: translate(-50%, -50%) scaleX(-1);
     opacity: 0.3;
     filter: brightness(0.5) drop-shadow(0 0 0px rgba(255, 255, 255, 0));
   }
   50% {
-    transform: translate(0, -50%) scaleX(-1);
+    transform: translate(-50%, -50%) scaleX(-1);
     opacity: 0.1;
     filter: brightness(0.2) drop-shadow(0 0 0px rgba(255, 255, 255, 0));
   }
   75% {
-    transform: translate(0, -50%) scaleX(-1);
+    transform: translate(-50%, -50%) scaleX(-1);
     opacity: 0.8;
     filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
   }
   100% {
-    transform: translate(0, -50%) scaleX(-1);
+    transform: translate(-50%, -50%) scaleX(-1);
     opacity: 1;
     filter: brightness(1) drop-shadow(0 0 0px rgba(255, 255, 255, 0));
   }
@@ -121,25 +121,15 @@
     padding: 3rem 1.5rem 0 0.5rem;
   }
 
-  .subtitle {
-    font-size: 1.1rem;
-  }
-
   .main-title {
-    h1 {
-      font-size: 3rem;
-    }
     img {
       width: 200px;
     }
-  }  
+  }
 }
 
 @media (max-width: 400px) {
   .main-title {
-    h1 {
-      font-size: 2.5rem;
-    }
     img {
       width: 170px;
       left: -10px;

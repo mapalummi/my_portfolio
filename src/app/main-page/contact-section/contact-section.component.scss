@@ -65,12 +65,9 @@
   flex-direction: column;
 
   span {
-    font-size: 20px;
+    font-size: var(--font-size-base);
+    font-weight: 300;
     text-transform: uppercase;
-
-    @media (max-width: 1111px) {
-      font-size: 18px;
-    }
 
     @media (max-width: 460px) {
       margin-bottom: 12px;
@@ -78,18 +75,10 @@
   }
 
   h1 {
-    font-size: 48px;
+    font-size: clamp(2rem, 5vw, 3rem);
     max-width: 100%;
     word-break: break-word;
     overflow-wrap: break-word;
-
-    @media (max-width: 1111px) {
-      font-size: 44px;
-    }
-
-    @media (max-width: 999px) {
-      font-size: 34px;
-    }
   }
 }
 
@@ -102,20 +91,13 @@
   p {
     align-self: flex-start;
     width: 100%;
-    font-size: 18px;
+    font-size: var(--font-size-base);
     text-wrap: balance;
-    line-height: 1.5;
-
-    @media (max-width: 1111px) {
-      font-size: 16px;
-      line-height: 1.5;
-    }
+    line-height: 1.4;
 
     @media (max-width: 576px) {
       align-self: flex-start;
       width: 100%;
-      font-size: 15px;
-      line-height: 1.5;
     }
   }
 }
