@@ -4,6 +4,7 @@
 .pokedex-project,
 .wp-project {
   flex: 1;
+  padding-bottom: 2rem;
 }
 
 .join-project {
@@ -198,6 +199,54 @@ a.details-button {
 // RESPONSIVE STYLES
 // ===================
 
+@media (max-width: 1024px) {
+  .join-project,
+  .pollo-loco-project,
+  .da-bubble-project,
+  .pokedex-project,
+  .wp-project {
+    padding-bottom: 2rem;
+  }
+
+  .desktop-button {
+    display: none;
+  }
+
+  .mobile-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    width: auto;
+    max-width: 200px;
+    height: auto;
+    align-self: flex-start;
+    opacity: 1;
+    margin-top: 15px;
+    margin-left: 0;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid black;
+    background-color: transparent;
+    box-shadow: 2px 2px 0px black;
+
+    a {
+      color: black;
+    }
+
+    &:hover {
+      box-shadow: 2px 2px 0px black;
+      transform: none;
+      background-color: transparent;
+    }
+  }
+
+  .mobile-button a,
+  a.mobile-button {
+    color: black;
+  }
+}
+
 @media (max-width: 576px) {
   .join-project,
   .pollo-loco-project,
@@ -243,37 +292,6 @@ a.details-button {
     }
   }
 
-  .desktop-button {
-    display: none;
-  }
-
-  .mobile-button {
-    display: block;
-    position: static;
-    width: 34%;
-    opacity: 1;
-    margin-top: 15px;
-    margin-left: auto;
-    border: 1px solid black;
-    background-color: transparent;
-    box-shadow: 2px 2px 0px black;
-    @include flex-center;
-
-    a {
-      color: black;
-    }
-
-    &:hover {
-      box-shadow: 2px 2px 0px black;
-      transform: none;
-      background-color: transparent;
-    }
-  }
-
-  .mobile-button a,
-  a.mobile-button {
-    color: black;
-  }
 }
 
 @media (max-width: 430px) {
@@ -285,14 +303,4 @@ a.details-button {
     margin-bottom: 24px;
   }
 
-  .mobile-button {
-    width: 100%;
-    margin-top: 15px;
-    margin-left: 0;
-    margin-right: 0;
-    margin-right: auto;
-    margin-left: auto;
-    transform: none;
-    @include flex-center;
-  }
 }
