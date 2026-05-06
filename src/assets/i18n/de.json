@@ -22,8 +22,8 @@
     "button": "Reden wir?"
   },
   "my-stack-section": {
-    "headline-one": "My Stack",
-    "headline-two": "Skill set",
+    "headline-one": "Mein Tech-Stack",
+    "headline-two": "Skill Set",
     "text": "Ich entwickle moderne Webseiten und Web-Anwendungen - von WordPress-Lösungen für Kunden bis hin zu Custom-Frontends mit TypeScript und Angular. Dabei achte ich auf sauberen Code, klare Struktur und nachhaltige Wartbarkeit.",
     "category-custom-dev": "Custom Development",
     "category-wordpress": "WordPress & Tools",
