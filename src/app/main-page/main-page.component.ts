@@ -27,12 +27,15 @@ import { ChatbotComponent } from '../chatbot/chatbot.component';
 export class MainPageComponent {
   showBackToTop = false;
 
+  // Toleranz in px statt exaktem Grenzwert, da scrollHeight/pageYOffset
+  // auf Desktop durch Subpixel-Rundung nie exakt übereinstimmen müssen.
+  private readonly bottomThreshold = 10;
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // this.showBackToTop = window.pageYOffset > 1000;
-    const atBottom =
-      window.pageYOffset + window.innerHeight >= document.body.scrollHeight;
-    this.showBackToTop = atBottom;
+    const distanceToBottom =
+      document.body.scrollHeight - (window.pageYOffset + window.innerHeight);
+    this.showBackToTop = distanceToBottom <= this.bottomThreshold;
   }
 
   scrollToTop() {
