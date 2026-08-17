@@ -6,7 +6,7 @@ import { MyCraftSectionComponent } from './my-craft-section/my-craft-section.com
 import { TestimonialsSectionComponent } from './testimonials-section/testimonials-section.component';
 import { ContactSectionComponent } from './contact-section/contact-section.component';
 import { RouterModule } from '@angular/router';
-import { ChatbotComponent } from '../chatbot/chatbot.component';
+// import { ChatbotComponent } from '../chatbot/chatbot.component';
 
 @Component({
   selector: 'app-main-page',
@@ -19,7 +19,7 @@ import { ChatbotComponent } from '../chatbot/chatbot.component';
     MyCraftSectionComponent,
     TestimonialsSectionComponent,
     ContactSectionComponent,
-    ChatbotComponent
+    // ChatbotComponent
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
