@@ -11,6 +11,13 @@
   background-repeat: no-repeat;
   font-family: "Bricolage Grotesque", sans-serif;
 
+  // Keep content clear of the torn paper edge at the bottom of the background image.
+  // In the desktop layout the image scales with the section width (cover),
+  // so the edge height grows with vw as well (~6.5vw).
+  @media (min-width: 1386px) {
+    padding-bottom: 8vw;
+  }
+
   @media (max-width: 768px) {
     padding-bottom: 6rem;
   }
