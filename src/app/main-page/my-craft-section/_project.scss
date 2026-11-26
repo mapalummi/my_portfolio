@@ -188,11 +188,9 @@ a.details-button {
   transition: transform 0.3s ease;
 }
 
-.athlon-project-image {
-  width: 100%;
-  height: 100%;
+// Modifier: only changes how the image is cropped (no distortion)
+.project-image--cover {
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
 // ===================
